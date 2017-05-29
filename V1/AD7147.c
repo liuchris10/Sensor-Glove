@@ -6,8 +6,8 @@
 void setup_AD7147(void)
 {   
     unsigned int StageBuffer[8];
-    CS_CDC1 = 0;   //set CS to low (transmit data)
-    CS_CDC2 = 0;   //set CS to low (transmit data)
+    //CS_CDC1 = 0;   //set CS to low (transmit data)
+    //CS_CDC2 = 0;   //set CS to low (transmit data)
     // BANK 2 REGISTERS CONFIGURATION
     // StageBuffer[0] StageX_Connections[6:0] setup
     // StageBuffer[1] StageX_Connections[12:7] setup
@@ -202,8 +202,8 @@ void setup_AD7147(void)
 	//read_AD7147(STAGE_LOW_LIMIT_INT, 3, AD7147Registers); //Registers 0x08 & 0x09 & 0x0A
 	//Read High and Low Limit Status registers to clear INT pin
 	//unsigned int AD7147Registers = read_AD7147(STAGE_LOW_LIMIT_INT, 3); //Registers 0x08 & 0x09 & 0x0A
-    CS_CDC1 = 1;   //set CS to low (transmit data)
-    CS_CDC2 = 1;   //set CS to low (transmit data)
+    //CS_CDC1 = 1;   //set CS to low (transmit data)
+    //CS_CDC2 = 1;   //set CS to low (transmit data)
 }
 
 void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[])
@@ -304,14 +304,28 @@ void read_sensors()
 
 unsigned int get_ID(unsigned int cdc)
 {
-    //get_CDC(cdc,0);
-    CS_CDC2 = 0;   //set CS to low (transmit data)
+    get_CDC(cdc,0);
     unsigned int result = (w16_r16_spi(ENABLE_READ + DEV_ID) & 0b1111111111110000) >> 4;
-    //get_CDC(cdc,1);
-    CS_CDC2 = 1;   //set CS to low (transmit data)
+    get_CDC(cdc,1);
     return result;
 }
 
+void switch_LED(unsigned int state, unsigned int cdc)
+{
+ get_CDC(cdc,0);
+ if (state==1)
+ {
+     unsigned int message = 0b0011000000000000;
+     w32_spi((ENABLE_WRITE + STAGE_LOW_INT_EN),message);
+ }
+ else
+ {
+     
+     unsigned int message = 0b0010000000000000;
+     w32_spi((ENABLE_WRITE + STAGE_LOW_INT_EN),message);
+ }
+ get_CDC(cdc,0);
+}
 void get_CDC(unsigned int number, unsigned int option)
 {
     if (option == 0)

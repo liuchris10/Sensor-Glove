@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/debug\Sensor_Glove.debug.hex">
+  <executable name="dist/default/debug\V1.debug.hex">
     <memory name="program">
       <units>bytes</units>
       <length>32768</length>
-      <used>714</used>
-      <free>32054</free>
+      <used>1032</used>
+      <free>31736</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>3649</length>
-      <used>59</used>
-      <free>3590</free>
+      <used>61</used>
+      <free>3588</free>
     </memory>
   </executable>
 </project>

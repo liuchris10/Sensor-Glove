@@ -8,17 +8,24 @@ void main(void)
     delay_ms(500);
     setup_mcu();
     setup_spi();
+    //get_CDC(2,0);
     //setup_AD7147();
-   
-    char indicator = 'i';
+    //get_CDC(2,1);
+    //switch_LED(0,1);
+    //switch_LED(0,2);
+    char indicator = 'f';
     unsigned int bb = 1020;
     while(1) 
     {   
         if (indicator == 'i')
         {
             uart_write_char('i');
-            unsigned int device_ID = get_ID(1);
+            unsigned int device_ID = get_ID(2);
             uart_write_unsigned_int(device_ID);
+        }
+        if (indicator = 'l')
+        {
+            switch_LED(1,1);
         }
         if (indicator == 's')
         {

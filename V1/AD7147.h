@@ -10,6 +10,7 @@ static int ServiceAD7147Isr(void);
 unsigned int read_sensor(unsigned int);
 unsigned int get_ID(unsigned int);
 void read_sensors(void);
+void switch_LED(unsigned int, unsigned int);
 void get_CDC(unsigned int, unsigned int);
 #endif	/* XC_HEADER_TEMPLATE_H */
 

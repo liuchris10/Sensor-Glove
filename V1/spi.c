@@ -32,8 +32,6 @@ void w32_spi(unsigned int address, unsigned int data)
     
     data_low = data & 0xFF;
     data_high = (data >> 8) & 0xFF;
-
-    CS_CDC1 = 0;   //set CS to low (transmit data)
     
     SSPBUF = address_high;  // Command byte (write to pot 0)
     while(!SSPSTATbits.BF); // wait to complete 
@@ -50,8 +48,6 @@ void w32_spi(unsigned int address, unsigned int data)
     SSPBUF = data_low;  // Command byte (write to pot 0)
     while(!SSPSTATbits.BF); // wait to complete 
     unsigned int p4 = SSPBUF;
-    
-    CS_CDC1 = 1;   //set CS to low (transmit data)
 }
 
 void w16_spi(unsigned int address)
@@ -62,8 +58,6 @@ void w16_spi(unsigned int address)
     address_low = address & 0xFF;
     address_high = (address >> 8) & 0xFF;
     
-    CS_CDC1 = 0;   //set CS to low (transmit data)
-    
     SSPBUF = address_high;  // Command byte (write to pot 0)
     while(!SSPSTATbits.BF); // wait to complete 
     p1 = SSPBUF;
@@ -71,8 +65,6 @@ void w16_spi(unsigned int address)
     SSPBUF = address_low;  // Command byte (write to pot 0)
     while(!SSPSTATbits.BF); // wait to complete 
     p2 = SSPBUF;
-
-    CS_CDC1 = 1;   //set CS to low (transmit data)
 }
 
 unsigned int r16_spi(void)

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Sensor_Glove
+PROJECTNAME=V1
 
 # Active Configuration
 DEFAULTCONF=default
