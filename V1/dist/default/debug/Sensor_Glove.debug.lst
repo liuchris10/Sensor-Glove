@@ -1,0 +1,1598 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.38 build -256452561 
+                                                                                               Sun May 28 17:46:12 2017
+
+Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010351
+     1                           	processor	18F25K80
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text10,global,reloc=2,class=CODE,delta=1
+    19                           	psect	text11,global,reloc=2,class=CODE,delta=1
+    20                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    21                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    22  0000                     _BAUDCON1	set	4007
+    23  0000                     _LATCbits	set	3979
+    24  0000                     _PIE1bits	set	3997
+    25  0000                     _PIR1bits	set	3998
+    26  0000                     _RCREG1	set	4014
+    27  0000                     _RCSTA1bits	set	4011
+    28  0000                     _SPBRG1	set	4015
+    29  0000                     _SSPBUF	set	4041
+    30  0000                     _SSPCON1bits	set	4038
+    31  0000                     _SSPSTATbits	set	4039
+    32  0000                     _TRISB	set	3987
+    33  0000                     _TRISC	set	3988
+    34  0000                     _TXREG1	set	4013
+    35  0000                     _TXSTA1	set	4012
+    36  0000                     _TXSTA1bits	set	4012
+    37  0000                     _RC1IF	set	31989
+    38                           
+    39                           ; #config settings
+    40  0000                     
+    41                           	psect	cinit
+    42  007D62                     __pcinit:
+    43                           	opt stack 0
+    44  007D62                     start_initialization:
+    45                           	opt stack 0
+    46  007D62                     __initialization:
+    47                           	opt stack 0
+    48                           
+    49                           ; Clear objects allocated to COMRAM (24 bytes)
+    50  007D62  EE00  F024         	lfsr	0,__pbssCOMRAM
+    51  007D66  0E18               	movlw	24
+    52  007D68                     clear_0:
+    53  007D68  6AEE               	clrf	postinc0,c
+    54  007D6A  06E8               	decf	wreg,f,c
+    55  007D6C  E1FD               	bnz	clear_0
+    56  007D6E                     end_of_initialization:
+    57                           	opt stack 0
+    58  007D6E                     __end_of__initialization:
+    59                           	opt stack 0
+    60  007D6E  0100               	movlb	0
+    61  007D70  EFAE  F03F         	goto	_main	;jump to C main() function
+    62                           postinc0	equ	0xFEE
+    63                           wreg	equ	0xFE8
+    64                           
+    65                           	psect	bssCOMRAM
+    66  000024                     __pbssCOMRAM:
+    67                           	opt stack 0
+    68  000024                     _CDC_RESULT:
+    69                           	opt stack 0
+    70  000024                     	ds	24
+    71                           postinc0	equ	0xFEE
+    72                           wreg	equ	0xFE8
+    73                           
+    74                           	psect	cstackCOMRAM
+    75  000001                     __pcstackCOMRAM:
+    76                           	opt stack 0
+    77  000001                     ?_w16_r16_spi:
+    78                           	opt stack 0
+    79  000001                     ?___awdiv:
+    80                           	opt stack 0
+    81  000001                     uart_write_char@data:
+    82                           	opt stack 0
+    83  000001                     w16_r16_spi@address:
+    84                           	opt stack 0
+    85  000001                     uart_write_unsigned_int@number:
+    86                           	opt stack 0
+    87  000001                     ___awdiv@dividend:
+    88                           	opt stack 0
+    89                           
+    90                           ; 2 bytes @ 0x0
+    91  000001                     	ds	2
+    92  000003                     ??_w16_r16_spi:
+    93  000003                     uart_write_unsigned_int@char1:
+    94                           	opt stack 0
+    95  000003                     ___awdiv@divisor:
+    96                           	opt stack 0
+    97                           
+    98                           ; 2 bytes @ 0x2
+    99  000003                     	ds	1
+   100  000004                     uart_write_unsigned_int@char2:
+   101                           	opt stack 0
+   102                           
+   103                           ; 1 bytes @ 0x3
+   104  000004                     	ds	1
+   105  000005                     ___awdiv@counter:
+   106                           	opt stack 0
+   107  000005                     w16_r16_spi@p1:
+   108                           	opt stack 0
+   109                           
+   110                           ; 2 bytes @ 0x4
+   111  000005                     	ds	1
+   112  000006                     ___awdiv@sign:
+   113                           	opt stack 0
+   114                           
+   115                           ; 1 bytes @ 0x5
+   116  000006                     	ds	1
+   117  000007                     w16_r16_spi@p2:
+   118                           	opt stack 0
+   119  000007                     ___awdiv@quotient:
+   120                           	opt stack 0
+   121                           
+   122                           ; 2 bytes @ 0x6
+   123  000007                     	ds	2
+   124  000009                     delay_ms@n:
+   125                           	opt stack 0
+   126  000009                     w16_r16_spi@address_low:
+   127                           	opt stack 0
+   128                           
+   129                           ; 2 bytes @ 0x8
+   130  000009                     	ds	2
+   131  00000B                     ??_delay_ms:
+   132  00000B                     w16_r16_spi@address_high:
+   133                           	opt stack 0
+   134                           
+   135                           ; 2 bytes @ 0xA
+   136  00000B                     	ds	1
+   137  00000C                     delay_ms@j:
+   138                           	opt stack 0
+   139                           
+   140                           ; 2 bytes @ 0xB
+   141  00000C                     	ds	1
+   142  00000D                     w16_r16_spi@result:
+   143                           	opt stack 0
+   144                           
+   145                           ; 2 bytes @ 0xC
+   146  00000D                     	ds	2
+   147  00000F                     w16_r16_spi@blank_low:
+   148                           	opt stack 0
+   149                           
+   150                           ; 2 bytes @ 0xE
+   151  00000F                     	ds	2
+   152  000011                     w16_r16_spi@blank_high:
+   153                           	opt stack 0
+   154                           
+   155                           ; 2 bytes @ 0x10
+   156  000011                     	ds	2
+   157  000013                     w16_r16_spi@p3:
+   158                           	opt stack 0
+   159                           
+   160                           ; 2 bytes @ 0x12
+   161  000013                     	ds	2
+   162  000015                     w16_r16_spi@p4:
+   163                           	opt stack 0
+   164                           
+   165                           ; 2 bytes @ 0x14
+   166  000015                     	ds	2
+   167  000017                     ?_read_sensor:
+   168                           	opt stack 0
+   169  000017                     ?_get_ID:
+   170                           	opt stack 0
+   171  000017                     read_sensor@sensor:
+   172                           	opt stack 0
+   173  000017                     get_ID@cdc:
+   174                           	opt stack 0
+   175                           
+   176                           ; 2 bytes @ 0x16
+   177  000017                     	ds	2
+   178  000019                     ??_get_ID:
+   179  000019                     read_sensor@register1:
+   180                           	opt stack 0
+   181                           
+   182                           ; 2 bytes @ 0x18
+   183  000019                     	ds	1
+   184  00001A                     get_ID@result:
+   185                           	opt stack 0
+   186                           
+   187                           ; 2 bytes @ 0x19
+   188  00001A                     	ds	1
+   189  00001B                     read_sensor@sensor_value:
+   190                           	opt stack 0
+   191                           
+   192                           ; 2 bytes @ 0x1A
+   193  00001B                     	ds	2
+   194  00001D                     main@bb:
+   195                           	opt stack 0
+   196                           
+   197                           ; 2 bytes @ 0x1C
+   198  00001D                     	ds	2
+   199  00001F                     main@device_ID:
+   200                           	opt stack 0
+   201                           
+   202                           ; 2 bytes @ 0x1E
+   203  00001F                     	ds	2
+   204  000021                     main@sensor_0:
+   205                           	opt stack 0
+   206                           
+   207                           ; 2 bytes @ 0x20
+   208  000021                     	ds	2
+   209  000023                     main@indicator:
+   210                           	opt stack 0
+   211                           
+   212                           ; 1 bytes @ 0x22
+   213  000023                     	ds	1
+   214                           postinc0	equ	0xFEE
+   215                           wreg	equ	0xFE8
+   216                           
+   217 ;;
+   218 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   219 ;;
+   220 ;; *************** function _main *****************
+   221 ;; Defined at:
+   222 ;;		line 6 in file "main.c"
+   223 ;; Parameters:    Size  Location     Type
+   224 ;;		None
+   225 ;; Auto vars:     Size  Location     Type
+   226 ;;  sensor_0        2   32[COMRAM] unsigned int 
+   227 ;;  device_ID       2   30[COMRAM] unsigned int 
+   228 ;;  bb              2   28[COMRAM] unsigned int 
+   229 ;;  indicator       1   34[COMRAM] unsigned char 
+   230 ;; Return value:  Size  Location     Type
+   231 ;;                  1    wreg      void 
+   232 ;; Registers used:
+   233 ;;		wreg, status,2, status,0, cstack
+   234 ;; Tracked objects:
+   235 ;;		On entry : 0/0
+   236 ;;		On exit  : 0/0
+   237 ;;		Unchanged: 0/0
+   238 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   239 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   240 ;;      Locals:         7       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   241 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   242 ;;      Totals:         7       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   243 ;;Total ram usage:        7 bytes
+   244 ;; Hardware stack levels required when called:    2
+   245 ;; This function calls:
+   246 ;;		_delay_ms
+   247 ;;		_get_ID
+   248 ;;		_read_sensor
+   249 ;;		_setup_mcu
+   250 ;;		_setup_spi
+   251 ;;		_uart_write_char
+   252 ;;		_uart_write_unsigned_int
+   253 ;; This function is called by:
+   254 ;;		Startup code after reset
+   255 ;; This function uses a non-reentrant model
+   256 ;;
+   257                           
+   258                           	psect	text0
+   259  007F5C                     __ptext0:
+   260                           	opt stack 0
+   261  007F5C                     _main:
+   262                           	opt stack 29
+   263                           
+   264                           ;main.c: 8: delay_ms(500);
+   265                           
+   266                           ;incstack = 0
+   267  007F5C  0E01               	movlw	1
+   268  007F5E  6E0A               	movwf	delay_ms@n+1,c
+   269  007F60  0EF4               	movlw	244
+   270  007F62  6E09               	movwf	delay_ms@n,c
+   271  007F64  EC0D  F03F         	call	_delay_ms	;wreg free
+   272                           
+   273                           ;main.c: 9: setup_mcu();
+   274  007F68  EC9E  F03E         	call	_setup_mcu	;wreg free
+   275                           
+   276                           ;main.c: 10: setup_spi();
+   277  007F6C  ECC4  F03E         	call	_setup_spi	;wreg free
+   278                           
+   279                           ;main.c: 13: char indicator = 'i';
+   280  007F70  0E69               	movlw	105
+   281  007F72  6E23               	movwf	main@indicator,c
+   282                           
+   283                           ;main.c: 14: unsigned int bb = 1020;
+   284  007F74  0E03               	movlw	3
+   285  007F76  6E1E               	movwf	main@bb+1,c
+   286  007F78  0EFC               	movlw	252
+   287  007F7A  6E1D               	movwf	main@bb,c
+   288  007F7C                     l1405:
+   289                           
+   290                           ;main.c: 16: {
+   291                           ;main.c: 17: if (indicator == 'i')
+   292  007F7C  0E69               	movlw	105
+   293  007F7E  1823               	xorwf	main@indicator,w,c
+   294  007F80  A4D8               	btfss	status,2,c
+   295  007F82  D013               	goto	l1413
+   296                           
+   297                           ;main.c: 18: {
+   298                           ;main.c: 19: uart_write_char('i');
+   299  007F84  0E69               	movlw	105
+   300  007F86  ECA3  F03E         	call	_uart_write_char
+   301                           
+   302                           ;main.c: 20: unsigned int device_ID = get_ID(1);
+   303  007F8A  0E00               	movlw	0
+   304  007F8C  6E18               	movwf	get_ID@cdc+1,c
+   305  007F8E  0E01               	movlw	1
+   306  007F90  6E17               	movwf	get_ID@cdc,c
+   307  007F92  ECF3  F03E         	call	_get_ID	;wreg free
+   308  007F96  C017  F01F         	movff	?_get_ID,main@device_ID
+   309  007F9A  C018  F020         	movff	?_get_ID+1,main@device_ID+1
+   310                           
+   311                           ;main.c: 21: uart_write_unsigned_int(device_ID);
+   312  007F9E  C01F  F001         	movff	main@device_ID,uart_write_unsigned_int@number
+   313  007FA2  C020  F002         	movff	main@device_ID+1,uart_write_unsigned_int@number+1
+   314  007FA6  ECCF  F03E         	call	_uart_write_unsigned_int	;wreg free
+   315  007FAA                     l1413:
+   316                           
+   317                           ;main.c: 22: }
+   318                           ;main.c: 23: if (indicator == 's')
+   319  007FAA  0E73               	movlw	115
+   320  007FAC  1823               	xorwf	main@indicator,w,c
+   321  007FAE  A4D8               	btfss	status,2,c
+   322  007FB0  D013               	goto	l1421
+   323                           
+   324                           ;main.c: 24: {
+   325                           ;main.c: 25: uart_write_char('s');
+   326  007FB2  0E73               	movlw	115
+   327  007FB4  ECA3  F03E         	call	_uart_write_char
+   328                           
+   329                           ;main.c: 26: unsigned int sensor_0 = read_sensor(0);
+   330  007FB8  0E00               	movlw	0
+   331  007FBA  6E18               	movwf	read_sensor@sensor+1,c
+   332  007FBC  0E00               	movlw	0
+   333  007FBE  6E17               	movwf	read_sensor@sensor,c
+   334  007FC0  ECDC  F03E         	call	_read_sensor	;wreg free
+   335  007FC4  C017  F021         	movff	?_read_sensor,main@sensor_0
+   336  007FC8  C018  F022         	movff	?_read_sensor+1,main@sensor_0+1
+   337                           
+   338                           ;main.c: 27: uart_write_unsigned_int(sensor_0);
+   339  007FCC  C021  F001         	movff	main@sensor_0,uart_write_unsigned_int@number
+   340  007FD0  C022  F002         	movff	main@sensor_0+1,uart_write_unsigned_int@number+1
+   341  007FD4  ECCF  F03E         	call	_uart_write_unsigned_int	;wreg free
+   342  007FD8                     l1421:
+   343                           
+   344                           ;main.c: 28: }
+   345                           ;main.c: 29: if (indicator == 'f')
+   346  007FD8  0E66               	movlw	102
+   347  007FDA  1823               	xorwf	main@indicator,w,c
+   348  007FDC  A4D8               	btfss	status,2,c
+   349  007FDE  D009               	goto	l1427
+   350                           
+   351                           ;main.c: 30: {
+   352                           ;main.c: 31: uart_write_char('f');
+   353  007FE0  0E66               	movlw	102
+   354  007FE2  ECA3  F03E         	call	_uart_write_char
+   355                           
+   356                           ;main.c: 33: uart_write_unsigned_int(bb);
+   357  007FE6  C01D  F001         	movff	main@bb,uart_write_unsigned_int@number
+   358  007FEA  C01E  F002         	movff	main@bb+1,uart_write_unsigned_int@number+1
+   359  007FEE  ECCF  F03E         	call	_uart_write_unsigned_int	;wreg free
+   360  007FF2                     l1427:
+   361                           
+   362                           ;main.c: 34: }
+   363                           ;main.c: 35: delay_ms(500);
+   364  007FF2  0E01               	movlw	1
+   365  007FF4  6E0A               	movwf	delay_ms@n+1,c
+   366  007FF6  0EF4               	movlw	244
+   367  007FF8  6E09               	movwf	delay_ms@n,c
+   368  007FFA  EC0D  F03F         	call	_delay_ms	;wreg free
+   369  007FFE  D7BE               	goto	l1405
+   370  008000                     __end_of_main:
+   371                           	opt stack 0
+   372                           postinc0	equ	0xFEE
+   373                           wreg	equ	0xFE8
+   374                           status	equ	0xFD8
+   375                           
+   376 ;; *************** function _uart_write_unsigned_int *****************
+   377 ;; Defined at:
+   378 ;;		line 39 in file "uart.c"
+   379 ;; Parameters:    Size  Location     Type
+   380 ;;  number          2    0[COMRAM] unsigned int 
+   381 ;; Auto vars:     Size  Location     Type
+   382 ;;  char2           1    3[COMRAM] unsigned char 
+   383 ;;  char1           1    2[COMRAM] unsigned char 
+   384 ;; Return value:  Size  Location     Type
+   385 ;;                  1    wreg      void 
+   386 ;; Registers used:
+   387 ;;		wreg, status,2
+   388 ;; Tracked objects:
+   389 ;;		On entry : 0/0
+   390 ;;		On exit  : 0/0
+   391 ;;		Unchanged: 0/0
+   392 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   393 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   394 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   395 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   396 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   397 ;;Total ram usage:        4 bytes
+   398 ;; Hardware stack levels used:    1
+   399 ;; This function calls:
+   400 ;;		Nothing
+   401 ;; This function is called by:
+   402 ;;		_main
+   403 ;; This function uses a non-reentrant model
+   404 ;;
+   405                           
+   406                           	psect	text1
+   407  007D9E                     __ptext1:
+   408                           	opt stack 0
+   409  007D9E                     _uart_write_unsigned_int:
+   410                           	opt stack 30
+   411                           
+   412                           ;uart.c: 41: char char1 = number & 0xFF;
+   413                           
+   414                           ;incstack = 0
+   415  007D9E  C001  F003         	movff	uart_write_unsigned_int@number,uart_write_unsigned_int@char1
+   416                           
+   417                           ;uart.c: 42: char char2 = number >> 8;
+   418  007DA2  5002               	movf	uart_write_unsigned_int@number+1,w,c
+   419  007DA4  6E04               	movwf	uart_write_unsigned_int@char2,c
+   420  007DA6                     l218:
+   421  007DA6  A2AC               	btfss	4012,1,c	;volatile
+   422  007DA8  D7FE               	goto	l218
+   423                           
+   424                           ;uart.c: 45: TXREG1 = char1;
+   425  007DAA  C003  FFAD         	movff	uart_write_unsigned_int@char1,4013	;volatile
+   426  007DAE                     l221:
+   427  007DAE  A2AC               	btfss	4012,1,c	;volatile
+   428  007DB0  D7FE               	goto	l221
+   429                           
+   430                           ;uart.c: 47: TXREG1 = char2;
+   431  007DB2  C004  FFAD         	movff	uart_write_unsigned_int@char2,4013	;volatile
+   432  007DB6  0012               	return		;funcret
+   433  007DB8                     __end_of_uart_write_unsigned_int:
+   434                           	opt stack 0
+   435                           postinc0	equ	0xFEE
+   436                           wreg	equ	0xFE8
+   437                           status	equ	0xFD8
+   438                           
+   439 ;; *************** function _uart_write_char *****************
+   440 ;; Defined at:
+   441 ;;		line 24 in file "uart.c"
+   442 ;; Parameters:    Size  Location     Type
+   443 ;;  data            1    wreg     unsigned char 
+   444 ;; Auto vars:     Size  Location     Type
+   445 ;;  data            1    0[COMRAM] unsigned char 
+   446 ;; Return value:  Size  Location     Type
+   447 ;;                  1    wreg      void 
+   448 ;; Registers used:
+   449 ;;		wreg
+   450 ;; Tracked objects:
+   451 ;;		On entry : 0/0
+   452 ;;		On exit  : 0/0
+   453 ;;		Unchanged: 0/0
+   454 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   455 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   456 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   457 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   458 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   459 ;;Total ram usage:        1 bytes
+   460 ;; Hardware stack levels used:    1
+   461 ;; This function calls:
+   462 ;;		Nothing
+   463 ;; This function is called by:
+   464 ;;		_main
+   465 ;;		_uart_write_string
+   466 ;; This function uses a non-reentrant model
+   467 ;;
+   468                           
+   469                           	psect	text2
+   470  007D46                     __ptext2:
+   471                           	opt stack 0
+   472  007D46                     _uart_write_char:
+   473                           	opt stack 30
+   474                           
+   475                           ;incstack = 0
+   476                           ;uart_write_char@data stored from wreg
+   477  007D46  6E01               	movwf	uart_write_char@data,c
+   478  007D48                     l206:
+   479  007D48  A2AC               	btfss	4012,1,c	;volatile
+   480  007D4A  D7FE               	goto	l206
+   481                           
+   482                           ;uart.c: 28: TXREG1 = data;
+   483  007D4C  C001  FFAD         	movff	uart_write_char@data,4013	;volatile
+   484  007D50  0012               	return		;funcret
+   485  007D52                     __end_of_uart_write_char:
+   486                           	opt stack 0
+   487                           postinc0	equ	0xFEE
+   488                           wreg	equ	0xFE8
+   489                           status	equ	0xFD8
+   490                           
+   491 ;; *************** function _setup_spi *****************
+   492 ;; Defined at:
+   493 ;;		line 4 in file "spi.c"
+   494 ;; Parameters:    Size  Location     Type
+   495 ;;		None
+   496 ;; Auto vars:     Size  Location     Type
+   497 ;;		None
+   498 ;; Return value:  Size  Location     Type
+   499 ;;                  1    wreg      void 
+   500 ;; Registers used:
+   501 ;;		None
+   502 ;; Tracked objects:
+   503 ;;		On entry : 0/0
+   504 ;;		On exit  : 0/0
+   505 ;;		Unchanged: 0/0
+   506 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   507 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   508 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   509 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   510 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   511 ;;Total ram usage:        0 bytes
+   512 ;; Hardware stack levels used:    1
+   513 ;; This function calls:
+   514 ;;		Nothing
+   515 ;; This function is called by:
+   516 ;;		_main
+   517 ;; This function uses a non-reentrant model
+   518 ;;
+   519                           
+   520                           	psect	text3
+   521  007D88                     __ptext3:
+   522                           	opt stack 0
+   523  007D88                     _setup_spi:
+   524                           	opt stack 30
+   525                           
+   526                           ;spi.c: 6: SSPSTATbits.SMP = 0;
+   527                           
+   528                           ;incstack = 0
+   529  007D88  9EC7               	bcf	4039,7,c	;volatile
+   530                           
+   531                           ;spi.c: 7: SSPSTATbits.CKE = 0;
+   532  007D8A  9CC7               	bcf	4039,6,c	;volatile
+   533                           
+   534                           ;spi.c: 9: SSPCON1bits.WCOL = 0;
+   535  007D8C  9EC6               	bcf	4038,7,c	;volatile
+   536                           
+   537                           ;spi.c: 10: SSPCON1bits.CKP = 1;
+   538  007D8E  88C6               	bsf	4038,4,c	;volatile
+   539                           
+   540                           ;spi.c: 12: SSPCON1bits.SSPM3 = 0;
+   541  007D90  96C6               	bcf	4038,3,c	;volatile
+   542                           
+   543                           ;spi.c: 13: SSPCON1bits.SSPM2 = 0;
+   544  007D92  94C6               	bcf	4038,2,c	;volatile
+   545                           
+   546                           ;spi.c: 14: SSPCON1bits.SSPM1 = 1;
+   547  007D94  82C6               	bsf	4038,1,c	;volatile
+   548                           
+   549                           ;spi.c: 15: SSPCON1bits.SSPM0 = 0;
+   550  007D96  90C6               	bcf	4038,0,c	;volatile
+   551                           
+   552                           ;spi.c: 17: PIE1bits.SSPIE = 0;
+   553  007D98  969D               	bcf	3997,3,c	;volatile
+   554                           
+   555                           ;spi.c: 19: SSPCON1bits.SSPEN = 1;
+   556  007D9A  8AC6               	bsf	4038,5,c	;volatile
+   557  007D9C  0012               	return		;funcret
+   558  007D9E                     __end_of_setup_spi:
+   559                           	opt stack 0
+   560                           postinc0	equ	0xFEE
+   561                           wreg	equ	0xFE8
+   562                           status	equ	0xFD8
+   563                           
+   564 ;; *************** function _setup_mcu *****************
+   565 ;; Defined at:
+   566 ;;		line 6 in file "micro_setup.c"
+   567 ;; Parameters:    Size  Location     Type
+   568 ;;		None
+   569 ;; Auto vars:     Size  Location     Type
+   570 ;;		None
+   571 ;; Return value:  Size  Location     Type
+   572 ;;                  1    wreg      void 
+   573 ;; Registers used:
+   574 ;;		wreg, status,2, cstack
+   575 ;; Tracked objects:
+   576 ;;		On entry : 0/0
+   577 ;;		On exit  : 0/0
+   578 ;;		Unchanged: 0/0
+   579 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   580 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   581 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   582 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   583 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   584 ;;Total ram usage:        0 bytes
+   585 ;; Hardware stack levels used:    1
+   586 ;; Hardware stack levels required when called:    1
+   587 ;; This function calls:
+   588 ;;		_init_uart
+   589 ;;		_setup_port
+   590 ;; This function is called by:
+   591 ;;		_main
+   592 ;; This function uses a non-reentrant model
+   593 ;;
+   594                           
+   595                           	psect	text4
+   596  007D3C                     __ptext4:
+   597                           	opt stack 0
+   598  007D3C                     _setup_mcu:
+   599                           	opt stack 29
+   600                           
+   601                           ;micro_setup.c: 8: setup_port();
+   602                           
+   603                           ;incstack = 0
+   604  007D3C  ECA9  F03E         	call	_setup_port	;wreg free
+   605                           
+   606                           ;micro_setup.c: 9: init_uart();
+   607  007D40  ECBA  F03E         	call	_init_uart	;wreg free
+   608  007D44  0012               	return		;funcret
+   609  007D46                     __end_of_setup_mcu:
+   610                           	opt stack 0
+   611                           postinc0	equ	0xFEE
+   612                           wreg	equ	0xFE8
+   613                           status	equ	0xFD8
+   614                           
+   615 ;; *************** function _setup_port *****************
+   616 ;; Defined at:
+   617 ;;		line 12 in file "micro_setup.c"
+   618 ;; Parameters:    Size  Location     Type
+   619 ;;		None
+   620 ;; Auto vars:     Size  Location     Type
+   621 ;;		None
+   622 ;; Return value:  Size  Location     Type
+   623 ;;                  1    wreg      void 
+   624 ;; Registers used:
+   625 ;;		wreg, status,2
+   626 ;; Tracked objects:
+   627 ;;		On entry : 0/0
+   628 ;;		On exit  : 0/0
+   629 ;;		Unchanged: 0/0
+   630 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   631 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   632 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   633 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   634 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   635 ;;Total ram usage:        0 bytes
+   636 ;; Hardware stack levels used:    1
+   637 ;; This function calls:
+   638 ;;		Nothing
+   639 ;; This function is called by:
+   640 ;;		_setup_mcu
+   641 ;; This function uses a non-reentrant model
+   642 ;;
+   643                           
+   644                           	psect	text5
+   645  007D52                     __ptext5:
+   646                           	opt stack 0
+   647  007D52                     _setup_port:
+   648                           	opt stack 29
+   649                           
+   650                           ;micro_setup.c: 15: TRISB = 0b00000000;
+   651                           
+   652                           ;incstack = 0
+   653  007D52  0E00               	movlw	0
+   654  007D54  6E93               	movwf	3987,c	;volatile
+   655                           
+   656                           ;micro_setup.c: 16: TRISC = 0b10010000;
+   657  007D56  0E90               	movlw	144
+   658  007D58  6E94               	movwf	3988,c	;volatile
+   659                           
+   660                           ;micro_setup.c: 17: LATCbits.LATC1=1;
+   661  007D5A  828B               	bsf	3979,1,c	;volatile
+   662                           
+   663                           ;micro_setup.c: 18: LATCbits.LATC0=1;
+   664  007D5C  808B               	bsf	3979,0,c	;volatile
+   665                           
+   666                           ;micro_setup.c: 19: LATCbits.LATC2=1;
+   667  007D5E  848B               	bsf	3979,2,c	;volatile
+   668  007D60  0012               	return		;funcret
+   669  007D62                     __end_of_setup_port:
+   670                           	opt stack 0
+   671                           postinc0	equ	0xFEE
+   672                           wreg	equ	0xFE8
+   673                           status	equ	0xFD8
+   674                           
+   675 ;; *************** function _init_uart *****************
+   676 ;; Defined at:
+   677 ;;		line 22 in file "micro_setup.c"
+   678 ;; Parameters:    Size  Location     Type
+   679 ;;		None
+   680 ;; Auto vars:     Size  Location     Type
+   681 ;;		None
+   682 ;; Return value:  Size  Location     Type
+   683 ;;                  1    wreg      void 
+   684 ;; Registers used:
+   685 ;;		wreg, status,2
+   686 ;; Tracked objects:
+   687 ;;		On entry : 0/0
+   688 ;;		On exit  : 0/0
+   689 ;;		Unchanged: 0/0
+   690 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   691 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   692 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   693 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   694 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   695 ;;Total ram usage:        0 bytes
+   696 ;; Hardware stack levels used:    1
+   697 ;; This function calls:
+   698 ;;		Nothing
+   699 ;; This function is called by:
+   700 ;;		_setup_mcu
+   701 ;; This function uses a non-reentrant model
+   702 ;;
+   703                           
+   704                           	psect	text6
+   705  007D74                     __ptext6:
+   706                           	opt stack 0
+   707  007D74                     _init_uart:
+   708                           	opt stack 29
+   709                           
+   710                           ;micro_setup.c: 24: TXSTA1 = 0b00100000;
+   711                           
+   712                           ;incstack = 0
+   713  007D74  0E20               	movlw	32
+   714  007D76  6EAC               	movwf	4012,c	;volatile
+   715                           
+   716                           ;micro_setup.c: 36: SPBRG1 = 12;
+   717  007D78  0E0C               	movlw	12
+   718  007D7A  6EAF               	movwf	4015,c	;volatile
+   719                           
+   720                           ;micro_setup.c: 38: BAUDCON1 = 0b00000000;
+   721  007D7C  0E00               	movlw	0
+   722  007D7E  6EA7               	movwf	4007,c	;volatile
+   723                           
+   724                           ;micro_setup.c: 58: RCSTA1bits.SPEN=1;
+   725  007D80  8EAB               	bsf	4011,7,c	;volatile
+   726                           
+   727                           ;micro_setup.c: 59: RCSTA1bits.RX9=0;
+   728  007D82  9CAB               	bcf	4011,6,c	;volatile
+   729                           
+   730                           ;micro_setup.c: 60: RCSTA1bits.CREN=1;
+   731  007D84  88AB               	bsf	4011,4,c	;volatile
+   732  007D86  0012               	return		;funcret
+   733  007D88                     __end_of_init_uart:
+   734                           	opt stack 0
+   735                           postinc0	equ	0xFEE
+   736                           wreg	equ	0xFE8
+   737                           status	equ	0xFD8
+   738                           
+   739 ;; *************** function _read_sensor *****************
+   740 ;; Defined at:
+   741 ;;		line 237 in file "AD7147.c"
+   742 ;; Parameters:    Size  Location     Type
+   743 ;;  sensor          2   22[COMRAM] unsigned int 
+   744 ;; Auto vars:     Size  Location     Type
+   745 ;;  sensor_value    2   26[COMRAM] unsigned int 
+   746 ;;  register1       2   24[COMRAM] unsigned int 
+   747 ;; Return value:  Size  Location     Type
+   748 ;;                  2   22[COMRAM] unsigned int 
+   749 ;; Registers used:
+   750 ;;		wreg, status,2, status,0, cstack
+   751 ;; Tracked objects:
+   752 ;;		On entry : 0/0
+   753 ;;		On exit  : 0/0
+   754 ;;		Unchanged: 0/0
+   755 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   756 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   757 ;;      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   758 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   759 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   760 ;;Total ram usage:        6 bytes
+   761 ;; Hardware stack levels used:    1
+   762 ;; Hardware stack levels required when called:    1
+   763 ;; This function calls:
+   764 ;;		_w16_r16_spi
+   765 ;; This function is called by:
+   766 ;;		_main
+   767 ;; This function uses a non-reentrant model
+   768 ;;
+   769                           
+   770                           	psect	text7
+   771  007DB8                     __ptext7:
+   772                           	opt stack 0
+   773  007DB8                     _read_sensor:
+   774                           	opt stack 29
+   775                           
+   776                           ;AD7147.c: 239: unsigned int register1 = 0xE400 + 0x00B + sensor;
+   777                           
+   778                           ;incstack = 0
+   779  007DB8  0E0B               	movlw	11
+   780  007DBA  2417               	addwf	read_sensor@sensor,w,c
+   781  007DBC  6E19               	movwf	read_sensor@register1,c
+   782  007DBE  0EE4               	movlw	228
+   783  007DC0  2018               	addwfc	read_sensor@sensor+1,w,c
+   784  007DC2  6E1A               	movwf	read_sensor@register1+1,c
+   785                           
+   786                           ;AD7147.c: 240: LATCbits.LATC1 = 0;
+   787  007DC4  928B               	bcf	3979,1,c	;volatile
+   788                           
+   789                           ;AD7147.c: 241: unsigned int sensor_value = w16_r16_spi(register1);
+   790  007DC6  C019  F001         	movff	read_sensor@register1,w16_r16_spi@address
+   791  007DCA  C01A  F002         	movff	read_sensor@register1+1,w16_r16_spi@address+1
+   792  007DCE  EC2D  F03F         	call	_w16_r16_spi	;wreg free
+   793  007DD2  C001  F01B         	movff	?_w16_r16_spi,read_sensor@sensor_value
+   794  007DD6  C002  F01C         	movff	?_w16_r16_spi+1,read_sensor@sensor_value+1
+   795                           
+   796                           ;AD7147.c: 242: LATCbits.LATC1 = 1;
+   797  007DDA  828B               	bsf	3979,1,c	;volatile
+   798                           
+   799                           ;AD7147.c: 250: return sensor_value;
+   800  007DDC  C01B  F017         	movff	read_sensor@sensor_value,?_read_sensor
+   801  007DE0  C01C  F018         	movff	read_sensor@sensor_value+1,?_read_sensor+1
+   802  007DE4  0012               	return	
+   803  007DE6                     __end_of_read_sensor:
+   804                           	opt stack 0
+   805                           postinc0	equ	0xFEE
+   806                           wreg	equ	0xFE8
+   807                           status	equ	0xFD8
+   808                           
+   809 ;; *************** function _get_ID *****************
+   810 ;; Defined at:
+   811 ;;		line 305 in file "AD7147.c"
+   812 ;; Parameters:    Size  Location     Type
+   813 ;;  cdc             2   22[COMRAM] unsigned int 
+   814 ;; Auto vars:     Size  Location     Type
+   815 ;;  result          2   25[COMRAM] unsigned int 
+   816 ;; Return value:  Size  Location     Type
+   817 ;;                  2   22[COMRAM] unsigned int 
+   818 ;; Registers used:
+   819 ;;		wreg, status,2, status,0, cstack
+   820 ;; Tracked objects:
+   821 ;;		On entry : 0/0
+   822 ;;		On exit  : 0/0
+   823 ;;		Unchanged: 0/0
+   824 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   825 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   826 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   827 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   828 ;;      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   829 ;;Total ram usage:        5 bytes
+   830 ;; Hardware stack levels used:    1
+   831 ;; Hardware stack levels required when called:    1
+   832 ;; This function calls:
+   833 ;;		_w16_r16_spi
+   834 ;; This function is called by:
+   835 ;;		_main
+   836 ;; This function uses a non-reentrant model
+   837 ;;
+   838                           
+   839                           	psect	text8
+   840  007DE6                     __ptext8:
+   841                           	opt stack 0
+   842  007DE6                     _get_ID:
+   843                           	opt stack 29
+   844                           
+   845                           ;AD7147.c: 308: LATCbits.LATC0 = 0;
+   846                           
+   847                           ;incstack = 0
+   848  007DE6  908B               	bcf	3979,0,c	;volatile
+   849                           
+   850                           ;AD7147.c: 309: unsigned int result = (w16_r16_spi(0xE400 + 0x017) & 0b1111111111110000)
+      +                           >> 4;
+   851  007DE8  0EE4               	movlw	228
+   852  007DEA  6E02               	movwf	w16_r16_spi@address+1,c
+   853  007DEC  0E17               	movlw	23
+   854  007DEE  6E01               	movwf	w16_r16_spi@address,c
+   855  007DF0  EC2D  F03F         	call	_w16_r16_spi	;wreg free
+   856  007DF4  0E04               	movlw	4
+   857  007DF6  6E19               	movwf	??_get_ID& (0+255),c
+   858  007DF8                     u595:
+   859  007DF8  90D8               	bcf	status,0,c
+   860  007DFA  3202               	rrcf	?_w16_r16_spi+1,f,c
+   861  007DFC  3201               	rrcf	?_w16_r16_spi,f,c
+   862  007DFE  2E19               	decfsz	??_get_ID& (0+255),f,c
+   863  007E00  D7FB               	goto	u595
+   864  007E02  0EFF               	movlw	255
+   865  007E04  1401               	andwf	?_w16_r16_spi,w,c
+   866  007E06  6E1A               	movwf	get_ID@result,c
+   867  007E08  0E0F               	movlw	15
+   868  007E0A  1402               	andwf	?_w16_r16_spi+1,w,c
+   869  007E0C  6E1B               	movwf	get_ID@result+1,c
+   870                           
+   871                           ;AD7147.c: 311: LATCbits.LATC0 = 1;
+   872  007E0E  808B               	bsf	3979,0,c	;volatile
+   873                           
+   874                           ;AD7147.c: 312: return result;
+   875  007E10  C01A  F017         	movff	get_ID@result,?_get_ID
+   876  007E14  C01B  F018         	movff	get_ID@result+1,?_get_ID+1
+   877  007E18  0012               	return	
+   878  007E1A                     __end_of_get_ID:
+   879                           	opt stack 0
+   880                           postinc0	equ	0xFEE
+   881                           wreg	equ	0xFE8
+   882                           status	equ	0xFD8
+   883                           
+   884 ;; *************** function _w16_r16_spi *****************
+   885 ;; Defined at:
+   886 ;;		line 100 in file "spi.c"
+   887 ;; Parameters:    Size  Location     Type
+   888 ;;  address         2    0[COMRAM] unsigned int 
+   889 ;; Auto vars:     Size  Location     Type
+   890 ;;  p4              2   20[COMRAM] unsigned int 
+   891 ;;  p3              2   18[COMRAM] unsigned int 
+   892 ;;  blank_high      2   16[COMRAM] unsigned int 
+   893 ;;  blank_low       2   14[COMRAM] unsigned int 
+   894 ;;  result          2   12[COMRAM] unsigned int 
+   895 ;;  address_high    2   10[COMRAM] unsigned int 
+   896 ;;  address_low     2    8[COMRAM] unsigned int 
+   897 ;;  p2              2    6[COMRAM] unsigned int 
+   898 ;;  p1              2    4[COMRAM] unsigned int 
+   899 ;; Return value:  Size  Location     Type
+   900 ;;                  2    0[COMRAM] unsigned int 
+   901 ;; Registers used:
+   902 ;;		wreg, status,2, status,0
+   903 ;; Tracked objects:
+   904 ;;		On entry : 0/0
+   905 ;;		On exit  : 0/0
+   906 ;;		Unchanged: 0/0
+   907 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+   908 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   909 ;;      Locals:        18       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   910 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   911 ;;      Totals:        22       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+   912 ;;Total ram usage:       22 bytes
+   913 ;; Hardware stack levels used:    1
+   914 ;; This function calls:
+   915 ;;		Nothing
+   916 ;; This function is called by:
+   917 ;;		_read_sensor
+   918 ;;		_get_ID
+   919 ;;		_read_AD7147
+   920 ;; This function uses a non-reentrant model
+   921 ;;
+   922                           
+   923                           	psect	text9
+   924  007E5A                     __ptext9:
+   925                           	opt stack 0
+   926  007E5A                     _w16_r16_spi:
+   927                           	opt stack 29
+   928                           
+   929                           ;spi.c: 102: unsigned int address_low, address_high, result;
+   930                           ;spi.c: 103: unsigned int blank_low = 0x000;
+   931                           
+   932                           ;incstack = 0
+   933  007E5A  0E00               	movlw	0
+   934  007E5C  6E10               	movwf	w16_r16_spi@blank_low+1,c
+   935  007E5E  0E00               	movlw	0
+   936  007E60  6E0F               	movwf	w16_r16_spi@blank_low,c
+   937                           
+   938                           ;spi.c: 104: unsigned int blank_high = 0x000;
+   939  007E62  0E00               	movlw	0
+   940  007E64  6E12               	movwf	w16_r16_spi@blank_high+1,c
+   941  007E66  0E00               	movlw	0
+   942  007E68  6E11               	movwf	w16_r16_spi@blank_high,c
+   943                           
+   944                           ;spi.c: 105: unsigned int p1, p2, p3, p4;
+   945                           ;spi.c: 107: address_low = address & 0xFF;
+   946  007E6A  5001               	movf	w16_r16_spi@address,w,c
+   947  007E6C  6E09               	movwf	w16_r16_spi@address_low,c
+   948  007E6E  6A0A               	clrf	w16_r16_spi@address_low+1,c
+   949                           
+   950                           ;spi.c: 108: address_high = (address >> 8) & 0xFF;
+   951  007E70  C001  F003         	movff	w16_r16_spi@address,??_w16_r16_spi
+   952  007E74  C002  F004         	movff	w16_r16_spi@address+1,??_w16_r16_spi+1
+   953  007E78  C004  F003         	movff	??_w16_r16_spi+1,??_w16_r16_spi
+   954  007E7C  6A04               	clrf	??_w16_r16_spi+1,c
+   955  007E7E  5003               	movf	??_w16_r16_spi,w,c
+   956  007E80  6E0B               	movwf	w16_r16_spi@address_high,c
+   957  007E82  6A0C               	clrf	w16_r16_spi@address_high+1,c
+   958                           
+   959                           ;spi.c: 110: SSPBUF = address_high;
+   960  007E84  C00B  FFC9         	movff	w16_r16_spi@address_high,4041	;volatile
+   961  007E88                     l172:
+   962  007E88  A0C7               	btfss	4039,0,c	;volatile
+   963  007E8A  D7FE               	goto	l172
+   964                           
+   965                           ;spi.c: 112: p1 = SSPBUF;
+   966  007E8C  CFC9 F005          	movff	4041,w16_r16_spi@p1	;volatile
+   967  007E90  6A06               	clrf	w16_r16_spi@p1+1,c
+   968                           
+   969                           ;spi.c: 114: SSPBUF = address_low;
+   970  007E92  C009  FFC9         	movff	w16_r16_spi@address_low,4041	;volatile
+   971  007E96                     l175:
+   972  007E96  A0C7               	btfss	4039,0,c	;volatile
+   973  007E98  D7FE               	goto	l175
+   974                           
+   975                           ;spi.c: 116: p2 = SSPBUF;
+   976  007E9A  CFC9 F007          	movff	4041,w16_r16_spi@p2	;volatile
+   977  007E9E  6A08               	clrf	w16_r16_spi@p2+1,c
+   978                           
+   979                           ;spi.c: 118: SSPBUF = blank_high;
+   980  007EA0  C011  FFC9         	movff	w16_r16_spi@blank_high,4041	;volatile
+   981  007EA4                     l178:
+   982  007EA4  A0C7               	btfss	4039,0,c	;volatile
+   983  007EA6  D7FE               	goto	l178
+   984                           
+   985                           ;spi.c: 120: p3 = SSPBUF;
+   986  007EA8  CFC9 F013          	movff	4041,w16_r16_spi@p3	;volatile
+   987  007EAC  6A14               	clrf	w16_r16_spi@p3+1,c
+   988                           
+   989                           ;spi.c: 122: SSPBUF = blank_low;
+   990  007EAE  C00F  FFC9         	movff	w16_r16_spi@blank_low,4041	;volatile
+   991  007EB2                     l181:
+   992  007EB2  A0C7               	btfss	4039,0,c	;volatile
+   993  007EB4  D7FE               	goto	l181
+   994                           
+   995                           ;spi.c: 124: p4 = SSPBUF;
+   996  007EB6  CFC9 F015          	movff	4041,w16_r16_spi@p4	;volatile
+   997  007EBA  6A16               	clrf	w16_r16_spi@p4+1,c
+   998                           
+   999                           ;spi.c: 126: result = (p3 << 8) + p4;
+  1000  007EBC  5013               	movf	w16_r16_spi@p3,w,c
+  1001  007EBE  6E04               	movwf	(??_w16_r16_spi+1)& (0+255),c
+  1002  007EC0  6A03               	clrf	??_w16_r16_spi& (0+255),c
+  1003  007EC2  5015               	movf	w16_r16_spi@p4,w,c
+  1004  007EC4  2403               	addwf	??_w16_r16_spi,w,c
+  1005  007EC6  6E0D               	movwf	w16_r16_spi@result,c
+  1006  007EC8  5016               	movf	w16_r16_spi@p4+1,w,c
+  1007  007ECA  2004               	addwfc	??_w16_r16_spi+1,w,c
+  1008  007ECC  6E0E               	movwf	w16_r16_spi@result+1,c
+  1009                           
+  1010                           ;spi.c: 127: return result;
+  1011  007ECE  C00D  F001         	movff	w16_r16_spi@result,?_w16_r16_spi
+  1012  007ED2  C00E  F002         	movff	w16_r16_spi@result+1,?_w16_r16_spi+1
+  1013  007ED6  0012               	return	
+  1014  007ED8                     __end_of_w16_r16_spi:
+  1015                           	opt stack 0
+  1016                           postinc0	equ	0xFEE
+  1017                           wreg	equ	0xFE8
+  1018                           status	equ	0xFD8
+  1019                           
+  1020 ;; *************** function _delay_ms *****************
+  1021 ;; Defined at:
+  1022 ;;		line 67 in file "micro_setup.c"
+  1023 ;; Parameters:    Size  Location     Type
+  1024 ;;  n               2    8[COMRAM] int 
+  1025 ;; Auto vars:     Size  Location     Type
+  1026 ;;  j               2   11[COMRAM] int 
+  1027 ;; Return value:  Size  Location     Type
+  1028 ;;                  1    wreg      void 
+  1029 ;; Registers used:
+  1030 ;;		wreg, status,2, status,0, cstack
+  1031 ;; Tracked objects:
+  1032 ;;		On entry : 0/0
+  1033 ;;		On exit  : 0/0
+  1034 ;;		Unchanged: 0/0
+  1035 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+  1036 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1037 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1038 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1039 ;;      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1040 ;;Total ram usage:        5 bytes
+  1041 ;; Hardware stack levels used:    1
+  1042 ;; Hardware stack levels required when called:    1
+  1043 ;; This function calls:
+  1044 ;;		___awdiv
+  1045 ;; This function is called by:
+  1046 ;;		_main
+  1047 ;; This function uses a non-reentrant model
+  1048 ;;
+  1049                           
+  1050                           	psect	text10
+  1051  007E1A                     __ptext10:
+  1052                           	opt stack 0
+  1053  007E1A                     _delay_ms:
+  1054                           	opt stack 29
+  1055                           
+  1056                           ;micro_setup.c: 69: int j = n/10;
+  1057                           
+  1058                           ;incstack = 0
+  1059  007E1A  C009  F001         	movff	delay_ms@n,___awdiv@dividend
+  1060  007E1E  C00A  F002         	movff	delay_ms@n+1,___awdiv@dividend+1
+  1061  007E22  0E00               	movlw	0
+  1062  007E24  6E04               	movwf	___awdiv@divisor+1,c
+  1063  007E26  0E0A               	movlw	10
+  1064  007E28  6E03               	movwf	___awdiv@divisor,c
+  1065  007E2A  EC6C  F03F         	call	___awdiv	;wreg free
+  1066  007E2E  C001  F00C         	movff	?___awdiv,delay_ms@j
+  1067  007E32  C002  F00D         	movff	?___awdiv+1,delay_ms@j+1
+  1068                           
+  1069                           ;micro_setup.c: 70: while(j--)
+  1070  007E36  D008               	goto	l1377
+  1071  007E38                     l1375:
+  1072                           
+  1073                           ;micro_setup.c: 71: {
+  1074                           ;micro_setup.c: 72: _delay((unsigned long)((10)*(8000000/4000.0)));
+  1075  007E38  0E1A               	movlw	26
+  1076  007E3A  6E0B               	movwf	??_delay_ms& (0+255),c
+  1077  007E3C  0EF8               	movlw	248
+  1078  007E3E                     u677:
+  1079  007E3E  2EE8               	decfsz	wreg,f,c
+  1080  007E40  D7FE               	goto	u677
+  1081  007E42  2E0B               	decfsz	??_delay_ms& (0+255),f,c
+  1082  007E44  D7FC               	goto	u677
+  1083  007E46  D000               	nop2	
+  1084  007E48                     l1377:
+  1085  007E48  060C               	decf	delay_ms@j,f,c
+  1086  007E4A  A0D8               	btfss	status,0,c
+  1087  007E4C  060D               	decf	delay_ms@j+1,f,c
+  1088  007E4E  280C               	incf	delay_ms@j,w,c
+  1089  007E50  E1F3               	bnz	l1375
+  1090  007E52  280D               	incf	delay_ms@j+1,w,c
+  1091  007E54  B4D8               	btfsc	status,2,c
+  1092  007E56  0012               	return	
+  1093  007E58  D7EF               	goto	l1375
+  1094  007E5A                     __end_of_delay_ms:
+  1095                           	opt stack 0
+  1096                           postinc0	equ	0xFEE
+  1097                           wreg	equ	0xFE8
+  1098                           status	equ	0xFD8
+  1099                           
+  1100 ;; *************** function ___awdiv *****************
+  1101 ;; Defined at:
+  1102 ;;		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c"
+  1103 ;; Parameters:    Size  Location     Type
+  1104 ;;  dividend        2    0[COMRAM] int 
+  1105 ;;  divisor         2    2[COMRAM] int 
+  1106 ;; Auto vars:     Size  Location     Type
+  1107 ;;  quotient        2    6[COMRAM] int 
+  1108 ;;  sign            1    5[COMRAM] unsigned char 
+  1109 ;;  counter         1    4[COMRAM] unsigned char 
+  1110 ;; Return value:  Size  Location     Type
+  1111 ;;                  2    0[COMRAM] int 
+  1112 ;; Registers used:
+  1113 ;;		wreg, status,2, status,0
+  1114 ;; Tracked objects:
+  1115 ;;		On entry : 0/0
+  1116 ;;		On exit  : 0/0
+  1117 ;;		Unchanged: 0/0
+  1118 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+  1119 ;;      Params:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1120 ;;      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1121 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1122 ;;      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+  1123 ;;Total ram usage:        8 bytes
+  1124 ;; Hardware stack levels used:    1
+  1125 ;; This function calls:
+  1126 ;;		Nothing
+  1127 ;; This function is called by:
+  1128 ;;		_delay_ms
+  1129 ;; This function uses a non-reentrant model
+  1130 ;;
+  1131                           
+  1132                           	psect	text11
+  1133  007ED8                     __ptext11:
+  1134                           	opt stack 0
+  1135  007ED8                     ___awdiv:
+  1136                           	opt stack 29
+  1137                           
+  1138                           ;incstack = 0
+  1139  007ED8  0E00               	movlw	0
+  1140  007EDA  6E06               	movwf	___awdiv@sign,c
+  1141  007EDC  AE04               	btfss	___awdiv@divisor+1,7,c
+  1142  007EDE  D006               	goto	l1315
+  1143  007EE0  6C03               	negf	___awdiv@divisor,c
+  1144  007EE2  1E04               	comf	___awdiv@divisor+1,f,c
+  1145  007EE4  B0D8               	btfsc	status,0,c
+  1146  007EE6  2A04               	incf	___awdiv@divisor+1,f,c
+  1147  007EE8  0E01               	movlw	1
+  1148  007EEA  6E06               	movwf	___awdiv@sign,c
+  1149  007EEC                     l1315:
+  1150  007EEC  AE02               	btfss	___awdiv@dividend+1,7,c
+  1151  007EEE  D006               	goto	l1321
+  1152  007EF0  6C01               	negf	___awdiv@dividend,c
+  1153  007EF2  1E02               	comf	___awdiv@dividend+1,f,c
+  1154  007EF4  B0D8               	btfsc	status,0,c
+  1155  007EF6  2A02               	incf	___awdiv@dividend+1,f,c
+  1156  007EF8  0E01               	movlw	1
+  1157  007EFA  1A06               	xorwf	___awdiv@sign,f,c
+  1158  007EFC                     l1321:
+  1159  007EFC  0E00               	movlw	0
+  1160  007EFE  6E08               	movwf	___awdiv@quotient+1,c
+  1161  007F00  0E00               	movlw	0
+  1162  007F02  6E07               	movwf	___awdiv@quotient,c
+  1163  007F04  5003               	movf	___awdiv@divisor,w,c
+  1164  007F06  1004               	iorwf	___awdiv@divisor+1,w,c
+  1165  007F08  B4D8               	btfsc	status,2,c
+  1166  007F0A  D01C               	goto	l1343
+  1167  007F0C  0E01               	movlw	1
+  1168  007F0E  6E05               	movwf	___awdiv@counter,c
+  1169  007F10  D004               	goto	l1329
+  1170  007F12                     l1327:
+  1171  007F12  90D8               	bcf	status,0,c
+  1172  007F14  3603               	rlcf	___awdiv@divisor,f,c
+  1173  007F16  3604               	rlcf	___awdiv@divisor+1,f,c
+  1174  007F18  2A05               	incf	___awdiv@counter,f,c
+  1175  007F1A                     l1329:
+  1176  007F1A  AE04               	btfss	___awdiv@divisor+1,7,c
+  1177  007F1C  D7FA               	goto	l1327
+  1178  007F1E                     l1331:
+  1179  007F1E  90D8               	bcf	status,0,c
+  1180  007F20  3607               	rlcf	___awdiv@quotient,f,c
+  1181  007F22  3608               	rlcf	___awdiv@quotient+1,f,c
+  1182  007F24  5003               	movf	___awdiv@divisor,w,c
+  1183  007F26  5C01               	subwf	___awdiv@dividend,w,c
+  1184  007F28  5004               	movf	___awdiv@divisor+1,w,c
+  1185  007F2A  5802               	subwfb	___awdiv@dividend+1,w,c
+  1186  007F2C  A0D8               	btfss	status,0,c
+  1187  007F2E  D005               	goto	l1339
+  1188  007F30  5003               	movf	___awdiv@divisor,w,c
+  1189  007F32  5E01               	subwf	___awdiv@dividend,f,c
+  1190  007F34  5004               	movf	___awdiv@divisor+1,w,c
+  1191  007F36  5A02               	subwfb	___awdiv@dividend+1,f,c
+  1192  007F38  8007               	bsf	___awdiv@quotient,0,c
+  1193  007F3A                     l1339:
+  1194  007F3A  90D8               	bcf	status,0,c
+  1195  007F3C  3204               	rrcf	___awdiv@divisor+1,f,c
+  1196  007F3E  3203               	rrcf	___awdiv@divisor,f,c
+  1197  007F40  2E05               	decfsz	___awdiv@counter,f,c
+  1198  007F42  D7ED               	goto	l1331
+  1199  007F44                     l1343:
+  1200  007F44  5006               	movf	___awdiv@sign,w,c
+  1201  007F46  B4D8               	btfsc	status,2,c
+  1202  007F48  D004               	goto	l1347
+  1203  007F4A  6C07               	negf	___awdiv@quotient,c
+  1204  007F4C  1E08               	comf	___awdiv@quotient+1,f,c
+  1205  007F4E  B0D8               	btfsc	status,0,c
+  1206  007F50  2A08               	incf	___awdiv@quotient+1,f,c
+  1207  007F52                     l1347:
+  1208  007F52  C007  F001         	movff	___awdiv@quotient,?___awdiv
+  1209  007F56  C008  F002         	movff	___awdiv@quotient+1,?___awdiv+1
+  1210  007F5A  0012               	return	
+  1211  007F5C                     __end_of___awdiv:
+  1212                           	opt stack 0
+  1213  0000                     postinc0	equ	0xFEE
+  1214                           wreg	equ	0xFE8
+  1215                           status	equ	0xFD8
+  1216                           postinc0	equ	0xFEE
+  1217                           wreg	equ	0xFE8
+  1218                           status	equ	0xFD8
+  1219                           
+  1220                           	psect	rparam
+  1221  0000                     postinc0	equ	0xFEE
+  1222                           wreg	equ	0xFE8
+  1223                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         24
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     35      59
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+    BANK13          256      0       0
+    BANK14           65      0       0
+
+Pointer List with Targets:
+
+    CDC_RESULT	PTR unsigned int [12] size(2) Largest target is 3648
+		 -> NULL(NULL[0]), RAM(DATA[3648]), 
+
+
+Critical Paths under _main in COMRAM
+
+    _main->_read_sensor
+    _read_sensor->_w16_r16_spi
+    _get_ID->_w16_r16_spi
+    _delay_ms->___awdiv
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Critical Paths under _main in BANK13
+
+    None.
+
+Critical Paths under _main in BANK14
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 7     7      0    2051
+                                             28 COMRAM     7     7      0
+                           _delay_ms
+                             _get_ID
+                        _read_sensor
+                          _setup_mcu
+                          _setup_spi
+                    _uart_write_char
+            _uart_write_unsigned_int
+ ---------------------------------------------------------------------------------
+ (1) _uart_write_unsigned_int                              4     2      2     282
+                                              0 COMRAM     4     2      2
+ ---------------------------------------------------------------------------------
+ (1) _uart_write_char                                      1     1      0      15
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _setup_spi                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _setup_mcu                                            0     0      0       0
+                          _init_uart
+                         _setup_port
+ ---------------------------------------------------------------------------------
+ (2) _setup_port                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _init_uart                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _read_sensor                                          6     4      2     531
+                                             22 COMRAM     6     4      2
+                        _w16_r16_spi
+ ---------------------------------------------------------------------------------
+ (1) _get_ID                                               5     3      2     486
+                                             22 COMRAM     5     3      2
+                        _w16_r16_spi
+ ---------------------------------------------------------------------------------
+ (2) _w16_r16_spi                                         22    20      2     399
+                                              0 COMRAM    22    20      2
+ ---------------------------------------------------------------------------------
+ (1) _delay_ms                                             5     3      2     601
+                                              8 COMRAM     5     3      2
+                            ___awdiv
+ ---------------------------------------------------------------------------------
+ (2) ___awdiv                                              8     4      4     428
+                                              0 COMRAM     8     4      4
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _delay_ms
+     ___awdiv
+   _get_ID
+     _w16_r16_spi
+   _read_sensor
+     _w16_r16_spi
+   _setup_mcu
+     _init_uart
+     _setup_port
+   _setup_spi
+   _uart_write_char
+   _uart_write_unsigned_int
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             E40      0       0      35        0.0%
+EEDATA             400      0       0       0        0.0%
+BITBANK13          100      0       0      31        0.0%
+BANK13             100      0       0      32        0.0%
+BITBANK12          100      0       0      29        0.0%
+BANK12             100      0       0      30        0.0%
+BITBANK11          100      0       0      27        0.0%
+BANK11             100      0       0      28        0.0%
+BITBANK10          100      0       0      25        0.0%
+BANK10             100      0       0      26        0.0%
+BITBANK9           100      0       0      23        0.0%
+BANK9              100      0       0      24        0.0%
+BITBANK8           100      0       0      21        0.0%
+BANK8              100      0       0      22        0.0%
+BITBANK7           100      0       0      19        0.0%
+BANK7              100      0       0      20        0.0%
+BITBANK6           100      0       0      17        0.0%
+BANK6              100      0       0      18        0.0%
+BITBANK5           100      0       0      15        0.0%
+BANK5              100      0       0      16        0.0%
+BITBANK4           100      0       0      13        0.0%
+BANK4              100      0       0      14        0.0%
+BITBANK3           100      0       0      11        0.0%
+BANK3              100      0       0      12        0.0%
+BITBANK2           100      0       0       9        0.0%
+BANK2              100      0       0      10        0.0%
+BITBANK1           100      0       0       7        0.0%
+BANK1              100      0       0       8        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     23      3B       1       62.1%
+BITBANK14           41      0       0      33        0.0%
+BANK14              41      0       0      34        0.0%
+BITSFR_2             0      0       0      40        0.0%
+SFR_2                0      0       0      40        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      3B       6        0.0%
+DATA                 0      0      3B       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.38 build -256452561 
+Symbol Table                                                                                   Sun May 28 17:46:12 2017
+
+                     _SSPSTATbits 000FC7                      ___awdiv@sign 0006  
+                    __CFG_CP0$OFF 000000                               l221 7DAE  
+                             l206 7D48                               l218 7DA6  
+                             l172 7E88                               l181 7EB2  
+                             l175 7E96                               l178 7EA4  
+                             u595 7DF8                               u677 7E3E  
+                             wreg 000FE8                        _TXSTA1bits 000FAC  
+                            l1321 7EFC                              l1331 7F1E  
+                            l1315 7EEC                              l1421 7FD8  
+                            l1413 7FAA                              l1405 7F7C  
+                            l1327 7F12                              l1343 7F44  
+                            l1329 7F1A                              l1347 7F52  
+                            l1339 7F3A                              l1427 7FF2  
+                            l1375 7E38                              l1377 7E48  
+                            _main 7F5C  __size_of_uart_write_unsigned_int 001A  
+                            start 0002                     ??_w16_r16_spi 0003  
+                   __CFG_IESO$OFF 000000                     __CFG_FOSC$HS1 000000  
+                    ___param_bank 000010          __size_of_uart_write_char 000C  
+                           ?_main 0001                   __end_of___awdiv 7F5C  
+                 ___awdiv@divisor 0003                             _RC1IF 007CF5  
+           w16_r16_spi@blank_high 0011                   ___awdiv@counter 0005  
+                           _TRISB 000F93                             _TRISC 000F94  
+                  __CFG_FCMEN$OFF 000000                      ?_read_sensor 0017  
+                    main@sensor_0 0021                             status 000FD8  
+          w16_r16_spi@address_low 0009                   __initialization 7D62  
+                    __end_of_main 8000               __end_of_w16_r16_spi 7ED8  
+                          ??_main 001D                     main@device_ID 001F  
+                   __activetblptr 000000                  ___awdiv@dividend 0001  
+                   main@indicator 0023                    __CFG_WDTEN$OFF 000000  
+                          _RCREG1 000FAE                            _SPBRG1 000FAF  
+                          _SSPBUF 000FC9                            _TXREG1 000FAD  
+                          _TXSTA1 000FAC                  __end_of_delay_ms 7E5A  
+                  __CFG_XINST$OFF 000000                         ??___awdiv 0005  
+                  __CFG_STVREN$ON 000000                            _get_ID 7DE6  
+                          clear_0 7D68                  ___awdiv@quotient 0007  
+                          main@bb 001D                 ??_uart_write_char 0001  
+         w16_r16_spi@address_high 000B           _uart_write_unsigned_int 7D9E  
+                      __accesstop 0060           __end_of__initialization 7D6E  
+                   ___rparam_used 000001                       _w16_r16_spi 7E5A  
+                  __pcstackCOMRAM 0001              __size_of_read_sensor 002E  
+              __size_of_init_uart 0014                           ?_get_ID 0017  
+                __CFG_CANMX$PORTB 000000                __size_of_setup_mcu 000A  
+              __size_of_setup_spi 0016                         ?_delay_ms 0009  
+                   w16_r16_spi@p1 0005                     w16_r16_spi@p2 0007  
+                   w16_r16_spi@p3 0013                     w16_r16_spi@p4 0015  
+       ??_uart_write_unsigned_int 0003                           __Hparam 0000  
+                         __Lparam 0000                           ___awdiv 7ED8  
+                 __size_of_get_ID 0034                           __pcinit 7D62  
+                         __ramtop 0F00                           __ptext0 7F5C  
+                         __ptext1 7D9E                           __ptext2 7D46  
+                         __ptext3 7D88                           __ptext4 7D3C  
+                         __ptext5 7D52                           __ptext6 7D74  
+                         __ptext7 7DB8                           __ptext8 7DE6  
+                         __ptext9 7E5A                 __end_of_init_uart 7D88  
+                      ??_delay_ms 000B              end_of_initialization 7D6E  
+               __end_of_setup_mcu 7D46                 __end_of_setup_spi 7D9E  
+ __end_of_uart_write_unsigned_int 7DB8                           postinc0 000FEE  
+                 _uart_write_char 7D46                        _setup_port 7D52  
+                    ?_w16_r16_spi 0001              w16_r16_spi@blank_low 000F  
+                  __end_of_get_ID 7E1A               start_initialization 7D62  
+             uart_write_char@data 0001           __end_of_uart_write_char 7D52  
+                        ??_get_ID 0019                       ?_setup_port 0001  
+                     __pbssCOMRAM 0024                     ??_read_sensor 0019  
+               __size_of_delay_ms 0040                          ?___awdiv 0001  
+                        _BAUDCON1 000FA7      uart_write_unsigned_int@char1 0003  
+    uart_write_unsigned_int@char2 0004                         _init_uart 7D74  
+                        _LATCbits 000F8B                         delay_ms@j 000C  
+                       delay_ms@n 0009               __end_of_read_sensor 7DE6  
+                       get_ID@cdc 0017                          _PIE1bits 000F9D  
+             __size_of_setup_port 0010                  ?_uart_write_char 0001  
+                        _PIR1bits 000F9E              __size_of_w16_r16_spi 007E  
+                       _setup_mcu 7D3C                         _setup_spi 7D88  
+                __CFG_SOSCSEL$DIG 000000          ?_uart_write_unsigned_int 0001  
+                      ?_init_uart 0001                        _CDC_RESULT 0024  
+                        __Hrparam 0000                      get_ID@result 001A  
+                        __Lrparam 0000           read_sensor@sensor_value 001B  
+                __size_of___awdiv 0084                        ?_setup_mcu 0001  
+                      ?_setup_spi 0001                          _delay_ms 7E1A  
+            read_sensor@register1 0019                          __ptext10 7E1A  
+                        __ptext11 7ED8                       _read_sensor 7DB8  
+                   __size_of_main 00A4                 read_sensor@sensor 0017  
+              w16_r16_spi@address 0001                      ??_setup_port 0001  
+                     ??_init_uart 0001                        _RCSTA1bits 000FAB  
+              __end_of_setup_port 7D62                       ??_setup_mcu 0001  
+                     ??_setup_spi 0001                 w16_r16_spi@result 000D  
+                     _SSPCON1bits 000FC6     uart_write_unsigned_int@number 0001  

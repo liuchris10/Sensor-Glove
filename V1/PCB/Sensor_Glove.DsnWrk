@@ -1,0 +1,6 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=PCB_1.PrjPcb
+[Project2]
+ProjectPath=..\..\..\..\..\Google Drive\Prototyping Facility Official\Altium Models and Templates\Library Models\UCSD Protolab.LibPkg

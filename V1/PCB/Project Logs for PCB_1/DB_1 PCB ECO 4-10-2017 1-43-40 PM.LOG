@@ -1,0 +1,15 @@
+Change Component Comment : Designator=R3 Old Comment=86.6 New Comment=30
+Change Component Comment : Designator=R4 Old Comment=86.6 New Comment=30
+Added Component: Designator=C13(CAP-0805(2012)-R)
+Added Pin To Net: NetName=3.3V Pin=C13-1
+Added Pin To Net: NetName=GND Pin=C13-2
+Added Pin To Net: NetName=CS3 Pin=U6-22
+Added Pin To Net: NetName=A_INT1 Pin=U4-20
+Added Pin To Net: NetName=A_INT1 Pin=U6-18
+Added Pin To Net: NetName=A_INT1 Pin=U7-11
+Added Net: Name=A_INT1
+Added Pin To Net: NetName=A_INT2 Pin=U4-21
+Added Pin To Net: NetName=A_INT2 Pin=U6-17
+Added Pin To Net: NetName=A_INT2 Pin=U7-9
+Added Net: Name=A_INT2
+Added Member To Class: ClassName=Sheet Member=Component C13 0.1µF

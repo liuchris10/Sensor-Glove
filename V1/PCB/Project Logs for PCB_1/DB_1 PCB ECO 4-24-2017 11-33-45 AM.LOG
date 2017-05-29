@@ -1,0 +1,33 @@
+Added Component: Designator=TP1(Test Point)
+Added Component: Designator=TP2(S1751-46R)
+Added Component: Designator=TP3(S1751-46R)
+Added Component: Designator=TP4(Test Point)
+Added Component: Designator=TP5(Test Point)
+Added Component: Designator=TP6(Test Point)
+Added Component: Designator=TP7(Test Point)
+Added Component: Designator=TP8(Test Point)
+Added Component: Designator=TP9(Test Point)
+Added Component: Designator=TP10(Test Point)
+Added Component: Designator=TP11(S1751-46R)
+Added Pin To Net: NetName=CS1 Pin=TP1-1
+Added Pin To Net: NetName=V_USB Pin=TP2-1
+Added Pin To Net: NetName=GND Pin=TP3-1
+Added Pin To Net: NetName=CS2 Pin=TP4-1
+Added Pin To Net: NetName=CS3 Pin=TP5-1
+Added Pin To Net: NetName=SCLK Pin=TP6-1
+Added Pin To Net: NetName=MOSI Pin=TP7-1
+Added Pin To Net: NetName=MISO Pin=TP8-1
+Added Pin To Net: NetName=RX Pin=TP9-1
+Added Pin To Net: NetName=TX Pin=TP10-1
+Added Pin To Net: NetName=3.3V Pin=TP11-1
+Added Member To Class: ClassName=Sheet Member=Component TP1 Test Point
+Added Member To Class: ClassName=Sheet Member=Component TP2 S1751-46R
+Added Member To Class: ClassName=Sheet Member=Component TP3 S1751-46R
+Added Member To Class: ClassName=Sheet Member=Component TP4 Test Point
+Added Member To Class: ClassName=Sheet Member=Component TP5 Test Point
+Added Member To Class: ClassName=Sheet Member=Component TP6 Test Point
+Added Member To Class: ClassName=Sheet Member=Component TP7 Test Point
+Added Member To Class: ClassName=Sheet Member=Component TP8 Test Point
+Added Member To Class: ClassName=Sheet Member=Component TP9 Test Point
+Added Member To Class: ClassName=Sheet Member=Component TP10 Test Point
+Added Member To Class: ClassName=Sheet Member=Component TP11 S1751-46R

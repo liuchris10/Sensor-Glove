@@ -1,0 +1,46 @@
+Removed Pin From Net: NetName=SCLK Pin=U7-4
+Removed Pin From Net: NetName=MOSI Pin=U7-6
+Removed Pin From Net: NetName=MISO Pin=U7-7
+Removed Pin From Net: NetName=CS3 Pin=U7-8
+Removed Pin From Net: NetName=GND Pin=U7-10
+Removed Pin From Net: NetName=A_INT1 Pin=U7-11
+Removed Pin From Net: NetName=GND Pin=U7-12
+Change Component DesignItemId : Designator=U7 Old DesignItemId=CMP-0234-00055-3 New DesignItemId=LSM6DS3H
+Change Component Footprint: Designator=U7 Old Footprint=STM-LGA-16_N New Footprint=LGA-14
+Change Component Comment : Designator=U7 Old Comment=LIS3DHTR New Comment=LSM6DS3H
+Change Component Library : Designator=U7 Old Library=Glove.SchLib New Library=Glove.SchLib
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C4-1
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C11-2
+Added Pin To Net: NetName=GND Pin=C12-2
+Added Pin To Net: NetName=GND Pin=C13-1
+Added Pin To Net: NetName=GND Pin=D1-A
+Added Pin To Net: NetName=GND Pin=D2-A
+Added Pin To Net: NetName=GND Pin=J28-2
+Added Pin To Net: NetName=GND Pin=J29-1
+Added Pin To Net: NetName=GND Pin=J30-2
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=GND Pin=U1-8
+Added Pin To Net: NetName=GND Pin=U1-10
+Added Pin To Net: NetName=GND Pin=U2-11
+Added Pin To Net: NetName=GND Pin=U2-12
+Added Pin To Net: NetName=GND Pin=U3-11
+Added Pin To Net: NetName=GND Pin=U3-12
+Added Pin To Net: NetName=GND Pin=U4-3
+Added Pin To Net: NetName=GND Pin=U4-17
+Added Pin To Net: NetName=GND Pin=U5-3
+Added Pin To Net: NetName=GND Pin=U6-2
+Added Pin To Net: NetName=GND Pin=U6-3
+Added Pin To Net: NetName=GND Pin=U6-20
+Added Pin To Net: NetName=MISO Pin=U7-1
+Added Pin To Net: NetName=GND Pin=U7-2
+Added Pin To Net: NetName=GND Pin=U7-3
+Added Pin To Net: NetName=A_INT1 Pin=U7-4
+Added Pin To Net: NetName=GND Pin=U7-6
+Added Pin To Net: NetName=GND Pin=U7-7
+Added Pin To Net: NetName=GND Pin=U7-8
+Added Pin To Net: NetName=CS3 Pin=U7-12
+Added Pin To Net: NetName=SCLK Pin=U7-13
+Added Pin To Net: NetName=MOSI Pin=U7-14
+Change Net Name : Old Net Name=GND New Net Name=3.3V

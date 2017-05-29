@@ -1,0 +1,16 @@
+#ifndef AD7147_H
+#define	AD7147_H
+//---------------------------------
+//Function prototypes
+//---------------------------------
+void setup_AD7147(void);
+void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[]);
+unsigned int read_AD7147(unsigned int, unsigned int);
+static int ServiceAD7147Isr(void);
+unsigned int read_sensor(unsigned int);
+unsigned int get_ID(unsigned int);
+void read_sensors(void);
+void get_CDC(unsigned int, unsigned int);
+#endif	/* XC_HEADER_TEMPLATE_H */
+
+
