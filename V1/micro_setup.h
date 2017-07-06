@@ -68,18 +68,18 @@
 extern unsigned int* CDC_RESULT[]; // Result from the CDC 
 // Ram map - these registers are defined as we go along
 //=====================================================
-#define STAGE0_CONNECTION       	0x80
-#define STAGE1_CONNECTION           0x88
-#define STAGE2_CONNECTION           0x90
-#define STAGE3_CONNECTION           0x98
-#define STAGE4_CONNECTION           0xA0
-#define STAGE5_CONNECTION           0xA8
-#define STAGE6_CONNECTION           0xB0
-#define STAGE7_CONNECTION           0xB8
-#define STAGE8_CONNECTION           0xC0
-#define STAGE9_CONNECTION           0xC8
-#define STAGE10_CONNECTION          0xD0
-#define STAGE11_CONNECTION          0xD8
+#define STAGE0_CONNECTION       	0x080
+#define STAGE1_CONNECTION           0x088
+#define STAGE2_CONNECTION           0x090
+#define STAGE3_CONNECTION           0x098
+#define STAGE4_CONNECTION           0x0A0
+#define STAGE5_CONNECTION           0x0A8
+#define STAGE6_CONNECTION           0x0B0
+#define STAGE7_CONNECTION           0x0B8
+#define STAGE8_CONNECTION           0x0C0
+#define STAGE9_CONNECTION           0x0C8
+#define STAGE10_CONNECTION          0x0D0
+#define STAGE11_CONNECTION          0x0D8
 
 #define STAGE0                  	0xE0
 #define STAGE0_AMBIENT              0xF1

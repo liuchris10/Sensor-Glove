@@ -1,203 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/ex1.py" line="5" mnemonic="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2786c48a-81c6-49ae-808a-7de65d2c63fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Bill of Materials-PCB_1.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/DB_1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(43).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(44).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(45).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(46).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(47).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(48).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(49).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(50).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(51).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(52).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(53).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(54).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(55).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(56).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(57).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(58).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(59).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(60).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(61).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(62).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(63).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(64).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(65).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(66).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(67).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(68).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(69).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(70).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(71).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(72).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(73).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(74).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(75).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(76).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(77).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(78).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(79).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(80).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(81).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(82).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(83).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/DB_1.~(84).PcbDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(31).PcbLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(60).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(61).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(62).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(63).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(64).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(65).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(66).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(67).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(68).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(69).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(70).SchLib.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Job1.~(1).OutJob.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/PCB_1.~(6).PrjPcb.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Project Outputs for PCB_1/BOM1.~(1).BomDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Project Outputs for PCB_1/BOM1.~(3).BomDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Project Outputs for PCB_1/BOM1.~(4).BomDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Project Outputs for PCB_1/BOM1.~(5).BomDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Project Outputs for PCB_1/BOM1.~(6).BomDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Project Outputs for PCB_1/BOM1.~(7).BomDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Project Outputs for PCB_1/BOM1.~(8).BomDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Project Outputs for PCB_1/BOM1.~(9).BomDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(113).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(114).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(115).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(116).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(117).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(118).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(119).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(120).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(121).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(122).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(123).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(124).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(125).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(126).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/History/Sheet.~(127).SchDoc.Zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for Free Documents/BOM/Bill of Materials-PCB_1.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/2017-04-10/BOM/Bill of Materials-PCB_1.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/2017-04-10/BOM/Bill of Materials-PCB_1.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/BOM/Bill of Materials-PCB_1.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/BOM1.BomDoc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Zpower_Undergradate_Bowl.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Zpower_Undergradate_Bowl.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/serial_1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Job1.OutJob" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/PCB_1.Dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Logs for PCB_1/DB_1 PCB ECO 4-10-2017 1-43-40 PM.LOG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Logs for PCB_1/DB_1 PCB ECO 4-10-2017 2-24-20 AM.LOG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Logs for PCB_1/DB_1 PCB ECO 4-10-2017 3-36-39 PM.LOG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for Free Documents/Status Report.Txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/2017-04-10/Status Report.Txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/Design Rule Check - DB_1.drc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/Status Report.Txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(12).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(13).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(14).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(16).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(17).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(18).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(19).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(20).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(21).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(22).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(23).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(24).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(25).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(8).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(9).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(11).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(12).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(13).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(13).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(14).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(14).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(15).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(15).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(16).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(16).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(17).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(17).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(18).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(18).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(19).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(19).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(2).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(20).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(20).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(21).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(22).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(23).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(24).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(25).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(26).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(27).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(28).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(29).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(3).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(30).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(31).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(32).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(33).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(34).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/PCB_1.~(2).PrjPcb.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/PCB_1.~(3).PrjPcb.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(38).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(39).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(4).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(40).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(41).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(42).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(43).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(44).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(45).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(46).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(47).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(48).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(49).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(5).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(50).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(51).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(52).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(53).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(54).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(55).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(56).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(57).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(58).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(59).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Sheet.~(6).SchDoc.Zip" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../PCB/History/DB_1.~(15).PcbDoc.Zip" afterPath="$PROJECT_DIR$/../PCB/History/Glove.~(30).PcbLib.Zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/DB_1.PcbDoc" afterPath="$PROJECT_DIR$/../PCB/DB_1.PcbDoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Glove.PcbLib" afterPath="$PROJECT_DIR$/../PCB/Glove.PcbLib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Glove.SchLib" afterPath="$PROJECT_DIR$/../PCB/Glove.SchLib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Sheet.SchDoc" afterPath="$PROJECT_DIR$/../PCB/Sheet.SchDoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.elf" afterPath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.elf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.obj" afterPath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.rlf" afterPath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.rlf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.elf" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.elf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.obj" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.rlf" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.rlf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gui_ex.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.elf" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.elf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.obj" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.rlf" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.rlf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AD7147.c" afterPath="$PROJECT_DIR$/../AD7147.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AD7147.h" afterPath="$PROJECT_DIR$/../AD7147.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ex1.py" afterPath="$PROJECT_DIR$/ex1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/PCB_1.PrjPcb" afterPath="$PROJECT_DIR$/../PCB/PCB_1.PrjPcb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Sensor_Glove.DsnWrk" afterPath="$PROJECT_DIR$/../PCB/Sensor_Glove.DsnWrk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/__Previews/DB_1.PcbDocPreview" afterPath="$PROJECT_DIR$/../PCB/__Previews/DB_1.PcbDocPreview" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/serial_1.py" afterPath="$PROJECT_DIR$/serial_1.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/__Previews/Sheet.SchDocPreview" afterPath="$PROJECT_DIR$/../PCB/__Previews/Sheet.SchDocPreview" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/AD7147.p1" afterPath="$PROJECT_DIR$/../build/default/debug/AD7147.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/AD7147.p1.d" afterPath="$PROJECT_DIR$/../build/default/debug/AD7147.p1.d" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/AD7147.pre" afterPath="$PROJECT_DIR$/../build/default/debug/AD7147.pre" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/main.p1" afterPath="$PROJECT_DIR$/../build/default/debug/main.p1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/main.pre" afterPath="$PROJECT_DIR$/../build/default/debug/main.pre" />
@@ -207,44 +26,25 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/spi.pre" afterPath="$PROJECT_DIR$/../build/default/debug/spi.pre" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/uart.p1" afterPath="$PROJECT_DIR$/../build/default/debug/uart.p1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/uart.pre" afterPath="$PROJECT_DIR$/../build/default/debug/uart.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/AD7147.p1" afterPath="$PROJECT_DIR$/../build/default/production/AD7147.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/AD7147.p1.d" afterPath="$PROJECT_DIR$/../build/default/production/AD7147.p1.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/AD7147.pre" afterPath="$PROJECT_DIR$/../build/default/production/AD7147.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/main.p1" afterPath="$PROJECT_DIR$/../build/default/production/main.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/main.pre" afterPath="$PROJECT_DIR$/../build/default/production/main.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/micro_setup.p1" afterPath="$PROJECT_DIR$/../build/default/production/micro_setup.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/micro_setup.pre" afterPath="$PROJECT_DIR$/../build/default/production/micro_setup.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/spi.p1" afterPath="$PROJECT_DIR$/../build/default/production/spi.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/spi.pre" afterPath="$PROJECT_DIR$/../build/default/production/spi.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/uart.p1" afterPath="$PROJECT_DIR$/../build/default/production/uart.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/uart.pre" afterPath="$PROJECT_DIR$/../build/default/production/uart.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.cmf" afterPath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.cmf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.hxl" afterPath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.hxl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.lst" afterPath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.map" afterPath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.mum" afterPath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.mum" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.sdb" afterPath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.sdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.sym" afterPath="$PROJECT_DIR$/../dist/default/debug/Sensor_Glove.debug.sym" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.cmf" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.cmf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.hxl" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.hxl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.lst" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.map" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.mum" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.mum" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sdb" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sym" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sym" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/memoryfile.xml" afterPath="$PROJECT_DIR$/../dist/default/debug/memoryfile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.cmf" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.cmf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.hex" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.hex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.hxl" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.hxl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.lst" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.map" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.mum" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.mum" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.sdb" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.sdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.sym" afterPath="$PROJECT_DIR$/../dist/default/production/Sensor_Glove.production.sym" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/memoryfile.xml" afterPath="$PROJECT_DIR$/../dist/default/production/memoryfile.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../main.c" afterPath="$PROJECT_DIR$/../main.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../micro_setup.c" afterPath="$PROJECT_DIR$/../micro_setup.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../micro_setup.h" afterPath="$PROJECT_DIR$/../micro_setup.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-default.mk" afterPath="$PROJECT_DIR$/../nbproject/Makefile-default.mk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-genesis.properties" afterPath="$PROJECT_DIR$/../nbproject/Makefile-genesis.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-impl.mk" afterPath="$PROJECT_DIR$/../nbproject/Makefile-impl.mk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-local-default.mk" afterPath="$PROJECT_DIR$/../nbproject/Makefile-local-default.mk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-variables.mk" afterPath="$PROJECT_DIR$/../nbproject/Makefile-variables.mk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Package-default.bash" afterPath="$PROJECT_DIR$/../nbproject/Package-default.bash" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/configurations.xml" afterPath="$PROJECT_DIR$/../nbproject/configurations.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/private/configurations.xml" afterPath="$PROJECT_DIR$/../nbproject/private/configurations.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/private/private.xml" afterPath="$PROJECT_DIR$/../nbproject/private/private.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spi.c" afterPath="$PROJECT_DIR$/../spi.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../uart.c" afterPath="$PROJECT_DIR$/../uart.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../uart.h" afterPath="$PROJECT_DIR$/../uart.h" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -262,12 +62,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ex1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ex1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ex1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-              <folding />
+            <state relative-caret-position="357">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -275,8 +77,8 @@
       <file leaf-file-name="serial_1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serial_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="68">
+              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -285,10 +87,22 @@
       <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="171" column="22" lean-forward="false" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
+            <state relative-caret-position="952">
+              <caret line="56" column="77" lean-forward="true" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gui_ex.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gui_ex.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -322,9 +136,10 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
-        <option value="$PROJECT_DIR$/gui.py" />
-        <option value="$PROJECT_DIR$/ex1.py" />
         <option value="$PROJECT_DIR$/serial_1.py" />
+        <option value="$PROJECT_DIR$/ex1.py" />
+        <option value="$PROJECT_DIR$/gui.py" />
+        <option value="$PROJECT_DIR$/gui_ex.py" />
       </list>
     </option>
   </component>
@@ -351,7 +166,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -366,10 +180,11 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python" />
   </component>
@@ -385,7 +200,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ex1">
+  <component name="RunManager" selected="Python.gui_ex">
     <configuration default="false" name="ex1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -399,24 +214,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Gui" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Gui" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -471,6 +268,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Gui" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="gui_ex" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gui" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui_ex.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -574,18 +389,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.ex1" />
-      <item index="1" class="java.lang.String" itemvalue="Python.scratch" />
-      <item index="2" class="java.lang.String" itemvalue="Python.scratch_1" />
-      <item index="3" class="java.lang.String" itemvalue="Python.scratch_2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.gui" />
+      <item index="1" class="java.lang.String" itemvalue="Python.scratch_1" />
+      <item index="2" class="java.lang.String" itemvalue="Python.scratch_2" />
+      <item index="3" class="java.lang.String" itemvalue="Python.gui" />
+      <item index="4" class="java.lang.String" itemvalue="Python.gui_ex" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.ex1" />
-        <item index="1" class="java.lang.String" itemvalue="Python.gui" />
-        <item index="2" class="java.lang.String" itemvalue="Python.scratch_2" />
-        <item index="3" class="java.lang.String" itemvalue="Python.scratch_1" />
-        <item index="4" class="java.lang.String" itemvalue="Python.scratch" />
+        <item index="0" class="java.lang.String" itemvalue="Python.gui_ex" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ex1" />
+        <item index="2" class="java.lang.String" itemvalue="Python.gui" />
+        <item index="3" class="java.lang.String" itemvalue="Python.scratch_2" />
+        <item index="4" class="java.lang.String" itemvalue="Python.scratch_1" />
       </list>
     </recent_temporary>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -639,14 +454,14 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15729167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3284055" sideWeight="0.33958334" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.66041666" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3284055" sideWeight="0.34479168" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.65520835" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955106" sideWeight="0.49710983" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955106" sideWeight="0.49710983" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -665,18 +480,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4403">
           <caret line="259" column="34" lean-forward="false" selection-start-line="259" selection-start-column="34" selection-end-line="259" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -691,7 +501,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -699,7 +511,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -707,7 +521,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -715,7 +531,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -723,7 +541,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -731,7 +551,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -739,7 +561,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -747,7 +571,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -755,7 +581,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -763,7 +591,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -771,7 +601,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -779,7 +611,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -787,7 +621,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -795,205 +631,93 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="36" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
+    <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1022,29 +746,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/serial_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="171" column="22" lean-forward="false" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
+        <state relative-caret-position="952">
+          <caret line="56" column="77" lean-forward="true" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/serial_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui_ex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

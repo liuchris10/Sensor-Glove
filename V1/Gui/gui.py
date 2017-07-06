@@ -110,14 +110,12 @@ class SensorGlove(tk.Tk):
         subMenu = tk.Menu(menubar, tearoff=1)
         subMenu.add_command(label="Sensor Calibration", command=lambda: popupmsg("Not supported just yet!"))
         subMenu.add_command(label="Save settings", command=lambda: popupmsg("Not supported just yet!"))
-        subMenu.add_separator()
-        subMenu.add_command(label="Exit", command=lambda: print_Name1())
         menubar.add_cascade(label="Settings", menu=subMenu)
 
         editMenu = tk.Menu(menubar, tearoff=1)
         editMenu.add_command(label="Help Menu", command=lambda: self.show_frame(Help_Page))
         editMenu.add_separator()
-        editMenu.add_command(label="Exit", command=lambda: print_Name1())
+        editMenu.add_command(label="Print Name", command=lambda: print_Name1())
         menubar.add_cascade(label="Help", menu=editMenu)
 
         tk.Tk.config(self, menu=menubar)

@@ -1,5 +1,5 @@
 import serial
-port1 = serial.Serial(port='COM3', baudrate=9600, bytesize=serial.EIGHTBITS, stopbits=serial.STOPBITS_ONE, timeout=None)
+port1 = serial.Serial(port='COM7', baudrate=9600, bytesize=serial.EIGHTBITS, stopbits=serial.STOPBITS_ONE, timeout=None)
 
 def __init__(self):
     self.data = []
