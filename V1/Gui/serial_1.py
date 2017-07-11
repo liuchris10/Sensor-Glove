@@ -1,12 +1,13 @@
 import serial
-port1 = serial.Serial(port='COM3', baudrate=9600, bytesize=serial.EIGHTBITS, stopbits=serial.STOPBITS_ONE, timeout=None)
+port1 = serial.Serial(port='COM4', baudrate=9600, bytesize=serial.EIGHTBITS, stopbits=serial.STOPBITS_ONE, timeout=None)
 
 def __init__(self):
     self.data = []
 
 def read_8():
     return port1.read()
-
+def wait():
+    port1.inWaiting()
 def write_8(data):
     message = data.encode('utf-8')
     port1.write(message)
