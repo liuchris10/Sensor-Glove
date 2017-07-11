@@ -3,11 +3,10 @@
 #include "spi.h"
 #include "uart.h"
 
-void setup_AD7147(void)
+void setup_AD7147(unsigned int cdc)
 {   
+    get_CDC(cdc,0);
     unsigned int StageBuffer[8];
-    //CS_CDC1 = 0;   //set CS to low (transmit data)
-    //CS_CDC2 = 0;   //set CS to low (transmit data)
     // BANK 2 REGISTERS CONFIGURATION
     // StageBuffer[0] StageX_Connections[6:0] setup
     // StageBuffer[1] StageX_Connections[12:7] setup
@@ -20,11 +19,9 @@ void setup_AD7147(void)
     // WriteToAD7147(STAGEX_CONNECTION, 8, StageBuffer, 0);
     
     //===========================
-    //= Stage 0 - CIN0 (+) S0
+    //= Stage 0 - CIN0 (+) S1
     //===========================
-    //StageBuffer[0] = 0x3FFE;	//Register 0x80
-    StageBuffer[0] = 0x2000;	//Register 0x80
-    //StageBuffer[1] = 0x1FFF;	//Register 0x81
+    StageBuffer[0] = 0x0001;	//Register 0x80
     StageBuffer[1] = 0x0000;	//Register 0x81
     StageBuffer[2] = 0x0100;	//Register 0x82
     StageBuffer[3] = 0x2121;	//Register 0x83
@@ -35,7 +32,7 @@ void setup_AD7147(void)
     write_AD7147(STAGE0_CONNECTION, 8, StageBuffer);
     
     //===========================
-    //= Stage 1 - CIN1 (+) S1
+    //= Stage 1 - CIN1 (+) S2
     //===========================
     StageBuffer[0]=0x3FFB;	//Register 0x88
     StageBuffer[1]=0x1FFF;	//Register 0x89
@@ -48,7 +45,7 @@ void setup_AD7147(void)
 	write_AD7147(STAGE1_CONNECTION, 8, StageBuffer);
 
     //===========================
-    //= Stage 2 - CIN2 (+) S2
+    //= Stage 2 - CIN2 (+) S3
     //===========================
     StageBuffer[0]=0x3FEF;	//Register 0x90
     StageBuffer[1]=0x1FFF;	//Register 0x91
@@ -61,7 +58,7 @@ void setup_AD7147(void)
 	write_AD7147(STAGE2_CONNECTION, 8, StageBuffer);
 
     //===========================
-    //= Stage 3 - CIN3 (+) S3
+    //= Stage 3 - CIN3 (+) S4
     //===========================
     StageBuffer[0]=0x3FBF;	//Register 0x98
     StageBuffer[1]=0x1FFF;	//Register 0x99
@@ -74,7 +71,7 @@ void setup_AD7147(void)
     write_AD7147(STAGE3_CONNECTION, 8, StageBuffer);
 
     //===========================
-    //= Stage 4 - CIN4 (+) S4
+    //= Stage 4 - CIN4 (+) S5
     //===========================
     StageBuffer[0]=0x3EFF;	//Register 0xA0
     StageBuffer[1]=0x1FFF;	//Register 0xA1
@@ -87,7 +84,7 @@ void setup_AD7147(void)
     write_AD7147(STAGE4_CONNECTION, 8, StageBuffer);
 
     //===========================
-    //= Stage 5 - CIN5 (+) S5
+    //= Stage 5 - CIN5 (+) S6
     //===========================
     StageBuffer[0]=0x3BFF;	//Register 0xA8
     StageBuffer[1]=0x1FFF;	//Register 0xA9
@@ -100,7 +97,7 @@ void setup_AD7147(void)
 	write_AD7147(STAGE5_CONNECTION, 8, StageBuffer);
 
 	//===========================
-    //= Stage 6 - CIN6 (+) S6
+    //= Stage 6 - CIN6 (+) S7
     //===========================
     StageBuffer[0]=0x2FFF;	//Register 0xB0
     StageBuffer[1]=0x1FFF;	//Register 0xB1
@@ -113,7 +110,7 @@ void setup_AD7147(void)
     write_AD7147(STAGE6_CONNECTION, 8, StageBuffer);
 
     //===========================
-    //= Stage 7 - CIN7 (+) S7
+    //= Stage 7 - CIN7 (+) S8
     //===========================
     StageBuffer[0]=0x3FFF;	//Register 0xB8
     StageBuffer[1]=0x1FFE;	//Register 0xB9
@@ -126,7 +123,7 @@ void setup_AD7147(void)
     write_AD7147(STAGE7_CONNECTION, 8, StageBuffer);
 
     //===========================
-    //= Stage 8 - CIN8 (+) S8
+    //= Stage 8 - CIN8 (+) S9
     //===========================
     StageBuffer[0]=0x3FFF;	//Register 0xC0
     StageBuffer[1]=0x1FFB;	//Register 0xC1
@@ -139,7 +136,7 @@ void setup_AD7147(void)
     write_AD7147(STAGE8_CONNECTION, 8, StageBuffer);
 
     //===========================
-    //= Stage 9 - CIN9 (+) S9
+    //= Stage 9 - CIN9 (+) S10
     //===========================
     StageBuffer[0]=0x3FFF;	//Register 0xC8	
     StageBuffer[1]=0x1FEF;	//Register 0xC9
@@ -152,7 +149,7 @@ void setup_AD7147(void)
     write_AD7147(STAGE9_CONNECTION, 8, StageBuffer);
 
     //============================
-    //= Stage 10 - CIN10 (+) S10
+    //= Stage 10 - CIN10 (+) S11
     //============================
     StageBuffer[0]=0x3FFF;	//Register 0xD0
     StageBuffer[1]=0x1FBF;	//Register 0xD1
@@ -165,7 +162,7 @@ void setup_AD7147(void)
 	write_AD7147(STAGE10_CONNECTION, 8, StageBuffer);
 
     //============================
-    //= Stage 11 - CIN11 (+) S11
+    //= Stage 11 - CIN11 (+) S12
     //============================
     StageBuffer[0]=0x3FFF;	//Register 0xD8
     StageBuffer[1]=0x1EFF;	//Register 0xD9
@@ -202,14 +199,12 @@ void setup_AD7147(void)
 	//read_AD7147(STAGE_LOW_LIMIT_INT, 3, AD7147Registers); //Registers 0x08 & 0x09 & 0x0A
 	//Read High and Low Limit Status registers to clear INT pin
 	//unsigned int AD7147Registers = read_AD7147(STAGE_LOW_LIMIT_INT, 3); //Registers 0x08 & 0x09 & 0x0A
-    //CS_CDC1 = 1;   //set CS to low (transmit data)
-    //CS_CDC2 = 1;   //set CS to low (transmit data)
+    get_CDC(cdc,1);
 }
 
 void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[])
 {
-    unsigned int enable_word = 0xE000;
-    unsigned int Register_Values=enable_word + RegisterAddress;
+    unsigned int Register_Values= ENABLE_WRITE + RegisterAddress;
 	//Write out the Message in two individual 16 bit unsigned int messages
 	for (int i=0; i<NumberOfRegisters; i++)
 	{
@@ -236,10 +231,14 @@ unsigned int read_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegi
 
 unsigned int read_sensor(unsigned int sensor)
 {	
-    unsigned int register1 = ENABLE_READ + 0x00B + sensor;
-    CS_CDC1 = 0;   //set CS to low (transmit data)   
+    if ((sensor > 12) && (sensor != 25))
+    {
+        sensor = sensor - 12;
+    }
+    unsigned int register1 = ENABLE_READ + 0x00A + sensor;
+    sensor_cdc(sensor, 0); //set CS to low (transmit data)   
 	unsigned int sensor_value = w16_r16_spi(register1);
-    CS_CDC1 = 1;   //set CS to low (transmit data)
+    sensor_cdc(sensor, 1); //set CS to high (Stop Transmitting data)
     
     //This is how we access the ADC Values
 	//AD7147Registers[CDC_RESULT_S0] corresponds to ADC Value of Stage 0
@@ -255,6 +254,19 @@ void read_sensors()
     read_AD7147(CDC_RESULT_REGISTER[0], 3, 0);
 }
 */
+void sensor_cdc(unsigned int sensor, unsigned int state)
+{
+    //Sensor is the sensor number to be read
+    //State: 0 = Transmit Data, 1 = Stop Transmit Data
+    if ((sensor <= 12) || (sensor == 25))
+    {
+        get_CDC(1,state);
+    }
+    else
+    {
+        get_CDC(2,state);
+    }
+}
 void read_sensors()
 {
     unsigned int Register_Values[12];
@@ -310,44 +322,54 @@ unsigned int get_ID(unsigned int cdc)
     return result;
 }
 
-void switch_LED(unsigned int state, unsigned int cdc)
+void switch_LED(unsigned int cdc, unsigned int state)
 {
  get_CDC(cdc,0);
  if (state==1)
  {
-     unsigned int message = 0b0011000000000000;
+     unsigned int message = 0b0010000000000000;
      w32_spi((ENABLE_WRITE + STAGE_LOW_INT_EN),message);
  }
  else
  {
-     
-     unsigned int message = 0b0010000000000000;
+     unsigned int message = 0b0011000000000000;
      w32_spi((ENABLE_WRITE + STAGE_LOW_INT_EN),message);
  }
- get_CDC(cdc,0);
+ delay_ms(10);
+ get_CDC(cdc,1);
 }
-void get_CDC(unsigned int number, unsigned int option)
+void blink_LED(unsigned int cdc)
 {
-    if (option == 0)
+    get_CDC(cdc,0);
+    unsigned int message = 0b0010000000000000;
+    w32_spi((ENABLE_WRITE + STAGE_LOW_INT_EN),message);
+    delay_ms(10);
+    get_CDC(cdc,1);
+    delay_ms(1000);
+    get_CDC(cdc,0);
+    unsigned int message = 0b0011000000000000;
+    w32_spi((ENABLE_WRITE + STAGE_LOW_INT_EN),message);
+    delay_ms(10);
+    get_CDC(cdc,1);
+}
+void get_CDC(unsigned int cdc, unsigned int state)
+{
+    if (state == 1)
     {
-        if (number == 1)
-        {
-            CS_CDC1 = 0;   //set CS to low (transmit data)
-        }
-        else
-        {
-            CS_CDC2 = 0;   //set CS to low (transmit data)
-        }
+            CS_CDC1 = 1;   //set CS to high (stop transmit data)
+            CS_CDC2 = 1;    //set CS to high (stop transmit data)
     }
     else
     {
-        if (number == 1)
+        if (cdc == 1)
         {
-            CS_CDC1 = 1;   //set CS to high (stop transmit data)
+            CS_CDC1 = 0;   //set CS to low (transmit data)
+            CS_CDC2 = 1;   //Keep CS of CDC 2 High 
         }
         else
         {
-            CS_CDC2 = 1;   //set CS to high (stop transmit data)
+            CS_CDC2 = 0;    //set CS to low (transmit data)
+            CS_CDC1 = 1;    //Keep CS of CDC 1 High 
         }
     }
 }
