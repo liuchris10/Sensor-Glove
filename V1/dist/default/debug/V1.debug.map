@@ -1,10 +1,10 @@
-Microchip MPLAB XC8 Compiler V1.38 ()
+Microchip MPLAB XC8 Compiler V1.42 ()
 
 Linker command line:
 
--W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.38\dat\en_msgs.txt -cs \
+-W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.42\dat\en_msgs.txt -cs \
   -h+dist/default/debug\V1.debug.sym --cmf=dist/default/debug\V1.debug.cmf \
-  -z -Q18F25K80 -oC:\Users\Intern\AppData\Local\Temp\s5is.2 \
+  -z -Q18F25K80 -oC:\Users\Intern\AppData\Local\Temp\s4o4.2 \
   -Mdist/default/debug/V1.debug.map -E1 -ver=XC8 -ASTACK=078h-0e40h \
   -pstack=STACK -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0F00h-0FFFhx113 -AMEDIUMCONST=0F00h-07FFFh -ACOMRAM=01h-05Fh \
@@ -16,7 +16,7 @@ Linker command line:
   -ABANK10=0A00h-0AFFh -ABANK11=0B00h-0BFFh -ABANK12=0C00h-0CFFh \
   -ABANK13=0D00h-0DFFh -ABANK14=0E00h-0E40h \
   -ASFR=0E41h-0EFFh,0F00h-0F5Fh,0F60h-0FFCh \
-  -preset_vec=00h,intcode,intcodelo,powerup,init,end_init -pramtop=0F00h \
+  -preset_vec=00h,intcode,intcodelo,powerup,init -pramtop=0F00h \
   -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
   -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
   -AIDLOC=0200000h-0200007h -pidloc=IDLOC -AEEDATA=0F00000h-0F003FFh \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Intern\AppData\Local\Temp\s5is.obj \
+  C:\Users\Intern\AppData\Local\Temp\s4o4.obj \
   dist/default/debug\V1.debug.obj 
 
 Object code version is 3.11
@@ -38,8 +38,8 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Intern\AppData\Local\Temp\s5is.obj
-                end_init                              2        2        4        0       0
+C:\Users\Intern\AppData\Local\Temp\s4o4.obj
+                init                                  2        2        4        0       0
                 reset_vec                             0        0        2        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
@@ -70,7 +70,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   STACK          
 
         CLASS   CODE           
-                end_init                              2        2        4         0
+                init                                  2        2        4         0
                 reset_vec                             0        0        2         0
                 text17                             78FC     78FC       84         0
                 text16                             7670     7670       40         0
@@ -272,14 +272,13 @@ __Hconst                          const        000000
 __HcstackCOMRAM                   cstackCOMRAM 000000
 __Hdata                           data         000000
 __Heeprom_data                    eeprom_data  000000
-__Hend_init                       end_init     000006
 __Hfarbss                         farbss       000000
 __Hfardata                        fardata      000000
 __Hibigdata                       ibigdata     000000
 __Hidata                          idata        000000
 __Hidloc                          idloc        200008
 __Hifardata                       ifardata     000000
-__Hinit                           init         000002
+__Hinit                           init         000006
 __Hintcode                        intcode      000002
 __Hintcode_body                   intcode_body 000000
 __Hintcodelo                      intcodelo    000002
@@ -357,7 +356,6 @@ __Lconst                          const        000000
 __LcstackCOMRAM                   cstackCOMRAM 000000
 __Ldata                           data         000000
 __Leeprom_data                    eeprom_data  000000
-__Lend_init                       end_init     000002
 __Lfarbss                         farbss       000000
 __Lfardata                        fardata      000000
 __Libigdata                       ibigdata     000000
@@ -423,7 +421,7 @@ ___awdiv@quotient                 cstackCOMRAM 000007
 ___awdiv@sign                     cstackCOMRAM 000006
 ___inthi_sp                       stack        000000
 ___intlo_sp                       stack        000000
-___param_bank                     (abs)        000010
+___param_bank                     (abs)        000000
 ___rparam_used                    (abs)        000001
 ___sp                             stack        000000
 __accesstop                       (abs)        000060
@@ -1125,7 +1123,7 @@ Total ram usage:        5 bytes
 
  *************** function ___awdiv *****************
  Defined at:
-		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c"
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c"
  Parameters:    Size  Location     Type
   dividend        2    0[COMRAM] int 
   divisor         2    2[COMRAM] int 
@@ -1159,16 +1157,16 @@ Total ram usage:        8 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+		___awdiv       		CODE           	78FC	0000	133
+
+C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c estimated size: 133
+
 uart.c
 		_uart_write_char		CODE           	75DC	0000	13
 		_uart_write_unsigned_int		CODE           	7634	0000	27
 
 uart.c estimated size: 40
-
-C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
-		___awdiv       		CODE           	78FC	0000	133
-
-C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c estimated size: 133
 
 micro_setup.c
 		_init_uart     		CODE           	760A	0000	21

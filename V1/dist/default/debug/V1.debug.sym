@@ -46,7 +46,7 @@ __size_of_w32_spi 0 0 ABS 0
 __Hbss 0 0 RAM 1
 __CFG_STVREN$ON 0 0 ABS 0
 __Lbss 0 0 RAM 1
-___param_bank 10 0 ABS 0
+___param_bank 0 0 ABS 0
 __Hnvrram 0 0 COMRAM 1
 __Lnvrram 0 0 COMRAM 1
 _RCREG1 FAE 0 ABS 0
@@ -100,7 +100,7 @@ stacklo 78 0 ABS 0
 __Hrbit 0 0 COMRAM 1
 __Lrbit 0 0 COMRAM 1
 _sensor_cdc 76B0 0 CODE 0
-__Hinit 2 0 CODE 0
+__Hinit 6 0 CODE 0
 __Linit 2 0 CODE 0
 __Hintcodelo 2 0 CODE 0
 __Lintcodelo 2 0 CODE 0
@@ -311,8 +311,6 @@ ___intlo_sp 0 0 STACK 2
 __size_of_write_AD7147 0 0 ABS 0
 uart_write_unsigned_int@number 1 0 COMRAM 1
 setup_AD7147@cdc 21 0 COMRAM 1
-__Hend_init 6 0 CODE 0
-__Lend_init 2 0 CODE 0
 ___awdiv@divisor 3 0 COMRAM 1
 __end_of_sensor_cdc 76F2 0 CODE 0
 __end_of_delay_ms 76B0 0 CODE 0
@@ -378,20 +376,20 @@ text2 75DC 75E7 CODE 75DC 0
 text4 75D2 75DB CODE 75D2 0
 %locals
 dist/default/debug\V1.debug.obj
-C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18f25k80.h
-C:\Users\Intern\AppData\Local\Temp\s5is.
-4807 75F8 0 CODE 0
-4809 75F8 0 CODE 0
-4812 75F8 0 CODE 0
-4824 75F8 0 CODE 0
-4825 75FC 0 CODE 0
-4826 75FE 0 CODE 0
-4827 75FE 0 CODE 0
-4828 7600 0 CODE 0
-4829 7602 0 CODE 0
-4835 7604 0 CODE 0
-4837 7604 0 CODE 0
-4838 7606 0 CODE 0
+C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f25k80.h
+C:\Users\Intern\AppData\Local\Temp\s4o4.
+4705 75F8 0 CODE 0
+4707 75F8 0 CODE 0
+4710 75F8 0 CODE 0
+4722 75F8 0 CODE 0
+4723 75FC 0 CODE 0
+4724 75FE 0 CODE 0
+4725 75FE 0 CODE 0
+4726 7600 0 CODE 0
+4727 7602 0 CODE 0
+4733 7604 0 CODE 0
+4735 7604 0 CODE 0
+4736 7606 0 CODE 0
 main.c
 6 7A2E 0 CODE 0
 8 7A2E 0 CODE 0
@@ -692,7 +690,7 @@ micro_setup.c
 70 768C 0 CODE 0
 72 768E 0 CODE 0
 70 769E 0 CODE 0
-C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
 8 78FC 0 CODE 0
 14 78FC 0 CODE 0
 15 7900 0 CODE 0
