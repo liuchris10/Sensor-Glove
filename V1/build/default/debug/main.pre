@@ -17634,6 +17634,7 @@ char indicator = 's';
 unsigned int bb = 1020;
 while(1)
 {
+
 if (indicator == 'i')
 {
 uart_write_char('i');

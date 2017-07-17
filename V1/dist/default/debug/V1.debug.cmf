@@ -11,11 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Intern\AppData\Local\Temp\s4o4.obj
-idloc IDLOC 0 200000 200000 8 1
-init CODE 0 2 2 4 1
-reset_vec CODE 0 0 0 2 1
-config CONFIG 0 300000 300000 E 1
 $dist/default/debug\V1.debug.obj
 cinit CODE 0 75F8 75F8 12 1
 text0 CODE 0 7A2E 7A2E D4 1
@@ -38,6 +33,11 @@ text16 CODE 0 7670 7670 40 1
 text17 CODE 0 78FC 78FC 84 1
 cstackCOMRAM COMRAM 1 1 1 49 1
 bssBANK0 BANK0 1 60 60 18 1
+$C:\Users\Intern\AppData\Local\Temp\s2l0.obj
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 2 2 4 1
+reset_vec CODE 0 0 0 2 1
+config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -378,31 +378,31 @@ $dist/default/debug\V1.debug.obj
 7A66 text0 CODE >15:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
 7A72 text0 CODE >16:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
 7A76 text0 CODE >17:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7A7E text0 CODE >20:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7A86 text0 CODE >22:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7A8C text0 CODE >23:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7AA0 text0 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7AAC text0 CODE >26:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7AB4 text0 CODE >28:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7ABA text0 CODE >29:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7ACE text0 CODE >30:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7ADA text0 CODE >32:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7AE2 text0 CODE >34:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7AE8 text0 CODE >36:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7AF4 text0 CODE >38:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A7E text0 CODE >21:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A86 text0 CODE >23:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A8C text0 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7AA0 text0 CODE >25:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7AAC text0 CODE >27:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7AB4 text0 CODE >29:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7ABA text0 CODE >30:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7ACE text0 CODE >31:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7ADA text0 CODE >33:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7AE2 text0 CODE >35:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7AE8 text0 CODE >37:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7AF4 text0 CODE >39:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
 7B00 text0 CODE >18:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-75F8 cinit CODE >4705:C:\Users\Intern\AppData\Local\Temp\s4o4.
-75F8 cinit CODE >4707:C:\Users\Intern\AppData\Local\Temp\s4o4.
-75F8 cinit CODE >4710:C:\Users\Intern\AppData\Local\Temp\s4o4.
-75F8 cinit CODE >4722:C:\Users\Intern\AppData\Local\Temp\s4o4.
-75FC cinit CODE >4723:C:\Users\Intern\AppData\Local\Temp\s4o4.
-75FE cinit CODE >4724:C:\Users\Intern\AppData\Local\Temp\s4o4.
-75FE cinit CODE >4725:C:\Users\Intern\AppData\Local\Temp\s4o4.
-7600 cinit CODE >4726:C:\Users\Intern\AppData\Local\Temp\s4o4.
-7602 cinit CODE >4727:C:\Users\Intern\AppData\Local\Temp\s4o4.
-7604 cinit CODE >4733:C:\Users\Intern\AppData\Local\Temp\s4o4.
-7604 cinit CODE >4735:C:\Users\Intern\AppData\Local\Temp\s4o4.
-7606 cinit CODE >4736:C:\Users\Intern\AppData\Local\Temp\s4o4.
+75F8 cinit CODE >4705:C:\Users\Intern\AppData\Local\Temp\s2l0.
+75F8 cinit CODE >4707:C:\Users\Intern\AppData\Local\Temp\s2l0.
+75F8 cinit CODE >4710:C:\Users\Intern\AppData\Local\Temp\s2l0.
+75F8 cinit CODE >4722:C:\Users\Intern\AppData\Local\Temp\s2l0.
+75FC cinit CODE >4723:C:\Users\Intern\AppData\Local\Temp\s2l0.
+75FE cinit CODE >4724:C:\Users\Intern\AppData\Local\Temp\s2l0.
+75FE cinit CODE >4725:C:\Users\Intern\AppData\Local\Temp\s2l0.
+7600 cinit CODE >4726:C:\Users\Intern\AppData\Local\Temp\s2l0.
+7602 cinit CODE >4727:C:\Users\Intern\AppData\Local\Temp\s2l0.
+7604 cinit CODE >4733:C:\Users\Intern\AppData\Local\Temp\s2l0.
+7604 cinit CODE >4735:C:\Users\Intern\AppData\Local\Temp\s2l0.
+7606 cinit CODE >4736:C:\Users\Intern\AppData\Local\Temp\s2l0.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -424,16 +424,16 @@ __Hspace_2 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 blink_LED@message 19 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\V1.debug.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Intern\AppData\Local\Temp\s4o4.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Intern\AppData\Local\Temp\s2l0.obj
 __size_of_uart_write_char 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\V1.debug.obj
 setup_AD7147@AD7147Registers 23 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __size_of_uart_write_unsigned_int 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __end_of_w32_spi 780A 0 CODE 0 text14 dist/default/debug\V1.debug.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\V1.debug.obj
-___sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\s4o4.obj
+___sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\s2l0.obj
 _main 7A2E 0 CODE 0 text0 dist/default/debug\V1.debug.obj
-start 2 0 CODE 0 init C:\Users\Intern\AppData\Local\Temp\s4o4.obj
+start 2 0 CODE 0 init C:\Users\Intern\AppData\Local\Temp\s2l0.obj
 __size_of___awdiv 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __size_of_main 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 w16_r16_spi@address 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
@@ -450,11 +450,11 @@ _setup_AD7147 7B02 0 CODE 0 text7 dist/default/debug\V1.debug.obj
 get_ID@cdc 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hpowerup 2 0 CODE 0 powerup dist/default/debug\V1.debug.obj
 uart_write_unsigned_int@number 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-__accesstop 60 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\s4o4.obj
-intlevel0 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\s4o4.obj
-intlevel1 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\s4o4.obj
-intlevel2 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\s4o4.obj
-intlevel3 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\s4o4.obj
+__accesstop 60 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\s2l0.obj
+intlevel0 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\s2l0.obj
+intlevel1 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\s2l0.obj
+intlevel2 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\s2l0.obj
+intlevel3 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\s2l0.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\V1.debug.obj
 ?_get_ID 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\V1.debug.obj
@@ -475,8 +475,8 @@ w16_r16_spi@blank_low F 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __size_of_setup_AD7147 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 write_AD7147@DataBuffer 1B 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 ___awdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\s4o4.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\s4o4.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\s2l0.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\s2l0.obj
 read_sensor@register1 19 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 write_AD7147@i 1F 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\V1.debug.obj
@@ -545,7 +545,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/debug\V1.debug.obj
 _w32_spi 779C 0 CODE 0 text14 dist/default/debug\V1.debug.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\V1.debug.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\V1.debug.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Intern\AppData\Local\Temp\s4o4.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Intern\AppData\Local\Temp\s2l0.obj
 _BAUDCON1 FA7 0 ABS 0 - dist/default/debug\V1.debug.obj
 __Hcomram 0 0 ABS 0 comram dist/default/debug\V1.debug.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/debug\V1.debug.obj
@@ -669,8 +669,8 @@ __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\V1.debug.obj
 _init_uart 760A 0 CODE 0 text6 dist/default/debug\V1.debug.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\V1.debug.obj
 __end_of_w16_r16_spi 78FC 0 CODE 0 text12 dist/default/debug\V1.debug.obj
-stackhi E40 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\s4o4.obj
-stacklo 78 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\s4o4.obj
+stackhi E40 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\s2l0.obj
+stacklo 78 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\s2l0.obj
 __Lintcode 2 0 CODE 0 intcode dist/default/debug\V1.debug.obj
 __Lintret 0 0 ABS 0 intret dist/default/debug\V1.debug.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\V1.debug.obj
@@ -719,7 +719,7 @@ __Ltext14 0 0 ABS 0 text14 dist/default/debug\V1.debug.obj
 __Ltext15 0 0 ABS 0 text15 dist/default/debug\V1.debug.obj
 __Ltext16 0 0 ABS 0 text16 dist/default/debug\V1.debug.obj
 __Ltext17 0 0 ABS 0 text17 dist/default/debug\V1.debug.obj
-__ramtop F00 0 RAM 0 ramtop C:\Users\Intern\AppData\Local\Temp\s4o4.obj
+__ramtop F00 0 RAM 0 ramtop C:\Users\Intern\AppData\Local\Temp\s2l0.obj
 __Lpowerup 2 0 CODE 0 powerup dist/default/debug\V1.debug.obj
 w32_spi@address_high 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\V1.debug.obj

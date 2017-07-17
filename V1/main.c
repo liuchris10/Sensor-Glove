@@ -17,6 +17,7 @@ void main(void)
     unsigned int bb = 1020;
     while(1) 
     {   
+        //char indicator = uart_read_char();
         if (indicator == 'i')
         {
             uart_write_char('i');

@@ -9,10 +9,11 @@ import matplotlib.animation as animation
 from matplotlib import style
 
 from matplotlib import pyplot as plt
-from drawnow import *
+#from drawnow import *
 
 import serial_1 as sp1
 
+from openpyxl import Workbook
 import pandas as pd
 import numpy as np
 import sys
@@ -25,8 +26,9 @@ SMALL_FONT = ("Helvetica", 8)
 style.use("ggplot")
 
 
-rawdata = []  # Raw Data from Arduino.
-pressure = []  # Transforming the Data from the Arduino into something Useful
+rawdata = []  #Raw Data from Arduino.
+capacitance = [] #Capacitance value from the Sensor
+pressure = []  #Transforming the Data from the Arduino into something Useful
 seconds = [] #Time Since Data has been Captured
 
 f = Figure(figsize=(5,5), dpi=100)
@@ -35,6 +37,8 @@ plt.ion()
 start_time = 0
 stop_time = 0
 record = 0
+sensors = [0]*24
+
 
 def init_gui():
     app = SensorGlove()
@@ -64,10 +68,33 @@ def record_stop(value):
     if value == 1:
         record = 0
         start_time = 0
+    print(rawdata)
+    print(seconds)
+    save_data()
 
 def print_Name1():
         print("Carl!")
 
+def save_data():
+    global seconds
+    global rawdata
+    global capacitance
+    global pressure
+    dest_filename = 'C:/Users/Intern/Documents/Data/test2.xlsx'
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Sample #1"
+    ws.cell(row=1, column=1, value="Time (s)")
+    ws.cell(row=1, column=2, value="Raw Data (16 bit)")
+    ws.cell(row=1, column=3, value="Capacitance (pf)")
+    ws.cell(row=1, column=4, value="Pressure (Pa)")
+    for i in range(1,len(seconds)):
+        ws.cell(row=i+1, column=1, value=seconds[i-1])
+        ws.cell(row=i+1, column=2, value=rawdata[i-1])
+        ws.cell(row=i+1, column=3, value=capacitance[i-1])
+        ws.cell(row=i+1, column=4, value=pressure[i-1])
+
+    wb.save(filename = dest_filename)
 
 def makeFig():  # Create a function that makes our desired plot
     b = plt.figure(1)
@@ -88,6 +115,10 @@ def makeFig():  # Create a function that makes our desired plot
 def recordData(i):
     # start data collection
     global record
+    global rawdata
+    global pressure
+    global capacitance
+    global seconds
     data = 0
     if (record == 1):
         while (sp1.wait() == 0):
@@ -98,8 +129,10 @@ def recordData(i):
         print(data)
         rd = float(data)
         p = (rd / 65535) * 500
+        c = (rd *22) / 76
         count = time.time() - start_time
         rawdata.append(rd)
+        capacitance.append(c)
         pressure.append(p)
         seconds.append(count)
         a.clear()
@@ -186,10 +219,10 @@ class Help_Page(tk.Frame):
         label = tk.Label(self, text=("Welcome to Help Menu!"), font=TITLE_FONT)
         label.grid(row=0,column=0)
 
-        button1 = ttk.Button(self, text="go Back to intro Page", command=lambda: controller.show_frame(Intro_Page))
+        button1 = tk.Button(self, text="go Back to intro Page", command=lambda: controller.show_frame(Intro_Page))
         button1.grid(row=1,column=0)
 
-        button2 = ttk.Button(self, text="Go Back to main Page", command=lambda: controller.show_frame(Main_Page))
+        button2 = tk.Button(self, text="Go Back to main Page", command=lambda: controller.show_frame(Main_Page))
         button2.grid(row=2,column=0)
 
 class Main_Page(tk.Frame):
@@ -200,32 +233,69 @@ class Main_Page(tk.Frame):
         self.create_Button()
 
         canvas_frame = tk.Frame(self)
-        canvas_frame.grid(row=3, column=0,columnspan=2)
         canvas = FigureCanvasTkAgg(f, canvas_frame)
         canvas.show()
         canvas.get_tk_widget().pack(side=tk.BOTTOM)
+        canvas_frame.grid(row=6, column=0, columnspan=2)
 
         toolbar_frame = tk.Frame(self)
-        toolbar_frame.grid(row=4,column=0,columnspan=2)
         toolbar = NavigationToolbar2TkAgg(canvas, toolbar_frame)
         toolbar.update()
         canvas._tkcanvas.pack(side=tk.TOP)
-
+        toolbar_frame.grid(row=7, column=0, columnspan=2)
 
     def update_CheckBox_Sensors(self,s_toggle):
+        global sensors
+        if sensors[s_toggle-1] == 0:
+            sensors[s_toggle-1] = 1
+        else:
+            sensors[s_toggle-1] = 0
         #sp1.update_Sensor(8, int(s_toggle[b-1]))
-        print(s_toggle)
+        print(sensors)
 
     def create_CheckBox(self):
-        s1_check = tk.Checkbutton(self, text="Sensor 1", onvalue = 1, offvalue = 0, command=lambda: self.update_CheckBox_Sensors(1))
-        s1_check.grid(row=0, column=0)
-        s2_check = tk.Checkbutton(self, text="Sensor 2", onvalue = 1, offvalue = 0, command =lambda: self.update_CheckBox_Sensors(2))
-        s2_check.grid(row=1, column=0)
+        button = []
+        left = tk.Frame(self)
+        left.grid(row=0, column=0, columnspan=4)
+        right = tk.Frame(self)
+        right.grid(row=0, column=5, columnspan=4)
+        left_title = tk.Label(left, text='LEFT HAND', font=TITLE_FONT)
+        left_title.grid(row=0)
+        right_title = tk.Label(right, text='RIGHT HAND', font=TITLE_FONT)
+        right_title.grid(row=0)
+        for n in range(1,25):
+            checkbox_name = "Sensor %d" %(n)
+            if n > 12:
+                button.append(tk.Checkbutton(right, text=checkbox_name, onvalue = 1, offvalue = 0, command=lambda n=n: self.update_CheckBox_Sensors(n)))
+                if n > 20:
+                    row = 3
+                    column = 5 + (n-21)
+                elif n > 16:
+                    row = 2
+                    column = 5 + (n-17)
+                else:
+                    row = 1
+                    column = 5 + (n-13)
+            else:
+                button.append(tk.Checkbutton(left, text=checkbox_name, onvalue=1, offvalue=0, command=lambda n=n: self.update_CheckBox_Sensors(n)))
+                if n > 8:
+                    row = 3
+                    column = 0 + (n-9)
+                elif n > 4:
+                    row = 2
+                    column = 0 + (n-5)
+                else:
+                    row = 1
+                    column = 0 + (n-1)
+            button[n-1].grid(row=row, column=column)
+
     def create_Button(self):
-        button2 = ttk.Button(self, text="Start", command=lambda: record_start(record))
-        button2.grid(row=2,column=0)
-        button3 = ttk.Button(self, text="Stop", command=lambda: record_stop(record))
-        button3.grid(row=2,column=1)
+        button_frame = tk.Frame(self)
+        button2 = ttk.Button(button_frame, text="Start", command=lambda: record_start(record))
+        button2.grid(row=0,column=0)
+        button3 = ttk.Button(button_frame, text="Stop", command=lambda: record_stop(record))
+        button3.grid(row=0,column=1)
+        button_frame.grid(row=4,column=0)
 
 def main():
     init_gui()

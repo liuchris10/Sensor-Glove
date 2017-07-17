@@ -299,15 +299,15 @@
 "6 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"29
+"30
 [v main@sensor_1 sensor_1 `ui  1 a 2 70 ]
-"23
+"24
 [v main@device_ID device_ID `ui  1 a 2 68 ]
 "17
 [v main@bb bb `ui  1 a 2 66 ]
 "16
 [v main@indicator indicator `uc  1 a 1 72 ]
-"41
+"42
 } 0
 "39 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
 [v _uart_write_unsigned_int uart_write_unsigned_int `(v  1 e 1 0 ]

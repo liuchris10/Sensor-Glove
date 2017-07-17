@@ -8,34 +8,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.elf" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.elf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.obj" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.rlf" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.rlf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Gui.iml" afterPath="$PROJECT_DIR$/.idea/Gui.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui_ex.py" afterPath="$PROJECT_DIR$/gui_ex.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/AD7147.p1" afterPath="$PROJECT_DIR$/../build/default/debug/AD7147.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/AD7147.pre" afterPath="$PROJECT_DIR$/../build/default/debug/AD7147.pre" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/serial_1.py" afterPath="$PROJECT_DIR$/serial_1.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/main.p1" afterPath="$PROJECT_DIR$/../build/default/debug/main.p1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/main.pre" afterPath="$PROJECT_DIR$/../build/default/debug/main.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/micro_setup.p1" afterPath="$PROJECT_DIR$/../build/default/debug/micro_setup.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/micro_setup.pre" afterPath="$PROJECT_DIR$/../build/default/debug/micro_setup.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/spi.p1" afterPath="$PROJECT_DIR$/../build/default/debug/spi.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/spi.pre" afterPath="$PROJECT_DIR$/../build/default/debug/spi.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/uart.p1" afterPath="$PROJECT_DIR$/../build/default/debug/uart.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/uart.pre" afterPath="$PROJECT_DIR$/../build/default/debug/uart.pre" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.cmf" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.cmf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.lst" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.map" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sdb" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sym" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sym" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-default.mk" afterPath="$PROJECT_DIR$/../nbproject/Makefile-default.mk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../main.c" afterPath="$PROJECT_DIR$/../main.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-genesis.properties" afterPath="$PROJECT_DIR$/../nbproject/Makefile-genesis.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-impl.mk" afterPath="$PROJECT_DIR$/../nbproject/Makefile-impl.mk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-local-default.mk" afterPath="$PROJECT_DIR$/../nbproject/Makefile-local-default.mk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-variables.mk" afterPath="$PROJECT_DIR$/../nbproject/Makefile-variables.mk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Package-default.bash" afterPath="$PROJECT_DIR$/../nbproject/Package-default.bash" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/configurations.xml" afterPath="$PROJECT_DIR$/../nbproject/configurations.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/private/configurations.xml" afterPath="$PROJECT_DIR$/../nbproject/private/configurations.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/private/private.xml" afterPath="$PROJECT_DIR$/../nbproject/private/private.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ex1.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ex1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ex1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="49" />
+            <state relative-caret-position="102">
+              <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -68,20 +53,33 @@
       <file leaf-file-name="serial_1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serial_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="-20">
+              <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="-275">
+              <caret line="90" column="35" lean-forward="true" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#0#20#0" expanded="true" />
+                <marker date="1499933259277" expanded="true" signature="0:7" ph="import ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scratch.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="14" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,8 +88,8 @@
       <file leaf-file-name="gui_ex.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui_ex.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+            <state relative-caret-position="578">
+              <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -112,6 +110,7 @@
     <findStrings>
       <find>.pack()</find>
       <find>f</find>
+      <find>NORM_</find>
     </findStrings>
     <replaceStrings>
       <replace>.grid(row=1,column=1)</replace>
@@ -124,13 +123,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
-        <option value="$PROJECT_DIR$/serial_1.py" />
         <option value="$PROJECT_DIR$/ex1.py" />
-        <option value="$PROJECT_DIR$/gui.py" />
         <option value="$PROJECT_DIR$/gui_ex.py" />
+        <option value="$PROJECT_DIR$/serial_1.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+        <option value="$PROJECT_DIR$/gui.py" />
       </list>
     </option>
   </component>
@@ -156,7 +155,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -171,13 +169,15 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/gui.py" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python" />
+    <property name="settings.editor.splitter.proportion" value="0.23212537" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -191,7 +191,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.gui_ex">
+  <component name="RunManager" selected="Python.gui">
     <configuration default="false" name="ex1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -205,24 +205,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Gui" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Gui" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -277,6 +259,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Gui" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui_ex.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gui" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -380,18 +380,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.ex1" />
-      <item index="1" class="java.lang.String" itemvalue="Python.scratch_1" />
-      <item index="2" class="java.lang.String" itemvalue="Python.scratch_2" />
-      <item index="3" class="java.lang.String" itemvalue="Python.gui" />
-      <item index="4" class="java.lang.String" itemvalue="Python.gui_ex" />
+      <item index="1" class="java.lang.String" itemvalue="Python.scratch_2" />
+      <item index="2" class="java.lang.String" itemvalue="Python.gui" />
+      <item index="3" class="java.lang.String" itemvalue="Python.gui_ex" />
+      <item index="4" class="java.lang.String" itemvalue="Python.scratch" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.gui_ex" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ex1" />
-        <item index="2" class="java.lang.String" itemvalue="Python.gui" />
-        <item index="3" class="java.lang.String" itemvalue="Python.scratch_2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.scratch_1" />
+        <item index="0" class="java.lang.String" itemvalue="Python.gui" />
+        <item index="1" class="java.lang.String" itemvalue="Python.scratch" />
+        <item index="2" class="java.lang.String" itemvalue="Python.gui_ex" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ex1" />
+        <item index="4" class="java.lang.String" itemvalue="Python.scratch_2" />
       </list>
     </recent_temporary>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -441,11 +441,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="96" width="1696" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1797619" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15297619" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32497388" sideWeight="0.34479168" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.65520835" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32810867" sideWeight="0.34761906" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.65238094" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -692,50 +693,59 @@
     <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/cript1.py" />
     <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
     <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
     <entry file="file://C:/Program Files (x86)/Python/Lib/tkinter/__init__.py" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
-    <entry file="file://$PROJECT_DIR$/gui_ex.py">
+    <entry file="file://$USER_HOME$/Downloads/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="14" selection-end-column="31" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/serial_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ex1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-20">
+          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="-275">
+          <caret line="90" column="35" lean-forward="true" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+            <marker date="1499933259277" expanded="true" signature="0:7" ph="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui_ex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>

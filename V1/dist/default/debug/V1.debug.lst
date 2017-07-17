@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.42 build -159332390 
-                                                                                               Mon Jul 10 18:34:12 2017
+                                                                                               Wed Jul 12 23:53:38 2017
 
 Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130522
      1                           	processor	18F25K80
@@ -442,18 +442,18 @@ Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130
    423  007A7E                     l1937:
    424                           
    425                           ;main.c: 19: {
-   426                           ;main.c: 20: if (indicator == 'i')
+   426                           ;main.c: 21: if (indicator == 'i')
    427  007A7E  0E69               	movlw	105
    428  007A80  1849               	xorwf	main@indicator,w,c
    429  007A82  A4D8               	btfss	status,2,c
    430  007A84  D013               	goto	l1945
    431                           
-   432                           ;main.c: 21: {
-   433                           ;main.c: 22: uart_write_char('i');
+   432                           ;main.c: 22: {
+   433                           ;main.c: 23: uart_write_char('i');
    434  007A86  0E69               	movlw	105
    435  007A88  ECEE  F03A         	call	_uart_write_char
    436                           
-   437                           ;main.c: 23: unsigned int device_ID = get_ID(1);
+   437                           ;main.c: 24: unsigned int device_ID = get_ID(1);
    438  007A8C  0E00               	movlw	0
    439  007A8E  6E18               	movwf	get_ID@cdc+1,c
    440  007A90  0E01               	movlw	1
@@ -462,25 +462,25 @@ Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130
    443  007A98  C017  F045         	movff	?_get_ID,main@device_ID
    444  007A9C  C018  F046         	movff	?_get_ID+1,main@device_ID+1
    445                           
-   446                           ;main.c: 24: uart_write_unsigned_int(device_ID);
+   446                           ;main.c: 25: uart_write_unsigned_int(device_ID);
    447  007AA0  C045  F001         	movff	main@device_ID,uart_write_unsigned_int@number
    448  007AA4  C046  F002         	movff	main@device_ID+1,uart_write_unsigned_int@number+1
    449  007AA8  EC1A  F03B         	call	_uart_write_unsigned_int	;wreg free
    450  007AAC                     l1945:
    451                           
-   452                           ;main.c: 25: }
-   453                           ;main.c: 26: if (indicator == 's')
+   452                           ;main.c: 26: }
+   453                           ;main.c: 27: if (indicator == 's')
    454  007AAC  0E73               	movlw	115
    455  007AAE  1849               	xorwf	main@indicator,w,c
    456  007AB0  A4D8               	btfss	status,2,c
    457  007AB2  D013               	goto	l1953
    458                           
-   459                           ;main.c: 27: {
-   460                           ;main.c: 28: uart_write_char('s');
+   459                           ;main.c: 28: {
+   460                           ;main.c: 29: uart_write_char('s');
    461  007AB4  0E73               	movlw	115
    462  007AB6  ECEE  F03A         	call	_uart_write_char
    463                           
-   464                           ;main.c: 29: unsigned int sensor_1 = read_sensor(13);
+   464                           ;main.c: 30: unsigned int sensor_1 = read_sensor(13);
    465  007ABA  0E00               	movlw	0
    466  007ABC  6E18               	movwf	read_sensor@sensor+1,c
    467  007ABE  0E0D               	movlw	13
@@ -489,32 +489,32 @@ Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130
    470  007AC6  C017  F047         	movff	?_read_sensor,main@sensor_1
    471  007ACA  C018  F048         	movff	?_read_sensor+1,main@sensor_1+1
    472                           
-   473                           ;main.c: 30: uart_write_unsigned_int(sensor_1);
+   473                           ;main.c: 31: uart_write_unsigned_int(sensor_1);
    474  007ACE  C047  F001         	movff	main@sensor_1,uart_write_unsigned_int@number
    475  007AD2  C048  F002         	movff	main@sensor_1+1,uart_write_unsigned_int@number+1
    476  007AD6  EC1A  F03B         	call	_uart_write_unsigned_int	;wreg free
    477  007ADA                     l1953:
    478                           
-   479                           ;main.c: 31: }
-   480                           ;main.c: 32: if (indicator == 'f')
+   479                           ;main.c: 32: }
+   480                           ;main.c: 33: if (indicator == 'f')
    481  007ADA  0E66               	movlw	102
    482  007ADC  1849               	xorwf	main@indicator,w,c
    483  007ADE  A4D8               	btfss	status,2,c
    484  007AE0  D009               	goto	l1959
    485                           
-   486                           ;main.c: 33: {
-   487                           ;main.c: 34: uart_write_char('f');
+   486                           ;main.c: 34: {
+   487                           ;main.c: 35: uart_write_char('f');
    488  007AE2  0E66               	movlw	102
    489  007AE4  ECEE  F03A         	call	_uart_write_char
    490                           
-   491                           ;main.c: 36: uart_write_unsigned_int(bb);
+   491                           ;main.c: 37: uart_write_unsigned_int(bb);
    492  007AE8  C043  F001         	movff	main@bb,uart_write_unsigned_int@number
    493  007AEC  C044  F002         	movff	main@bb+1,uart_write_unsigned_int@number+1
    494  007AF0  EC1A  F03B         	call	_uart_write_unsigned_int	;wreg free
    495  007AF4                     l1959:
    496                           
-   497                           ;main.c: 37: }
-   498                           ;main.c: 38: delay_ms(500);
+   497                           ;main.c: 38: }
+   498                           ;main.c: 39: delay_ms(500);
    499  007AF4  0E01               	movlw	1
    500  007AF6  6E0A               	movwf	delay_ms@n+1,c
    501  007AF8  0EF4               	movlw	244
@@ -3263,7 +3263,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.42 build -159332390 
-Symbol Table                                                                                   Mon Jul 10 18:34:12 2017
+Symbol Table                                                                                   Wed Jul 12 23:53:38 2017
 
                      _SSPSTATbits 000FC7                                l38 782C  
                               l81 766A                      ___awdiv@sign 0006  

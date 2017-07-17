@@ -13481,76 +13481,76 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 19: {
 "19
 {
-[; ;main.c: 20: if (indicator == 'i')
-"20
-[e $ ! == -> _indicator `ui -> 105 `ui 1525  ]
-[; ;main.c: 21: {
+[; ;main.c: 21: if (indicator == 'i')
 "21
-{
-[; ;main.c: 22: uart_write_char('i');
+[e $ ! == -> _indicator `ui -> 105 `ui 1525  ]
+[; ;main.c: 22: {
 "22
-[e ( _uart_write_char (1 -> -> 105 `ui `uc ]
+{
+[; ;main.c: 23: uart_write_char('i');
 "23
-[v _device_ID `ui ~T0 @X0 1 a ]
-[; ;main.c: 23: unsigned int device_ID = get_ID(1);
-[e = _device_ID ( _get_ID (1 -> -> 1 `i `ui ]
-[; ;main.c: 24: uart_write_unsigned_int(device_ID);
+[e ( _uart_write_char (1 -> -> 105 `ui `uc ]
 "24
-[e ( _uart_write_unsigned_int (1 _device_ID ]
+[v _device_ID `ui ~T0 @X0 1 a ]
+[; ;main.c: 24: unsigned int device_ID = get_ID(1);
+[e = _device_ID ( _get_ID (1 -> -> 1 `i `ui ]
+[; ;main.c: 25: uart_write_unsigned_int(device_ID);
 "25
+[e ( _uart_write_unsigned_int (1 _device_ID ]
+"26
 }
 [e :U 1525 ]
-[; ;main.c: 25: }
-[; ;main.c: 26: if (indicator == 's')
-"26
-[e $ ! == -> _indicator `ui -> 115 `ui 1526  ]
-[; ;main.c: 27: {
+[; ;main.c: 26: }
+[; ;main.c: 27: if (indicator == 's')
 "27
-{
-[; ;main.c: 28: uart_write_char('s');
+[e $ ! == -> _indicator `ui -> 115 `ui 1526  ]
+[; ;main.c: 28: {
 "28
-[e ( _uart_write_char (1 -> -> 115 `ui `uc ]
+{
+[; ;main.c: 29: uart_write_char('s');
 "29
-[v _sensor_1 `ui ~T0 @X0 1 a ]
-[; ;main.c: 29: unsigned int sensor_1 = read_sensor(13);
-[e = _sensor_1 ( _read_sensor (1 -> -> 13 `i `ui ]
-[; ;main.c: 30: uart_write_unsigned_int(sensor_1);
+[e ( _uart_write_char (1 -> -> 115 `ui `uc ]
 "30
-[e ( _uart_write_unsigned_int (1 _sensor_1 ]
+[v _sensor_1 `ui ~T0 @X0 1 a ]
+[; ;main.c: 30: unsigned int sensor_1 = read_sensor(13);
+[e = _sensor_1 ( _read_sensor (1 -> -> 13 `i `ui ]
+[; ;main.c: 31: uart_write_unsigned_int(sensor_1);
 "31
+[e ( _uart_write_unsigned_int (1 _sensor_1 ]
+"32
 }
 [e :U 1526 ]
-[; ;main.c: 31: }
-[; ;main.c: 32: if (indicator == 'f')
-"32
-[e $ ! == -> _indicator `ui -> 102 `ui 1527  ]
-[; ;main.c: 33: {
+[; ;main.c: 32: }
+[; ;main.c: 33: if (indicator == 'f')
 "33
-{
-[; ;main.c: 34: uart_write_char('f');
+[e $ ! == -> _indicator `ui -> 102 `ui 1527  ]
+[; ;main.c: 34: {
 "34
+{
+[; ;main.c: 35: uart_write_char('f');
+"35
 [e ( _uart_write_char (1 -> -> 102 `ui `uc ]
-[; ;main.c: 36: uart_write_unsigned_int(bb);
-"36
-[e ( _uart_write_unsigned_int (1 _bb ]
+[; ;main.c: 37: uart_write_unsigned_int(bb);
 "37
+[e ( _uart_write_unsigned_int (1 _bb ]
+"38
 }
 [e :U 1527 ]
-[; ;main.c: 37: }
-[; ;main.c: 38: delay_ms(500);
-"38
-[e ( _delay_ms (1 -> 500 `i ]
+[; ;main.c: 38: }
+[; ;main.c: 39: delay_ms(500);
 "39
+[e ( _delay_ms (1 -> 500 `i ]
+"40
 }
 [e :U 1522 ]
 "18
 [e $U 1523  ]
 [e :U 1524 ]
-[; ;main.c: 39: }
-[; ;main.c: 40: return;
-"40
-[e $UE 1521  ]
-[; ;main.c: 41: }
+[; ;main.c: 40: }
+[; ;main.c: 41: return;
 "41
+[e $UE 1521  ]
+[; ;main.c: 42: }
+"42
 [e :UE 1521 ]
 }
