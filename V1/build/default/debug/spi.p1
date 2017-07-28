@@ -13467,6 +13467,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x FCMEN=OFF ]
 "18
 [p x IESO=OFF ]
+[; ;micro_setup.h: 66: extern unsigned int CDC_RESULT_REGISTER[12];
 [; ;micro_setup.h: 68: extern unsigned int* CDC_RESULT[];
 [; ;micro_setup.h: 183: void setup_mcu(void);
 [; ;micro_setup.h: 185: void setup_port(void);

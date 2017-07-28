@@ -1,10 +1,16 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"7 AD7147.h
+"16 AD7147.h
+[v _get_CDC `(v ~T0 @X0 0 ef2`ui`ui ]
+"7
 [v _write_AD7147 `(v ~T0 @X0 0 ef3`ui`ui`*ui ]
+"9
+[v _read_AD7147_interrupt `(ui ~T0 @X0 0 ef1`ui ]
 "6 spi.h
 [v _w32_spi `(v ~T0 @X0 0 ef2`ui`ui ]
 "12
 [v _w16_r16_spi `(ui ~T0 @X0 0 ef1`ui ]
+"17 AD7147.h
+[v _sensor_CDC `(v ~T0 @X0 0 ef2`ui`ui ]
 "30443 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f25k80.h
 [s S1156 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1156 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
@@ -59,10 +65,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1359 . . . . . . . . . . . . . ]
 "34795
 [v _SSPSTATbits `VS1359 ~T0 @X0 0 e@4039 ]
-"68 micro_setup.h
-[v _CDC_RESULT `*ui ~T0 @X0 -> 0 `x e ]
-"14 AD7147.h
-[v _get_CDC `(v ~T0 @X0 0 ef2`ui`ui ]
+"189 micro_setup.h
+[v _delay_ms `(v ~T0 @X0 0 ef1`i ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -13450,20 +13454,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x FCMEN=OFF ]
 "18
 [p x IESO=OFF ]
+[; ;micro_setup.h: 66: extern unsigned int CDC_RESULT_REGISTER[12];
 [; ;micro_setup.h: 68: extern unsigned int* CDC_RESULT[];
 [; ;micro_setup.h: 183: void setup_mcu(void);
 [; ;micro_setup.h: 185: void setup_port(void);
 [; ;micro_setup.h: 187: void init_uart(void);
 [; ;micro_setup.h: 189: void delay_ms(int n);
-[; ;AD7147.h: 6: void setup_AD7147(void);
+[; ;AD7147.h: 6: void setup_AD7147(unsigned int);
 [; ;AD7147.h: 7: void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[]);
 [; ;AD7147.h: 8: unsigned int read_AD7147(unsigned int, unsigned int);
-[; ;AD7147.h: 9: static int ServiceAD7147Isr(void);
-[; ;AD7147.h: 10: unsigned int read_sensor(unsigned int);
-[; ;AD7147.h: 11: unsigned int get_ID(unsigned int);
-[; ;AD7147.h: 12: void read_sensors(void);
-[; ;AD7147.h: 13: void switch_LED(unsigned int, unsigned int);
-[; ;AD7147.h: 14: void get_CDC(unsigned int, unsigned int);
+[; ;AD7147.h: 9: unsigned int read_AD7147_interrupt(unsigned int);
+[; ;AD7147.h: 10: static int ServiceAD7147Isr(void);
+[; ;AD7147.h: 11: unsigned int read_sensor(unsigned int);
+[; ;AD7147.h: 12: unsigned int get_ID(unsigned int);
+[; ;AD7147.h: 13: void read_sensors(void);
+[; ;AD7147.h: 14: void switch_LED(unsigned int, unsigned int);
+[; ;AD7147.h: 15: void blink_LED(unsigned int);
+[; ;AD7147.h: 16: void get_CDC(unsigned int, unsigned int);
+[; ;AD7147.h: 17: void sensor_CDC(unsigned int, unsigned int);
 [; ;spi.h: 4: void setup_spi(void);
 [; ;spi.h: 6: void w32_spi(unsigned int, unsigned int);
 [; ;spi.h: 8: void w16_spi(unsigned int);
@@ -13476,857 +13484,1002 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;uart.h: 14: void uart_write_32(unsigned int, unsigned int);
 [; ;uart.h: 16: char uart_tx_empty(void);
 [; ;uart.h: 18: void uart_write_string(const char *text);
-[; ;uart.h: 20: char uart_int_to_string(int number);
+[; ;uart.h: 20: char uart_int_to_string(unsigned int);
 [; ;uart.h: 22: char uart_data_ready(void);
 [; ;uart.h: 24: char uart_read_char(void);
 [; ;uart.h: 26: void uart_read_text(char *Output, unsigned int length);
 "6 AD7147.c
-[v _setup_AD7147 `(v ~T0 @X0 1 ef ]
+[v _setup_AD7147 `(v ~T0 @X0 1 ef1`ui ]
 "7
 {
-[; ;AD7147.c: 6: void setup_AD7147(void)
+[; ;AD7147.c: 6: void setup_AD7147(unsigned int cdc)
 [; ;AD7147.c: 7: {
 [e :U _setup_AD7147 ]
+"6
+[v _cdc `ui ~T0 @X0 1 r1 ]
+"7
 [f ]
 "8
 [v _StageBuffer `ui ~T0 @X0 -> 8 `i a ]
-[; ;AD7147.c: 8: unsigned int StageBuffer[8];
-[; ;AD7147.c: 26: StageBuffer[0] = 0x2000;
-"26
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8192 `i `ui ]
-[; ;AD7147.c: 28: StageBuffer[1] = 0x0000;
-"28
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
-[; ;AD7147.c: 29: StageBuffer[2] = 0x0100;
-"29
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 30: StageBuffer[3] = 0x2121;
-"30
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 31: StageBuffer[4] = 4000;
-"31
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 32: StageBuffer[5] = 4000;
-"32
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 33: StageBuffer[6] = 4250;
-"33
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 34: StageBuffer[7] = 4250;
-"34
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 35: write_AD7147(0x80, 8, StageBuffer);
-"35
-[e ( _write_AD7147 (3 , , -> -> 128 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 40: StageBuffer[0]=0x3FFB;
-"40
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16379 `i `ui ]
-[; ;AD7147.c: 41: StageBuffer[1]=0x1FFF;
-"41
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
-[; ;AD7147.c: 42: StageBuffer[2]=0x0100;
-"42
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 43: StageBuffer[3]=0x2121;
-"43
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 44: StageBuffer[4]=4000;
-"44
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 45: StageBuffer[5]=4000;
-"45
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 46: StageBuffer[6]=4250;
-"46
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 47: StageBuffer[7]=4250;
-"47
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 48: write_AD7147(0x88, 8, StageBuffer);
-"48
-[e ( _write_AD7147 (3 , , -> -> 136 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 53: StageBuffer[0]=0x3FEF;
-"53
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16367 `i `ui ]
-[; ;AD7147.c: 54: StageBuffer[1]=0x1FFF;
-"54
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
-[; ;AD7147.c: 55: StageBuffer[2]=0x0100;
-"55
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 56: StageBuffer[3]=0x2121;
-"56
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 57: StageBuffer[4]=4000;
-"57
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 58: StageBuffer[5]=4000;
-"58
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 59: StageBuffer[6]=4250;
-"59
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 60: StageBuffer[7]=4250;
-"60
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 61: write_AD7147(0x90, 8, StageBuffer);
-"61
-[e ( _write_AD7147 (3 , , -> -> 144 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 66: StageBuffer[0]=0x3FBF;
-"66
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16319 `i `ui ]
-[; ;AD7147.c: 67: StageBuffer[1]=0x1FFF;
-"67
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
-[; ;AD7147.c: 68: StageBuffer[2]=0x0100;
-"68
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 69: StageBuffer[3]=0x2121;
-"69
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 70: StageBuffer[4]=4000;
-"70
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 71: StageBuffer[5]=4000;
-"71
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 72: StageBuffer[6]=4250;
-"72
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 73: StageBuffer[7]=4250;
-"73
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 74: write_AD7147(0x98, 8, StageBuffer);
-"74
-[e ( _write_AD7147 (3 , , -> -> 152 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 79: StageBuffer[0]=0x3EFF;
-"79
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16127 `i `ui ]
-[; ;AD7147.c: 80: StageBuffer[1]=0x1FFF;
-"80
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
-[; ;AD7147.c: 81: StageBuffer[2]=0x0100;
-"81
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 82: StageBuffer[3]=0x2121;
-"82
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 83: StageBuffer[4]=4000;
-"83
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 84: StageBuffer[5]=4000;
-"84
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 85: StageBuffer[6]=4250;
-"85
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 86: StageBuffer[7]=4250;
-"86
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 87: write_AD7147(0xA0, 8, StageBuffer);
-"87
-[e ( _write_AD7147 (3 , , -> -> 160 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 92: StageBuffer[0]=0x3BFF;
-"92
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 15359 `i `ui ]
-[; ;AD7147.c: 93: StageBuffer[1]=0x1FFF;
-"93
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
-[; ;AD7147.c: 94: StageBuffer[2]=0x0100;
-"94
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 95: StageBuffer[3]=0x2121;
-"95
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 96: StageBuffer[4]=4000;
-"96
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 97: StageBuffer[5]=4000;
-"97
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 98: StageBuffer[6]=4250;
-"98
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 99: StageBuffer[7]=4250;
-"99
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 100: write_AD7147(0xA8, 8, StageBuffer);
-"100
-[e ( _write_AD7147 (3 , , -> -> 168 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 105: StageBuffer[0]=0x2FFF;
-"105
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 12287 `i `ui ]
-[; ;AD7147.c: 106: StageBuffer[1]=0x1FFF;
-"106
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
-[; ;AD7147.c: 107: StageBuffer[2]=0x0100;
-"107
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 108: StageBuffer[3]=0x2121;
-"108
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 109: StageBuffer[4]=4000;
-"109
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 110: StageBuffer[5]=4000;
-"110
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 111: StageBuffer[6]=4250;
-"111
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 112: StageBuffer[7]=4250;
-"112
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 113: write_AD7147(0xB0, 8, StageBuffer);
-"113
-[e ( _write_AD7147 (3 , , -> -> 176 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 118: StageBuffer[0]=0x3FFF;
-"118
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
-[; ;AD7147.c: 119: StageBuffer[1]=0x1FFE;
-"119
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8190 `i `ui ]
-[; ;AD7147.c: 120: StageBuffer[2]=0x0100;
-"120
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 121: StageBuffer[3]=0x2121;
-"121
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 122: StageBuffer[4]=4000;
-"122
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 123: StageBuffer[5]=4000;
-"123
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 124: StageBuffer[6]=4250;
-"124
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 125: StageBuffer[7]=4250;
-"125
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 126: write_AD7147(0xB8, 8, StageBuffer);
-"126
-[e ( _write_AD7147 (3 , , -> -> 184 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 131: StageBuffer[0]=0x3FFF;
-"131
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
-[; ;AD7147.c: 132: StageBuffer[1]=0x1FFB;
-"132
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8187 `i `ui ]
-[; ;AD7147.c: 133: StageBuffer[2]=0x0100;
-"133
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 134: StageBuffer[3]=0x2121;
-"134
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 135: StageBuffer[4]=4000;
-"135
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 136: StageBuffer[5]=4000;
-"136
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 137: StageBuffer[6]=4250;
-"137
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 138: StageBuffer[7]=4250;
-"138
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 139: write_AD7147(0xC0, 8, StageBuffer);
-"139
-[e ( _write_AD7147 (3 , , -> -> 192 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 144: StageBuffer[0]=0x3FFF;
-"144
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
-[; ;AD7147.c: 145: StageBuffer[1]=0x1FEF;
-"145
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8175 `i `ui ]
-[; ;AD7147.c: 146: StageBuffer[2]=0x0100;
-"146
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 147: StageBuffer[3]=0x2121;
-"147
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 148: StageBuffer[4]=4000;
-"148
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 149: StageBuffer[5]=4000;
-"149
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 150: StageBuffer[6]=4250;
-"150
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 151: StageBuffer[7]=4250;
-"151
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 152: write_AD7147(0xC8, 8, StageBuffer);
-"152
-[e ( _write_AD7147 (3 , , -> -> 200 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 157: StageBuffer[0]=0x3FFF;
-"157
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
-[; ;AD7147.c: 158: StageBuffer[1]=0x1FBF;
-"158
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8127 `i `ui ]
-[; ;AD7147.c: 159: StageBuffer[2]=0x0100;
-"159
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 160: StageBuffer[3]=0x2121;
-"160
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 161: StageBuffer[4]=4000;
-"161
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 162: StageBuffer[5]=4000;
-"162
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 163: StageBuffer[6]=4250;
-"163
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 164: StageBuffer[7]=4250;
-"164
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 165: write_AD7147(0xD0, 8, StageBuffer);
-"165
-[e ( _write_AD7147 (3 , , -> -> 208 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-[; ;AD7147.c: 170: StageBuffer[0]=0x3FFF;
-"170
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
-[; ;AD7147.c: 171: StageBuffer[1]=0x1EFF;
-"171
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 7935 `i `ui ]
-[; ;AD7147.c: 172: StageBuffer[2]=0x0100;
-"172
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
-[; ;AD7147.c: 173: StageBuffer[3]=0x2121;
-"173
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
-[; ;AD7147.c: 174: StageBuffer[4]=4000;
-"174
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 175: StageBuffer[5]=4000;
-"175
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 176: StageBuffer[6]=4250;
-"176
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 177: StageBuffer[7]=4250;
-"177
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
-[; ;AD7147.c: 178: write_AD7147(0xD8, 8, StageBuffer);
-"178
-[e ( _write_AD7147 (3 , , -> -> 216 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
-"184
+"9
 [v _AD7147Registers `ui ~T0 @X0 -> 8 `i a ]
-[; ;AD7147.c: 184: unsigned int AD7147Registers[8];
-[; ;AD7147.c: 185: AD7147Registers[0] = 0x02B2;
-"185
-[e = *U + &U _AD7147Registers * -> -> -> 0 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 690 `i `ui ]
-[; ;AD7147.c: 186: AD7147Registers[1] = 0x0000;
-"186
+[; ;AD7147.c: 8: unsigned int StageBuffer[8];
+[; ;AD7147.c: 9: unsigned int AD7147Registers[8];
+[; ;AD7147.c: 10: get_CDC(cdc,0);
+"10
+[e ( _get_CDC (2 , _cdc -> -> 0 `i `ui ]
+[; ;AD7147.c: 25: StageBuffer[0] = 0xFFFE;
+"25
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65534 `ui ]
+[; ;AD7147.c: 26: StageBuffer[1] = 0x1FFF;
+"26
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
+[; ;AD7147.c: 27: StageBuffer[2] = 0x0100;
+"27
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
+[; ;AD7147.c: 28: StageBuffer[3] = 0x2121;
+"28
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
+[; ;AD7147.c: 29: StageBuffer[4] = 4000;
+"29
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 30: StageBuffer[5] = 4000;
+"30
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 31: StageBuffer[6] = 4250;
+"31
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
+[; ;AD7147.c: 32: StageBuffer[7] = 4250;
+"32
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
+[; ;AD7147.c: 33: write_AD7147(0x080, 8, StageBuffer);
+"33
+[e ( _write_AD7147 (3 , , -> -> 128 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 38: StageBuffer[0]=0x3FFB;
+"38
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16379 `i `ui ]
+[; ;AD7147.c: 39: StageBuffer[1]=0x1FFF;
+"39
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
+[; ;AD7147.c: 40: StageBuffer[2]=0x0100;
+"40
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
+[; ;AD7147.c: 41: StageBuffer[3]=0x2121;
+"41
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
+[; ;AD7147.c: 42: StageBuffer[4]=4000;
+"42
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 43: StageBuffer[5]=4000;
+"43
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 44: StageBuffer[6]=4250;
+"44
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
+[; ;AD7147.c: 45: StageBuffer[7]=4250;
+"45
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
+[; ;AD7147.c: 46: write_AD7147(0x088, 8, StageBuffer);
+"46
+[e ( _write_AD7147 (3 , , -> -> 136 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 51: StageBuffer[0]=0x3FEF;
+"51
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16367 `i `ui ]
+[; ;AD7147.c: 52: StageBuffer[1]=0x1FFF;
+"52
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
+[; ;AD7147.c: 53: StageBuffer[2]=0x0100;
+"53
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
+[; ;AD7147.c: 54: StageBuffer[3]=0x2121;
+"54
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
+[; ;AD7147.c: 55: StageBuffer[4]=4000;
+"55
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 56: StageBuffer[5]=4000;
+"56
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 57: StageBuffer[6]=4250;
+"57
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
+[; ;AD7147.c: 58: StageBuffer[7]=4250;
+"58
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
+[; ;AD7147.c: 59: write_AD7147(0x090, 8, StageBuffer);
+"59
+[e ( _write_AD7147 (3 , , -> -> 144 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 64: StageBuffer[0]=0x3FBF;
+"64
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16319 `i `ui ]
+[; ;AD7147.c: 65: StageBuffer[1]=0x1FFF;
+"65
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
+[; ;AD7147.c: 66: StageBuffer[2]=0x0100;
+"66
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
+[; ;AD7147.c: 67: StageBuffer[3]=0x2121;
+"67
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
+[; ;AD7147.c: 68: StageBuffer[4]=4000;
+"68
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 69: StageBuffer[5]=4000;
+"69
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 70: StageBuffer[6]=4250;
+"70
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
+[; ;AD7147.c: 71: StageBuffer[7]=4250;
+"71
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4250 `i `ui ]
+[; ;AD7147.c: 72: write_AD7147(0x098, 8, StageBuffer);
+"72
+[e ( _write_AD7147 (3 , , -> -> 152 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 77: StageBuffer[0]=0xFFFF;
+"77
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65535 `ui ]
+[; ;AD7147.c: 78: StageBuffer[1]=0x3FFF;
+"78
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
+[; ;AD7147.c: 79: StageBuffer[2]=0x0000;
+"79
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
+[; ;AD7147.c: 80: StageBuffer[3]=0x2626;
+"80
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 9766 `i `ui ]
+[; ;AD7147.c: 81: StageBuffer[4]=3000;
+"81
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 82: StageBuffer[5]=3000;
+"82
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 83: StageBuffer[6]=4000;
+"83
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 84: StageBuffer[7]=4000;
+"84
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 85: write_AD7147(0x0A0, 8, StageBuffer);
+"85
+[e ( _write_AD7147 (3 , , -> -> 160 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 90: StageBuffer[0]=0xFFFF;
+"90
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65535 `ui ]
+[; ;AD7147.c: 91: StageBuffer[1]=0x3FFF;
+"91
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
+[; ;AD7147.c: 92: StageBuffer[2]=0x0000;
+"92
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
+[; ;AD7147.c: 93: StageBuffer[3]=0x2626;
+"93
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 9766 `i `ui ]
+[; ;AD7147.c: 94: StageBuffer[4]=3000;
+"94
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 95: StageBuffer[5]=3000;
+"95
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 96: StageBuffer[6]=4000;
+"96
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 97: StageBuffer[7]=4000;
+"97
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 98: write_AD7147(0x0A8, 8, StageBuffer);
+"98
+[e ( _write_AD7147 (3 , , -> -> 168 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 103: StageBuffer[0]=0xFFFF;
+"103
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65535 `ui ]
+[; ;AD7147.c: 104: StageBuffer[1]=0x3FFF;
+"104
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
+[; ;AD7147.c: 105: StageBuffer[2]=0x0000;
+"105
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
+[; ;AD7147.c: 106: StageBuffer[3]=0x2626;
+"106
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 9766 `i `ui ]
+[; ;AD7147.c: 107: StageBuffer[4]=3000;
+"107
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 108: StageBuffer[5]=3000;
+"108
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 109: StageBuffer[6]=4000;
+"109
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 110: StageBuffer[7]=4000;
+"110
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 111: write_AD7147(0x0B0, 8, StageBuffer);
+"111
+[e ( _write_AD7147 (3 , , -> -> 176 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 116: StageBuffer[0]=0xFFFF;
+"116
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65535 `ui ]
+[; ;AD7147.c: 117: StageBuffer[1]=0x3FFE;
+"117
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16382 `i `ui ]
+[; ;AD7147.c: 118: StageBuffer[2]=0x0000;
+"118
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
+[; ;AD7147.c: 119: StageBuffer[3]=0x2626;
+"119
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 9766 `i `ui ]
+[; ;AD7147.c: 120: StageBuffer[4]=3000;
+"120
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 121: StageBuffer[5]=3000;
+"121
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 122: StageBuffer[6]=4000;
+"122
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 123: StageBuffer[7]=4000;
+"123
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 124: write_AD7147(0x0B8, 8, StageBuffer);
+"124
+[e ( _write_AD7147 (3 , , -> -> 184 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 129: StageBuffer[0]=0xFFFF;
+"129
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65535 `ui ]
+[; ;AD7147.c: 130: StageBuffer[1]=0x3FFF;
+"130
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
+[; ;AD7147.c: 131: StageBuffer[2]=0x0000;
+"131
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
+[; ;AD7147.c: 132: StageBuffer[3]=0x2626;
+"132
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 9766 `i `ui ]
+[; ;AD7147.c: 133: StageBuffer[4]=3000;
+"133
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 134: StageBuffer[5]=3000;
+"134
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 135: StageBuffer[6]=4000;
+"135
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 136: StageBuffer[7]=4000;
+"136
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 137: write_AD7147(0x0C0, 8, StageBuffer);
+"137
+[e ( _write_AD7147 (3 , , -> -> 192 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 142: StageBuffer[0]=0xFFFF;
+"142
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65535 `ui ]
+[; ;AD7147.c: 143: StageBuffer[1]=0x3FFF;
+"143
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
+[; ;AD7147.c: 144: StageBuffer[2]=0x0000;
+"144
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
+[; ;AD7147.c: 145: StageBuffer[3]=0x2626;
+"145
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 9766 `i `ui ]
+[; ;AD7147.c: 146: StageBuffer[4]=3000;
+"146
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 147: StageBuffer[5]=3000;
+"147
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 148: StageBuffer[6]=4000;
+"148
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 149: StageBuffer[7]=4000;
+"149
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 150: write_AD7147(0x0C8, 8, StageBuffer);
+"150
+[e ( _write_AD7147 (3 , , -> -> 200 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 155: StageBuffer[0]=0xFFFF;
+"155
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65535 `ui ]
+[; ;AD7147.c: 156: StageBuffer[1]=0x3FFF;
+"156
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
+[; ;AD7147.c: 157: StageBuffer[2]=0x0000;
+"157
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
+[; ;AD7147.c: 158: StageBuffer[3]=0x2626;
+"158
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 9766 `i `ui ]
+[; ;AD7147.c: 159: StageBuffer[4]=3000;
+"159
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 160: StageBuffer[5]=3000;
+"160
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 161: StageBuffer[6]=4000;
+"161
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 162: StageBuffer[7]=4000;
+"162
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 163: write_AD7147(0x0D0, 8, StageBuffer);
+"163
+[e ( _write_AD7147 (3 , , -> -> 208 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 168: StageBuffer[0]=0xFFFF;
+"168
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65535 `ui ]
+[; ;AD7147.c: 169: StageBuffer[1]=0x3FFF;
+"169
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
+[; ;AD7147.c: 170: StageBuffer[2]=0x0000;
+"170
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
+[; ;AD7147.c: 171: StageBuffer[3]=0x2626;
+"171
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 9766 `i `ui ]
+[; ;AD7147.c: 172: StageBuffer[4]=3000;
+"172
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 173: StageBuffer[5]=3000;
+"173
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 3000 `i `ui ]
+[; ;AD7147.c: 174: StageBuffer[6]=4000;
+"174
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 175: StageBuffer[7]=4000;
+"175
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[; ;AD7147.c: 176: write_AD7147(0x0D8, 8, StageBuffer);
+"176
+[e ( _write_AD7147 (3 , , -> -> 216 `i `ui -> -> 8 `i `ui &U _StageBuffer ]
+[; ;AD7147.c: 183: AD7147Registers[0] = 0x82B2;
+"183
+[e = *U + &U _AD7147Registers * -> -> -> 0 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> 33458 `ui ]
+[; ;AD7147.c: 184: AD7147Registers[1] = 0x0000;
+"184
 [e = *U + &U _AD7147Registers * -> -> -> 1 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 0 `i `ui ]
-[; ;AD7147.c: 187: AD7147Registers[2] = 0x3230;
-"187
+[; ;AD7147.c: 185: AD7147Registers[2] = 0x3230;
+"185
 [e = *U + &U _AD7147Registers * -> -> -> 2 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 12848 `i `ui ]
-[; ;AD7147.c: 188: AD7147Registers[3] = 0x0419;
-"188
+[; ;AD7147.c: 186: AD7147Registers[3] = 0x0419;
+"186
 [e = *U + &U _AD7147Registers * -> -> -> 3 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 1049 `i `ui ]
-[; ;AD7147.c: 189: AD7147Registers[4] = 0x0832;
-"189
+[; ;AD7147.c: 187: AD7147Registers[4] = 0x0832;
+"187
 [e = *U + &U _AD7147Registers * -> -> -> 4 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 2098 `i `ui ]
-[; ;AD7147.c: 190: AD7147Registers[5] = 0x0000;
-"190
+[; ;AD7147.c: 188: AD7147Registers[5] = 0x0000;
+"188
 [e = *U + &U _AD7147Registers * -> -> -> 5 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 0 `i `ui ]
-[; ;AD7147.c: 191: AD7147Registers[6] = 0x0000;
-"191
+[; ;AD7147.c: 189: AD7147Registers[6] = 0x0000;
+"189
 [e = *U + &U _AD7147Registers * -> -> -> 6 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 0 `i `ui ]
-[; ;AD7147.c: 192: AD7147Registers[7] = 0x0000;
-"192
+[; ;AD7147.c: 190: AD7147Registers[7] = 0x0000;
+"190
 [e = *U + &U _AD7147Registers * -> -> -> 7 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 0 `i `ui ]
-[; ;AD7147.c: 193: write_AD7147(0x000, 8, AD7147Registers);
-"193
+[; ;AD7147.c: 191: write_AD7147(0x000, 8, AD7147Registers);
+"191
 [e ( _write_AD7147 (3 , , -> -> 0 `i `ui -> -> 8 `i `ui &U _AD7147Registers ]
-[; ;AD7147.c: 196: AD7147Registers[1] = 0x0FFF;
-"196
-[e = *U + &U _AD7147Registers * -> -> -> 1 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 4095 `i `ui ]
-[; ;AD7147.c: 197: write_AD7147(0x001, 1, AD7147Registers[1]);
+[; ;AD7147.c: 194: AD7147Registers[0] = 0x0FFF;
+"194
+[e = *U + &U _AD7147Registers * -> -> -> 0 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 4095 `i `ui ]
+[; ;AD7147.c: 195: write_AD7147(0x001, 1, AD7147Registers);
+"195
+[e ( _write_AD7147 (3 , , -> -> 1 `i `ui -> -> 1 `i `ui &U _AD7147Registers ]
 "197
-[e ( _write_AD7147 (3 , , -> -> 1 `i `ui -> -> 1 `i `ui -> *U + &U _AD7147Registers * -> -> -> 1 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux `*ui ]
-[; ;AD7147.c: 199: AD7147Registers[0] = 0x0200;
+[v _int_low `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 197: unsigned int int_low = read_AD7147_interrupt(0x008);
+[e = _int_low ( _read_AD7147_interrupt (1 -> -> 8 `i `ui ]
+"198
+[v _int_high `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 198: unsigned int int_high = read_AD7147_interrupt(0x009);
+[e = _int_high ( _read_AD7147_interrupt (1 -> -> 9 `i `ui ]
 "199
-[e = *U + &U _AD7147Registers * -> -> -> 0 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux -> -> 512 `i `ui ]
-[; ;AD7147.c: 200: write_AD7147(0x000, 1, AD7147Registers[1]);
+[v _int_complete `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 199: unsigned int int_complete = read_AD7147_interrupt(0x00A);
+[e = _int_complete ( _read_AD7147_interrupt (1 -> -> 10 `i `ui ]
+[; ;AD7147.c: 200: get_CDC(cdc,1);
 "200
-[e ( _write_AD7147 (3 , , -> -> 0 `i `ui -> -> 1 `i `ui -> *U + &U _AD7147Registers * -> -> -> 1 `i `ui `ux -> -> # *U &U _AD7147Registers `ui `ux `*ui ]
-[; ;AD7147.c: 207: }
-"207
+[e ( _get_CDC (2 , _cdc -> -> 1 `i `ui ]
+[; ;AD7147.c: 201: }
+"201
 [e :UE 1521 ]
 }
-"209
+"203
 [v _write_AD7147 `(v ~T0 @X0 1 ef3`ui`ui`*ui ]
-"210
+"204
 {
-[; ;AD7147.c: 209: void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[])
-[; ;AD7147.c: 210: {
+[; ;AD7147.c: 203: void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[])
+[; ;AD7147.c: 204: {
 [e :U _write_AD7147 ]
-"209
+"203
 [v _RegisterAddress `ui ~T0 @X0 1 r1 ]
 [v _NumberOfRegisters `ui ~T0 @X0 1 r2 ]
 [v _DataBuffer `*ui ~T0 @X0 1 r3 ]
-"210
+"204
 [f ]
-"211
-[v _enable_word `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 211: unsigned int enable_word = 0xE000;
-[e = _enable_word -> 57344 `ui ]
-"212
+"205
 [v _Register_Values `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 212: unsigned int Register_Values=enable_word + RegisterAddress;
-[e = _Register_Values + _enable_word _RegisterAddress ]
-[; ;AD7147.c: 214: for (int i=0; i<NumberOfRegisters; i++)
-"214
+[; ;AD7147.c: 205: unsigned int Register_Values = 0xE000 + RegisterAddress;
+[e = _Register_Values + -> 57344 `ui _RegisterAddress ]
+[; ;AD7147.c: 207: for (unsigned int i=0; i<NumberOfRegisters; i++)
+"207
 {
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
 [e $U 1526  ]
-"215
+"208
 [e :U 1523 ]
-[; ;AD7147.c: 215: {
+[; ;AD7147.c: 208: {
 {
-[; ;AD7147.c: 218: w32_spi((Register_Values+i),DataBuffer[i]);
-"218
-[e ( _w32_spi (2 , + _Register_Values -> _i `ui *U + _DataBuffer * -> _i `x -> -> # *U _DataBuffer `i `x ]
-"219
+[; ;AD7147.c: 211: w32_spi((Register_Values+i),DataBuffer[i]);
+"211
+[e ( _w32_spi (2 , + _Register_Values _i *U + _DataBuffer * -> _i `ux -> -> # *U _DataBuffer `ui `ux ]
+"212
 }
-"214
-[e ++ _i -> 1 `i ]
+"207
+[e ++ _i -> -> 1 `i `ui ]
 [e :U 1526 ]
-[e $ < -> _i `ui _NumberOfRegisters 1523  ]
+[e $ < _i _NumberOfRegisters 1523  ]
 [e :U 1524 ]
-"219
+"212
 }
-[; ;AD7147.c: 219: }
-[; ;AD7147.c: 220: }
-"220
+[; ;AD7147.c: 212: }
+[; ;AD7147.c: 213: }
+"213
 [e :UE 1522 ]
 }
-"222
+"215
 [v _read_AD7147 `(ui ~T0 @X0 1 ef2`ui`ui ]
-"223
+"216
 {
-[; ;AD7147.c: 222: unsigned int read_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters)
-[; ;AD7147.c: 223: {
+[; ;AD7147.c: 215: unsigned int read_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters)
+[; ;AD7147.c: 216: {
 [e :U _read_AD7147 ]
-"222
+"215
 [v _RegisterAddress `ui ~T0 @X0 1 r1 ]
 [v _NumberOfRegisters `ui ~T0 @X0 1 r2 ]
-"223
+"216
 [f ]
-"224
+"217
 [v _Register_Values `ui ~T0 @X0 1 a ]
-"225
+"218
 [v _DataBuffer `ui ~T0 @X0 -> 0 `x a ]
-"226
+"219
 [v _enable_word `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 224: unsigned int Register_Values;
-[; ;AD7147.c: 225: unsigned int DataBuffer[];
-[; ;AD7147.c: 226: unsigned int enable_word = 0xE400;
+[; ;AD7147.c: 217: unsigned int Register_Values;
+[; ;AD7147.c: 218: unsigned int DataBuffer[];
+[; ;AD7147.c: 219: unsigned int enable_word = 0xE400;
 [e = _enable_word -> 58368 `ui ]
-[; ;AD7147.c: 228: Register_Values = enable_word + RegisterAddress;
-"228
+[; ;AD7147.c: 221: Register_Values = enable_word + RegisterAddress;
+"221
 [e = _Register_Values + _enable_word _RegisterAddress ]
-[; ;AD7147.c: 230: for (unsigned int i=0; i<NumberOfRegisters; i++)
-"230
+[; ;AD7147.c: 223: for (unsigned int i=0; i<NumberOfRegisters; i++)
+"223
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
 [e $U 1531  ]
-"231
+"224
 [e :U 1528 ]
-[; ;AD7147.c: 231: {
+[; ;AD7147.c: 224: {
 {
-[; ;AD7147.c: 232: DataBuffer[i]=w16_r16_spi(Register_Values+i);
-"232
+[; ;AD7147.c: 225: DataBuffer[i]=w16_r16_spi(Register_Values+i);
+"225
 [e = *U + &U _DataBuffer * -> _i `ux -> -> # *U &U _DataBuffer `ui `ux ( _w16_r16_spi (1 + _Register_Values _i ]
-"233
+"226
 }
-"230
+"223
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 1531 ]
 [e $ < _i _NumberOfRegisters 1528  ]
 [e :U 1529 ]
-"233
+"226
 }
-[; ;AD7147.c: 233: }
-[; ;AD7147.c: 234: return DataBuffer;
-"234
-[e ) -> &U _DataBuffer `ui ]
+[; ;AD7147.c: 226: }
+[; ;AD7147.c: 227: return DataBuffer[0];
+"227
+[e ) *U + &U _DataBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _DataBuffer `ui `ux ]
 [e $UE 1527  ]
-[; ;AD7147.c: 235: }
-"235
+[; ;AD7147.c: 228: }
+"228
 [e :UE 1527 ]
 }
-"237
-[v _read_sensor `(ui ~T0 @X0 1 ef1`ui ]
-"238
+"230
+[v _read_AD7147_interrupt `(ui ~T0 @X0 1 ef1`ui ]
+"231
 {
-[; ;AD7147.c: 237: unsigned int read_sensor(unsigned int sensor)
-[; ;AD7147.c: 238: {
-[e :U _read_sensor ]
-"237
-[v _sensor `ui ~T0 @X0 1 r1 ]
-"238
+[; ;AD7147.c: 230: unsigned int read_AD7147_interrupt(unsigned int RegisterAddress)
+[; ;AD7147.c: 231: {
+[e :U _read_AD7147_interrupt ]
+"230
+[v _RegisterAddress `ui ~T0 @X0 1 r1 ]
+"231
 [f ]
-"239
-[v _register1 `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 239: unsigned int register1 = 0xE400 + 0x00B + sensor;
-[e = _register1 + + -> 58368 `ui -> -> 11 `i `ui _sensor ]
-[; ;AD7147.c: 240: LATCbits.LATC1 = 0;
-"240
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-"241
-[v _sensor_value `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 241: unsigned int sensor_value = w16_r16_spi(register1);
-[e = _sensor_value ( _w16_r16_spi (1 _register1 ]
-[; ;AD7147.c: 242: LATCbits.LATC1 = 1;
-"242
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-[; ;AD7147.c: 250: return sensor_value;
-"250
-[e ) _sensor_value ]
+"232
+[v _Register_Values `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 232: unsigned int Register_Values = 0xE400 + RegisterAddress;
+[e = _Register_Values + -> 58368 `ui _RegisterAddress ]
+"233
+[v _interrupt_clear `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 233: unsigned int interrupt_clear = w16_r16_spi(Register_Values);
+[e = _interrupt_clear ( _w16_r16_spi (1 _Register_Values ]
+[; ;AD7147.c: 236: return interrupt_clear;
+"236
+[e ) _interrupt_clear ]
 [e $UE 1532  ]
-[; ;AD7147.c: 251: }
-"251
+[; ;AD7147.c: 237: }
+"237
 [e :UE 1532 ]
 }
-"258
-[v _read_sensors `(v ~T0 @X0 1 ef ]
-"259
+"239
+[v _read_sensor `(ui ~T0 @X0 1 ef1`ui ]
+"240
 {
-[; ;AD7147.c: 258: void read_sensors()
-[; ;AD7147.c: 259: {
+[; ;AD7147.c: 239: unsigned int read_sensor(unsigned int sensor)
+[; ;AD7147.c: 240: {
+[e :U _read_sensor ]
+"239
+[v _sensor `ui ~T0 @X0 1 r1 ]
+"240
+[f ]
+"241
+[v _cdc_sensor `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 241: unsigned int cdc_sensor = 0;
+[e = _cdc_sensor -> -> 0 `i `ui ]
+[; ;AD7147.c: 242: if (sensor > 12)
+"242
+[e $ ! > _sensor -> -> 12 `i `ui 1534  ]
+[; ;AD7147.c: 243: {
+"243
+{
+[; ;AD7147.c: 244: cdc_sensor = sensor - 12;
+"244
+[e = _cdc_sensor - _sensor -> -> 12 `i `ui ]
+"245
+}
+[; ;AD7147.c: 245: }
+[e $U 1535  ]
+"246
+[e :U 1534 ]
+[; ;AD7147.c: 246: else
+[; ;AD7147.c: 247: {
+"247
+{
+[; ;AD7147.c: 248: cdc_sensor = sensor;
+"248
+[e = _cdc_sensor _sensor ]
+"249
+}
+[e :U 1535 ]
+"250
+[v _register1 `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 249: }
+[; ;AD7147.c: 250: unsigned int register1 = 0xE400 + 0x00A + cdc_sensor;
+[e = _register1 + + -> 58368 `ui -> -> 10 `i `ui _cdc_sensor ]
+[; ;AD7147.c: 252: sensor_CDC(sensor, 0);
+"252
+[e ( _sensor_CDC (2 , _sensor -> -> 0 `i `ui ]
+"253
+[v _sensor_value `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 253: unsigned int sensor_value = w16_r16_spi(register1);
+[e = _sensor_value ( _w16_r16_spi (1 _register1 ]
+[; ;AD7147.c: 254: sensor_CDC(sensor, 1);
+"254
+[e ( _sensor_CDC (2 , _sensor -> -> 1 `i `ui ]
+[; ;AD7147.c: 261: return sensor_value;
+"261
+[e ) _sensor_value ]
+[e $UE 1533  ]
+[; ;AD7147.c: 262: }
+"262
+[e :UE 1533 ]
+}
+"269
+[v _sensor_CDC `(v ~T0 @X0 1 ef2`ui`ui ]
+"270
+{
+[; ;AD7147.c: 269: void sensor_CDC(unsigned int sensor, unsigned int state)
+[; ;AD7147.c: 270: {
+[e :U _sensor_CDC ]
+"269
+[v _sensor `ui ~T0 @X0 1 r1 ]
+[v _state `ui ~T0 @X0 1 r2 ]
+"270
+[f ]
+[; ;AD7147.c: 273: if (sensor > 12)
+"273
+[e $ ! > _sensor -> -> 12 `i `ui 1537  ]
+[; ;AD7147.c: 274: {
+"274
+{
+[; ;AD7147.c: 275: get_CDC(2,state);
+"275
+[e ( _get_CDC (2 , -> -> 2 `i `ui _state ]
+"276
+}
+[; ;AD7147.c: 276: }
+[e $U 1538  ]
+"277
+[e :U 1537 ]
+[; ;AD7147.c: 277: else
+[; ;AD7147.c: 278: {
+"278
+{
+[; ;AD7147.c: 279: get_CDC(1,state);
+"279
+[e ( _get_CDC (2 , -> -> 1 `i `ui _state ]
+"280
+}
+[e :U 1538 ]
+[; ;AD7147.c: 280: }
+[; ;AD7147.c: 281: }
+"281
+[e :UE 1536 ]
+}
+"282
+[v _read_sensors `(v ~T0 @X0 1 ef ]
+"283
+{
+[; ;AD7147.c: 282: void read_sensors()
+[; ;AD7147.c: 283: {
 [e :U _read_sensors ]
 [f ]
-"260
+"284
 [v _Register_Values `ui ~T0 @X0 -> 12 `i a ]
-"261
+"285
 [v _address_low `ui ~T0 @X0 -> 12 `i a ]
-"262
+"286
 [v _address_high `ui ~T0 @X0 -> 12 `i a ]
-"263
+"287
 [v _enable_word `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 260: unsigned int Register_Values[12];
-[; ;AD7147.c: 261: unsigned int address_low[12];
-[; ;AD7147.c: 262: unsigned int address_high[12];
-[; ;AD7147.c: 263: unsigned int enable_word = 0xE400;
+[; ;AD7147.c: 284: unsigned int Register_Values[12];
+[; ;AD7147.c: 285: unsigned int address_low[12];
+[; ;AD7147.c: 286: unsigned int address_high[12];
+[; ;AD7147.c: 287: unsigned int enable_word = 0xE400;
 [e = _enable_word -> 58368 `ui ]
-"264
+"288
 [v _blank_low `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 264: unsigned int blank_low = 0x000;
+[; ;AD7147.c: 288: unsigned int blank_low = 0x000;
 [e = _blank_low -> -> 0 `i `ui ]
-"265
+"289
 [v _blank_high `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 265: unsigned int blank_high = 0x000;
+[; ;AD7147.c: 289: unsigned int blank_high = 0x000;
 [e = _blank_high -> -> 0 `i `ui ]
-"266
+"290
 [v _p1 `ui ~T0 @X0 1 a ]
 [v _p2 `ui ~T0 @X0 1 a ]
 [v _p3 `ui ~T0 @X0 1 a ]
 [v _p4 `ui ~T0 @X0 1 a ]
-"267
+"291
 [v _temp_high `ui ~T0 @X0 1 a ]
 [v _temp_low `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 266: unsigned int p1, p2, p3, p4;
-[; ;AD7147.c: 267: unsigned int temp_high, temp_low;
-[; ;AD7147.c: 269: for(int i=0; i<12; i++)
-"269
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 12 `i 1534  ]
-[e $U 1535  ]
-"270
-[e :U 1534 ]
-[; ;AD7147.c: 270: {
-{
-[; ;AD7147.c: 273: Register_Values[i] = enable_word + (0x00B+i);
-"273
-[e = *U + &U _Register_Values * -> -> _i `ui `ux -> -> # *U &U _Register_Values `ui `ux + _enable_word -> + -> 11 `i _i `ui ]
-[; ;AD7147.c: 274: address_low[i] = Register_Values[i] & 0xFF;
-"274
-[e = *U + &U _address_low * -> -> _i `ui `ux -> -> # *U &U _address_low `ui `ux & *U + &U _Register_Values * -> -> _i `ui `ux -> -> # *U &U _Register_Values `ui `ux -> -> 255 `i `ui ]
-[; ;AD7147.c: 275: address_high[i] = Register_Values[i] >> 8;
-"275
-[e = *U + &U _address_high * -> -> _i `ui `ux -> -> # *U &U _address_high `ui `ux >> *U + &U _Register_Values * -> -> _i `ui `ux -> -> # *U &U _Register_Values `ui `ux -> 8 `i ]
-"276
-}
-"269
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 12 `i 1534  ]
-[e :U 1535 ]
-"276
-}
-[; ;AD7147.c: 276: }
-[; ;AD7147.c: 278: LATCbits.LATC1 = 0;
-"278
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-[; ;AD7147.c: 279: for(int i=0; i<12; i++)
-"279
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 12 `i 1537  ]
-[e $U 1538  ]
-"280
-[e :U 1537 ]
-[; ;AD7147.c: 280: {
-{
-[; ;AD7147.c: 281: temp_high = address_high[i];
-"281
-[e = _temp_high *U + &U _address_high * -> -> _i `ui `ux -> -> # *U &U _address_high `ui `ux ]
-[; ;AD7147.c: 282: temp_low = address_low[i];
-"282
-[e = _temp_low *U + &U _address_low * -> -> _i `ui `ux -> -> # *U &U _address_low `ui `ux ]
-[; ;AD7147.c: 284: SSPBUF = temp_high;
-"284
-[e = _SSPBUF -> _temp_high `uc ]
-[; ;AD7147.c: 285: while(!SSPSTATbits.BF);
-"285
-[e $U 1540  ]
-[e :U 1541 ]
-[e :U 1540 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1541  ]
-[e :U 1542 ]
-[; ;AD7147.c: 286: p1 = SSPBUF;
-"286
-[e = _p1 -> _SSPBUF `ui ]
-[; ;AD7147.c: 288: SSPBUF = temp_low;
-"288
-[e = _SSPBUF -> _temp_low `uc ]
-[; ;AD7147.c: 289: while(!SSPSTATbits.BF);
-"289
-[e $U 1543  ]
-[e :U 1544 ]
-[e :U 1543 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1544  ]
-[e :U 1545 ]
-[; ;AD7147.c: 290: p2 = SSPBUF;
-"290
-[e = _p2 -> _SSPBUF `ui ]
-[; ;AD7147.c: 292: SSPBUF = blank_high;
-"292
-[e = _SSPBUF -> _blank_high `uc ]
-[; ;AD7147.c: 293: while(!SSPSTATbits.BF);
+[; ;AD7147.c: 290: unsigned int p1, p2, p3, p4;
+[; ;AD7147.c: 291: unsigned int temp_high, temp_low;
+[; ;AD7147.c: 293: for(unsigned int i=0; i<12; i++)
 "293
+{
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
+[e $ < _i -> -> 12 `i `ui 1540  ]
+[e $U 1541  ]
+"294
+[e :U 1540 ]
+[; ;AD7147.c: 294: {
+{
+[; ;AD7147.c: 297: Register_Values[i] = enable_word + (0x00B+i);
+"297
+[e = *U + &U _Register_Values * -> _i `ux -> -> # *U &U _Register_Values `ui `ux + _enable_word + -> -> 11 `i `ui _i ]
+[; ;AD7147.c: 298: address_low[i] = Register_Values[i] & 0xFF;
+"298
+[e = *U + &U _address_low * -> _i `ux -> -> # *U &U _address_low `ui `ux & *U + &U _Register_Values * -> _i `ux -> -> # *U &U _Register_Values `ui `ux -> -> 255 `i `ui ]
+[; ;AD7147.c: 299: address_high[i] = Register_Values[i] >> 8;
+"299
+[e = *U + &U _address_high * -> _i `ux -> -> # *U &U _address_high `ui `ux >> *U + &U _Register_Values * -> _i `ux -> -> # *U &U _Register_Values `ui `ux -> 8 `i ]
+"300
+}
+"293
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 12 `i `ui 1540  ]
+[e :U 1541 ]
+"300
+}
+[; ;AD7147.c: 300: }
+[; ;AD7147.c: 302: LATCbits.LATC1 = 0;
+"302
+[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+[; ;AD7147.c: 303: for(unsigned int i=0; i<12; i++)
+"303
+{
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
+[e $ < _i -> -> 12 `i `ui 1543  ]
+[e $U 1544  ]
+"304
+[e :U 1543 ]
+[; ;AD7147.c: 304: {
+{
+[; ;AD7147.c: 305: temp_high = address_high[i];
+"305
+[e = _temp_high *U + &U _address_high * -> _i `ux -> -> # *U &U _address_high `ui `ux ]
+[; ;AD7147.c: 306: temp_low = address_low[i];
+"306
+[e = _temp_low *U + &U _address_low * -> _i `ux -> -> # *U &U _address_low `ui `ux ]
+[; ;AD7147.c: 308: SSPBUF = temp_high;
+"308
+[e = _SSPBUF -> _temp_high `uc ]
+[; ;AD7147.c: 309: while(!SSPSTATbits.BF);
+"309
 [e $U 1546  ]
 [e :U 1547 ]
 [e :U 1546 ]
 [e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1547  ]
 [e :U 1548 ]
-[; ;AD7147.c: 294: p3 = SSPBUF;
-"294
-[e = _p3 -> _SSPBUF `ui ]
-[; ;AD7147.c: 296: SSPBUF = blank_low;
-"296
-[e = _SSPBUF -> _blank_low `uc ]
-[; ;AD7147.c: 297: while(!SSPSTATbits.BF);
-"297
+[; ;AD7147.c: 310: p1 = SSPBUF;
+"310
+[e = _p1 -> _SSPBUF `ui ]
+[; ;AD7147.c: 312: SSPBUF = temp_low;
+"312
+[e = _SSPBUF -> _temp_low `uc ]
+[; ;AD7147.c: 313: while(!SSPSTATbits.BF);
+"313
 [e $U 1549  ]
 [e :U 1550 ]
 [e :U 1549 ]
 [e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1550  ]
 [e :U 1551 ]
-[; ;AD7147.c: 298: p4 = SSPBUF;
-"298
-[e = _p4 -> _SSPBUF `ui ]
-[; ;AD7147.c: 300: CDC_RESULT[i] = (p3 << 8) + p4;
-"300
-[e = *U + &U _CDC_RESULT * -> -> _i `ui `ux -> -> # *U &U _CDC_RESULT `ui `ux -> + << _p3 -> 8 `i _p4 `*ui ]
-"301
-}
-"279
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 12 `i 1537  ]
-[e :U 1538 ]
-"301
-}
-[; ;AD7147.c: 301: }
-[; ;AD7147.c: 302: LATCbits.LATC1 = 1;
-"302
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-[; ;AD7147.c: 303: }
-"303
-[e :UE 1533 ]
-}
-"305
-[v _get_ID `(ui ~T0 @X0 1 ef1`ui ]
-"306
-{
-[; ;AD7147.c: 305: unsigned int get_ID(unsigned int cdc)
-[; ;AD7147.c: 306: {
-[e :U _get_ID ]
-"305
-[v _cdc `ui ~T0 @X0 1 r1 ]
-"306
-[f ]
-[; ;AD7147.c: 307: get_CDC(cdc,0);
-"307
-[e ( _get_CDC (2 , _cdc -> -> 0 `i `ui ]
-"308
-[v _result `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 308: unsigned int result = (w16_r16_spi(0xE400 + 0x017) & 0b1111111111110000) >> 4;
-[e = _result >> & ( _w16_r16_spi (1 + -> 58368 `ui -> -> 23 `i `ui -> 65520 `ui -> 4 `i ]
-[; ;AD7147.c: 309: get_CDC(cdc,1);
-"309
-[e ( _get_CDC (2 , _cdc -> -> 1 `i `ui ]
-[; ;AD7147.c: 310: return result;
-"310
-[e ) _result ]
-[e $UE 1552  ]
-[; ;AD7147.c: 311: }
-"311
-[e :UE 1552 ]
-}
-"313
-[v _switch_LED `(v ~T0 @X0 1 ef2`ui`ui ]
+[; ;AD7147.c: 314: p2 = SSPBUF;
 "314
-{
-[; ;AD7147.c: 313: void switch_LED(unsigned int state, unsigned int cdc)
-[; ;AD7147.c: 314: {
-[e :U _switch_LED ]
-"313
-[v _state `ui ~T0 @X0 1 r1 ]
-[v _cdc `ui ~T0 @X0 1 r2 ]
-"314
-[f ]
-[; ;AD7147.c: 315: get_CDC(cdc,0);
-"315
-[e ( _get_CDC (2 , _cdc -> -> 0 `i `ui ]
-[; ;AD7147.c: 316: if (state==1)
+[e = _p2 -> _SSPBUF `ui ]
+[; ;AD7147.c: 316: SSPBUF = blank_high;
 "316
-[e $ ! == _state -> -> 1 `i `ui 1554  ]
-[; ;AD7147.c: 317: {
+[e = _SSPBUF -> _blank_high `uc ]
+[; ;AD7147.c: 317: while(!SSPSTATbits.BF);
 "317
-{
-"318
-[v _message `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 318: unsigned int message = 0b0011000000000000;
-[e = _message -> -> 12288 `i `ui ]
-[; ;AD7147.c: 319: w32_spi((0xE000 + 0x005),message);
-"319
-[e ( _w32_spi (2 , + -> 57344 `ui -> -> 5 `i `ui _message ]
-"320
-}
-[; ;AD7147.c: 320: }
-[e $U 1555  ]
-"321
+[e $U 1552  ]
+[e :U 1553 ]
+[e :U 1552 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1553  ]
 [e :U 1554 ]
-[; ;AD7147.c: 321: else
-[; ;AD7147.c: 322: {
-"322
-{
-"324
-[v _message `ui ~T0 @X0 1 a ]
-[; ;AD7147.c: 324: unsigned int message = 0b0010000000000000;
-[e = _message -> -> 8192 `i `ui ]
-[; ;AD7147.c: 325: w32_spi((0xE000 + 0x005),message);
-"325
-[e ( _w32_spi (2 , + -> 57344 `ui -> -> 5 `i `ui _message ]
-"326
-}
+[; ;AD7147.c: 318: p3 = SSPBUF;
+"318
+[e = _p3 -> _SSPBUF `ui ]
+[; ;AD7147.c: 320: SSPBUF = blank_low;
+"320
+[e = _SSPBUF -> _blank_low `uc ]
+[; ;AD7147.c: 321: while(!SSPSTATbits.BF);
+"321
+[e $U 1555  ]
+[e :U 1556 ]
 [e :U 1555 ]
-[; ;AD7147.c: 326: }
-[; ;AD7147.c: 327: get_CDC(cdc,0);
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1556  ]
+[e :U 1557 ]
+[; ;AD7147.c: 322: p4 = SSPBUF;
+"322
+[e = _p4 -> _SSPBUF `ui ]
+"325
+}
+"303
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 12 `i `ui 1543  ]
+[e :U 1544 ]
+"325
+}
+[; ;AD7147.c: 325: }
+[; ;AD7147.c: 326: LATCbits.LATC1 = 1;
+"326
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+[; ;AD7147.c: 327: }
 "327
-[e ( _get_CDC (2 , _cdc -> -> 0 `i `ui ]
-[; ;AD7147.c: 328: }
-"328
-[e :UE 1553 ]
+[e :UE 1539 ]
 }
 "329
-[v _get_CDC `(v ~T0 @X0 1 ef2`ui`ui ]
+[v _get_ID `(ui ~T0 @X0 1 ef1`ui ]
 "330
 {
-[; ;AD7147.c: 329: void get_CDC(unsigned int number, unsigned int option)
+[; ;AD7147.c: 329: unsigned int get_ID(unsigned int cdc)
 [; ;AD7147.c: 330: {
-[e :U _get_CDC ]
+[e :U _get_ID ]
 "329
-[v _number `ui ~T0 @X0 1 r1 ]
-[v _option `ui ~T0 @X0 1 r2 ]
+[v _cdc `ui ~T0 @X0 1 r1 ]
 "330
 [f ]
-[; ;AD7147.c: 331: if (option == 0)
+[; ;AD7147.c: 331: get_CDC(cdc,0);
 "331
-[e $ ! == _option -> -> 0 `i `ui 1557  ]
-[; ;AD7147.c: 332: {
+[e ( _get_CDC (2 , _cdc -> -> 0 `i `ui ]
 "332
-{
-[; ;AD7147.c: 333: if (number == 1)
+[v _result `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 332: unsigned int result = (w16_r16_spi(0xE400 + 0x017) & 0b1111111111110000) >> 4;
+[e = _result >> & ( _w16_r16_spi (1 + -> 58368 `ui -> -> 23 `i `ui -> 65520 `ui -> 4 `i ]
+[; ;AD7147.c: 333: get_CDC(cdc,1);
 "333
-[e $ ! == _number -> -> 1 `i `ui 1558  ]
-[; ;AD7147.c: 334: {
+[e ( _get_CDC (2 , _cdc -> -> 1 `i `ui ]
+[; ;AD7147.c: 334: return result;
 "334
-{
-[; ;AD7147.c: 335: LATCbits.LATC1 = 0;
+[e ) _result ]
+[e $UE 1558  ]
+[; ;AD7147.c: 335: }
 "335
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-"336
+[e :UE 1558 ]
 }
-[; ;AD7147.c: 336: }
-[e $U 1559  ]
 "337
-[e :U 1558 ]
-[; ;AD7147.c: 337: else
-[; ;AD7147.c: 338: {
+[v _switch_LED `(v ~T0 @X0 1 ef2`ui`ui ]
 "338
 {
-[; ;AD7147.c: 339: LATCbits.LATC0 = 0;
+[; ;AD7147.c: 337: void switch_LED(unsigned int cdc, unsigned int state)
+[; ;AD7147.c: 338: {
+[e :U _switch_LED ]
+"337
+[v _cdc `ui ~T0 @X0 1 r1 ]
+[v _state `ui ~T0 @X0 1 r2 ]
+"338
+[f ]
+[; ;AD7147.c: 339: get_CDC(cdc,0);
 "339
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[e ( _get_CDC (2 , _cdc -> -> 0 `i `ui ]
+[; ;AD7147.c: 340: if (state==1)
 "340
-}
-[e :U 1559 ]
+[e $ ! == _state -> -> 1 `i `ui 1560  ]
+[; ;AD7147.c: 341: {
 "341
-}
-[; ;AD7147.c: 340: }
-[; ;AD7147.c: 341: }
-[e $U 1560  ]
+{
 "342
-[e :U 1557 ]
-[; ;AD7147.c: 342: else
-[; ;AD7147.c: 343: {
+[v _message `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 342: unsigned int message = 0b0010000000000000;
+[e = _message -> -> 8192 `i `ui ]
+[; ;AD7147.c: 343: w32_spi((0xE000 + 0x005),message);
 "343
-{
-[; ;AD7147.c: 344: if (number == 1)
+[e ( _w32_spi (2 , + -> 57344 `ui -> -> 5 `i `ui _message ]
 "344
-[e $ ! == _number -> -> 1 `i `ui 1561  ]
-[; ;AD7147.c: 345: {
+}
+[; ;AD7147.c: 344: }
+[e $U 1561  ]
 "345
-{
-[; ;AD7147.c: 346: LATCbits.LATC1 = 1;
-"346
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-"347
-}
-[; ;AD7147.c: 347: }
-[e $U 1562  ]
-"348
-[e :U 1561 ]
-[; ;AD7147.c: 348: else
-[; ;AD7147.c: 349: {
-"349
-{
-[; ;AD7147.c: 350: LATCbits.LATC0 = 1;
-"350
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-"351
-}
-[e :U 1562 ]
-"352
-}
 [e :U 1560 ]
-[; ;AD7147.c: 351: }
+[; ;AD7147.c: 345: else
+[; ;AD7147.c: 346: {
+"346
+{
+"347
+[v _message `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 347: unsigned int message = 0b0011000000000000;
+[e = _message -> -> 12288 `i `ui ]
+[; ;AD7147.c: 348: w32_spi((0xE000 + 0x005),message);
+"348
+[e ( _w32_spi (2 , + -> 57344 `ui -> -> 5 `i `ui _message ]
+"349
+}
+[e :U 1561 ]
+[; ;AD7147.c: 349: }
+[; ;AD7147.c: 350: delay_ms(10);
+"350
+[e ( _delay_ms (1 -> 10 `i ]
+[; ;AD7147.c: 351: get_CDC(cdc,1);
+"351
+[e ( _get_CDC (2 , _cdc -> -> 1 `i `ui ]
 [; ;AD7147.c: 352: }
-[; ;AD7147.c: 353: }
+"352
+[e :UE 1559 ]
+}
 "353
-[e :UE 1556 ]
+[v _blink_LED `(v ~T0 @X0 1 ef1`ui ]
+"354
+{
+[; ;AD7147.c: 353: void blink_LED(unsigned int cdc)
+[; ;AD7147.c: 354: {
+[e :U _blink_LED ]
+"353
+[v _cdc `ui ~T0 @X0 1 r1 ]
+"354
+[f ]
+[; ;AD7147.c: 355: get_CDC(cdc,0);
+"355
+[e ( _get_CDC (2 , _cdc -> -> 0 `i `ui ]
+"356
+[v _message `ui ~T0 @X0 1 a ]
+[; ;AD7147.c: 356: unsigned int message = 0b0010000000000000;
+[e = _message -> -> 8192 `i `ui ]
+[; ;AD7147.c: 357: w32_spi((0xE000 + 0x005),message);
+"357
+[e ( _w32_spi (2 , + -> 57344 `ui -> -> 5 `i `ui _message ]
+[; ;AD7147.c: 358: delay_ms(10);
+"358
+[e ( _delay_ms (1 -> 10 `i ]
+[; ;AD7147.c: 359: get_CDC(cdc,1);
+"359
+[e ( _get_CDC (2 , _cdc -> -> 1 `i `ui ]
+[; ;AD7147.c: 360: delay_ms(1000);
+"360
+[e ( _delay_ms (1 -> 1000 `i ]
+[; ;AD7147.c: 361: get_CDC(cdc,0);
+"361
+[e ( _get_CDC (2 , _cdc -> -> 0 `i `ui ]
+[; ;AD7147.c: 362: unsigned int message = 0b0011000000000000;
+"362
+[e = _message -> -> 12288 `i `ui ]
+[; ;AD7147.c: 363: w32_spi((0xE000 + 0x005),message);
+"363
+[e ( _w32_spi (2 , + -> 57344 `ui -> -> 5 `i `ui _message ]
+[; ;AD7147.c: 364: delay_ms(10);
+"364
+[e ( _delay_ms (1 -> 10 `i ]
+[; ;AD7147.c: 365: get_CDC(cdc,1);
+"365
+[e ( _get_CDC (2 , _cdc -> -> 1 `i `ui ]
+[; ;AD7147.c: 366: }
+"366
+[e :UE 1562 ]
+}
+"367
+[v _get_CDC `(v ~T0 @X0 1 ef2`ui`ui ]
+"368
+{
+[; ;AD7147.c: 367: void get_CDC(unsigned int cdc, unsigned int state)
+[; ;AD7147.c: 368: {
+[e :U _get_CDC ]
+"367
+[v _cdc `ui ~T0 @X0 1 r1 ]
+[v _state `ui ~T0 @X0 1 r2 ]
+"368
+[f ]
+[; ;AD7147.c: 369: if (state == 1)
+"369
+[e $ ! == _state -> -> 1 `i `ui 1564  ]
+[; ;AD7147.c: 370: {
+"370
+{
+[; ;AD7147.c: 371: LATCbits.LATC1 = 1;
+"371
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+[; ;AD7147.c: 372: LATCbits.LATC0 = 1;
+"372
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+"373
+}
+[; ;AD7147.c: 373: }
+[e $U 1565  ]
+"374
+[e :U 1564 ]
+[; ;AD7147.c: 374: else
+[; ;AD7147.c: 375: {
+"375
+{
+[; ;AD7147.c: 376: if (cdc == 1)
+"376
+[e $ ! == _cdc -> -> 1 `i `ui 1566  ]
+[; ;AD7147.c: 377: {
+"377
+{
+[; ;AD7147.c: 378: LATCbits.LATC1 = 0;
+"378
+[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+[; ;AD7147.c: 379: LATCbits.LATC0 = 1;
+"379
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+"380
+}
+[; ;AD7147.c: 380: }
+[e $U 1567  ]
+"381
+[e :U 1566 ]
+[; ;AD7147.c: 381: else
+[; ;AD7147.c: 382: {
+"382
+{
+[; ;AD7147.c: 383: LATCbits.LATC0 = 0;
+"383
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[; ;AD7147.c: 384: LATCbits.LATC1 = 1;
+"384
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+"385
+}
+[e :U 1567 ]
+"386
+}
+[e :U 1565 ]
+[; ;AD7147.c: 385: }
+[; ;AD7147.c: 386: }
+[; ;AD7147.c: 387: }
+"387
+[e :UE 1563 ]
 }

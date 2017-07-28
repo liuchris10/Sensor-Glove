@@ -12,7 +12,7 @@ void setup_mcu(void)
 void setup_port(void)
 {
     //TRISA = 0b00000000;         // Port A: Output: 0-7
-    TRISB = 0b00000000;         // Port B: Output: 0-7
+    TRISB = 0b00000011;         // Port B: Output: 2-7, Input: 0,1
     TRISC = 0b10010000;         // Port C: Output: 0-3,5-6 Input: 4,7 
     CS_CDC1=1;
     CS_CDC2=1;

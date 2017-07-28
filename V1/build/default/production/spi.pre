@@ -17571,7 +17571,9 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 
-# 68
+# 66
+extern unsigned int CDC_RESULT_REGISTER[12];
+
 extern unsigned int* CDC_RESULT[];
 
 # 183

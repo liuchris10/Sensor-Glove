@@ -13471,6 +13471,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x FCMEN=OFF ]
 "18
 [p x IESO=OFF ]
+[; ;micro_setup.h: 66: extern unsigned int CDC_RESULT_REGISTER[12];
 [; ;micro_setup.h: 68: extern unsigned int* CDC_RESULT[];
 [; ;micro_setup.h: 183: void setup_mcu(void);
 [; ;micro_setup.h: 185: void setup_port(void);
@@ -13521,9 +13522,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;micro_setup.c: 13: {
 [e :U _setup_port ]
 [f ]
-[; ;micro_setup.c: 15: TRISB = 0b00000000;
+[; ;micro_setup.c: 15: TRISB = 0b00000011;
 "15
-[e = _TRISB -> -> 0 `i `uc ]
+[e = _TRISB -> -> 3 `i `uc ]
 [; ;micro_setup.c: 16: TRISC = 0b10010000;
 "16
 [e = _TRISC -> -> 144 `i `uc ]

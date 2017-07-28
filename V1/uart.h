@@ -17,7 +17,7 @@ char uart_tx_empty(void);
 
 void uart_write_string(const char *text);
 
-char uart_int_to_string(int number);
+char uart_int_to_string(unsigned int);
 
 char uart_data_ready(void);
 

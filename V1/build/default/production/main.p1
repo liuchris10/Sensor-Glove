@@ -6,16 +6,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _setup_mcu `(v ~T0 @X0 0 ef ]
 "4 spi.h
 [v _setup_spi `(v ~T0 @X0 0 ef ]
+"6 AD7147.h
+[v _setup_AD7147 `(v ~T0 @X0 0 ef1`ui ]
+"15
+[v _blink_LED `(v ~T0 @X0 0 ef1`ui ]
 "8 uart.h
 [v _uart_write_char `(v ~T0 @X0 0 ef1`uc ]
-"11 AD7147.h
+"12 AD7147.h
 [v _get_ID `(ui ~T0 @X0 0 ef1`ui ]
 "12 uart.h
 [v _uart_write_unsigned_int `(v ~T0 @X0 0 ef1`ui ]
-"13 AD7147.h
-[v _switch_LED `(v ~T0 @X0 0 ef2`ui`ui ]
-"10
-[v _read_sensor `(ui ~T0 @X0 0 ef1`ui ]
+"29942 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f25k80.h
+[s S1134 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1134 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"29952
+[s S1135 :3 `uc 1 :1 `uc 1 ]
+[n S1135 . . CCP2_PA2 ]
+"29941
+[u S1133 `S1134 1 `S1135 1 ]
+[n S1133 . . . ]
+"29957
+[v _PORTBbits `VS1133 ~T0 @X0 0 e@3969 ]
+"16 AD7147.h
+[v _get_CDC `(v ~T0 @X0 0 ef2`ui`ui ]
+"12 spi.h
+[v _w16_r16_spi `(ui ~T0 @X0 0 ef1`ui ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -13403,6 +13418,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x FCMEN=OFF ]
 "18
 [p x IESO=OFF ]
+[; ;micro_setup.h: 66: extern unsigned int CDC_RESULT_REGISTER[12];
 [; ;micro_setup.h: 68: extern unsigned int* CDC_RESULT[];
 [; ;micro_setup.h: 183: void setup_mcu(void);
 [; ;micro_setup.h: 185: void setup_port(void);
@@ -13420,19 +13436,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;uart.h: 14: void uart_write_32(unsigned int, unsigned int);
 [; ;uart.h: 16: char uart_tx_empty(void);
 [; ;uart.h: 18: void uart_write_string(const char *text);
-[; ;uart.h: 20: char uart_int_to_string(int number);
+[; ;uart.h: 20: char uart_int_to_string(unsigned int);
 [; ;uart.h: 22: char uart_data_ready(void);
 [; ;uart.h: 24: char uart_read_char(void);
 [; ;uart.h: 26: void uart_read_text(char *Output, unsigned int length);
-[; ;AD7147.h: 6: void setup_AD7147(void);
+[; ;AD7147.h: 6: void setup_AD7147(unsigned int);
 [; ;AD7147.h: 7: void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[]);
 [; ;AD7147.h: 8: unsigned int read_AD7147(unsigned int, unsigned int);
-[; ;AD7147.h: 9: static int ServiceAD7147Isr(void);
-[; ;AD7147.h: 10: unsigned int read_sensor(unsigned int);
-[; ;AD7147.h: 11: unsigned int get_ID(unsigned int);
-[; ;AD7147.h: 12: void read_sensors(void);
-[; ;AD7147.h: 13: void switch_LED(unsigned int, unsigned int);
-[; ;AD7147.h: 14: void get_CDC(unsigned int, unsigned int);
+[; ;AD7147.h: 9: unsigned int read_AD7147_interrupt(unsigned int);
+[; ;AD7147.h: 10: static int ServiceAD7147Isr(void);
+[; ;AD7147.h: 11: unsigned int read_sensor(unsigned int);
+[; ;AD7147.h: 12: unsigned int get_ID(unsigned int);
+[; ;AD7147.h: 13: void read_sensors(void);
+[; ;AD7147.h: 14: void switch_LED(unsigned int, unsigned int);
+[; ;AD7147.h: 15: void blink_LED(unsigned int);
+[; ;AD7147.h: 16: void get_CDC(unsigned int, unsigned int);
+[; ;AD7147.h: 17: void sensor_CDC(unsigned int, unsigned int);
 [v $root$_main `(v ~T0 @X0 0 e ]
 "6 main.c
 [v _main `(v ~T0 @X0 1 ef ]
@@ -13451,103 +13470,238 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 10: setup_spi();
 "10
 [e ( _setup_spi ..  ]
+[; ;main.c: 11: setup_AD7147(1);
+"11
+[e ( _setup_AD7147 (1 -> -> 1 `i `ui ]
+[; ;main.c: 12: setup_AD7147(2);
+"12
+[e ( _setup_AD7147 (1 -> -> 2 `i `ui ]
+[; ;main.c: 14: blink_LED(2);
+"14
+[e ( _blink_LED (1 -> -> 2 `i `ui ]
+[; ;main.c: 15: blink_LED(1);
+"15
+[e ( _blink_LED (1 -> -> 1 `i `ui ]
 "16
 [v _indicator `uc ~T0 @X0 1 a ]
-[; ;main.c: 16: char indicator = 'f';
-[e = _indicator -> -> 102 `ui `uc ]
+[; ;main.c: 16: char indicator = 's';
+[e = _indicator -> -> 115 `ui `uc ]
 "17
 [v _bb `ui ~T0 @X0 1 a ]
 [; ;main.c: 17: unsigned int bb = 1020;
 [e = _bb -> -> 1020 `i `ui ]
-[; ;main.c: 18: while(1)
 "18
-[e :U 1523 ]
-[; ;main.c: 19: {
+[v _power_mode `ui ~T0 @X0 1 a ]
+[; ;main.c: 18: unsigned int power_mode = 0;
+[e = _power_mode -> -> 0 `i `ui ]
 "19
-{
-[; ;main.c: 20: if (indicator == 'i')
+[v _int_ready `ui ~T0 @X0 1 a ]
+[; ;main.c: 19: unsigned int int_ready = 1;
+[e = _int_ready -> -> 1 `i `ui ]
 "20
-[e $ ! == -> _indicator `ui -> 105 `ui 1525  ]
-[; ;main.c: 21: {
+[v _int_read `ui ~T0 @X0 1 a ]
+[; ;main.c: 20: unsigned int int_read = 0xE400 + 0x00A;
+[e = _int_read + -> 58368 `ui -> -> 10 `i `ui ]
 "21
-{
-[; ;main.c: 22: uart_write_char('i');
+[v _int_low `ui ~T0 @X0 1 a ]
+[; ;main.c: 21: unsigned int int_low = 0xE400 + 0x008;
+[e = _int_low + -> 58368 `ui -> -> 8 `i `ui ]
 "22
-[e ( _uart_write_char (1 -> -> 105 `ui `uc ]
+[v _int_high `ui ~T0 @X0 1 a ]
+[; ;main.c: 22: unsigned int int_high = 0xE400 + 0x009;
+[e = _int_high + -> 58368 `ui -> -> 9 `i `ui ]
 "23
-[v _device_ID `ui ~T0 @X0 1 a ]
-[; ;main.c: 23: unsigned int device_ID = get_ID(2);
-[e = _device_ID ( _get_ID (1 -> -> 2 `i `ui ]
-[; ;main.c: 24: uart_write_unsigned_int(device_ID);
+[v _register1 `ui ~T0 @X0 1 a ]
+[; ;main.c: 23: unsigned int register1 = 0xE400 + 0x00B;
+[e = _register1 + -> 58368 `ui -> -> 11 `i `ui ]
 "24
-[e ( _uart_write_unsigned_int (1 _device_ID ]
+[v _register2 `ui ~T0 @X0 1 a ]
+[; ;main.c: 24: unsigned int register2 = 0xE400 + 0x00C;
+[e = _register2 + -> 58368 `ui -> -> 12 `i `ui ]
 "25
+[v _register3 `ui ~T0 @X0 1 a ]
+[; ;main.c: 25: unsigned int register3 = 0xE400 + 0x00D;
+[e = _register3 + -> 58368 `ui -> -> 13 `i `ui ]
+"26
+[v _register4 `ui ~T0 @X0 1 a ]
+[; ;main.c: 26: unsigned int register4 = 0xE400 + 0x00E;
+[e = _register4 + -> 58368 `ui -> -> 14 `i `ui ]
+"27
+[v _stage_0 `ui ~T0 @X0 1 a ]
+[; ;main.c: 27: unsigned int stage_0 = 0;
+[e = _stage_0 -> -> 0 `i `ui ]
+"28
+[v _stage_1 `ui ~T0 @X0 1 a ]
+[; ;main.c: 28: unsigned int stage_1 = 0;
+[e = _stage_1 -> -> 0 `i `ui ]
+"29
+[v _stage_2 `ui ~T0 @X0 1 a ]
+[; ;main.c: 29: unsigned int stage_2 = 0;
+[e = _stage_2 -> -> 0 `i `ui ]
+"30
+[v _stage_3 `ui ~T0 @X0 1 a ]
+[; ;main.c: 30: unsigned int stage_3 = 0;
+[e = _stage_3 -> -> 0 `i `ui ]
+"31
+[v _sensor_1 `ui ~T0 @X0 1 a ]
+[; ;main.c: 31: unsigned int sensor_1 = 0;
+[e = _sensor_1 -> -> 0 `i `ui ]
+"32
+[v _sensor_2 `ui ~T0 @X0 1 a ]
+[; ;main.c: 32: unsigned int sensor_2 = 0;
+[e = _sensor_2 -> -> 0 `i `ui ]
+"33
+[v _sensor_3 `ui ~T0 @X0 1 a ]
+[; ;main.c: 33: unsigned int sensor_3 = 0;
+[e = _sensor_3 -> -> 0 `i `ui ]
+"34
+[v _sensor_4 `ui ~T0 @X0 1 a ]
+[; ;main.c: 34: unsigned int sensor_4 = 0;
+[e = _sensor_4 -> -> 0 `i `ui ]
+"35
+[v _int_complete `ui ~T0 @X0 1 a ]
+[; ;main.c: 35: unsigned int int_complete = 0;
+[e = _int_complete -> -> 0 `i `ui ]
+[; ;main.c: 37: while(1)
+"37
+[e :U 1523 ]
+[; ;main.c: 38: {
+"38
+{
+[; ;main.c: 40: if (indicator == 'i')
+"40
+[e $ ! == -> _indicator `ui -> 105 `ui 1525  ]
+[; ;main.c: 41: {
+"41
+{
+[; ;main.c: 42: uart_write_char('i');
+"42
+[e ( _uart_write_char (1 -> -> 105 `ui `uc ]
+"43
+[v _device_ID `ui ~T0 @X0 1 a ]
+[; ;main.c: 43: unsigned int device_ID = get_ID(1);
+[e = _device_ID ( _get_ID (1 -> -> 1 `i `ui ]
+[; ;main.c: 44: uart_write_unsigned_int(device_ID);
+"44
+[e ( _uart_write_unsigned_int (1 _device_ID ]
+"45
 }
 [e :U 1525 ]
-[; ;main.c: 25: }
-[; ;main.c: 26: if (indicator = 'l')
-"26
-[e $ ! != -> = _indicator -> -> 108 `ui `uc `i -> -> -> 0 `i `uc `i 1526  ]
-[; ;main.c: 27: {
-"27
+[; ;main.c: 45: }
+[; ;main.c: 46: if (indicator == 's')
+"46
+[e $ ! == -> _indicator `ui -> 115 `ui 1526  ]
+[; ;main.c: 47: {
+"47
 {
-[; ;main.c: 28: switch_LED(1,1);
-"28
-[e ( _switch_LED (2 , -> -> 1 `i `ui -> -> 1 `i `ui ]
-"29
-}
-[e :U 1526 ]
-[; ;main.c: 29: }
-[; ;main.c: 30: if (indicator == 's')
-"30
-[e $ ! == -> _indicator `ui -> 115 `ui 1527  ]
-[; ;main.c: 31: {
-"31
-{
-[; ;main.c: 32: uart_write_char('s');
-"32
+[; ;main.c: 48: uart_write_char('s');
+"48
 [e ( _uart_write_char (1 -> -> 115 `ui `uc ]
-"33
-[v _sensor_0 `ui ~T0 @X0 1 a ]
-[; ;main.c: 33: unsigned int sensor_0 = read_sensor(0);
-[e = _sensor_0 ( _read_sensor (1 -> -> 0 `i `ui ]
-[; ;main.c: 34: uart_write_unsigned_int(sensor_0);
-"34
-[e ( _uart_write_unsigned_int (1 _sensor_0 ]
-"35
-}
-[e :U 1527 ]
-[; ;main.c: 35: }
-[; ;main.c: 36: if (indicator == 'f')
-"36
-[e $ ! == -> _indicator `ui -> 102 `ui 1528  ]
-[; ;main.c: 37: {
-"37
+[; ;main.c: 51: if(PORTBbits.RB1==0)
+"51
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 1527  ]
+[; ;main.c: 52: {
+"52
 {
-[; ;main.c: 38: uart_write_char('f');
-"38
-[e ( _uart_write_char (1 -> -> 102 `ui `uc ]
-[; ;main.c: 40: uart_write_unsigned_int(bb);
-"40
+[; ;main.c: 53: uart_write_unsigned_int(bb);
+"53
 [e ( _uart_write_unsigned_int (1 _bb ]
-"41
+"54
+}
+[; ;main.c: 54: }
+[e $U 1528  ]
+"55
+[e :U 1527 ]
+[; ;main.c: 55: else
+[; ;main.c: 56: {
+"56
+{
+[; ;main.c: 57: uart_write_unsigned_int(power_mode);
+"57
+[e ( _uart_write_unsigned_int (1 _power_mode ]
+"58
 }
 [e :U 1528 ]
-[; ;main.c: 41: }
-[; ;main.c: 42: delay_ms(500);
-"42
+[; ;main.c: 58: }
+[; ;main.c: 59: get_CDC(2,0);
+"59
+[e ( _get_CDC (2 , -> -> 2 `i `ui -> -> 0 `i `ui ]
+[; ;main.c: 60: sensor_1 = w16_r16_spi(register1);
+"60
+[e = _sensor_1 ( _w16_r16_spi (1 _register1 ]
+[; ;main.c: 61: sensor_2 = w16_r16_spi(register2);
+"61
+[e = _sensor_2 ( _w16_r16_spi (1 _register2 ]
+[; ;main.c: 62: sensor_3 = w16_r16_spi(register3);
+"62
+[e = _sensor_3 ( _w16_r16_spi (1 _register3 ]
+[; ;main.c: 63: sensor_4 = w16_r16_spi(register4);
+"63
+[e = _sensor_4 ( _w16_r16_spi (1 _register4 ]
+[; ;main.c: 64: int_complete = w16_r16_spi(int_low);
+"64
+[e = _int_complete ( _w16_r16_spi (1 _int_low ]
+[; ;main.c: 65: int_complete = w16_r16_spi(int_high);
+"65
+[e = _int_complete ( _w16_r16_spi (1 _int_high ]
+[; ;main.c: 66: int_complete = w16_r16_spi(int_read);
+"66
+[e = _int_complete ( _w16_r16_spi (1 _int_read ]
+[; ;main.c: 67: get_CDC(2,1);
+"67
+[e ( _get_CDC (2 , -> -> 2 `i `ui -> -> 1 `i `ui ]
+[; ;main.c: 69: get_CDC(2,0);
+"69
+[e ( _get_CDC (2 , -> -> 2 `i `ui -> -> 0 `i `ui ]
+[; ;main.c: 70: int_complete = w16_r16_spi(int_low);
+"70
+[e = _int_complete ( _w16_r16_spi (1 _int_low ]
+[; ;main.c: 71: int_complete = w16_r16_spi(int_high);
+"71
+[e = _int_complete ( _w16_r16_spi (1 _int_high ]
+[; ;main.c: 72: int_complete = w16_r16_spi(int_read);
+"72
+[e = _int_complete ( _w16_r16_spi (1 _int_read ]
+[; ;main.c: 73: get_CDC(2,1);
+"73
+[e ( _get_CDC (2 , -> -> 2 `i `ui -> -> 1 `i `ui ]
+[; ;main.c: 80: delay_ms(100);
+"80
+[e ( _delay_ms (1 -> 100 `i ]
+"82
+}
+[e :U 1526 ]
+[; ;main.c: 82: }
+[; ;main.c: 83: if (indicator == 'f')
+"83
+[e $ ! == -> _indicator `ui -> 102 `ui 1529  ]
+[; ;main.c: 84: {
+"84
+{
+[; ;main.c: 85: uart_write_char('f');
+"85
+[e ( _uart_write_char (1 -> -> 102 `ui `uc ]
+[; ;main.c: 87: uart_write_unsigned_int(bb);
+"87
+[e ( _uart_write_unsigned_int (1 _bb ]
+"88
+}
+[e :U 1529 ]
+[; ;main.c: 88: }
+[; ;main.c: 89: delay_ms(500);
+"89
 [e ( _delay_ms (1 -> 500 `i ]
-"43
+"90
 }
 [e :U 1522 ]
-"18
+"37
 [e $U 1523  ]
 [e :U 1524 ]
-[; ;main.c: 43: }
-[; ;main.c: 44: return;
-"44
+[; ;main.c: 90: }
+[; ;main.c: 91: return;
+"91
 [e $UE 1521  ]
-[; ;main.c: 45: }
-"45
+[; ;main.c: 92: }
+"92
 [e :UE 1521 ]
 }

@@ -15,19 +15,19 @@ void main(void)
     blink_LED(1);
     char indicator = 's';
     unsigned int bb = 1020;
+    unsigned int sensor[];
     while(1) 
     {   
-        //char indicator = uart_read_char();
         if (indicator == 'i')
         {
             uart_write_char('i');
-            unsigned int device_ID = get_ID(1);
+            unsigned int device_ID = get_ID(2);
             uart_write_unsigned_int(device_ID);
         }
         if (indicator == 's')
         {
             uart_write_char('s');
-            unsigned int sensor_1 = read_sensor(13);
+            unsigned int sensor_1 = read_sensor(14);
             uart_write_unsigned_int(sensor_1);
         }  
         if (indicator == 'f')

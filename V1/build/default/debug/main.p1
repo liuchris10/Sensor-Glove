@@ -8,15 +8,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _setup_spi `(v ~T0 @X0 0 ef ]
 "6 AD7147.h
 [v _setup_AD7147 `(v ~T0 @X0 0 ef1`ui ]
-"14
+"15
 [v _blink_LED `(v ~T0 @X0 0 ef1`ui ]
 "8 uart.h
 [v _uart_write_char `(v ~T0 @X0 0 ef1`uc ]
-"11 AD7147.h
+"12 AD7147.h
 [v _get_ID `(ui ~T0 @X0 0 ef1`ui ]
 "12 uart.h
 [v _uart_write_unsigned_int `(v ~T0 @X0 0 ef1`ui ]
-"10 AD7147.h
+"11 AD7147.h
 [v _read_sensor `(ui ~T0 @X0 0 ef1`ui ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -13405,6 +13405,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x FCMEN=OFF ]
 "18
 [p x IESO=OFF ]
+[; ;micro_setup.h: 66: extern unsigned int CDC_RESULT_REGISTER[12];
 [; ;micro_setup.h: 68: extern unsigned int* CDC_RESULT[];
 [; ;micro_setup.h: 183: void setup_mcu(void);
 [; ;micro_setup.h: 185: void setup_port(void);
@@ -13422,21 +13423,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;uart.h: 14: void uart_write_32(unsigned int, unsigned int);
 [; ;uart.h: 16: char uart_tx_empty(void);
 [; ;uart.h: 18: void uart_write_string(const char *text);
-[; ;uart.h: 20: char uart_int_to_string(int number);
+[; ;uart.h: 20: char uart_int_to_string(unsigned int);
 [; ;uart.h: 22: char uart_data_ready(void);
 [; ;uart.h: 24: char uart_read_char(void);
 [; ;uart.h: 26: void uart_read_text(char *Output, unsigned int length);
 [; ;AD7147.h: 6: void setup_AD7147(unsigned int);
-[; ;AD7147.h: 7: void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[]);
+[; ;AD7147.h: 7: void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[], unsigned int);
 [; ;AD7147.h: 8: unsigned int read_AD7147(unsigned int, unsigned int);
-[; ;AD7147.h: 9: static int ServiceAD7147Isr(void);
-[; ;AD7147.h: 10: unsigned int read_sensor(unsigned int);
-[; ;AD7147.h: 11: unsigned int get_ID(unsigned int);
-[; ;AD7147.h: 12: void read_sensors(void);
-[; ;AD7147.h: 13: void switch_LED(unsigned int, unsigned int);
-[; ;AD7147.h: 14: void blink_LED(unsigned int);
-[; ;AD7147.h: 15: void get_CDC(unsigned int, unsigned int);
-[; ;AD7147.h: 16: void sensor_cdc(unsigned int, unsigned int);
+[; ;AD7147.h: 9: unsigned int read_AD7147_interrupt(unsigned int);
+[; ;AD7147.h: 10: static int ServiceAD7147Isr(void);
+[; ;AD7147.h: 11: unsigned int read_sensor(unsigned int);
+[; ;AD7147.h: 12: unsigned int get_ID(unsigned int);
+[; ;AD7147.h: 13: void read_sensors(void);
+[; ;AD7147.h: 14: void switch_LED(unsigned int, unsigned int);
+[; ;AD7147.h: 15: void blink_LED(unsigned int);
+[; ;AD7147.h: 16: void get_CDC(unsigned int, unsigned int);
+[; ;AD7147.h: 17: void sensor_CDC(unsigned int, unsigned int);
 [v $root$_main `(v ~T0 @X0 0 e ]
 "6 main.c
 [v _main `(v ~T0 @X0 1 ef ]
@@ -13475,11 +13477,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _bb `ui ~T0 @X0 1 a ]
 [; ;main.c: 17: unsigned int bb = 1020;
 [e = _bb -> -> 1020 `i `ui ]
-[; ;main.c: 18: while(1)
 "18
-[e :U 1523 ]
-[; ;main.c: 19: {
+[v _sensor `ui ~T0 @X0 -> 0 `x a ]
+[; ;main.c: 18: unsigned int sensor[];
+[; ;main.c: 19: while(1)
 "19
+[e :U 1523 ]
+[; ;main.c: 20: {
+"20
 {
 [; ;main.c: 21: if (indicator == 'i')
 "21
@@ -13492,8 +13497,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _uart_write_char (1 -> -> 105 `ui `uc ]
 "24
 [v _device_ID `ui ~T0 @X0 1 a ]
-[; ;main.c: 24: unsigned int device_ID = get_ID(1);
-[e = _device_ID ( _get_ID (1 -> -> 1 `i `ui ]
+[; ;main.c: 24: unsigned int device_ID = get_ID(2);
+[e = _device_ID ( _get_ID (1 -> -> 2 `i `ui ]
 [; ;main.c: 25: uart_write_unsigned_int(device_ID);
 "25
 [e ( _uart_write_unsigned_int (1 _device_ID ]
@@ -13512,8 +13517,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _uart_write_char (1 -> -> 115 `ui `uc ]
 "30
 [v _sensor_1 `ui ~T0 @X0 1 a ]
-[; ;main.c: 30: unsigned int sensor_1 = read_sensor(13);
-[e = _sensor_1 ( _read_sensor (1 -> -> 13 `i `ui ]
+[; ;main.c: 30: unsigned int sensor_1 = read_sensor(14);
+[e = _sensor_1 ( _read_sensor (1 -> -> 14 `i `ui ]
 [; ;main.c: 31: uart_write_unsigned_int(sensor_1);
 "31
 [e ( _uart_write_unsigned_int (1 _sensor_1 ]
@@ -13543,7 +13548,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "40
 }
 [e :U 1522 ]
-"18
+"19
 [e $U 1523  ]
 [e :U 1524 ]
 [; ;main.c: 40: }

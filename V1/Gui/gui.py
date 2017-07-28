@@ -8,9 +8,6 @@ from matplotlib.figure import Figure
 import matplotlib.animation as animation
 from matplotlib import style
 
-from matplotlib import pyplot as plt
-#from drawnow import *
-
 import serial_1 as sp1
 
 from openpyxl import Workbook
@@ -31,9 +28,10 @@ capacitance = [] #Capacitance value from the Sensor
 pressure = []  #Transforming the Data from the Arduino into something Useful
 seconds = [] #Time Since Data has been Captured
 
-f = Figure(figsize=(5,5), dpi=100)
-a = f.add_subplot(111)
-plt.ion()
+f = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
+a = f.add_subplot(1,1,1)
+
+
 start_time = 0
 stop_time = 0
 record = 0
@@ -65,12 +63,16 @@ def record_start(value):
 def record_stop(value):
     global record
     global start_time
+    global rawdata
+    global seconds
+    global capacitance
     if value == 1:
         record = 0
         start_time = 0
-    print(rawdata)
-    print(seconds)
-    save_data()
+        save_data() #Saving the Data to an Excel Spread Sheet
+    rawdata = []
+    seconds = []
+    capacitance = []
 
 def print_Name1():
         print("Carl!")
@@ -96,21 +98,17 @@ def save_data():
 
     wb.save(filename = dest_filename)
 
-def makeFig():  # Create a function that makes our desired plot
-    b = plt.figure(1)
-    plt.ylim(0, 65535)  # Set y min and max values
-    plt.title('Live Arduino Data')  # Plot the title
-    plt.grid(True)  # Turn the grid on
-    plt.ylabel('Raw Data')  # Set ylabels
-    plt.plot(rawdata, 'ro-', label='Raw Values')  # plot the temperature
-    plt.legend(loc='upper left')  # plot the legend
-    plt2 = plt.twinx()  # Create a second y axis
-    plt.ylim(0, 500)  # Set limits of second y axis- adjust to readings you are getting
-    plt2.plot(pressure, 'b^-', label='Pressure (Pa)')  # plot pressure data
-    plt2.set_ylabel('Pressrue (Pa)')  # label second y axis
-    plt2.ticklabel_format(useOffset=False)  # Force matplotlib to NOT autoscale y axis
-    plt2.legend(loc='upper right')  # plot the legend
-    return b
+def update_single_Fig():
+    a.clear()
+    a.set_title("Individual Sensor Readout")
+    a.set_ylabel("Capacitance")  # Set ylabels
+    a.set_xlabel("Time (s)")
+    #a.set_xlim([0, 5])
+    #a.set_ylim([20, 30])
+    a.ticklabel_format(useOffset=False)
+def update_total_Fig():
+    print('Hello')
+
 
 def recordData(i):
     # start data collection
@@ -129,15 +127,15 @@ def recordData(i):
         print(data)
         rd = float(data)
         p = (rd / 65535) * 500
-        c = (rd *22) / 76
+        c = (rd *0.00034) + 4
         count = time.time() - start_time
         rawdata.append(rd)
         capacitance.append(c)
         pressure.append(p)
         seconds.append(count)
-        a.clear()
-        a.plot(seconds, rawdata)
-        # plt.pause(.000001)
+        update_single_Fig()
+        a.plot(seconds, capacitance)
+        # a.pause(.000001)
         # count = count + 1
         # if (count > 50):
         #     rawdata.pop(0)
@@ -235,8 +233,8 @@ class Main_Page(tk.Frame):
         canvas_frame = tk.Frame(self)
         canvas = FigureCanvasTkAgg(f, canvas_frame)
         canvas.show()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM)
-        canvas_frame.grid(row=6, column=0, columnspan=2)
+        canvas.get_tk_widget().pack()
+        canvas_frame.grid(row=6, column=0, columnspan=5)
 
         toolbar_frame = tk.Frame(self)
         toolbar = NavigationToolbar2TkAgg(canvas, toolbar_frame)

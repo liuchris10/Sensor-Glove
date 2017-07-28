@@ -32,7 +32,7 @@ void uart_write_int(int number)
 { 
     while(!TXSTA1bits.TRMT);
     //while(!PIR1bits.TXIF);
-    char temp = number + '0';
+    char temp = (unsigned int)number;
     TXREG1 = temp;
 }
 
@@ -66,7 +66,7 @@ void uart_write_32(unsigned int address, unsigned int data)
     while(!TXSTA1bits.TRMT);
     TXREG1 = data_high;
 }
-char uart_int_to_string(int number)
+char uart_int_to_string(unsigned int number)
 {
     char temp = number + '0';
     return temp;
@@ -74,7 +74,7 @@ char uart_int_to_string(int number)
 
 void uart_write_string(const char *text)
 {
-    for(int i=0; i <= strlen(text); i++)
+    for(unsigned int i=0; i <= strlen(text); i++)
     {
         uart_write_char(text[i]);
     }
@@ -88,7 +88,7 @@ char uart_tx_empty(void)
 
 char uart_data_ready(void)
 {
-    return RC1IF;
+    return (unsigned int)RC1IF;
 }
 
 char uart_read_char(void)
@@ -107,7 +107,7 @@ char uart_read_char(void)
 
 void uart_read_text(char *Output, unsigned int length)
 {
-    for(int i=0; i<length; i++)
+    for(unsigned int i=0; i<length; i++)
     {
         Output[i] = uart_read_char();
     }

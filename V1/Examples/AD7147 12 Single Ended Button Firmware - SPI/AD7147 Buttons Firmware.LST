@@ -1,0 +1,253 @@
+C51 COMPILER V8.01   AD7147_BUTTONS_FIRMWARE                                               03/27/2009 10:53:51 PAGE 1   
+
+
+C51 COMPILER V8.01, COMPILATION OF MODULE AD7147_BUTTONS_FIRMWARE
+OBJECT MODULE PLACED IN AD7147 Buttons Firmware.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE AD7147 Buttons Firmware.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          //#pragma OPTIMIZE (9)
+   2          /****************************************************************************/
+   3          /*                                                                                                                                                      */
+   4          /* AD7147 Standard Buttons Software                                                                                     */
+   5          /* --------------------------                                                                                           */
+   6          /* Date: 07/06/2007                                                                                                                     */
+   7          /* Author: ADI                                                                                                                          */
+   8          /*                                                                                                                                                      */
+   9          /* Descripton:                                                                                                                          */
+  10          /* -----------                                                                                                                          */
+  11          /* This firmware configures the AD7147 to respond to 12 buttons.                        */
+  12          /* Every time a button is touched, a bit is set in the High Limit Interrupt */
+  13          /* Status register. The AD7147 fires an interrupt only when a button is         */
+  14          /* touched or when we lift off.                                                                                         */
+  15          /****************************************************************************/
+  16          /* Sensor Buttons: ButtonStatus                                                                                         */
+  17          /* ======================================                                                                       */
+  18          /*                                                                                                                                                      */
+  19          /*      bit: 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0                                                              */
+  20          /*                                |  | | | | | | | | | | |-     Stage 0 - CIN 0                         */
+  21          /*                                |  | | | | | | | | | |---     Stage 1 - CIN 1                         */
+  22          /*                                |  | | | | | | | | |----- Stage 2 - CIN 2                             */
+  23          /*                                |  | | | | | | | |-------     Stage 3 - CIN 3                         */
+  24          /*                                |  | | | | | | |---------     Stage 4 - CIN 4                         */
+  25          /*                                |  | | | | | |-----------     Stage 5 - CIN 5                         */
+  26          /*                                |  | | | | |-------------     Stage 6 - CIN 6                         */
+  27          /*                                |  | | | |---------------     Stage 7 - CIN 7                         */
+  28          /*                                |  | | |-----------------     Stage 8 - CIN 8                         */
+  29          /*                                |  | |------------------- Stage 9 - CIN 9                             */
+  30          /*                                |  |---------------------     Stage 10 - CIN 10                       */
+  31          /*                                |------------------------     Stage 11 - CIN 11                       */
+  32          /*                                                                                                                                              */
+  33          /****************************************************************************/
+  34          
+  35          
+  36          #include <ADUC841.H>
+  37          #include <intrins.h>
+  38          #include "AD7147regMap.h"
+  39          #include "General Definitions.h"
+  40          #include "SPI.h"
+  41          #include "Single Ended Button Config.h"
+  42          
+  43          //---------------------------------
+  44          //Function prototypes
+  45          //---------------------------------
+  46          static int ServiceAD7147Isr(void);
+  47          static void ForceCalibration(void);
+  48          static WORD DecodeButtons(const WORD HighLimitStatusRegister);
+  49          //---------------------------------
+  50          //Button Status Variable
+  51          //---------------------------------
+  52          WORD ButtonStatus;
+  53          
+  54          //---------------------------------
+  55          //void AD7147_Isr() interrupt 0
+C51 COMPILER V8.01   AD7147_BUTTONS_FIRMWARE                                               03/27/2009 10:53:51 PAGE 2   
+
+  56          //---------------------------------
+  57          //---------------------------------
+  58          //Interrupt service routine that is executed when the INT0 pin goes low.
+  59          //--------------------------------------------------------------------------------
+  60          /********************************************************************************************/
+  61          /*//////////////////////////////////////////////////////////////////////////////////////////*/
+  62          // This function declaration is specific to the ADuC841 and needs to be changed for another //
+  63          // host processor. The interrupt vector number may be different                                                         //
+  64          /*//////////////////////////////////////////////////////////////////////////////////////////*/
+  65          /********************************************************************************************/
+  66          static void AD7147_Isr() interrupt 0
+  67          {
+  68   1              EX0=0;
+  69   1              ServiceAD7147Isr();
+  70   1              EX0=1;
+  71   1              return;
+  72   1      }
+  73          
+  74          void main (void)
+  75          {
+  76   1              //---------------------------
+  77   1              //Device initialisation
+  78   1              //---------------------------
+  79   1              /********************************************************************************************/
+  80   1              /*//////////////////////////////////////////////////////////////////////////////////////////*/
+  81   1              // Specific to the ADuC841, this section configures the ADuC841 pins as input or as output. //
+  82   1              // This needs to be changed for another host processor                                                                          //
+  83   1              /*//////////////////////////////////////////////////////////////////////////////////////////*/
+  84   1              /********************************************************************************************/
+  85   1              DOUT=1;                         //Set the DOUT pin
+  86   1              CLK=1;                          //Set the CLK pin
+  87   1              ADUC841_INT0=1;         //Makes sure that the INT0 pin on the ADuC841 is be an input.
+  88   1              
+  89   1              /********************************************************************************/
+  90   1              /*//////////////////////////////////////////////////////////////////////////////*/
+  91   1              // Specific to the ADuC841, this line can be removed for another host processor //
+  92   1              /*//////////////////////////////////////////////////////////////////////////////*/
+  93   1              /********************************************************************************/      
+  94   1              CFG841 |= 1;    //Enable the extended internal RAM              
+  95   1              
+  96   1              //-----------------
+  97   1              //Configure Device
+  98   1              //-----------------
+  99   1              ConfigAD7147(); 
+ 100   1              
+ 101   1              //Initialise Status Variable
+ 102   1              //--------------------
+ 103   1              ButtonStatus=0;
+ 104   1      
+ 105   1              /*******************************************************************************************/
+ 106   1              /*/////////////////////////////////////////////////////////////////////////////////////////*/
+ 107   1              // Enable interrupt after software initialisation. This section cannot be placed anywhere  //
+ 108   1              // else. These instructions must be changed for another host processor.                                    //
+ 109   1              /*/////////////////////////////////////////////////////////////////////////////////////////*/
+ 110   1              /*******************************************************************************************/
+ 111   1              IT0=0x1;                        //INT0 interrupt is negative edged triggered
+ 112   1              EX0=1;                          //Enable external interrupt "0" //AD7147 interrupt
+ 113   1              EA=1;                           //Enable all interrupts
+ 114   1              
+ 115   1              while(1)
+ 116   1              {       
+ 117   2                      //Access our Status Register Here 
+C51 COMPILER V8.01   AD7147_BUTTONS_FIRMWARE                                               03/27/2009 10:53:51 PAGE 3   
+
+ 118   2                      /****************************************************************************/
+ 119   2                      /* Sensor Buttons: ButtonStatus                                                                                         */
+ 120   2                      /* ======================================                                                                       */
+ 121   2                      /*                                                                                                                                                      */
+ 122   2                      /*      bit: 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0                                                              */
+ 123   2                      /*                                |  | | | | | | | | | | |-     Stage 0 - CIN 0                         */
+ 124   2                      /*                                |  | | | | | | | | | |---     Stage 1 - CIN 1                         */
+ 125   2                      /*                                |  | | | | | | | | |----- Stage 2 - CIN 2                             */
+ 126   2                      /*                                |  | | | | | | | |-------     Stage 3 - CIN 3                         */
+ 127   2                      /*                                |  | | | | | | |---------     Stage 4 - CIN 4                         */
+ 128   2                      /*                                |  | | | | | |-----------     Stage 5 - CIN 5                         */
+ 129   2                      /*                                |  | | | | |-------------     Stage 6 - CIN 6                         */
+ 130   2                      /*                                |  | | | |---------------     Stage 7 - CIN 7                         */
+ 131   2                      /*                                |  | | |-----------------     Stage 8 - CIN 8                         */
+ 132   2                      /*                                |  | |------------------- Stage 9 - CIN 9                             */
+ 133   2                      /*                                |  |---------------------     Stage 10 - CIN 10                       */
+ 134   2                      /*                                |------------------------     Stage 11 - CIN 11                       */
+ 135   2                      /*                                                                                                                                              */
+ 136   2                      /****************************************************************************/  
+ 137   2              }
+ 138   1      }
+ 139          
+ 140          
+ 141                  
+ 142          //---------------------------------
+ 143          //Function  definitions 
+ 144          //---------------------------------
+ 145          
+ 146          //ServiceAD7147Isr();
+ 147          //-----------------------------------------------------------------
+ 148          // Function called by the AD7147 ISR. Anything that must be 
+ 149          // executed during the ISR needs to be done here
+ 150          //-----------------------------------------------------------------
+ 151          static int ServiceAD7147Isr(void)
+ 152          {
+ 153   1              //Read thresholds and proximity registers
+ 154   1              ReadFromAD7147(STAGE_LOW_LIMIT_INT, 2, AD7147Registers, STAGE_LOW_LIMIT_INT);   
+ 155   1      
+ 156   1              //Recover from errors if needed
+ 157   1              if (((AD7147Registers[STAGE_LOW_LIMIT_INT] & POWER_UP_INTERRUPT) != 0x0000) && 
+ 158   1                      ((AD7147Registers[STAGE_HIGH_LIMIT_INT] & POWER_UP_INTERRUPT) == 0x0000))
+ 159   1              {
+ 160   2                      ForceCalibration();             
+ 161   2              }
+ 162   1              else
+ 163   1                      ButtonStatus=DecodeButtons(AD7147Registers[STAGE_HIGH_LIMIT_INT]);              
+ 164   1      }
+ 165          
+ 166          //ForceCalibration();
+ 167          //-----------------------------------------------------------------
+ 168          // Function called by ServiceAD7147Isr when there is a touch on 
+ 169          // power up or when there is a problem with the calibration.
+ 170          //-----------------------------------------------------------------
+ 171          static void ForceCalibration(void)
+ 172          {
+ 173   1              ReadFromAD7147(AMB_COMP_CTRL0, 1, AD7147Registers, AMB_COMP_CTRL0);
+ 174   1              AD7147Registers[AMB_COMP_CTRL0] |= 0x4000;
+ 175   1              WriteToAD7147(AMB_COMP_CTRL0, 1, AD7147Registers, AMB_COMP_CTRL0);
+ 176   1      }
+ 177          
+ 178          //DecodeButtons()
+ 179          //-----------------------------------------------------------------
+C51 COMPILER V8.01   AD7147_BUTTONS_FIRMWARE                                               03/27/2009 10:53:51 PAGE 4   
+
+ 180          // Function called by ServiceAD7147Isr. This function retrieves the
+ 181          // button being set based on the High Limit Status Register.
+ 182          //-----------------------------------------------------------------
+ 183          static WORD DecodeButtons(const WORD HighLimitStatusRegister)
+ 184          {
+ 185   1              WORD ButtonStatusValue=0;
+ 186   1              
+ 187   1              if ((HighLimitStatusRegister & 0x0001) == 0x0001)
+ 188   1                      ButtonStatusValue |= 0x0001;
+ 189   1              
+ 190   1              if ((HighLimitStatusRegister & 0x0002) == 0x0002)
+ 191   1                      ButtonStatusValue |= 0x0002;
+ 192   1              
+ 193   1              if ((HighLimitStatusRegister & 0x0004) == 0x0004)
+ 194   1                      ButtonStatusValue |= 0x0004;
+ 195   1              
+ 196   1              if ((HighLimitStatusRegister & 0x0008) == 0x0008)
+ 197   1                      ButtonStatusValue |= 0x0008;
+ 198   1      
+ 199   1              if ((HighLimitStatusRegister & 0x0010) == 0x0010)
+ 200   1                      ButtonStatusValue |= 0x0010;
+ 201   1      
+ 202   1              if ((HighLimitStatusRegister & 0x0020) == 0x0020)
+ 203   1                      ButtonStatusValue |= 0x0020;
+ 204   1      
+ 205   1              if ((HighLimitStatusRegister & 0x0040) == 0x0040)
+ 206   1                      ButtonStatusValue |= 0x0040;
+ 207   1      
+ 208   1              if ((HighLimitStatusRegister & 0x0080) == 0x0080)
+ 209   1                      ButtonStatusValue |= 0x0080;
+ 210   1      
+ 211   1              if ((HighLimitStatusRegister & 0x0100) == 0x0100)
+ 212   1                      ButtonStatusValue |= 0x0100;
+ 213   1      
+ 214   1              if ((HighLimitStatusRegister & 0x0200) == 0x0200)
+ 215   1                      ButtonStatusValue |= 0x0200;
+ 216   1      
+ 217   1              if ((HighLimitStatusRegister & 0x0400) == 0x0400)
+ 218   1                      ButtonStatusValue |= 0x0400;
+ 219   1      
+ 220   1              if ((HighLimitStatusRegister & 0x0800) == 0x0800)
+ 221   1                      ButtonStatusValue |= 0x0800;
+ 222   1              
+ 223   1              return (ButtonStatusValue);
+ 224   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1656    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     48      16
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2      35
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

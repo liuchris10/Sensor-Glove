@@ -13451,6 +13451,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x FCMEN=OFF ]
 "18
 [p x IESO=OFF ]
+[; ;micro_setup.h: 66: extern unsigned int CDC_RESULT_REGISTER[12];
 [; ;micro_setup.h: 68: extern unsigned int* CDC_RESULT[];
 [; ;micro_setup.h: 183: void setup_mcu(void);
 [; ;micro_setup.h: 185: void setup_port(void);
@@ -13647,8 +13648,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1536 ]
 "35
 [v _temp `uc ~T0 @X0 1 a ]
-[; ;uart.c: 35: char temp = number + '0';
-[e = _temp -> + -> _number `ui -> 48 `ui `uc ]
+[; ;uart.c: 35: char temp = (unsigned int)number;
+[e = _temp -> -> _number `ui `uc ]
 [; ;uart.c: 36: TXREG1 = temp;
 "36
 [e = _TXREG1 _temp ]
@@ -13774,20 +13775,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 1544 ]
 }
 "69
-[v _uart_int_to_string `(uc ~T0 @X0 1 ef1`i ]
+[v _uart_int_to_string `(uc ~T0 @X0 1 ef1`ui ]
 "70
 {
-[; ;uart.c: 69: char uart_int_to_string(int number)
+[; ;uart.c: 69: char uart_int_to_string(unsigned int number)
 [; ;uart.c: 70: {
 [e :U _uart_int_to_string ]
 "69
-[v _number `i ~T0 @X0 1 r1 ]
+[v _number `ui ~T0 @X0 1 r1 ]
 "70
 [f ]
 "71
 [v _temp `uc ~T0 @X0 1 a ]
 [; ;uart.c: 71: char temp = number + '0';
-[e = _temp -> + -> _number `ui -> 48 `ui `uc ]
+[e = _temp -> + _number -> 48 `ui `uc ]
 [; ;uart.c: 72: return temp;
 "72
 [e ) _temp ]
@@ -13807,11 +13808,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _text `*Cuc ~T0 @X0 1 r1 ]
 "76
 [f ]
-[; ;uart.c: 77: for(int i=0; i <= strlen(text); i++)
+[; ;uart.c: 77: for(unsigned int i=0; i <= strlen(text); i++)
 "77
 {
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
 [e $U 1562  ]
 "78
 [e :U 1559 ]
@@ -13819,13 +13820,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;uart.c: 79: uart_write_char(text[i]);
 "79
-[e ( _uart_write_char (1 *U + _text * -> _i `x -> -> # *U _text `i `x ]
+[e ( _uart_write_char (1 *U + _text * -> _i `ux -> -> # *U _text `ui `ux ]
 "80
 }
 "77
-[e ++ _i -> 1 `i ]
+[e ++ _i -> -> 1 `i `ui ]
 [e :U 1562 ]
-[e $ <= -> _i `ui ( _strlen (1 _text 1559  ]
+[e $ <= _i ( _strlen (1 _text 1559  ]
 [e :U 1560 ]
 "80
 }
@@ -13858,9 +13859,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;uart.c: 90: {
 [e :U _uart_data_ready ]
 [f ]
-[; ;uart.c: 91: return RC1IF;
+[; ;uart.c: 91: return (unsigned int)RC1IF;
 "91
-[e ) -> -> _RC1IF `i `uc ]
+[e ) -> -> -> _RC1IF `i `ui `uc ]
 [e $UE 1564  ]
 [; ;uart.c: 92: }
 "92
@@ -13927,11 +13928,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _length `ui ~T0 @X0 1 r2 ]
 "109
 [f ]
-[; ;uart.c: 110: for(int i=0; i<length; i++)
+[; ;uart.c: 110: for(unsigned int i=0; i<length; i++)
 "110
 {
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
 [e $U 1574  ]
 "111
 [e :U 1571 ]
@@ -13939,13 +13940,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;uart.c: 112: Output[i] = uart_read_char();
 "112
-[e = *U + _Output * -> _i `x -> -> # *U _Output `i `x ( _uart_read_char ..  ]
+[e = *U + _Output * -> _i `ux -> -> # *U _Output `ui `ux ( _uart_read_char ..  ]
 "113
 }
 "110
-[e ++ _i -> 1 `i ]
+[e ++ _i -> -> 1 `i `ui ]
 [e :U 1574 ]
-[e $ < -> _i `ui _length 1571  ]
+[e $ < _i _length 1571  ]
 [e :U 1572 ]
 "113
 }

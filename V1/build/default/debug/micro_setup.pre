@@ -17623,7 +17623,9 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 
-# 68
+# 66
+extern unsigned int CDC_RESULT_REGISTER[12];
+
 extern unsigned int* CDC_RESULT[];
 
 # 183
@@ -17647,7 +17649,7 @@ init_uart();
 void setup_port(void)
 {
 
-TRISB = 0b00000000;
+TRISB = 0b00000011;
 TRISC = 0b10010000;
 LATCbits.LATC1=1;
 LATCbits.LATC0=1;

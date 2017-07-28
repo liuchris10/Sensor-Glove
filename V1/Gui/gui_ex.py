@@ -3,7 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from drawnow import *
 
-port1 = serial.Serial(port='COM3', baudrate=9600, bytesize=serial.EIGHTBITS, stopbits=serial.STOPBITS_ONE, timeout=None)
+port1 = serial.Serial(port='COM4', baudrate=9600, bytesize=serial.EIGHTBITS, stopbits=serial.STOPBITS_ONE, timeout=None)
 
 plt.ion()  # set plot to animated
 

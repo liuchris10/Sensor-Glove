@@ -62,8 +62,8 @@
 #define	THRES_STAT_REG1				0x041	// R	Current threshold status register 1
 #define	PROX_STAT_REG				0x042	// R	Current proximity status register 2
 
-//extern unsigned int CDC_RESULT_REGISTER[12] = {CDC_RESULT_S0, CDC_RESULT_S1, CDC_RESULT_S2, CDC_RESULT_S3, CDC_RESULT_S4,
-//CDC_RESULT_S5, CDC_RESULT_S6, CDC_RESULT_S7, CDC_RESULT_S8, CDC_RESULT_S9, CDC_RESULT_S10, CDC_RESULT_S11};
+
+extern unsigned int CDC_RESULT_REGISTER[12];
 
 extern unsigned int* CDC_RESULT[]; // Result from the CDC 
 // Ram map - these registers are defined as we go along
@@ -168,8 +168,8 @@ extern unsigned int* CDC_RESULT[]; // Result from the CDC
 #define CS_CDC1 LATCbits.LATC1        // Defined Pin RC1 to variable CS_CDC1
 #define CS_CDC2 LATCbits.LATC0        // Defined Pin RC0 to variable CS_CDC2
 #define CS_AG LATCbits.LATC2        // Defined Pin RC2 to variable CS_AG
-#define INT_CDC1 LATBbits.LATB0        // Defined Pin RB0 to variable INT_CDC1
-#define INT_CDC2 LATBbits.LATB1        // Defined Pin RB1 to variable INT_CDC2
+#define INT_CDC1 PORTBbits.RB0        // Defined Pin RB0 to variable INT_CDC1
+#define INT_CDC2 PORTBbits.RB1        // Defined Pin RB1 to variable INT_CDC2
 #define INT_GYRO LATBbits.LATB2        // Defined Pin RD2 to variable INT_GYRO
 #define INT_ACCEL LATBbits.LATB3        // Defined Pin RD3 to variable INT_ACCEL
 
