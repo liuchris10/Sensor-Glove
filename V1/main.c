@@ -27,8 +27,10 @@ void main(void)
         if (indicator == 's')
         {
             uart_write_char('s');
-            unsigned int sensor_1 = read_sensor(14);
+            unsigned int sensor_1 = read_sensor(1);
+            unsigned int sensor_2 = read_sensor(13);
             uart_write_unsigned_int(sensor_1);
+            uart_write_unsigned_int(sensor_2);
         }  
         if (indicator == 'f')
         {
@@ -36,7 +38,7 @@ void main(void)
             //setup_AD7147();
             uart_write_unsigned_int(bb);
         }
-        delay_ms(500);
+        delay_ms(200);
     } 
     return;
 }

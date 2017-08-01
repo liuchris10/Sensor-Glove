@@ -11,34 +11,34 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/debug\V1.debug.obj
-cinit CODE 0 74AA 74AA 12 1
-text0 CODE 0 7934 7934 D4 1
-text1 CODE 0 74E6 74E6 1A 1
-text2 CODE 0 748E 748E C 1
-text3 CODE 0 74D0 74D0 16 1
-text4 CODE 0 7484 7484 A 1
-text5 CODE 0 749A 749A 10 1
-text6 CODE 0 74BC 74BC 14 1
-text7 CODE 0 7A08 7A08 5F8 1
-text8 CODE 0 7784 7784 7E 1
-text9 CODE 0 7522 7522 2A 1
-text10 CODE 0 768A 768A 7C 1
-text11 CODE 0 754C 754C 38 1
-text12 CODE 0 75C4 75C4 58 1
-text13 CODE 0 7706 7706 7E 1
-text14 CODE 0 7886 7886 AE 1
-text15 CODE 0 761C 761C 6E 1
-text16 CODE 0 7500 7500 22 1
-text17 CODE 0 7584 7584 40 1
-text18 CODE 0 7802 7802 84 1
-cstackCOMRAM COMRAM 1 1 1 55 1
-bssBANK0 BANK0 1 60 60 18 1
-$C:\Users\Intern\AppData\Local\Temp\sm20.obj
+$C:\Users\Intern\AppData\Local\Temp\schk.obj
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 2 2 4 1
 reset_vec CODE 0 0 0 2 1
 config CONFIG 0 300000 300000 E 1
+$dist/default/debug\V1.debug.obj
+cinit CODE 0 7504 7504 12 1
+text0 CODE 0 798E 798E F4 1
+text1 CODE 0 7540 7540 1A 1
+text2 CODE 0 74E8 74E8 C 1
+text3 CODE 0 752A 752A 16 1
+text4 CODE 0 74DE 74DE A 1
+text5 CODE 0 74F4 74F4 10 1
+text6 CODE 0 7516 7516 14 1
+text7 CODE 0 7A82 7A82 57E 1
+text8 CODE 0 77DE 77DE 7E 1
+text9 CODE 0 757C 757C 2A 1
+text10 CODE 0 76E4 76E4 7C 1
+text11 CODE 0 75A6 75A6 38 1
+text12 CODE 0 761E 761E 58 1
+text13 CODE 0 7760 7760 7E 1
+text14 CODE 0 78E0 78E0 AE 1
+text15 CODE 0 7676 7676 6E 1
+text16 CODE 0 755A 755A 22 1
+text17 CODE 0 75DE 75DE 40 1
+text18 CODE 0 785C 785C 84 1
+cstackCOMRAM COMRAM 1 1 1 57 1
+bssBANK0 BANK0 1 60 60 18 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -57,20 +57,20 @@ BANK6 600-6FF 1
 BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
-CONST 6-7483 1
+CONST 6-74DD 1
 STACK 78-E40 1
-SMALLCONST F00-7483 1
-CODE 6-7483 1
+SMALLCONST F00-74DD 1
+CODE 6-74DD 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
 BANK13 D00-DFF 1
 BANK14 E00-E40 1
-BIGRAM 56-5F 1
+BIGRAM 58-5F 1
 BIGRAM 78-E40 1
-COMRAM 56-5F 1
+COMRAM 58-5F 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST F00-7483 1
+MEDIUMCONST F00-74DD 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -85,341 +85,338 @@ MEDIUMCONST F00-7483 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\V1.debug.obj
-7802 text18 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7802 text18 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7806 text18 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-780A text18 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7812 text18 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7816 text18 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-781A text18 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7822 text18 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7826 text18 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-782E text18 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7836 text18 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-783A text18 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-783C text18 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7842 text18 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7844 text18 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7848 text18 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-784E text18 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-785A text18 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7862 text18 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7864 text18 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-786A text18 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-786E text18 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7874 text18 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-787C text18 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
-7584 text17 CODE >67:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-7584 text17 CODE >69:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-75A0 text17 CODE >70:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-75A2 text17 CODE >72:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-75B2 text17 CODE >70:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-7500 text16 CODE >377:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7500 text16 CODE >379:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7508 text16 CODE >381:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-750A text16 CODE >382:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-750C text16 CODE >383:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-750E text16 CODE >386:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7516 text16 CODE >388:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7518 text16 CODE >389:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-751A text16 CODE >390:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-751C text16 CODE >391:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-751C text16 CODE >393:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-751E text16 CODE >394:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7520 text16 CODE >395:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-761C text15 CODE >26:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-761C text15 CODE >30:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7622 text15 CODE >31:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7636 text15 CODE >33:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-763C text15 CODE >34:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7650 text15 CODE >36:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7654 text15 CODE >37:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7658 text15 CODE >38:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-765E text15 CODE >40:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7662 text15 CODE >41:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7666 text15 CODE >42:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-766C text15 CODE >44:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7670 text15 CODE >45:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7674 text15 CODE >46:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-767A text15 CODE >48:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-767E text15 CODE >49:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7682 text15 CODE >50:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7688 text15 CODE >51:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7886 text14 CODE >363:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7886 text14 CODE >365:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-789A text14 CODE >366:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-78A2 text14 CODE >367:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-78B6 text14 CODE >368:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-78C2 text14 CODE >369:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-78D6 text14 CODE >370:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-78E2 text14 CODE >371:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-78F6 text14 CODE >372:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-78FE text14 CODE >373:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7912 text14 CODE >374:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-791E text14 CODE >375:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7932 text14 CODE >376:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7706 text13 CODE >92:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7706 text13 CODE >95:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-770E text13 CODE >96:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7716 text13 CODE >99:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-771C text13 CODE >100:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7730 text13 CODE >102:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7734 text13 CODE >103:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7738 text13 CODE >104:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-773E text13 CODE >106:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7742 text13 CODE >107:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7746 text13 CODE >108:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-774C text13 CODE >110:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7750 text13 CODE >111:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7754 text13 CODE >112:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-775A text13 CODE >114:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-775E text13 CODE >115:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7762 text13 CODE >116:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-7768 text13 CODE >118:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-777A text13 CODE >119:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-75C4 text12 CODE >339:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-75C4 text12 CODE >341:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-75D8 text12 CODE >342:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-75FE text12 CODE >343:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7612 text12 CODE >344:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-754C text11 CODE >279:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-754C text11 CODE >283:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7558 text11 CODE >285:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-756C text11 CODE >286:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-756E text11 CODE >289:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-768A text10 CODE >249:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-768A text10 CODE >251:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7692 text10 CODE >252:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-769E text10 CODE >254:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-76AA text10 CODE >255:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-76AC text10 CODE >256:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-76AC text10 CODE >258:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-76B4 text10 CODE >260:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-76C0 text10 CODE >262:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-76D4 text10 CODE >263:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-76E8 text10 CODE >264:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-76FC text10 CODE >271:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7522 text9 CODE >240:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7522 text9 CODE >242:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-752E text9 CODE >243:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7542 text9 CODE >246:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7784 text8 CODE >212:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7784 text8 CODE >214:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-778C text8 CODE >215:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7794 text8 CODE >217:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-779E text8 CODE >219:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-77B6 text8 CODE >220:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-77DC text8 CODE >222:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-77F0 text8 CODE >217:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A08 text7 CODE >6:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A08 text7 CODE >10:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A1C text7 CODE >25:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A24 text7 CODE >26:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A2A text7 CODE >27:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A32 text7 CODE >28:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A3A text7 CODE >29:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A42 text7 CODE >30:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A4A text7 CODE >31:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A52 text7 CODE >32:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A5A text7 CODE >33:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A7E text7 CODE >38:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A86 text7 CODE >39:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A8C text7 CODE >40:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A94 text7 CODE >41:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7A9C text7 CODE >42:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7AA4 text7 CODE >43:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7AAC text7 CODE >44:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7AB4 text7 CODE >45:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7ABC text7 CODE >46:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7AE0 text7 CODE >51:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7AE8 text7 CODE >52:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7AEE text7 CODE >53:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7AF6 text7 CODE >54:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7AFE text7 CODE >55:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B06 text7 CODE >56:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B0E text7 CODE >57:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B16 text7 CODE >58:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B1E text7 CODE >59:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B42 text7 CODE >64:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B4A text7 CODE >65:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B50 text7 CODE >66:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B58 text7 CODE >67:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B60 text7 CODE >68:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B68 text7 CODE >69:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B70 text7 CODE >70:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B78 text7 CODE >71:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7B80 text7 CODE >72:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7BA4 text7 CODE >77:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7BAA text7 CODE >78:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7BB0 text7 CODE >79:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7BB8 text7 CODE >80:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7BC0 text7 CODE >81:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7BC8 text7 CODE >82:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7BD0 text7 CODE >83:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7BD8 text7 CODE >84:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7BE0 text7 CODE >85:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C04 text7 CODE >90:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C0A text7 CODE >91:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C10 text7 CODE >92:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C18 text7 CODE >93:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C20 text7 CODE >94:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C28 text7 CODE >95:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C30 text7 CODE >96:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C38 text7 CODE >97:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C40 text7 CODE >98:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C64 text7 CODE >103:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C6A text7 CODE >104:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C70 text7 CODE >105:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C78 text7 CODE >106:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C80 text7 CODE >107:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C88 text7 CODE >108:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C90 text7 CODE >109:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7C98 text7 CODE >110:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7CA0 text7 CODE >111:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7CC4 text7 CODE >116:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7CC8 text7 CODE >117:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7CD0 text7 CODE >118:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7CD8 text7 CODE >119:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7CE0 text7 CODE >120:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7CE8 text7 CODE >121:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7CF0 text7 CODE >122:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7CF8 text7 CODE >123:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D00 text7 CODE >124:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D24 text7 CODE >129:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D28 text7 CODE >130:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D2E text7 CODE >131:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D36 text7 CODE >132:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D3E text7 CODE >133:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D46 text7 CODE >134:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D4E text7 CODE >135:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D56 text7 CODE >136:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D5E text7 CODE >137:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D82 text7 CODE >142:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D86 text7 CODE >143:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D8C text7 CODE >144:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D94 text7 CODE >145:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7D9C text7 CODE >146:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7DA4 text7 CODE >147:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7DAC text7 CODE >148:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7DB4 text7 CODE >149:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7DBC text7 CODE >150:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7DE0 text7 CODE >155:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7DE4 text7 CODE >156:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7DEA text7 CODE >157:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7DF2 text7 CODE >158:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7DFA text7 CODE >159:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E02 text7 CODE >160:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E0A text7 CODE >161:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E12 text7 CODE >162:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E1A text7 CODE >163:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E3E text7 CODE >168:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E42 text7 CODE >169:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E48 text7 CODE >170:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E50 text7 CODE >171:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E58 text7 CODE >172:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E60 text7 CODE >173:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E68 text7 CODE >174:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E70 text7 CODE >175:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E78 text7 CODE >176:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7E9C text7 CODE >182:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7EA4 text7 CODE >183:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7EC8 text7 CODE >185:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7EDC text7 CODE >186:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7EF0 text7 CODE >187:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F04 text7 CODE >189:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F0C text7 CODE >190:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F14 text7 CODE >191:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F1C text7 CODE >192:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F24 text7 CODE >193:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F2C text7 CODE >194:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F34 text7 CODE >195:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F58 text7 CODE >198:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F5E text7 CODE >199:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F82 text7 CODE >201:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7F8A text7 CODE >202:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7FAE text7 CODE >206:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7FC2 text7 CODE >207:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7FD6 text7 CODE >208:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7FEA text7 CODE >209:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-7FFE text7 CODE >210:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-74BC text6 CODE >22:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74BC text6 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74C0 text6 CODE >36:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74C4 text6 CODE >38:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74C8 text6 CODE >58:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74CA text6 CODE >59:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74CC text6 CODE >60:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74CE text6 CODE >65:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-749A text5 CODE >12:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-749A text5 CODE >15:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-749E text5 CODE >16:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74A2 text5 CODE >17:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74A4 text5 CODE >18:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74A6 text5 CODE >19:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74A8 text5 CODE >20:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-7484 text4 CODE >6:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-7484 text4 CODE >8:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-7488 text4 CODE >9:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-748C text4 CODE >10:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-74D0 text3 CODE >4:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74D0 text3 CODE >6:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74D2 text3 CODE >7:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74D4 text3 CODE >9:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74D6 text3 CODE >10:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74D8 text3 CODE >12:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74DA text3 CODE >13:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74DC text3 CODE >14:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74DE text3 CODE >15:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74E0 text3 CODE >17:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74E2 text3 CODE >19:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-74E4 text3 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
-748E text2 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-7490 text2 CODE >26:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-7494 text2 CODE >28:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-7498 text2 CODE >29:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-74E6 text1 CODE >39:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-74E6 text1 CODE >41:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-74EA text1 CODE >42:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-74EE text1 CODE >44:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-74F2 text1 CODE >45:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-74F6 text1 CODE >46:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-74FA text1 CODE >47:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-74FE text1 CODE >48:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
-7934 text0 CODE >6:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7934 text0 CODE >8:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7940 text0 CODE >9:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7944 text0 CODE >10:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7948 text0 CODE >11:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7954 text0 CODE >12:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7960 text0 CODE >14:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-796C text0 CODE >15:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7978 text0 CODE >16:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-797C text0 CODE >17:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7984 text0 CODE >21:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-798C text0 CODE >23:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7992 text0 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-79A6 text0 CODE >25:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-79B2 text0 CODE >27:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-79BA text0 CODE >29:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-79C0 text0 CODE >30:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-79D4 text0 CODE >31:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-79E0 text0 CODE >33:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-79E8 text0 CODE >35:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-79EE text0 CODE >37:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-79FA text0 CODE >39:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-7A06 text0 CODE >19:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-74AA cinit CODE >4706:C:\Users\Intern\AppData\Local\Temp\sm20.
-74AA cinit CODE >4708:C:\Users\Intern\AppData\Local\Temp\sm20.
-74AA cinit CODE >4711:C:\Users\Intern\AppData\Local\Temp\sm20.
-74AA cinit CODE >4724:C:\Users\Intern\AppData\Local\Temp\sm20.
-74AE cinit CODE >4725:C:\Users\Intern\AppData\Local\Temp\sm20.
-74B0 cinit CODE >4726:C:\Users\Intern\AppData\Local\Temp\sm20.
-74B0 cinit CODE >4727:C:\Users\Intern\AppData\Local\Temp\sm20.
-74B2 cinit CODE >4728:C:\Users\Intern\AppData\Local\Temp\sm20.
-74B4 cinit CODE >4729:C:\Users\Intern\AppData\Local\Temp\sm20.
-74B6 cinit CODE >4735:C:\Users\Intern\AppData\Local\Temp\sm20.
-74B6 cinit CODE >4737:C:\Users\Intern\AppData\Local\Temp\sm20.
-74B8 cinit CODE >4738:C:\Users\Intern\AppData\Local\Temp\sm20.
+785C text18 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+785C text18 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+7860 text18 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+7864 text18 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+786C text18 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+7870 text18 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+7874 text18 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+787C text18 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+7880 text18 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+7888 text18 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+7890 text18 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+7894 text18 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+7896 text18 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+789C text18 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+789E text18 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+78A2 text18 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+78A8 text18 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+78B4 text18 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+78BC text18 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+78BE text18 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+78C4 text18 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+78C8 text18 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+78CE text18 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+78D6 text18 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+75DE text17 CODE >67:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+75DE text17 CODE >69:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+75FA text17 CODE >70:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+75FC text17 CODE >72:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+760C text17 CODE >70:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+755A text16 CODE >371:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+755A text16 CODE >373:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7562 text16 CODE >375:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7564 text16 CODE >376:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7566 text16 CODE >377:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7568 text16 CODE >380:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7570 text16 CODE >382:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7572 text16 CODE >383:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7574 text16 CODE >384:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7576 text16 CODE >385:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7576 text16 CODE >387:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7578 text16 CODE >388:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+757A text16 CODE >389:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7676 text15 CODE >26:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7676 text15 CODE >30:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+767C text15 CODE >31:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7690 text15 CODE >33:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7696 text15 CODE >34:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76AA text15 CODE >36:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76AE text15 CODE >37:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76B2 text15 CODE >38:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76B8 text15 CODE >40:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76BC text15 CODE >41:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76C0 text15 CODE >42:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76C6 text15 CODE >44:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76CA text15 CODE >45:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76CE text15 CODE >46:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76D4 text15 CODE >48:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76D8 text15 CODE >49:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76DC text15 CODE >50:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+76E2 text15 CODE >51:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+78E0 text14 CODE >357:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+78E0 text14 CODE >359:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+78F4 text14 CODE >360:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+78FC text14 CODE >361:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7910 text14 CODE >362:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+791C text14 CODE >363:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7930 text14 CODE >364:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+793C text14 CODE >365:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7950 text14 CODE >366:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7958 text14 CODE >367:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+796C text14 CODE >368:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7978 text14 CODE >369:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+798C text14 CODE >370:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7760 text13 CODE >92:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7760 text13 CODE >95:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7768 text13 CODE >96:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7770 text13 CODE >99:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7776 text13 CODE >100:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+778A text13 CODE >102:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+778E text13 CODE >103:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7792 text13 CODE >104:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7798 text13 CODE >106:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+779C text13 CODE >107:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+77A0 text13 CODE >108:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+77A6 text13 CODE >110:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+77AA text13 CODE >111:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+77AE text13 CODE >112:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+77B4 text13 CODE >114:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+77B8 text13 CODE >115:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+77BC text13 CODE >116:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+77C2 text13 CODE >118:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+77D4 text13 CODE >119:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+761E text12 CODE >333:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+761E text12 CODE >335:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7632 text12 CODE >336:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7658 text12 CODE >337:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+766C text12 CODE >338:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+75A6 text11 CODE >273:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+75A6 text11 CODE >277:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+75B2 text11 CODE >279:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+75C6 text11 CODE >280:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+75C8 text11 CODE >283:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+76E4 text10 CODE >243:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+76E4 text10 CODE >245:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+76EC text10 CODE >246:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+76F8 text10 CODE >248:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7704 text10 CODE >249:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7706 text10 CODE >250:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7706 text10 CODE >252:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+770E text10 CODE >254:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+771A text10 CODE >256:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+772E text10 CODE >257:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7742 text10 CODE >258:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7756 text10 CODE >265:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+757C text9 CODE >234:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+757C text9 CODE >236:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7588 text9 CODE >237:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+759C text9 CODE >240:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+77DE text8 CODE >206:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+77DE text8 CODE >208:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+77E6 text8 CODE >209:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+77EE text8 CODE >211:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+77F8 text8 CODE >213:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7810 text8 CODE >214:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7836 text8 CODE >216:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+784A text8 CODE >211:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7A82 text7 CODE >6:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7A82 text7 CODE >10:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7A96 text7 CODE >25:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7A9E text7 CODE >26:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7AA4 text7 CODE >27:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7AAC text7 CODE >28:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7AB4 text7 CODE >29:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7ABC text7 CODE >30:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7AC4 text7 CODE >31:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7ACC text7 CODE >32:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7AD4 text7 CODE >33:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7AF8 text7 CODE >38:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7AFC text7 CODE >39:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B02 text7 CODE >40:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B0A text7 CODE >41:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B12 text7 CODE >42:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B1A text7 CODE >43:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B22 text7 CODE >44:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B2A text7 CODE >45:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B32 text7 CODE >46:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B56 text7 CODE >51:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B5A text7 CODE >52:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B60 text7 CODE >53:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B68 text7 CODE >54:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B70 text7 CODE >55:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B78 text7 CODE >56:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B80 text7 CODE >57:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B88 text7 CODE >58:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7B90 text7 CODE >59:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7BB4 text7 CODE >64:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7BB8 text7 CODE >65:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7BBE text7 CODE >66:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7BC6 text7 CODE >67:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7BCE text7 CODE >68:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7BD6 text7 CODE >69:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7BDE text7 CODE >70:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7BE6 text7 CODE >71:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7BEE text7 CODE >72:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C12 text7 CODE >77:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C16 text7 CODE >78:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C1C text7 CODE >79:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C24 text7 CODE >80:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C2C text7 CODE >81:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C34 text7 CODE >82:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C3C text7 CODE >83:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C44 text7 CODE >84:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C4C text7 CODE >85:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C70 text7 CODE >90:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C74 text7 CODE >91:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C7A text7 CODE >92:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C82 text7 CODE >93:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C8A text7 CODE >94:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C92 text7 CODE >95:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7C9A text7 CODE >96:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7CA2 text7 CODE >97:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7CAA text7 CODE >98:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7CCE text7 CODE >103:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7CD2 text7 CODE >104:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7CD8 text7 CODE >105:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7CE0 text7 CODE >106:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7CE8 text7 CODE >107:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7CF0 text7 CODE >108:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7CF8 text7 CODE >109:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D00 text7 CODE >110:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D08 text7 CODE >111:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D2C text7 CODE >116:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D30 text7 CODE >117:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D36 text7 CODE >118:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D3E text7 CODE >119:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D46 text7 CODE >120:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D4E text7 CODE >121:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D56 text7 CODE >122:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D5E text7 CODE >123:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D66 text7 CODE >124:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D8A text7 CODE >129:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D8E text7 CODE >130:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D94 text7 CODE >131:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7D9C text7 CODE >132:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7DA4 text7 CODE >133:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7DAC text7 CODE >134:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7DB4 text7 CODE >135:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7DBC text7 CODE >136:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7DC4 text7 CODE >137:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7DE8 text7 CODE >142:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7DEC text7 CODE >143:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7DF2 text7 CODE >144:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7DFA text7 CODE >145:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E02 text7 CODE >146:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E0A text7 CODE >147:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E12 text7 CODE >148:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E1A text7 CODE >149:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E22 text7 CODE >150:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E46 text7 CODE >155:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E4A text7 CODE >156:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E50 text7 CODE >157:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E58 text7 CODE >158:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E60 text7 CODE >159:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E68 text7 CODE >160:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E70 text7 CODE >161:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E78 text7 CODE >162:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7E80 text7 CODE >163:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7EA4 text7 CODE >168:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7EA8 text7 CODE >169:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7EAE text7 CODE >170:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7EB6 text7 CODE >171:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7EBE text7 CODE >172:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7EC6 text7 CODE >173:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7ECE text7 CODE >174:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7ED6 text7 CODE >175:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7EDE text7 CODE >176:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F02 text7 CODE >182:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F0A text7 CODE >183:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F2E text7 CODE >185:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F36 text7 CODE >186:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F3E text7 CODE >187:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F46 text7 CODE >188:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F4E text7 CODE >189:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F56 text7 CODE >190:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F5E text7 CODE >191:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F82 text7 CODE >194:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7F8A text7 CODE >195:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7FAE text7 CODE >200:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7FC2 text7 CODE >201:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7FD6 text7 CODE >202:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7FEA text7 CODE >203:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7FFE text7 CODE >204:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+7516 text6 CODE >22:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+7516 text6 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+751A text6 CODE >36:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+751E text6 CODE >38:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+7522 text6 CODE >58:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+7524 text6 CODE >59:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+7526 text6 CODE >60:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+7528 text6 CODE >65:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+74F4 text5 CODE >12:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+74F4 text5 CODE >15:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+74F8 text5 CODE >16:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+74FC text5 CODE >17:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+74FE text5 CODE >18:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+7500 text5 CODE >19:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+7502 text5 CODE >20:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+74DE text4 CODE >6:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+74DE text4 CODE >8:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+74E2 text4 CODE >9:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+74E6 text4 CODE >10:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+752A text3 CODE >4:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+752A text3 CODE >6:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+752C text3 CODE >7:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+752E text3 CODE >9:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7530 text3 CODE >10:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7532 text3 CODE >12:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7534 text3 CODE >13:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7536 text3 CODE >14:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+7538 text3 CODE >15:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+753A text3 CODE >17:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+753C text3 CODE >19:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+753E text3 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
+74E8 text2 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+74EA text2 CODE >26:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+74EE text2 CODE >28:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+74F2 text2 CODE >29:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+7540 text1 CODE >39:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+7540 text1 CODE >41:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+7544 text1 CODE >42:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+7548 text1 CODE >44:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+754C text1 CODE >45:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+7550 text1 CODE >46:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+7554 text1 CODE >47:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+7558 text1 CODE >48:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
+798E text0 CODE >6:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+798E text0 CODE >8:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+799A text0 CODE >9:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+799E text0 CODE >10:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+79A2 text0 CODE >11:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+79AE text0 CODE >12:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+79BA text0 CODE >14:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+79C6 text0 CODE >15:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+79D2 text0 CODE >16:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+79D6 text0 CODE >17:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+79DE text0 CODE >21:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+79E6 text0 CODE >23:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+79EC text0 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A00 text0 CODE >25:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A0C text0 CODE >27:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A14 text0 CODE >29:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A1A text0 CODE >30:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A2E text0 CODE >31:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A42 text0 CODE >32:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A4E text0 CODE >33:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A5A text0 CODE >35:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A62 text0 CODE >37:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A68 text0 CODE >39:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A74 text0 CODE >41:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7A80 text0 CODE >19:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
+7504 cinit CODE >4706:C:\Users\Intern\AppData\Local\Temp\schk.
+7504 cinit CODE >4708:C:\Users\Intern\AppData\Local\Temp\schk.
+7504 cinit CODE >4711:C:\Users\Intern\AppData\Local\Temp\schk.
+7504 cinit CODE >4724:C:\Users\Intern\AppData\Local\Temp\schk.
+7508 cinit CODE >4725:C:\Users\Intern\AppData\Local\Temp\schk.
+750A cinit CODE >4726:C:\Users\Intern\AppData\Local\Temp\schk.
+750A cinit CODE >4727:C:\Users\Intern\AppData\Local\Temp\schk.
+750C cinit CODE >4728:C:\Users\Intern\AppData\Local\Temp\schk.
+750E cinit CODE >4729:C:\Users\Intern\AppData\Local\Temp\schk.
+7510 cinit CODE >4735:C:\Users\Intern\AppData\Local\Temp\schk.
+7510 cinit CODE >4737:C:\Users\Intern\AppData\Local\Temp\schk.
+7512 cinit CODE >4738:C:\Users\Intern\AppData\Local\Temp\schk.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -434,54 +431,54 @@ $dist/default/debug\V1.debug.obj
 %SYMTAB
 ___awdiv@counter 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\V1.debug.obj
-__end_of_write_AD7147 7802 0 CODE 0 text8 dist/default/debug\V1.debug.obj
+__end_of_write_AD7147 785C 0 CODE 0 text8 dist/default/debug\V1.debug.obj
 __Hspace_0 30000E 0 ABS 0 - dist/default/debug\V1.debug.obj
 __Hspace_1 78 0 ABS 0 - dist/default/debug\V1.debug.obj
 __Hspace_2 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 blink_LED@message 19 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\V1.debug.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Intern\AppData\Local\Temp\sm20.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Intern\AppData\Local\Temp\schk.obj
 __size_of_uart_write_char 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 setup_AD7147@int_complete 2D 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\V1.debug.obj
 __size_of_read_AD7147_interrupt 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 setup_AD7147@AD7147Registers 2F 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __size_of_uart_write_unsigned_int 0 0 ABS 0 - dist/default/debug\V1.debug.obj
-__end_of_w32_spi 768A 0 CODE 0 text15 dist/default/debug\V1.debug.obj
+__end_of_w32_spi 76E4 0 CODE 0 text15 dist/default/debug\V1.debug.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\V1.debug.obj
-___sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\sm20.obj
-_main 7934 0 CODE 0 text0 dist/default/debug\V1.debug.obj
-start 2 0 CODE 0 init C:\Users\Intern\AppData\Local\Temp\sm20.obj
+___sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\schk.obj
+_main 798E 0 CODE 0 text0 dist/default/debug\V1.debug.obj
+start 2 0 CODE 0 init C:\Users\Intern\AppData\Local\Temp\schk.obj
 __size_of___awdiv 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __size_of_main 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 w16_r16_spi@address 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/debug\V1.debug.obj
-_get_CDC 7500 0 CODE 0 text16 dist/default/debug\V1.debug.obj
+_get_CDC 755A 0 CODE 0 text16 dist/default/debug\V1.debug.obj
 w32_spi@p1 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 w32_spi@p2 9 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 w32_spi@p3 B 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 w32_spi@p4 D 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-main@indicator 55 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
+main@indicator 57 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 uart_write_unsigned_int@char1 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 uart_write_unsigned_int@char2 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-_setup_AD7147 7A08 0 CODE 0 text7 dist/default/debug\V1.debug.obj
+_setup_AD7147 7A82 0 CODE 0 text7 dist/default/debug\V1.debug.obj
 get_ID@cdc 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hpowerup 2 0 CODE 0 powerup dist/default/debug\V1.debug.obj
 uart_write_unsigned_int@number 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-__accesstop 60 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\sm20.obj
-intlevel0 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\sm20.obj
-intlevel1 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\sm20.obj
-intlevel2 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\sm20.obj
-intlevel3 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\sm20.obj
+__accesstop 60 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\schk.obj
+intlevel0 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\schk.obj
+intlevel1 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\schk.obj
+intlevel2 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\schk.obj
+intlevel3 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\schk.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\V1.debug.obj
 ?_get_ID 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\V1.debug.obj
 w16_r16_spi@blank_high 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 ___awdiv@sign 6 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/debug\V1.debug.obj
-__end_of_setup_mcu 748E 0 CODE 0 text4 dist/default/debug\V1.debug.obj
-__end_of_setup_spi 74E6 0 CODE 0 text3 dist/default/debug\V1.debug.obj
+__end_of_setup_mcu 74E8 0 CODE 0 text4 dist/default/debug\V1.debug.obj
+__end_of_setup_spi 7540 0 CODE 0 text3 dist/default/debug\V1.debug.obj
 setup_AD7147@StageBuffer 3F 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 ?_read_sensor 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 w16_r16_spi@p1 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
@@ -494,13 +491,13 @@ w16_r16_spi@blank_low F 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __size_of_setup_AD7147 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 write_AD7147@DataBuffer 1B 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 ___awdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\sm20.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\sm20.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\schk.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\schk.obj
 read_sensor@register1 19 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 write_AD7147@i 25 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\V1.debug.obj
-_setup_mcu 7484 0 CODE 0 text4 dist/default/debug\V1.debug.obj
-_setup_spi 74D0 0 CODE 0 text3 dist/default/debug\V1.debug.obj
+_setup_mcu 74DE 0 CODE 0 text4 dist/default/debug\V1.debug.obj
+_setup_spi 752A 0 CODE 0 text3 dist/default/debug\V1.debug.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\V1.debug.obj
 w16_r16_spi@address_low 9 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __size_of_read_sensor 0 0 ABS 0 - dist/default/debug\V1.debug.obj
@@ -509,16 +506,16 @@ __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\V1.debug.obj
 __Hintcodelo 2 0 CODE 0 intcodelo dist/default/debug\V1.debug.obj
 __CFG_FOSC$HS1 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 ___awdiv@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-__end_of___awdiv 7886 0 CODE 0 text18 dist/default/debug\V1.debug.obj
+__end_of___awdiv 78E0 0 CODE 0 text18 dist/default/debug\V1.debug.obj
 __end_of_setup_AD7147 8000 0 CODE 0 text7 dist/default/debug\V1.debug.obj
-_w16_r16_spi 7706 0 CODE 0 text13 dist/default/debug\V1.debug.obj
+_w16_r16_spi 7760 0 CODE 0 text13 dist/default/debug\V1.debug.obj
 read_AD7147_interrupt@Register_Values 19 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-__end_of_get_ID 761C 0 CODE 0 text12 dist/default/debug\V1.debug.obj
+__end_of_get_ID 7676 0 CODE 0 text12 dist/default/debug\V1.debug.obj
 __CFG_SOSCSEL$DIG 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __Lintcodelo 2 0 CODE 0 intcodelo dist/default/debug\V1.debug.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/debug\V1.debug.obj
-start_initialization 74AA 0 CODE 0 cinit dist/default/debug\V1.debug.obj
-_sensor_CDC 754C 0 CODE 0 text11 dist/default/debug\V1.debug.obj
+start_initialization 7504 0 CODE 0 cinit dist/default/debug\V1.debug.obj
+_sensor_CDC 75A6 0 CODE 0 text11 dist/default/debug\V1.debug.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\V1.debug.obj
 read_sensor@cdc_sensor 1D 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 ___rparam_used 1 0 ABS 0 - dist/default/debug\V1.debug.obj
@@ -563,11 +560,11 @@ __Hbank11 0 0 ABS 0 bank11 dist/default/debug\V1.debug.obj
 __Hbank12 0 0 ABS 0 bank12 dist/default/debug\V1.debug.obj
 __Hbank13 0 0 ABS 0 bank13 dist/default/debug\V1.debug.obj
 __Hbank14 0 0 ABS 0 bank14 dist/default/debug\V1.debug.obj
-_w32_spi 761C 0 CODE 0 text15 dist/default/debug\V1.debug.obj
+_w32_spi 7676 0 CODE 0 text15 dist/default/debug\V1.debug.obj
 write_AD7147@index 1D 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\V1.debug.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\V1.debug.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Intern\AppData\Local\Temp\sm20.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Intern\AppData\Local\Temp\schk.obj
 _BAUDCON1 FA7 0 ABS 0 - dist/default/debug\V1.debug.obj
 __Hcomram 0 0 ABS 0 comram dist/default/debug\V1.debug.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/debug\V1.debug.obj
@@ -602,9 +599,9 @@ __Ltext8 0 0 ABS 0 text8 dist/default/debug\V1.debug.obj
 __Ltext9 0 0 ABS 0 text9 dist/default/debug\V1.debug.obj
 write_AD7147@Data_Value 23 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\V1.debug.obj
-__end_of_sensor_CDC 7584 0 CODE 0 text11 dist/default/debug\V1.debug.obj
+__end_of_sensor_CDC 75DE 0 CODE 0 text11 dist/default/debug\V1.debug.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/debug\V1.debug.obj
-_setup_port 749A 0 CODE 0 text5 dist/default/debug\V1.debug.obj
+_setup_port 74F4 0 CODE 0 text5 dist/default/debug\V1.debug.obj
 __Habs1 0 0 ABS 0 abs1 dist/default/debug\V1.debug.obj
 __Hdata 0 0 ABS 0 data dist/default/debug\V1.debug.obj
 __Hinit 6 0 CODE 0 init dist/default/debug\V1.debug.obj
@@ -629,24 +626,24 @@ __S0 30000E 0 ABS 0 - dist/default/debug\V1.debug.obj
 __S1 78 0 ABS 0 - dist/default/debug\V1.debug.obj
 __S2 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 write_AD7147@RegisterAddress 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-__end_of_blink_LED 7934 0 CODE 0 text14 dist/default/debug\V1.debug.obj
+__end_of_blink_LED 798E 0 CODE 0 text14 dist/default/debug\V1.debug.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\V1.debug.obj
 __size_of_blink_LED 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __size_of_get_CDC 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\V1.debug.obj
-_get_ID 75C4 0 CODE 0 text12 dist/default/debug\V1.debug.obj
+_get_ID 761E 0 CODE 0 text12 dist/default/debug\V1.debug.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/debug\V1.debug.obj
-_read_sensor 768A 0 CODE 0 text10 dist/default/debug\V1.debug.obj
-_uart_write_unsigned_int 74E6 0 CODE 0 text1 dist/default/debug\V1.debug.obj
+_read_sensor 76E4 0 CODE 0 text10 dist/default/debug\V1.debug.obj
+_uart_write_unsigned_int 7540 0 CODE 0 text1 dist/default/debug\V1.debug.obj
 __Hramtop F00 0 RAM 0 ramtop dist/default/debug\V1.debug.obj
 __Hrparam 0 0 COMRAM 1 rparam dist/default/debug\V1.debug.obj
 read_AD7147_interrupt@interrupt_clear 1B 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-__end_of_read_AD7147_interrupt 754C 0 CODE 0 text9 dist/default/debug\V1.debug.obj
+__end_of_read_AD7147_interrupt 75A6 0 CODE 0 text9 dist/default/debug\V1.debug.obj
 _CDC_RESULT 60 0 BANK0 1 bssBANK0 dist/default/debug\V1.debug.obj
 __activetblptr 0 0 ABS 0 - dist/default/debug\V1.debug.obj
-__end_of_uart_write_unsigned_int 7500 0 CODE 0 text1 dist/default/debug\V1.debug.obj
+__end_of_uart_write_unsigned_int 755A 0 CODE 0 text1 dist/default/debug\V1.debug.obj
 __Hstruct 0 0 COMRAM 1 struct dist/default/debug\V1.debug.obj
-_blink_LED 7886 0 CODE 0 text14 dist/default/debug\V1.debug.obj
+_blink_LED 78E0 0 CODE 0 text14 dist/default/debug\V1.debug.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/debug\V1.debug.obj
 __Htext10 0 0 ABS 0 text10 dist/default/debug\V1.debug.obj
 __Htext11 0 0 ABS 0 text11 dist/default/debug\V1.debug.obj
@@ -660,20 +657,20 @@ __Htext18 0 0 ABS 0 text18 dist/default/debug\V1.debug.obj
 write_AD7147@Register_Value 21 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 w32_spi@address 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 _PIE1bits F9D 0 ABS 0 - dist/default/debug\V1.debug.obj
-__end_of_setup_port 74AA 0 CODE 0 text5 dist/default/debug\V1.debug.obj
-__end_of_init_uart 74D0 0 CODE 0 text6 dist/default/debug\V1.debug.obj
+__end_of_setup_port 7504 0 CODE 0 text5 dist/default/debug\V1.debug.obj
+__end_of_init_uart 752A 0 CODE 0 text6 dist/default/debug\V1.debug.obj
 get_CDC@state 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-__ptext10 768A 0 CODE 0 text10 dist/default/debug\V1.debug.obj
-__ptext11 754C 0 CODE 0 text11 dist/default/debug\V1.debug.obj
-__ptext12 75C4 0 CODE 0 text12 dist/default/debug\V1.debug.obj
-__ptext13 7706 0 CODE 0 text13 dist/default/debug\V1.debug.obj
-__ptext14 7886 0 CODE 0 text14 dist/default/debug\V1.debug.obj
-__ptext15 761C 0 CODE 0 text15 dist/default/debug\V1.debug.obj
-__ptext16 7500 0 CODE 0 text16 dist/default/debug\V1.debug.obj
-__ptext17 7584 0 CODE 0 text17 dist/default/debug\V1.debug.obj
-__ptext18 7802 0 CODE 0 text18 dist/default/debug\V1.debug.obj
+__ptext10 76E4 0 CODE 0 text10 dist/default/debug\V1.debug.obj
+__ptext11 75A6 0 CODE 0 text11 dist/default/debug\V1.debug.obj
+__ptext12 761E 0 CODE 0 text12 dist/default/debug\V1.debug.obj
+__ptext13 7760 0 CODE 0 text13 dist/default/debug\V1.debug.obj
+__ptext14 78E0 0 CODE 0 text14 dist/default/debug\V1.debug.obj
+__ptext15 7676 0 CODE 0 text15 dist/default/debug\V1.debug.obj
+__ptext16 755A 0 CODE 0 text16 dist/default/debug\V1.debug.obj
+__ptext17 75DE 0 CODE 0 text17 dist/default/debug\V1.debug.obj
+__ptext18 785C 0 CODE 0 text18 dist/default/debug\V1.debug.obj
 __size_of_init_uart 0 0 ABS 0 - dist/default/debug\V1.debug.obj
-___awdiv 7802 0 CODE 0 text18 dist/default/debug\V1.debug.obj
+___awdiv 785C 0 CODE 0 text18 dist/default/debug\V1.debug.obj
 __Lbank10 0 0 ABS 0 bank10 dist/default/debug\V1.debug.obj
 __Lbank11 0 0 ABS 0 bank11 dist/default/debug\V1.debug.obj
 __Lbank12 0 0 ABS 0 bank12 dist/default/debug\V1.debug.obj
@@ -682,7 +679,7 @@ __Lbank14 0 0 ABS 0 bank14 dist/default/debug\V1.debug.obj
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\V1.debug.obj
 __Lbigram 0 0 ABS 0 bigram dist/default/debug\V1.debug.obj
 setup_AD7147@cdc 27 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-_read_AD7147_interrupt 7522 0 CODE 0 text9 dist/default/debug\V1.debug.obj
+_read_AD7147_interrupt 757C 0 CODE 0 text9 dist/default/debug\V1.debug.obj
 w32_spi@data_low 13 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 w16_r16_spi@address_high B 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 read_sensor@sensor_value 1B 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
@@ -693,11 +690,11 @@ _LATCbits F8B 0 ABS 0 - dist/default/debug\V1.debug.obj
 __size_of_get_ID 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 _RCSTA1bits FAB 0 ABS 0 - dist/default/debug\V1.debug.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\V1.debug.obj
-_init_uart 74BC 0 CODE 0 text6 dist/default/debug\V1.debug.obj
+_init_uart 7516 0 CODE 0 text6 dist/default/debug\V1.debug.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\V1.debug.obj
-__end_of_w16_r16_spi 7784 0 CODE 0 text13 dist/default/debug\V1.debug.obj
-stackhi E40 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\sm20.obj
-stacklo 78 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\sm20.obj
+__end_of_w16_r16_spi 77DE 0 CODE 0 text13 dist/default/debug\V1.debug.obj
+stackhi E40 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\schk.obj
+stacklo 78 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\schk.obj
 __Lintcode 2 0 CODE 0 intcode dist/default/debug\V1.debug.obj
 __Lintret 0 0 ABS 0 intret dist/default/debug\V1.debug.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\V1.debug.obj
@@ -709,11 +706,11 @@ main@bb 4F 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 delay_ms@j C 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 delay_ms@n 9 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 _PIR1bits F9E 0 ABS 0 - dist/default/debug\V1.debug.obj
-__end_of_get_CDC 7522 0 CODE 0 text16 dist/default/debug\V1.debug.obj
+__end_of_get_CDC 757C 0 CODE 0 text16 dist/default/debug\V1.debug.obj
 __size_of_delay_ms 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\V1.debug.obj
-__end_of_uart_write_char 749A 0 CODE 0 text2 dist/default/debug\V1.debug.obj
-end_of_initialization 74B6 0 CODE 0 cinit dist/default/debug\V1.debug.obj
+__end_of_uart_write_char 74F4 0 CODE 0 text2 dist/default/debug\V1.debug.obj
+end_of_initialization 7510 0 CODE 0 cinit dist/default/debug\V1.debug.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\V1.debug.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/debug\V1.debug.obj
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/debug\V1.debug.obj
@@ -726,18 +723,18 @@ __HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/debug\V1.debug.obj
 __Lramtop F00 0 RAM 0 ramtop dist/default/debug\V1.debug.obj
 __size_of_sensor_CDC 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/debug\V1.debug.obj
-__pcinit 74AA 0 CODE 0 cinit dist/default/debug\V1.debug.obj
+__pcinit 7504 0 CODE 0 cinit dist/default/debug\V1.debug.obj
 _SSPCON1bits FC6 0 ABS 0 - dist/default/debug\V1.debug.obj
-__ptext0 7934 0 CODE 0 text0 dist/default/debug\V1.debug.obj
-__ptext1 74E6 0 CODE 0 text1 dist/default/debug\V1.debug.obj
-__ptext2 748E 0 CODE 0 text2 dist/default/debug\V1.debug.obj
-__ptext3 74D0 0 CODE 0 text3 dist/default/debug\V1.debug.obj
-__ptext4 7484 0 CODE 0 text4 dist/default/debug\V1.debug.obj
-__ptext5 749A 0 CODE 0 text5 dist/default/debug\V1.debug.obj
-__ptext6 74BC 0 CODE 0 text6 dist/default/debug\V1.debug.obj
-__ptext7 7A08 0 CODE 0 text7 dist/default/debug\V1.debug.obj
-__ptext8 7784 0 CODE 0 text8 dist/default/debug\V1.debug.obj
-__ptext9 7522 0 CODE 0 text9 dist/default/debug\V1.debug.obj
+__ptext0 798E 0 CODE 0 text0 dist/default/debug\V1.debug.obj
+__ptext1 7540 0 CODE 0 text1 dist/default/debug\V1.debug.obj
+__ptext2 74E8 0 CODE 0 text2 dist/default/debug\V1.debug.obj
+__ptext3 752A 0 CODE 0 text3 dist/default/debug\V1.debug.obj
+__ptext4 74DE 0 CODE 0 text4 dist/default/debug\V1.debug.obj
+__ptext5 74F4 0 CODE 0 text5 dist/default/debug\V1.debug.obj
+__ptext6 7516 0 CODE 0 text6 dist/default/debug\V1.debug.obj
+__ptext7 7A82 0 CODE 0 text7 dist/default/debug\V1.debug.obj
+__ptext8 77DE 0 CODE 0 text8 dist/default/debug\V1.debug.obj
+__ptext9 757C 0 CODE 0 text9 dist/default/debug\V1.debug.obj
 ?_read_AD7147_interrupt 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/debug\V1.debug.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/debug\V1.debug.obj
@@ -749,7 +746,7 @@ __Ltext15 0 0 ABS 0 text15 dist/default/debug\V1.debug.obj
 __Ltext16 0 0 ABS 0 text16 dist/default/debug\V1.debug.obj
 __Ltext17 0 0 ABS 0 text17 dist/default/debug\V1.debug.obj
 __Ltext18 0 0 ABS 0 text18 dist/default/debug\V1.debug.obj
-__ramtop F00 0 RAM 0 ramtop C:\Users\Intern\AppData\Local\Temp\sm20.obj
+__ramtop F00 0 RAM 0 ramtop C:\Users\Intern\AppData\Local\Temp\schk.obj
 __Lpowerup 2 0 CODE 0 powerup dist/default/debug\V1.debug.obj
 w32_spi@address_high 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\V1.debug.obj
@@ -757,23 +754,24 @@ setup_AD7147@int_high 2B 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\V1.debug.obj
 ___param_bank 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\V1.debug.obj
-__end_of__initialization 74B6 0 CODE 0 cinit dist/default/debug\V1.debug.obj
-_uart_write_char 748E 0 CODE 0 text2 dist/default/debug\V1.debug.obj
-_delay_ms 7584 0 CODE 0 text17 dist/default/debug\V1.debug.obj
+__end_of__initialization 7510 0 CODE 0 cinit dist/default/debug\V1.debug.obj
+_uart_write_char 74E8 0 CODE 0 text2 dist/default/debug\V1.debug.obj
+_delay_ms 75DE 0 CODE 0 text17 dist/default/debug\V1.debug.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/debug\V1.debug.obj
 read_sensor@sensor 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
-_write_AD7147 7784 0 CODE 0 text8 dist/default/debug\V1.debug.obj
+_write_AD7147 77DE 0 CODE 0 text8 dist/default/debug\V1.debug.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/debug\V1.debug.obj
 main@sensor_1 53 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
+main@sensor_2 55 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __size_of_w32_spi 0 0 ABS 0 - dist/default/debug\V1.debug.obj
-__end_of_delay_ms 75C4 0 CODE 0 text17 dist/default/debug\V1.debug.obj
+__end_of_delay_ms 761E 0 CODE 0 text17 dist/default/debug\V1.debug.obj
 sensor_CDC@state 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 ?_w16_r16_spi 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 sensor_CDC@sensor 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 get_ID@result 1A 0 COMRAM 1 cstackCOMRAM dist/default/debug\V1.debug.obj
 __CFG_CANMX$PORTB 0 0 ABS 0 - dist/default/debug\V1.debug.obj
-__end_of_main 7A08 0 CODE 0 text0 dist/default/debug\V1.debug.obj
+__end_of_main 7A82 0 CODE 0 text0 dist/default/debug\V1.debug.obj
 __size_of_setup_port 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 _RC1IF 7CF5 0 ABS 0 - dist/default/debug\V1.debug.obj
 _TRISB F93 0 ABS 0 - dist/default/debug\V1.debug.obj
@@ -791,8 +789,8 @@ __Lsfr 0 0 ABS 0 sfr dist/default/debug\V1.debug.obj
 __size_of_w16_r16_spi 0 0 ABS 0 - dist/default/debug\V1.debug.obj
 _SSPSTATbits FC7 0 ABS 0 - dist/default/debug\V1.debug.obj
 __size_of_write_AD7147 0 0 ABS 0 - dist/default/debug\V1.debug.obj
-__initialization 74AA 0 CODE 0 cinit dist/default/debug\V1.debug.obj
-__end_of_read_sensor 7706 0 CODE 0 text10 dist/default/debug\V1.debug.obj
+__initialization 7504 0 CODE 0 cinit dist/default/debug\V1.debug.obj
+__end_of_read_sensor 7760 0 CODE 0 text10 dist/default/debug\V1.debug.obj
 __pbssBANK0 60 0 BANK0 1 bssBANK0 dist/default/debug\V1.debug.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/debug\V1.debug.obj
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\V1.debug.obj
@@ -823,28 +821,28 @@ __Hintcode 2 0 CODE 0 intcode dist/default/debug\V1.debug.obj
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 74AA 74AA 12 1
+cinit 0 7504 7504 12 1
 idloc 0 200000 200000 8 1
-text0 0 7934 7934 D4 1
-text1 0 74E6 74E6 1A 1
-text2 0 748E 748E C 1
-text3 0 74D0 74D0 16 1
-text4 0 7484 7484 A 1
-text5 0 749A 749A 10 1
-text6 0 74BC 74BC 14 1
-text7 0 7A08 7A08 5F8 1
-text8 0 7784 7784 7E 1
-text9 0 7522 7522 2A 1
-text10 0 768A 768A 7C 1
-text11 0 754C 754C 38 1
-text12 0 75C4 75C4 58 1
-text13 0 7706 7706 7E 1
-text14 0 7886 7886 AE 1
-text15 0 761C 761C 6E 1
-text16 0 7500 7500 22 1
-text17 0 7584 7584 40 1
-text18 0 7802 7802 84 1
-cstackCOMRAM 1 1 1 55 1
+text0 0 798E 798E F4 1
+text1 0 7540 7540 1A 1
+text2 0 74E8 74E8 C 1
+text3 0 752A 752A 16 1
+text4 0 74DE 74DE A 1
+text5 0 74F4 74F4 10 1
+text6 0 7516 7516 14 1
+text7 0 7A82 7A82 57E 1
+text8 0 77DE 77DE 7E 1
+text9 0 757C 757C 2A 1
+text10 0 76E4 76E4 7C 1
+text11 0 75A6 75A6 38 1
+text12 0 761E 761E 58 1
+text13 0 7760 7760 7E 1
+text14 0 78E0 78E0 AE 1
+text15 0 7676 7676 6E 1
+text16 0 755A 755A 22 1
+text17 0 75DE 75DE 40 1
+text18 0 785C 785C 84 1
+cstackCOMRAM 1 1 1 57 1
 reset_vec 0 0 0 6 1
 bssBANK0 1 60 60 18 1
 config 0 300000 300000 E 1

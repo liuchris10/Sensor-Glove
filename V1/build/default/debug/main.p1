@@ -13517,45 +13517,52 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _uart_write_char (1 -> -> 115 `ui `uc ]
 "30
 [v _sensor_1 `ui ~T0 @X0 1 a ]
-[; ;main.c: 30: unsigned int sensor_1 = read_sensor(14);
-[e = _sensor_1 ( _read_sensor (1 -> -> 14 `i `ui ]
-[; ;main.c: 31: uart_write_unsigned_int(sensor_1);
+[; ;main.c: 30: unsigned int sensor_1 = read_sensor(1);
+[e = _sensor_1 ( _read_sensor (1 -> -> 1 `i `ui ]
 "31
-[e ( _uart_write_unsigned_int (1 _sensor_1 ]
+[v _sensor_2 `ui ~T0 @X0 1 a ]
+[; ;main.c: 31: unsigned int sensor_2 = read_sensor(13);
+[e = _sensor_2 ( _read_sensor (1 -> -> 13 `i `ui ]
+[; ;main.c: 32: uart_write_unsigned_int(sensor_1);
 "32
+[e ( _uart_write_unsigned_int (1 _sensor_1 ]
+[; ;main.c: 33: uart_write_unsigned_int(sensor_2);
+"33
+[e ( _uart_write_unsigned_int (1 _sensor_2 ]
+"34
 }
 [e :U 1526 ]
-[; ;main.c: 32: }
-[; ;main.c: 33: if (indicator == 'f')
-"33
-[e $ ! == -> _indicator `ui -> 102 `ui 1527  ]
-[; ;main.c: 34: {
-"34
-{
-[; ;main.c: 35: uart_write_char('f');
+[; ;main.c: 34: }
+[; ;main.c: 35: if (indicator == 'f')
 "35
-[e ( _uart_write_char (1 -> -> 102 `ui `uc ]
-[; ;main.c: 37: uart_write_unsigned_int(bb);
+[e $ ! == -> _indicator `ui -> 102 `ui 1527  ]
+[; ;main.c: 36: {
+"36
+{
+[; ;main.c: 37: uart_write_char('f');
 "37
+[e ( _uart_write_char (1 -> -> 102 `ui `uc ]
+[; ;main.c: 39: uart_write_unsigned_int(bb);
+"39
 [e ( _uart_write_unsigned_int (1 _bb ]
-"38
+"40
 }
 [e :U 1527 ]
-[; ;main.c: 38: }
-[; ;main.c: 39: delay_ms(500);
-"39
-[e ( _delay_ms (1 -> 500 `i ]
-"40
+[; ;main.c: 40: }
+[; ;main.c: 41: delay_ms(200);
+"41
+[e ( _delay_ms (1 -> 200 `i ]
+"42
 }
 [e :U 1522 ]
 "19
 [e $U 1523  ]
 [e :U 1524 ]
-[; ;main.c: 40: }
-[; ;main.c: 41: return;
-"41
-[e $UE 1521  ]
 [; ;main.c: 42: }
-"42
+[; ;main.c: 43: return;
+"43
+[e $UE 1521  ]
+[; ;main.c: 44: }
+"44
 [e :UE 1521 ]
 }

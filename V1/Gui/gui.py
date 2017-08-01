@@ -23,10 +23,11 @@ SMALL_FONT = ("Helvetica", 8)
 style.use("ggplot")
 
 
-rawdata = []  #Raw Data from Arduino.
-capacitance = [] #Capacitance value from the Sensor
-pressure = []  #Transforming the Data from the Arduino into something Useful
+sensors_capacitance = [[],[]] #Capacitance value from the Sensor
+sensors_pressure = [[],[]]  #Transforming the Data from the Arduino into something Useful
+sensors_raw = [[],[]] #Raw Data of Sensors
 seconds = [] #Time Since Data has been Captured
+
 
 f = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
 a = f.add_subplot(1,1,1)
@@ -35,7 +36,7 @@ a = f.add_subplot(1,1,1)
 start_time = 0
 stop_time = 0
 record = 0
-sensors = [0]*24
+sensors_switch = [0]*24
 
 
 def init_gui():
@@ -63,16 +64,19 @@ def record_start(value):
 def record_stop(value):
     global record
     global start_time
-    global rawdata
     global seconds
-    global capacitance
+    global sensors_capacitance
+    global sensors_raw
+    global sensors_pressure
     if value == 1:
         record = 0
         start_time = 0
         save_data() #Saving the Data to an Excel Spread Sheet
-    rawdata = []
+    sensors_raw = [[],[]]
+    sensors_capacitance = [[],[]]
+    sensors_pressure = [[],[]]
     seconds = []
-    capacitance = []
+
 
 def print_Name1():
         print("Carl!")
@@ -80,31 +84,42 @@ def print_Name1():
 def save_data():
     global seconds
     global rawdata
-    global capacitance
-    global pressure
+    global sensors_raw
+    global sensors_capacitance
+    global sensors_pressure
     dest_filename = 'C:/Users/Intern/Documents/Data/test2.xlsx'
     wb = Workbook()
     ws = wb.active
     ws.title = "Sample #1"
     ws.cell(row=1, column=1, value="Time (s)")
-    ws.cell(row=1, column=2, value="Raw Data (16 bit)")
-    ws.cell(row=1, column=3, value="Capacitance (pf)")
-    ws.cell(row=1, column=4, value="Pressure (Pa)")
+    ws.cell(row=1, column=2, value="Raw Data 1(16 bit)")
+    ws.cell(row=1, column=3, value="Capacitance 1(pf)")
+    ws.cell(row=1, column=4, value="Pressure 1(Pa)")
+    ws.cell(row=1, column=2, value="Raw Data 2(16 bit)")
+    ws.cell(row=1, column=3, value="Capacitance 2(pf)")
+    ws.cell(row=1, column=4, value="Pressure 2(Pa)")
     for i in range(1,len(seconds)):
         ws.cell(row=i+1, column=1, value=seconds[i-1])
-        ws.cell(row=i+1, column=2, value=rawdata[i-1])
-        ws.cell(row=i+1, column=3, value=capacitance[i-1])
-        ws.cell(row=i+1, column=4, value=pressure[i-1])
-
+        ws.cell(row=i+1, column=2, value=sensors_raw[0][i-1])
+        ws.cell(row=i+1, column=3, value=sensors_capacitance[0][i-1])
+        ws.cell(row=i+1, column=4, value=sensors_pressure[0][i-1])
+        ws.cell(row=i+1, column=5, value=sensors_raw[1][i-1])
+        ws.cell(row=i+1, column=6, value=sensors_capacitance[1][i-1])
+        ws.cell(row=i+1, column=7, value=sensors_pressure[1][i-1])
     wb.save(filename = dest_filename)
 
 def update_single_Fig():
+    global seconds
     a.clear()
     a.set_title("Individual Sensor Readout")
-    a.set_ylabel("Capacitance")  # Set ylabels
+    a.set_ylabel("Pressure (Psi)")  # Set ylabels
     a.set_xlabel("Time (s)")
-    #a.set_xlim([0, 5])
-    #a.set_ylim([20, 30])
+    if seconds[-1] < 20:
+        a.set_xlim([0, 20])
+    else:
+        time_low = seconds[-1] - 20
+        a.set_xlim([time_low,seconds[-1]])
+    a.set_ylim([0, 5])
     a.ticklabel_format(useOffset=False)
 def update_total_Fig():
     print('Hello')
@@ -113,33 +128,43 @@ def update_total_Fig():
 def recordData(i):
     # start data collection
     global record
-    global rawdata
-    global pressure
-    global capacitance
+    global sensors_raw
+    global sensors_pressure
+    global sensors_capacitance
     global seconds
-    data = 0
+    data1 = 0
+    data2 = 0
     if (record == 1):
         while (sp1.wait() == 0):
             pass
         indicator = sp1.read_8()
         if indicator == b's':
-            data = sp1.read_dec()
-        print(data)
-        rd = float(data)
-        p = (rd / 65535) * 500
-        c = (rd *0.00034) + 4
+            data1 = sp1.read_dec()
+            data2 = sp1.read_dec()
+        rd1 = float(data1)
+        c1 = (rd1 *0.00034) + 4
+        rd2 = float(data2)
+        c2 = (rd2 *0.00034) + 4
+        p1 = (c1 -  24) * 2.2
+        p2 = (c2 - 24) * 1.2
+
+        # print(p1)
+        # print(p2)
+
         count = time.time() - start_time
-        rawdata.append(rd)
-        capacitance.append(c)
-        pressure.append(p)
+
+        sensors_capacitance[0].append(c1)
+        sensors_raw[0].append(rd1)
+        sensors_pressure[0].append(p1)
+
+        sensors_capacitance[1].append(c2)
+        sensors_raw[1].append(rd2)
+        sensors_pressure[1].append(p2)
+
         seconds.append(count)
         update_single_Fig()
-        a.plot(seconds, capacitance)
-        # a.pause(.000001)
-        # count = count + 1
-        # if (count > 50):
-        #     rawdata.pop(0)
-        #     pressure.pop(0)
+        a.plot(seconds, sensors_pressure[0], seconds, sensors_pressure[1])
+
 
 class SensorGlove(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -264,7 +289,8 @@ class Main_Page(tk.Frame):
         for n in range(1,25):
             checkbox_name = "Sensor %d" %(n)
             if n > 12:
-                button.append(tk.Checkbutton(right, text=checkbox_name, onvalue = 1, offvalue = 0, command=lambda n=n: self.update_CheckBox_Sensors(n)))
+                #button.append(tk.Checkbutton(right, text=checkbox_name, onvalue = 1, offvalue = 0, command=lambda n=n: self.update_CheckBox_Sensors(n)))
+                button.append(tk.Checkbutton(right, text=checkbox_name, onvalue=1, offvalue=0, command=print_Name1()))
                 if n > 20:
                     row = 3
                     column = 5 + (n-21)
@@ -275,7 +301,7 @@ class Main_Page(tk.Frame):
                     row = 1
                     column = 5 + (n-13)
             else:
-                button.append(tk.Checkbutton(left, text=checkbox_name, onvalue=1, offvalue=0, command=lambda n=n: self.update_CheckBox_Sensors(n)))
+                button.append(tk.Checkbutton(left, text=checkbox_name, onvalue=1, offvalue=0, command=lambda n=n: print_Name1()))
                 if n > 8:
                     row = 3
                     column = 0 + (n-9)

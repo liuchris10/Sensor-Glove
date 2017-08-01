@@ -5,17 +5,19 @@
 [d frameptr 4065 ]
 "6 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 [v _setup_AD7147 setup_AD7147 `(v  1 e 1 0 ]
-"203
+"206
 [v _write_AD7147 write_AD7147 `(v  1 e 1 0 ]
-"230
+"234
 [v _read_AD7147_interrupt read_AD7147_interrupt `(ui  1 e 2 0 ]
-"269
+"243
+[v _read_sensor read_sensor `(ui  1 e 2 0 ]
+"273
 [v _sensor_CDC sensor_CDC `(v  1 e 1 0 ]
-"329
+"333
 [v _get_ID get_ID `(ui  1 e 2 0 ]
-"353
+"357
 [v _blink_LED blink_LED `(v  1 e 1 0 ]
-"367
+"371
 [v _get_CDC get_CDC `(v  1 e 1 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -63,22 +65,7 @@
 [v _uart_write_unsigned_int uart_write_unsigned_int `(v  1 e 1 0 ]
 "94
 [v _uart_read_char uart_read_char `(uc  1 e 1 0 ]
-[s S331 . 1 `uc 1 RB0 1 0 :1:0 
-`uc 1 RB1 1 0 :1:1 
-`uc 1 RB2 1 0 :1:2 
-`uc 1 RB3 1 0 :1:3 
-`uc 1 RB4 1 0 :1:4 
-`uc 1 RB5 1 0 :1:5 
-`uc 1 RB6 1 0 :1:6 
-`uc 1 RB7 1 0 :1:7 
-]
-"29957 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f25k80.h
-[s S340 . 1 `uc 1 . 1 0 :3:0 
-`uc 1 CCP2_PA2 1 0 :1:3 
-]
-[u S343 . 1 `S331 1 . 1 0 `S340 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES343  1 e 1 @3969 ]
-[s S56 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S57 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -87,8 +74,8 @@
 `uc 1 LATC6 1 0 :1:6 
 `uc 1 LATC7 1 0 :1:7 
 ]
-"30464
-[s S65 . 1 `uc 1 LC0 1 0 :1:0 
+"30464 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f25k80.h
+[s S66 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -97,13 +84,13 @@
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S74 . 1 `S56 1 . 1 0 `S65 1 . 1 0 ]
-[v _LATCbits LATCbits `VES74  1 e 1 @3979 ]
+[u S75 . 1 `S57 1 . 1 0 `S66 1 . 1 0 ]
+[v _LATCbits LATCbits `VES75  1 e 1 @3979 ]
 "30700
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "30762
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S634 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S585 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 TMR1GIE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -112,13 +99,13 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "31090
-[s S642 . 1 `uc 1 . 1 0 :4:0 
+[s S593 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXIE 1 0 :1:4 
 `uc 1 RCIE 1 0 :1:5 
 ]
-[u S646 . 1 `S634 1 . 1 0 `S642 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES646  1 e 1 @3997 ]
-[s S850 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S597 . 1 `S585 1 . 1 0 `S593 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES597  1 e 1 @3997 ]
+[s S801 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR1GIF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -127,15 +114,15 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "31161
-[s S858 . 1 `uc 1 . 1 0 :4:0 
+[s S809 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[u S862 . 1 `S850 1 . 1 0 `S858 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES862  1 e 1 @3998 ]
+[u S813 . 1 `S801 1 . 1 0 `S809 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES813  1 e 1 @3998 ]
 "31790
 [v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @4007 ]
-[s S433 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S384 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -145,22 +132,22 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "32195
-[s S442 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S393 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 ADEN 1 0 :1:3 
 `uc 1 . 1 0 :2:4 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S448 . 1 `uc 1 . 1 0 :6:0 
+[s S399 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 NOT_RC8 1 0 :1:6 
 ]
-[s S451 . 1 `uc 1 . 1 0 :6:0 
+[s S402 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S454 . 1 `uc 1 . 1 0 :6:0 
+[s S405 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S457 . 1 `uc 1 RX9D1 1 0 :1:0 
+[s S408 . 1 `uc 1 RX9D1 1 0 :1:0 
 `uc 1 OERR1 1 0 :1:1 
 `uc 1 FERR1 1 0 :1:2 
 `uc 1 ADDEN1 1 0 :1:3 
@@ -169,14 +156,14 @@
 `uc 1 RX91 1 0 :1:6 
 `uc 1 SPEN1 1 0 :1:7 
 ]
-[s S466 . 1 `uc 1 . 1 0 :5:0 
+[s S417 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[u S469 . 1 `S433 1 . 1 0 `S442 1 . 1 0 `S448 1 . 1 0 `S451 1 . 1 0 `S454 1 . 1 0 `S457 1 . 1 0 `S466 1 . 1 0 ]
-[v _RCSTA1bits RCSTA1bits `VES469  1 e 1 @4011 ]
+[u S420 . 1 `S384 1 . 1 0 `S393 1 . 1 0 `S399 1 . 1 0 `S402 1 . 1 0 `S405 1 . 1 0 `S408 1 . 1 0 `S417 1 . 1 0 ]
+[v _RCSTA1bits RCSTA1bits `VES420  1 e 1 @4011 ]
 "32478
 [v _TXSTA1 TXSTA1 `VEuc  1 e 1 @4012 ]
-[s S735 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S686 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -186,17 +173,17 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "32523
-[s S744 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S695 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S748 . 1 `uc 1 . 1 0 :6:0 
+[s S699 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 NOT_TX8 1 0 :1:6 
 ]
-[s S751 . 1 `uc 1 . 1 0 :6:0 
+[s S702 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S754 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S705 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -205,40 +192,40 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[u S763 . 1 `S735 1 . 1 0 `S744 1 . 1 0 `S748 1 . 1 0 `S751 1 . 1 0 `S754 1 . 1 0 ]
-[v _TXSTA1bits TXSTA1bits `VES763  1 e 1 @4012 ]
+[u S714 . 1 `S686 1 . 1 0 `S695 1 . 1 0 `S699 1 . 1 0 `S702 1 . 1 0 `S705 1 . 1 0 ]
+[v _TXSTA1bits TXSTA1bits `VES714  1 e 1 @4012 ]
 "32766
 [v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
 "32804
 [v _RCREG1 RCREG1 `VEuc  1 e 1 @4014 ]
 "32842
 [v _SPBRG1 SPBRG1 `VEuc  1 e 1 @4015 ]
-[s S608 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S559 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "34668
-[s S614 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S565 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
 "34668
-[u S619 . 1 `S608 1 . 1 0 `S614 1 . 1 0 ]
+[u S570 . 1 `S559 1 . 1 0 `S565 1 . 1 0 ]
 "34668
 "34668
-[v _SSPCON1bits SSPCON1bits `VES619  1 e 1 @4038 ]
-[s S97 . 1 `uc 1 . 1 0 :2:0 
+[v _SSPCON1bits SSPCON1bits `VES570  1 e 1 @4038 ]
+[s S98 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "34795
-[s S100 . 1 `uc 1 . 1 0 :5:0 
+[s S101 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
 "34795
-[s S103 . 1 `uc 1 BF 1 0 :1:0 
+[s S104 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -248,62 +235,62 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "34795
-[s S112 . 1 `uc 1 . 1 0 :2:0 
+[s S113 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
 "34795
-[s S117 . 1 `uc 1 . 1 0 :2:0 
+[s S118 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
 "34795
-[s S122 . 1 `uc 1 . 1 0 :2:0 
+[s S123 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
 "34795
-[s S125 . 1 `uc 1 . 1 0 :5:0 
+[s S126 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
 "34795
-[s S128 . 1 `uc 1 . 1 0 :2:0 
+[s S129 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
 "34795
-[s S133 . 1 `uc 1 . 1 0 :2:0 
+[s S134 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
 "34795
-[s S138 . 1 `uc 1 . 1 0 :2:0 
+[s S139 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
 "34795
-[s S144 . 1 `uc 1 . 1 0 :2:0 
+[s S145 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
 `uc 1 STOP 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
 "34795
-[s S150 . 1 `uc 1 . 1 0 :2:0 
+[s S151 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 NOT_A 1 0 :1:5 
 ]
 "34795
-[u S155 . 1 `S97 1 . 1 0 `S100 1 . 1 0 `S103 1 . 1 0 `S112 1 . 1 0 `S117 1 . 1 0 `S122 1 . 1 0 `S125 1 . 1 0 `S128 1 . 1 0 `S133 1 . 1 0 `S138 1 . 1 0 `S144 1 . 1 0 `S150 1 . 1 0 ]
+[u S156 . 1 `S98 1 . 1 0 `S101 1 . 1 0 `S104 1 . 1 0 `S113 1 . 1 0 `S118 1 . 1 0 `S123 1 . 1 0 `S126 1 . 1 0 `S129 1 . 1 0 `S134 1 . 1 0 `S139 1 . 1 0 `S145 1 . 1 0 `S151 1 . 1 0 ]
 "34795
 "34795
-[v _SSPSTATbits SSPSTATbits `VES155  1 e 1 @4039 ]
+[v _SSPSTATbits SSPSTATbits `VES156  1 e 1 @4039 ]
 "35020
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
 "39864
@@ -312,49 +299,17 @@
 "6 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"43
-[v main@device_ID device_ID `ui  1 a 2 28 ]
-"22
-[v main@int_high int_high `ui  1 a 2 38 ]
-"21
-[v main@int_low int_low `ui  1 a 2 36 ]
-"20
-[v main@int_read int_read `ui  1 a 2 34 ]
-"17
-[v main@bb bb `ui  1 a 2 32 ]
-"35
-[v main@int_complete int_complete `ui  1 a 2 30 ]
-"26
-[v main@register4 register4 `ui  1 a 2 26 ]
-"25
-[v main@register3 register3 `ui  1 a 2 24 ]
-"24
-[v main@register2 register2 `ui  1 a 2 22 ]
-"23
-[v main@register1 register1 `ui  1 a 2 20 ]
-"18
-[v main@power_mode power_mode `ui  1 a 2 18 ]
-"34
-[v main@sensor_4 sensor_4 `ui  1 a 2 16 ]
-"33
-[v main@sensor_3 sensor_3 `ui  1 a 2 14 ]
-"32
-[v main@sensor_2 sensor_2 `ui  1 a 2 12 ]
 "31
-[v main@sensor_1 sensor_1 `ui  1 a 2 10 ]
+[v main@sensor_2 sensor_2 `ui  1 a 2 84 ]
 "30
-[v main@stage_3 stage_3 `ui  1 a 2 8 ]
-"29
-[v main@stage_2 stage_2 `ui  1 a 2 6 ]
-"28
-[v main@stage_1 stage_1 `ui  1 a 2 4 ]
-"27
-[v main@stage_0 stage_0 `ui  1 a 2 2 ]
-"19
-[v main@int_ready int_ready `ui  1 a 2 0 ]
+[v main@sensor_1 sensor_1 `ui  1 a 2 82 ]
+"24
+[v main@device_ID device_ID `ui  1 a 2 80 ]
+"17
+[v main@bb bb `ui  1 a 2 78 ]
 "16
-[v main@indicator indicator `uc  1 a 1 40 ]
-"92
+[v main@indicator indicator `uc  1 a 1 86 ]
+"44
 } 0
 "39 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
 [v _uart_write_unsigned_int uart_write_unsigned_int `(v  1 e 1 0 ]
@@ -399,51 +354,74 @@
 [v _setup_AD7147 setup_AD7147 `(v  1 e 1 0 ]
 {
 "8
-[v setup_AD7147@StageBuffer StageBuffer `[8]ui  1 a 16 56 ]
+[v setup_AD7147@StageBuffer StageBuffer `[8]ui  1 a 16 62 ]
 "9
-[v setup_AD7147@AD7147Registers AD7147Registers `[8]ui  1 a 16 40 ]
-"199
-[v setup_AD7147@int_complete int_complete `ui  1 a 2 38 ]
-"198
-[v setup_AD7147@int_high int_high `ui  1 a 2 36 ]
-"197
-[v setup_AD7147@int_low int_low `ui  1 a 2 34 ]
-"6
-[v setup_AD7147@cdc cdc `ui  1 p 2 32 ]
+[v setup_AD7147@AD7147Registers AD7147Registers `[8]ui  1 a 16 46 ]
+"202
+[v setup_AD7147@int_complete int_complete `ui  1 a 2 44 ]
 "201
+[v setup_AD7147@int_high int_high `ui  1 a 2 42 ]
+"200
+[v setup_AD7147@int_low int_low `ui  1 a 2 40 ]
+"6
+[v setup_AD7147@cdc cdc `ui  1 p 2 38 ]
+"204
 } 0
-"203
+"206
 [v _write_AD7147 write_AD7147 `(v  1 e 1 0 ]
 {
-"207
-[v write_AD7147@i i `ui  1 a 2 30 ]
-"205
-[v write_AD7147@Register_Values Register_Values `ui  1 a 2 28 ]
-"203
+"211
+[v write_AD7147@i i `ui  1 a 2 36 ]
+"209
+[v write_AD7147@Data_Value Data_Value `ui  1 a 2 34 ]
+"208
+[v write_AD7147@Register_Value Register_Value `ui  1 a 2 32 ]
+"206
 [v write_AD7147@RegisterAddress RegisterAddress `ui  1 p 2 22 ]
 [v write_AD7147@NumberOfRegisters NumberOfRegisters `ui  1 p 2 24 ]
 [v write_AD7147@DataBuffer DataBuffer `*.39ui  1 p 2 26 ]
-"213
+[v write_AD7147@index index `ui  1 p 2 28 ]
+"218
 } 0
-"230
+"234
 [v _read_AD7147_interrupt read_AD7147_interrupt `(ui  1 e 2 0 ]
 {
-"233
-[v read_AD7147_interrupt@interrupt_clear interrupt_clear `ui  1 a 2 26 ]
-"232
-[v read_AD7147_interrupt@Register_Values Register_Values `ui  1 a 2 24 ]
-"230
-[v read_AD7147_interrupt@RegisterAddress RegisterAddress `ui  1 p 2 22 ]
 "237
+[v read_AD7147_interrupt@interrupt_clear interrupt_clear `ui  1 a 2 26 ]
+"236
+[v read_AD7147_interrupt@Register_Values Register_Values `ui  1 a 2 24 ]
+"234
+[v read_AD7147_interrupt@RegisterAddress RegisterAddress `ui  1 p 2 22 ]
+"241
 } 0
-"329
+"243
+[v _read_sensor read_sensor `(ui  1 e 2 0 ]
+{
+"245
+[v read_sensor@cdc_sensor cdc_sensor `ui  1 a 2 28 ]
+"257
+[v read_sensor@sensor_value sensor_value `ui  1 a 2 26 ]
+"254
+[v read_sensor@register1 register1 `ui  1 a 2 24 ]
+"243
+[v read_sensor@sensor sensor `ui  1 p 2 22 ]
+"266
+} 0
+"273
+[v _sensor_CDC sensor_CDC `(v  1 e 1 0 ]
+{
+[v sensor_CDC@sensor sensor `ui  1 p 2 4 ]
+[v sensor_CDC@state state `ui  1 p 2 6 ]
+"285
+} 0
+"333
 [v _get_ID get_ID `(ui  1 e 2 0 ]
 {
-"332
+"336
 [v get_ID@result result `ui  1 a 2 25 ]
-"329
+"333
 [v get_ID@cdc cdc `ui  1 p 2 22 ]
-"335
+"339
 } 0
 "92 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
 [v _w16_r16_spi w16_r16_spi `(ui  1 e 2 0 ]
@@ -466,14 +444,14 @@
 [v w16_r16_spi@address address `ui  1 p 2 0 ]
 "120
 } 0
-"353 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+"357 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 [v _blink_LED blink_LED `(v  1 e 1 0 ]
 {
-"356
+"360
 [v blink_LED@message message `ui  1 a 2 24 ]
-"353
+"357
 [v blink_LED@cdc cdc `ui  1 p 2 22 ]
-"366
+"370
 } 0
 "26 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
 [v _w32_spi w32_spi `(v  1 e 1 0 ]
@@ -496,12 +474,12 @@
 [v w32_spi@data data `ui  1 p 2 2 ]
 "51
 } 0
-"367 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
+"371 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 [v _get_CDC get_CDC `(v  1 e 1 0 ]
 {
 [v get_CDC@cdc cdc `ui  1 p 2 0 ]
 [v get_CDC@state state `ui  1 p 2 2 ]
-"387
+"391
 } 0
 "67 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
 [v _delay_ms delay_ms `(v  1 e 1 0 ]

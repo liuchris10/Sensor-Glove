@@ -24,7 +24,7 @@ void setup_AD7147(unsigned int cdc)
     //===========================
     StageBuffer[0] = 0xFFFE;	//Register 0x80
     StageBuffer[1] = 0x1FFF;	//Register 0x81
-    StageBuffer[2] = 0x0000;	//Register 0x82
+    StageBuffer[2] = 0x0100;	//Register 0x82
     StageBuffer[3] = 0x2121;	//Register 0x83
     StageBuffer[4] = 4000;      //Register 0x84	
     StageBuffer[5] = 4000;   	//Register 0x85
@@ -35,92 +35,92 @@ void setup_AD7147(unsigned int cdc)
     //===========================
     //= Stage 1 - CIN1 (+) S2
     //===========================
-    StageBuffer[0]=0xFFFB;	//Register 0x88
-    StageBuffer[1]=0x1FFF;	//Register 0x89
-    StageBuffer[2]=0x0100;	//Register 0x8A
-    StageBuffer[3]=0x2121;	//Register 0x8B
-    StageBuffer[4]=4000;	//Register 0x8C
-    StageBuffer[5]=4000;	//Register 0x8D
-    StageBuffer[6]=4250;	//Register 0x8E
-    StageBuffer[7]=4250;	//Register 0x8F
+    StageBuffer[0]=0xFFFF;	//Register 0x88
+    StageBuffer[1]=0x3FFF;	//Register 0x89
+    StageBuffer[2]=0x0000;	//Register 0x8A
+    StageBuffer[3]=0x2626;	//Register 0x8B
+    StageBuffer[4]=3000;	//Register 0x8C
+    StageBuffer[5]=3000;	//Register 0x8D
+    StageBuffer[6]=4000;	//Register 0x8E
+    StageBuffer[7]=4000;	//Register 0x8F
 	write_AD7147(STAGE1_CONNECTION, 8, StageBuffer,0);
 
     //===========================
     //= Stage 2 - CIN2 (+) S3
     //===========================
-    StageBuffer[0]=0xFFEF;	//Register 0x90
-    StageBuffer[1]=0x1FFF;	//Register 0x91
-    StageBuffer[2]=0x0100;	//Register 0x92
-    StageBuffer[3]=0x2121;	//Register 0x93
-    StageBuffer[4]=4000;	//Register 0x94
-    StageBuffer[5]=4000;	//Register 0x95
-    StageBuffer[6]=4250;	//Register 0x96
-    StageBuffer[7]=4250;	//Register 0x97
+    StageBuffer[0]=0xFFFF;	//Register 0x90
+    StageBuffer[1]=0x3FFF;	//Register 0x91
+    StageBuffer[2]=0x0000;	//Register 0x92
+    StageBuffer[3]=0x2626;	//Register 0x93
+    StageBuffer[4]=3000;	//Register 0x94
+    StageBuffer[5]=3000;	//Register 0x95
+    StageBuffer[6]=4000;	//Register 0x96
+    StageBuffer[7]=4000;	//Register 0x97
 	write_AD7147(STAGE2_CONNECTION, 8, StageBuffer,0);
 
     //===========================
     //= Stage 3 - CIN3 (+) S4
     //===========================
-    StageBuffer[0]=0xFFBF;	//Register 0x98
-    StageBuffer[1]=0x1FFF;	//Register 0x99
-    StageBuffer[2]=0x0100;	//Register 0x9A
-    StageBuffer[3]=0x2121;	//Register 0x9B
-    StageBuffer[4]=4000;	//Register 0x9C
-    StageBuffer[5]=4000;	//Register 0x9D
-    StageBuffer[6]=4250;	//Register 0x9E
-    StageBuffer[7]=4250;	//Register 0x9F
+    StageBuffer[0]=0xFFFF;	//Register 0x98
+    StageBuffer[1]=0x3FFF;	//Register 0x99
+    StageBuffer[2]=0x0000;	//Register 0x9A
+    StageBuffer[3]=0x2626;	//Register 0x9B
+    StageBuffer[4]=3000;	//Register 0x9C
+    StageBuffer[5]=3000;	//Register 0x9D
+    StageBuffer[6]=4000;	//Register 0x9E
+    StageBuffer[7]=4000;	//Register 0x9F
     write_AD7147(STAGE3_CONNECTION, 8, StageBuffer,0);
 
     //===========================
     //= Stage 4 - CIN4 (+) S5
     //===========================
-    StageBuffer[0]=0xFEFF;	//Register 0xA0
-    StageBuffer[1]=0x1FFF;	//Register 0xA1
-    StageBuffer[2]=0x0100;	//Register 0xA2
-    StageBuffer[3]=0x2121;	//Register 0xA3
-    StageBuffer[4]=4000;	//Register 0xA4
-    StageBuffer[5]=4000;	//Register 0xA5
-    StageBuffer[6]=4250;	//Register 0xA6
-    StageBuffer[7]=4250;	//Register 0xA7
+    StageBuffer[0]=0xFFFF;	//Register 0xA0
+    StageBuffer[1]=0x3FFF;	//Register 0xA1
+    StageBuffer[2]=0x0000;	//Register 0xA2
+    StageBuffer[3]=0x2626;	//Register 0xA3
+    StageBuffer[4]=3000;	//Register 0xA4
+    StageBuffer[5]=3000;	//Register 0xA5
+    StageBuffer[6]=4000;	//Register 0xA6
+    StageBuffer[7]=4000;	//Register 0xA7
     write_AD7147(STAGE4_CONNECTION, 8, StageBuffer,0);
 
     //===========================
     //= Stage 5 - CIN5 (+) S6
     //===========================
-    StageBuffer[0]=0xFBFF;	//Register 0xA8
-    StageBuffer[1]=0x1FFF;	//Register 0xA9
-    StageBuffer[2]=0x0100;	//Register 0xAA
-    StageBuffer[3]=0x2121;	//Register 0xAB
-    StageBuffer[4]=4000;	//Register 0xAC
-    StageBuffer[5]=4000;	//Register 0xAD
-    StageBuffer[6]=4250;	//Register 0xAE
-    StageBuffer[7]=4250;	//Register 0xAF
+    StageBuffer[0]=0xFFFF;	//Register 0xA8
+    StageBuffer[1]=0x3FFF;	//Register 0xA9
+    StageBuffer[2]=0x0000;	//Register 0xAA
+    StageBuffer[3]=0x2626;	//Register 0xAB
+    StageBuffer[4]=3000;	//Register 0xAC
+    StageBuffer[5]=3000;	//Register 0xAD
+    StageBuffer[6]=4000;	//Register 0xAE
+    StageBuffer[7]=4000;	//Register 0xAF
 	write_AD7147(STAGE5_CONNECTION, 8, StageBuffer,0);
 
 	//===========================
     //= Stage 6 - CIN6 (+) S7
     //===========================
-    StageBuffer[0]=0xEFFF;	//Register 0xB0
-    StageBuffer[1]=0x1FFF;	//Register 0xB1
-    StageBuffer[2]=0x0100;	//Register 0xB2
-    StageBuffer[3]=0x2121;	//Register 0xB3
-    StageBuffer[4]=4000;	//Register 0xB4
-    StageBuffer[5]=4000;	//Register 0xB5
-    StageBuffer[6]=4250;	//Register 0xB6
-    StageBuffer[7]=4250;	//Register 0xB7
+    StageBuffer[0]=0xFFFF;	//Register 0xB0
+    StageBuffer[1]=0x3FFF;	//Register 0xB1
+    StageBuffer[2]=0x0000;	//Register 0xB2
+    StageBuffer[3]=0x2626;	//Register 0xB3
+    StageBuffer[4]=3000;	//Register 0xB4
+    StageBuffer[5]=3000;	//Register 0xB5
+    StageBuffer[6]=4000;	//Register 0xB6
+    StageBuffer[7]=4000;	//Register 0xB7
     write_AD7147(STAGE6_CONNECTION, 8, StageBuffer,0);
 
     //===========================
     //= Stage 7 - CIN7 (+) S8
     //===========================
     StageBuffer[0]=0xFFFF;	//Register 0xB8
-    StageBuffer[1]=0x1FFE;	//Register 0xB9
-    StageBuffer[2]=0x0100;	//Register 0xBA
-    StageBuffer[3]=0x2121;	//Register 0xBB
-    StageBuffer[4]=4000;	//Register 0xBC
-    StageBuffer[5]=4000;  	//Register 0xBD
-    StageBuffer[6]=4250;	//Register 0xBE
-    StageBuffer[7]=4250;	//Register 0xBF
+    StageBuffer[1]=0x3FFF;	//Register 0xB9
+    StageBuffer[2]=0x0000;	//Register 0xBA
+    StageBuffer[3]=0x2626;	//Register 0xBB
+    StageBuffer[4]=3000;	//Register 0xBC
+    StageBuffer[5]=3000;  	//Register 0xBD
+    StageBuffer[6]=4000;	//Register 0xBE
+    StageBuffer[7]=4000;	//Register 0xBF
     write_AD7147(STAGE7_CONNECTION, 8, StageBuffer,0);
 
     //===========================
@@ -179,33 +179,27 @@ void setup_AD7147(unsigned int cdc)
     //-------------------------Bank 1 Registers---------------------------------//
     //--------------------------------------------------------------------------//
     //Initialization of the first register bank but not the STAGE_CAL_EN
-    AD7147Registers[0] = 0x02B2; 			//Register 0x000
+    AD7147Registers[0] = 0x82B2; 			//Register 0x000
     write_AD7147(PWR_CONTROL, 1, AD7147Registers,0);
-    
-    unsigned int int_low = read_AD7147_interrupt(STAGE_LOW_LIMIT_INT);
-    unsigned int int_high = read_AD7147_interrupt(STAGE_HIGH_LIMIT_INT);
-    unsigned int int_complete = read_AD7147_interrupt(STAGE_COMPLETE_LIMIT_INT);
     
     AD7147Registers[2] = 0x3230;			//Register 0x002
     AD7147Registers[3] = 0x0419;			//Register 0x003
     AD7147Registers[4] = 0x0832;			//Register 0x004
     AD7147Registers[5] = 0x0000;            //Register 0x005
     AD7147Registers[6] = 0x0000;            //Register 0x006
-    AD7147Registers[7] = 0x0001;            //Register 0x007
+    AD7147Registers[7] = 0x0000;            //Register 0x007
     write_AD7147(AMB_COMP_CTRL0, 6, AD7147Registers,2);
     
     //Enable data path for all sequences and enable calibration on 8 stages
-    AD7147Registers[1] = 0x00FF;			//Register 0x001
+    AD7147Registers[1] = 0x0001;			//Register 0x001
     write_AD7147(STAGE_CAL_EN, 1, AD7147Registers,1);
 
-    AD7147Registers[0] = 0x0200;			//Register 0x000
-    write_AD7147(PWR_CONTROL, 1, AD7147Registers,0);
     
     //Read high and low limit interrupt status before to enable the interrupts
 	//read_AD7147(STAGE_LOW_LIMIT_INT, 3, AD7147Registers); //Registers 0x08 & 0x09 & 0x0A
-    int_low = read_AD7147_interrupt(STAGE_LOW_LIMIT_INT);
-    int_high = read_AD7147_interrupt(STAGE_HIGH_LIMIT_INT);
-    int_complete = read_AD7147_interrupt(STAGE_COMPLETE_LIMIT_INT);
+    unsigned int int_low = read_AD7147_interrupt(STAGE_LOW_LIMIT_INT);
+    unsigned int int_high = read_AD7147_interrupt(STAGE_HIGH_LIMIT_INT);
+    unsigned int int_complete = read_AD7147_interrupt(STAGE_COMPLETE_LIMIT_INT);
     get_CDC(cdc,1);
 }
 

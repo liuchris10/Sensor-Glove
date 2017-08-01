@@ -17610,7 +17610,7 @@ void uart_read_text(char *Output, unsigned int length);
 
 # 6 "AD7147.h"
 void setup_AD7147(unsigned int);
-void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[]);
+void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[], unsigned int);
 unsigned int read_AD7147(unsigned int, unsigned int);
 unsigned int read_AD7147_interrupt(unsigned int);
 static int ServiceAD7147Isr(void);
@@ -17635,66 +17635,22 @@ blink_LED(2);
 blink_LED(1);
 char indicator = 's';
 unsigned int bb = 1020;
-unsigned int power_mode = 0;
-unsigned int int_ready = 1;
-unsigned int int_read = 0xE400 + 0x00A;
-unsigned int int_low = 0xE400 + 0x008;
-unsigned int int_high = 0xE400 + 0x009;
-unsigned int register1 = 0xE400 + 0x00B;
-unsigned int register2 = 0xE400 + 0x00C;
-unsigned int register3 = 0xE400 + 0x00D;
-unsigned int register4 = 0xE400 + 0x00E;
-unsigned int stage_0 = 0;
-unsigned int stage_1 = 0;
-unsigned int stage_2 = 0;
-unsigned int stage_3 = 0;
-unsigned int sensor_1 = 0;
-unsigned int sensor_2 = 0;
-unsigned int sensor_3 = 0;
-unsigned int sensor_4 = 0;
-unsigned int int_complete = 0;
-
+unsigned int sensor[];
 while(1)
 {
-
 if (indicator == 'i')
 {
 uart_write_char('i');
-unsigned int device_ID = get_ID(1);
+unsigned int device_ID = get_ID(2);
 uart_write_unsigned_int(device_ID);
 }
 if (indicator == 's')
 {
 uart_write_char('s');
-
-
-if(PORTBbits.RB1==0)
-{
-uart_write_unsigned_int(bb);
-}
-else
-{
-uart_write_unsigned_int(power_mode);
-}
-get_CDC(2,0);
-sensor_1 = w16_r16_spi(register1);
-sensor_2 = w16_r16_spi(register2);
-sensor_3 = w16_r16_spi(register3);
-sensor_4 = w16_r16_spi(register4);
-int_complete = w16_r16_spi(int_low);
-int_complete = w16_r16_spi(int_high);
-int_complete = w16_r16_spi(int_read);
-get_CDC(2,1);
-
-get_CDC(2,0);
-int_complete = w16_r16_spi(int_low);
-int_complete = w16_r16_spi(int_high);
-int_complete = w16_r16_spi(int_read);
-get_CDC(2,1);
-
-# 80
-delay_ms(100);
-
+unsigned int sensor_1 = read_sensor(1);
+unsigned int sensor_2 = read_sensor(13);
+uart_write_unsigned_int(sensor_1);
+uart_write_unsigned_int(sensor_2);
 }
 if (indicator == 'f')
 {
@@ -17702,7 +17658,7 @@ uart_write_char('f');
 
 uart_write_unsigned_int(bb);
 }
-delay_ms(500);
+delay_ms(200);
 }
 return;
 }

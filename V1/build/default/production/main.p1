@@ -16,21 +16,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _get_ID `(ui ~T0 @X0 0 ef1`ui ]
 "12 uart.h
 [v _uart_write_unsigned_int `(v ~T0 @X0 0 ef1`ui ]
-"29942 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f25k80.h
-[s S1134 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1134 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"29952
-[s S1135 :3 `uc 1 :1 `uc 1 ]
-[n S1135 . . CCP2_PA2 ]
-"29941
-[u S1133 `S1134 1 `S1135 1 ]
-[n S1133 . . . ]
-"29957
-[v _PORTBbits `VS1133 ~T0 @X0 0 e@3969 ]
-"16 AD7147.h
-[v _get_CDC `(v ~T0 @X0 0 ef2`ui`ui ]
-"12 spi.h
-[v _w16_r16_spi `(ui ~T0 @X0 0 ef1`ui ]
+"11 AD7147.h
+[v _read_sensor `(ui ~T0 @X0 0 ef1`ui ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -13441,7 +13428,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;uart.h: 24: char uart_read_char(void);
 [; ;uart.h: 26: void uart_read_text(char *Output, unsigned int length);
 [; ;AD7147.h: 6: void setup_AD7147(unsigned int);
-[; ;AD7147.h: 7: void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[]);
+[; ;AD7147.h: 7: void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[], unsigned int);
 [; ;AD7147.h: 8: unsigned int read_AD7147(unsigned int, unsigned int);
 [; ;AD7147.h: 9: unsigned int read_AD7147_interrupt(unsigned int);
 [; ;AD7147.h: 10: static int ServiceAD7147Isr(void);
@@ -13491,217 +13478,91 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 17: unsigned int bb = 1020;
 [e = _bb -> -> 1020 `i `ui ]
 "18
-[v _power_mode `ui ~T0 @X0 1 a ]
-[; ;main.c: 18: unsigned int power_mode = 0;
-[e = _power_mode -> -> 0 `i `ui ]
+[v _sensor `ui ~T0 @X0 -> 0 `x a ]
+[; ;main.c: 18: unsigned int sensor[];
+[; ;main.c: 19: while(1)
 "19
-[v _int_ready `ui ~T0 @X0 1 a ]
-[; ;main.c: 19: unsigned int int_ready = 1;
-[e = _int_ready -> -> 1 `i `ui ]
-"20
-[v _int_read `ui ~T0 @X0 1 a ]
-[; ;main.c: 20: unsigned int int_read = 0xE400 + 0x00A;
-[e = _int_read + -> 58368 `ui -> -> 10 `i `ui ]
-"21
-[v _int_low `ui ~T0 @X0 1 a ]
-[; ;main.c: 21: unsigned int int_low = 0xE400 + 0x008;
-[e = _int_low + -> 58368 `ui -> -> 8 `i `ui ]
-"22
-[v _int_high `ui ~T0 @X0 1 a ]
-[; ;main.c: 22: unsigned int int_high = 0xE400 + 0x009;
-[e = _int_high + -> 58368 `ui -> -> 9 `i `ui ]
-"23
-[v _register1 `ui ~T0 @X0 1 a ]
-[; ;main.c: 23: unsigned int register1 = 0xE400 + 0x00B;
-[e = _register1 + -> 58368 `ui -> -> 11 `i `ui ]
-"24
-[v _register2 `ui ~T0 @X0 1 a ]
-[; ;main.c: 24: unsigned int register2 = 0xE400 + 0x00C;
-[e = _register2 + -> 58368 `ui -> -> 12 `i `ui ]
-"25
-[v _register3 `ui ~T0 @X0 1 a ]
-[; ;main.c: 25: unsigned int register3 = 0xE400 + 0x00D;
-[e = _register3 + -> 58368 `ui -> -> 13 `i `ui ]
-"26
-[v _register4 `ui ~T0 @X0 1 a ]
-[; ;main.c: 26: unsigned int register4 = 0xE400 + 0x00E;
-[e = _register4 + -> 58368 `ui -> -> 14 `i `ui ]
-"27
-[v _stage_0 `ui ~T0 @X0 1 a ]
-[; ;main.c: 27: unsigned int stage_0 = 0;
-[e = _stage_0 -> -> 0 `i `ui ]
-"28
-[v _stage_1 `ui ~T0 @X0 1 a ]
-[; ;main.c: 28: unsigned int stage_1 = 0;
-[e = _stage_1 -> -> 0 `i `ui ]
-"29
-[v _stage_2 `ui ~T0 @X0 1 a ]
-[; ;main.c: 29: unsigned int stage_2 = 0;
-[e = _stage_2 -> -> 0 `i `ui ]
-"30
-[v _stage_3 `ui ~T0 @X0 1 a ]
-[; ;main.c: 30: unsigned int stage_3 = 0;
-[e = _stage_3 -> -> 0 `i `ui ]
-"31
-[v _sensor_1 `ui ~T0 @X0 1 a ]
-[; ;main.c: 31: unsigned int sensor_1 = 0;
-[e = _sensor_1 -> -> 0 `i `ui ]
-"32
-[v _sensor_2 `ui ~T0 @X0 1 a ]
-[; ;main.c: 32: unsigned int sensor_2 = 0;
-[e = _sensor_2 -> -> 0 `i `ui ]
-"33
-[v _sensor_3 `ui ~T0 @X0 1 a ]
-[; ;main.c: 33: unsigned int sensor_3 = 0;
-[e = _sensor_3 -> -> 0 `i `ui ]
-"34
-[v _sensor_4 `ui ~T0 @X0 1 a ]
-[; ;main.c: 34: unsigned int sensor_4 = 0;
-[e = _sensor_4 -> -> 0 `i `ui ]
-"35
-[v _int_complete `ui ~T0 @X0 1 a ]
-[; ;main.c: 35: unsigned int int_complete = 0;
-[e = _int_complete -> -> 0 `i `ui ]
-[; ;main.c: 37: while(1)
-"37
 [e :U 1523 ]
-[; ;main.c: 38: {
-"38
+[; ;main.c: 20: {
+"20
 {
-[; ;main.c: 40: if (indicator == 'i')
-"40
+[; ;main.c: 21: if (indicator == 'i')
+"21
 [e $ ! == -> _indicator `ui -> 105 `ui 1525  ]
-[; ;main.c: 41: {
-"41
+[; ;main.c: 22: {
+"22
 {
-[; ;main.c: 42: uart_write_char('i');
-"42
+[; ;main.c: 23: uart_write_char('i');
+"23
 [e ( _uart_write_char (1 -> -> 105 `ui `uc ]
-"43
+"24
 [v _device_ID `ui ~T0 @X0 1 a ]
-[; ;main.c: 43: unsigned int device_ID = get_ID(1);
-[e = _device_ID ( _get_ID (1 -> -> 1 `i `ui ]
-[; ;main.c: 44: uart_write_unsigned_int(device_ID);
-"44
+[; ;main.c: 24: unsigned int device_ID = get_ID(2);
+[e = _device_ID ( _get_ID (1 -> -> 2 `i `ui ]
+[; ;main.c: 25: uart_write_unsigned_int(device_ID);
+"25
 [e ( _uart_write_unsigned_int (1 _device_ID ]
-"45
+"26
 }
 [e :U 1525 ]
-[; ;main.c: 45: }
-[; ;main.c: 46: if (indicator == 's')
-"46
+[; ;main.c: 26: }
+[; ;main.c: 27: if (indicator == 's')
+"27
 [e $ ! == -> _indicator `ui -> 115 `ui 1526  ]
-[; ;main.c: 47: {
-"47
+[; ;main.c: 28: {
+"28
 {
-[; ;main.c: 48: uart_write_char('s');
-"48
+[; ;main.c: 29: uart_write_char('s');
+"29
 [e ( _uart_write_char (1 -> -> 115 `ui `uc ]
-[; ;main.c: 51: if(PORTBbits.RB1==0)
-"51
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 1527  ]
-[; ;main.c: 52: {
-"52
-{
-[; ;main.c: 53: uart_write_unsigned_int(bb);
-"53
-[e ( _uart_write_unsigned_int (1 _bb ]
-"54
-}
-[; ;main.c: 54: }
-[e $U 1528  ]
-"55
-[e :U 1527 ]
-[; ;main.c: 55: else
-[; ;main.c: 56: {
-"56
-{
-[; ;main.c: 57: uart_write_unsigned_int(power_mode);
-"57
-[e ( _uart_write_unsigned_int (1 _power_mode ]
-"58
-}
-[e :U 1528 ]
-[; ;main.c: 58: }
-[; ;main.c: 59: get_CDC(2,0);
-"59
-[e ( _get_CDC (2 , -> -> 2 `i `ui -> -> 0 `i `ui ]
-[; ;main.c: 60: sensor_1 = w16_r16_spi(register1);
-"60
-[e = _sensor_1 ( _w16_r16_spi (1 _register1 ]
-[; ;main.c: 61: sensor_2 = w16_r16_spi(register2);
-"61
-[e = _sensor_2 ( _w16_r16_spi (1 _register2 ]
-[; ;main.c: 62: sensor_3 = w16_r16_spi(register3);
-"62
-[e = _sensor_3 ( _w16_r16_spi (1 _register3 ]
-[; ;main.c: 63: sensor_4 = w16_r16_spi(register4);
-"63
-[e = _sensor_4 ( _w16_r16_spi (1 _register4 ]
-[; ;main.c: 64: int_complete = w16_r16_spi(int_low);
-"64
-[e = _int_complete ( _w16_r16_spi (1 _int_low ]
-[; ;main.c: 65: int_complete = w16_r16_spi(int_high);
-"65
-[e = _int_complete ( _w16_r16_spi (1 _int_high ]
-[; ;main.c: 66: int_complete = w16_r16_spi(int_read);
-"66
-[e = _int_complete ( _w16_r16_spi (1 _int_read ]
-[; ;main.c: 67: get_CDC(2,1);
-"67
-[e ( _get_CDC (2 , -> -> 2 `i `ui -> -> 1 `i `ui ]
-[; ;main.c: 69: get_CDC(2,0);
-"69
-[e ( _get_CDC (2 , -> -> 2 `i `ui -> -> 0 `i `ui ]
-[; ;main.c: 70: int_complete = w16_r16_spi(int_low);
-"70
-[e = _int_complete ( _w16_r16_spi (1 _int_low ]
-[; ;main.c: 71: int_complete = w16_r16_spi(int_high);
-"71
-[e = _int_complete ( _w16_r16_spi (1 _int_high ]
-[; ;main.c: 72: int_complete = w16_r16_spi(int_read);
-"72
-[e = _int_complete ( _w16_r16_spi (1 _int_read ]
-[; ;main.c: 73: get_CDC(2,1);
-"73
-[e ( _get_CDC (2 , -> -> 2 `i `ui -> -> 1 `i `ui ]
-[; ;main.c: 80: delay_ms(100);
-"80
-[e ( _delay_ms (1 -> 100 `i ]
-"82
+"30
+[v _sensor_1 `ui ~T0 @X0 1 a ]
+[; ;main.c: 30: unsigned int sensor_1 = read_sensor(1);
+[e = _sensor_1 ( _read_sensor (1 -> -> 1 `i `ui ]
+"31
+[v _sensor_2 `ui ~T0 @X0 1 a ]
+[; ;main.c: 31: unsigned int sensor_2 = read_sensor(13);
+[e = _sensor_2 ( _read_sensor (1 -> -> 13 `i `ui ]
+[; ;main.c: 32: uart_write_unsigned_int(sensor_1);
+"32
+[e ( _uart_write_unsigned_int (1 _sensor_1 ]
+[; ;main.c: 33: uart_write_unsigned_int(sensor_2);
+"33
+[e ( _uart_write_unsigned_int (1 _sensor_2 ]
+"34
 }
 [e :U 1526 ]
-[; ;main.c: 82: }
-[; ;main.c: 83: if (indicator == 'f')
-"83
-[e $ ! == -> _indicator `ui -> 102 `ui 1529  ]
-[; ;main.c: 84: {
-"84
+[; ;main.c: 34: }
+[; ;main.c: 35: if (indicator == 'f')
+"35
+[e $ ! == -> _indicator `ui -> 102 `ui 1527  ]
+[; ;main.c: 36: {
+"36
 {
-[; ;main.c: 85: uart_write_char('f');
-"85
+[; ;main.c: 37: uart_write_char('f');
+"37
 [e ( _uart_write_char (1 -> -> 102 `ui `uc ]
-[; ;main.c: 87: uart_write_unsigned_int(bb);
-"87
+[; ;main.c: 39: uart_write_unsigned_int(bb);
+"39
 [e ( _uart_write_unsigned_int (1 _bb ]
-"88
+"40
 }
-[e :U 1529 ]
-[; ;main.c: 88: }
-[; ;main.c: 89: delay_ms(500);
-"89
-[e ( _delay_ms (1 -> 500 `i ]
-"90
+[e :U 1527 ]
+[; ;main.c: 40: }
+[; ;main.c: 41: delay_ms(200);
+"41
+[e ( _delay_ms (1 -> 200 `i ]
+"42
 }
 [e :U 1522 ]
-"37
+"19
 [e $U 1523  ]
 [e :U 1524 ]
-[; ;main.c: 90: }
-[; ;main.c: 91: return;
-"91
+[; ;main.c: 42: }
+[; ;main.c: 43: return;
+"43
 [e $UE 1521  ]
-[; ;main.c: 92: }
-"92
+[; ;main.c: 44: }
+"44
 [e :UE 1521 ]
 }
