@@ -69,24 +69,21 @@ void w16_spi(unsigned int address)
 
 unsigned int r16_spi(void)
 {
-    unsigned int dummy = 0x000;
-    unsigned int p1, p2, message;
+    unsigned int blank_low = 0x000;
+    unsigned int blank_high = 0x000;
+    unsigned int p1, p2, result;
     
-    CS_CDC1 = 0;   //set CS to low (transmit data)
     
-    SSPBUF = dummy;  // Command byte (write to pot 0)
+    SSPBUF = blank_high;  // Command byte (write to pot 0)
     while(!SSPSTATbits.BF); // wait to complete 
     p1 = SSPBUF;
     
-    SSPBUF = dummy;  // Command byte (write to pot 0)
+    SSPBUF = blank_low;  // Command byte (write to pot 0)
     while(!SSPSTATbits.BF); // wait to complete 
     p2 = SSPBUF;
     
-    CS_CDC1 = 1;   //set CS to low (transmit data)
-    
-    message = (p1<<8) + p2;
-    
-    return message;    
+    result = (p1 << 8) + p2;
+    return result;    
 }
 
 unsigned int w16_r16_spi(unsigned int address)

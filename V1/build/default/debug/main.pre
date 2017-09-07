@@ -17560,15 +17560,14 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 
-# 66
-extern unsigned int CDC_RESULT_REGISTER[12];
+#pragma config MCLRE = OFF
 
-extern unsigned int* CDC_RESULT[];
-
-# 183
+# 198
 void setup_mcu(void);
 
 void setup_port(void);
+
+void init_interrupts(void);
 
 void init_uart(void);
 
@@ -17604,61 +17603,224 @@ char uart_int_to_string(unsigned int);
 
 char uart_data_ready(void);
 
-char uart_read_char(void);
+unsigned char uart_read_char(void);
 
-void uart_read_text(char *Output, unsigned int length);
+unsigned char uart_read_indicator(void);
+
+
+
+void uart_send_sensors(unsigned int*, unsigned int*, unsigned int);
+
+unsigned int uart_read_unsigned_int(void);
 
 # 6 "AD7147.h"
-void setup_AD7147(unsigned int);
-void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[], unsigned int);
-unsigned int read_AD7147(unsigned int, unsigned int);
-unsigned int read_AD7147_interrupt(unsigned int);
+void setup_AD7147(unsigned int*, unsigned int);
+void write_AD7147(unsigned int, unsigned int, unsigned int*, unsigned int, unsigned int);
+void read_AD7147(unsigned int*, unsigned int, unsigned int, unsigned int);
 static int ServiceAD7147Isr(void);
-unsigned int read_sensor(unsigned int);
+void read_sensor(unsigned int*, unsigned int);
+void read_cdc1(unsigned int*);
+void read_cdc2(unsigned int*);
 unsigned int get_ID(unsigned int);
-void read_sensors(void);
+void read_sensors(unsigned int*, unsigned int*, unsigned int);
 void switch_LED(unsigned int, unsigned int);
 void blink_LED(unsigned int);
 void get_CDC(unsigned int, unsigned int);
 void sensor_CDC(unsigned int, unsigned int);
 
-# 6 "main.c"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
+typedef unsigned size_t;
+
+# 14 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 36
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 7 "main.c"
+unsigned int single_sensor;
+unsigned int second_sensor;
+unsigned int device_ID;
+unsigned int sensor_values[24] = {0};
+unsigned int avail_sensors[24] = {0};
+unsigned int cdc;
+unsigned int on_off;
+unsigned int num_sensors;
+unsigned char indicator;
+char state = 'r';
+unsigned int interrupt_values_cdc1[3] = {0};
+unsigned int interrupt_values_cdc2[3] = {0};
+unsigned int start_stop = 1;
+unsigned char break_loop;
+void interrupt high_priority ISR(void)
+{
+
+if(INTCONbits.INT0IF && INTCONbits.INT0IE)
+{
+read_cdc1(sensor_values);
+read_AD7147(interrupt_values_cdc1, 0x008, 3, 1);
+INTCONbits.INT0IF = 0;
+}
+if(INTCON3bits.INT1IF && INTCON3bits.INT1E)
+{
+read_cdc2(sensor_values);
+read_AD7147(interrupt_values_cdc2, 0x008, 3, 2);
+INTCON3bits.INT1IF = 0;
+}
+return;
+}
+
 void main(void)
 {
 delay_ms(500);
 setup_mcu();
 setup_spi();
-setup_AD7147(1);
-setup_AD7147(2);
+setup_AD7147(interrupt_values_cdc1, 1);
 
-blink_LED(2);
+
 blink_LED(1);
-char indicator = 's';
-unsigned int bb = 1020;
-unsigned int sensor[];
+read_AD7147(interrupt_values_cdc1, 0x008, 3, 1);
+init_interrupts();
 while(1)
 {
-if (indicator == 'i')
+indicator = uart_read_char();
+switch (state)
 {
-uart_write_char('i');
-unsigned int device_ID = get_ID(2);
+case 's':
+switch (indicator)
+{
+case 'b':
+single_sensor = uart_read_unsigned_int();
+read_sensor(sensor_values, single_sensor);
+uart_write_unsigned_int(sensor_values[single_sensor]);
+state = 'r';
+break;
+case 'f':
+cdc = uart_read_unsigned_int();
+blink_LED(cdc);
+state = 'r';
+break;
+case 'h':
+cdc = uart_read_unsigned_int();
+on_off = uart_read_unsigned_int();
+switch_LED(cdc, on_off);
+state = 'r';
+break;
+case 'w':
+cdc = uart_read_unsigned_int();
+device_ID = get_ID(cdc);
 uart_write_unsigned_int(device_ID);
+state = 'r';
+break;
 }
-if (indicator == 's')
+break;
+
+case 'c':
+switch (indicator)
+{
+case 'u':
+single_sensor = uart_read_unsigned_int();
+read_sensor(sensor_values, single_sensor);
+uart_write_unsigned_int(sensor_values[single_sensor]);
+break;
+case 'v':
+while(start_stop == 1)
 {
 uart_write_char('s');
-unsigned int sensor_1 = read_sensor(1);
-unsigned int sensor_2 = read_sensor(13);
-uart_write_unsigned_int(sensor_1);
-uart_write_unsigned_int(sensor_2);
-}
-if (indicator == 'f')
+for(unsigned int i = 0; i<24; i++)
 {
-uart_write_char('f');
-
-uart_write_unsigned_int(bb);
+if(avail_sensors[i] == 1)
+{
+uart_write_unsigned_int(sensor_values[i]);
 }
-delay_ms(200);
+}
+break_loop = uart_read_indicator();
+if(break_loop == 'z')
+{
+start_stop = 0;
+state = 'r';
+}
+}
+start_stop = 1;
+break;
+default:
+state = 'r';
+break;
+}
+break;
+
+case 'p':
+switch (indicator)
+{
+case 'n':
+memset(avail_sensors, 0, 24*sizeof(avail_sensors[0]));
+num_sensors = uart_read_unsigned_int();
+for(unsigned int k = 0; k < num_sensors; k++)
+{
+unsigned int index = uart_read_unsigned_int();
+avail_sensors[index-1] = 1;
+}
+state = 'r';
+break;
+case 'e':
+uart_write_char('e');
+state = 'r';
+break;
+default:
+break;
+}
+break;
+
+case 'r':
+switch (indicator)
+{
+case 's':
+state = 's';
+break;
+case 'c':
+state = 'c';
+break;
+case 'p':
+state = 'p';
+break;
+default:
+state = 'r';
+break;
+}
+break;
+
+default:
+break;
+}
+
+# 172
 }
 return;
 }
+

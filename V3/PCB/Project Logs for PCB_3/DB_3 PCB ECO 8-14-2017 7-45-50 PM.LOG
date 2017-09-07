@@ -1,0 +1,82 @@
+Removed Pin From Net: NetName=3.3V Pin=C13-1
+Removed Pin From Net: NetName=GND Pin=C13-2
+Removed Pin From Net: NetName=3.3V Pin=C14-1
+Removed Pin From Net: NetName=GND Pin=C14-2
+Removed Pin From Net: NetName=GND Pin=C15-2
+Removed Pin From Net: NetName=3.3V Pin=R7-2
+Removed Pin From Net: NetName=MCLR Pin=R8-1
+Removed Pin From Net: NetName=3.3V Pin=U4-3
+Removed Pin From Net: NetName=GND Pin=U4-5
+Removed Pin From Net: NetName=CLK_IN Pin=U4-6
+Removed Pin From Net: NetName=CLK_OUT Pin=U4-7
+Removed Pin From Net: NetName=CS2 Pin=U4-8
+Removed Pin From Net: NetName=CS1 Pin=U4-9
+Removed Pin From Net: NetName=CS3 Pin=U4-10
+Removed Pin From Net: NetName=SCLK Pin=U4-11
+Removed Pin From Net: NetName=MISO Pin=U4-12
+Removed Pin From Net: NetName=MOSI Pin=U4-13
+Removed Pin From Net: NetName=TX Pin=U4-14
+Removed Pin From Net: NetName=RX Pin=U4-15
+Removed Pin From Net: NetName=GND Pin=U4-16
+Removed Pin From Net: NetName=3.3V Pin=U4-17
+Removed Pin From Net: NetName=INT_1 Pin=U4-18
+Removed Pin From Net: NetName=INT_2 Pin=U4-19
+Removed Pin From Net: NetName=A_INT1 Pin=U4-20
+Removed Pin From Net: NetName=A_INT2 Pin=U4-21
+Removed Pin From Net: NetName=ICSPCLK Pin=U4-24
+Removed Pin From Net: NetName=ICSPDAT Pin=U4-25
+Removed Pin From Net: NetName=MCLR Pin=U4-26
+Removed Pin From Net: NetName=GND Pin=U4-29
+Removed Pin From Net: NetName=GND Pin=U6-1
+Removed Pin From Net: NetName=3.3V Pin=U6-2
+Removed Pin From Net: NetName=3.3V Pin=U6-3
+Removed Pin From Net: NetName=P2_2 Pin=U6-4
+Removed Pin From Net: NetName=P2_1 Pin=U6-5
+Removed Pin From Net: NetName=GND Pin=U6-10
+Removed Pin From Net: NetName=3.3V Pin=U6-20
+Removed Pin From Net: NetName=GND Pin=U6-21
+Removed Pin From Net: NetName=CS3 Pin=U6-22
+Removed Pin From Net: NetName=SCLK Pin=U6-23
+Removed Pin From Net: NetName=MOSI Pin=U6-25
+Removed Pin From Net: NetName=MISO Pin=U6-26
+Removed Pin From Net: NetName=CS2 Pin=U6-27
+Removed Pin From Net: NetName=CS1 Pin=U6-28
+Removed Pin From Net: NetName=RESET Pin=U6-29
+Removed Pin From Net: NetName=GND Pin=U6-30
+Removed Member From Class: ClassName=Sheet-2 Member=C13
+Removed Member From Class: ClassName=Sheet-2 Member=C14
+Removed Member From Class: ClassName=Sheet-2 Member=C15
+Removed Member From Class: ClassName=Sheet-2 Member=R7
+Removed Member From Class: ClassName=Sheet-2 Member=R8
+Removed Member From Class: ClassName=Sheet-2 Member=U4
+Removed Member From Class: ClassName=Sheet-2 Member=U6
+Change Component Footprint: Designator=U9 Old Footprint=D0008A_L New Footprint=D0008A_M
+Added Component: Designator=U10(CYP-SP21_V)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Antenna Type"; Value = "Integrated,Chip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "RF/IFandRFID"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current - Receiving"; Value = "16.4mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current - Transmitting"; Value = "15.6mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Data Rate"; Value = "1Mbps"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.cypress.com/file/140791/download"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "Rev. *E, 02/2016"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "RFTransceiverModules"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency"; Value = "2.4GHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "CypressSemiconductorCorp"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.cypress.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Memory Size"; Value = "128kBFlash,16kBSRAM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Modulation"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-40degC~85degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "Module"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape&amp;Reel(TR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power - Output"; Value = "3dBm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Protocol"; Value = "Bluetoothv4.1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RF Family/Standard"; Value = "Bluetooth"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sensitivity"; Value = "-91dBm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Serial Interfaces"; Value = "I²C,SPI,UART"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "EZ-BLE™PRoC™"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage - Supply"; Value = "1.8V~4.5V"; VariantName = "[No Variations]"
+Change Class Name : Old Net Name=Battery New Net Name=Battery_3
+Change Class Name : Old Net Name=Sheet-2 New Net Name=Sheet-3
+Added Member To Class: ClassName=Sheet-3 Member=Component U10 CYBLE-022001-00

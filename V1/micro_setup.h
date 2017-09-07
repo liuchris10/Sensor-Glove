@@ -17,13 +17,12 @@
 #pragma config FCMEN = OFF       // Fail-Safe Clock Monitor Enable (Fail-Safe Clock Monitor enabled)
 #pragma config IESO = OFF       // Two-Speed Start-up (Internal/External Oscillator Switchover) Control bit (Two-Speed Start-up disabled)
 
+#pragma config MCLRE = OFF      // Master Clear Enabled
 //#pragma config MODE = MM        // External Memory Bus (Microcontroller mode - External bus disabled)
 
 // CONFIG3H
 //#pragma config CCP2MX = DEFAULT // ECCP2 MUX bit (ECCP2/P2A is multiplexed with RC1)
 //#pragma config ECCPMX = DEFAULT // ECCPx MUX bit (ECCP1 outputs (P1B/P1C) are multiplexed with RE6 and RE5; ECCP3 outputs (P3B/P3C) are multiplexed with RE4 and RE3)
-
-//#pragma config DEBUG = ON       // In-Circuit Debugger enabled, RB6/ICSPCLK and RB7/ICSPDAT are dedicated to the debugger
 
 // Register map
 //=============
@@ -63,9 +62,6 @@
 #define	PROX_STAT_REG				0x042	// R	Current proximity status register 2
 
 
-extern unsigned int CDC_RESULT_REGISTER[12];
-
-extern unsigned int* CDC_RESULT[]; // Result from the CDC 
 // Ram map - these registers are defined as we go along
 //=====================================================
 #define STAGE0_CONNECTION       	0x080
@@ -168,10 +164,29 @@ extern unsigned int* CDC_RESULT[]; // Result from the CDC
 #define CS_CDC1 LATCbits.LATC1        // Defined Pin RC1 to variable CS_CDC1
 #define CS_CDC2 LATCbits.LATC0        // Defined Pin RC0 to variable CS_CDC2
 #define CS_AG LATCbits.LATC2        // Defined Pin RC2 to variable CS_AG
-#define INT_CDC1 PORTBbits.RB0        // Defined Pin RB0 to variable INT_CDC1
-#define INT_CDC2 PORTBbits.RB1        // Defined Pin RB1 to variable INT_CDC2
+//#define INT_CDC1 PORTBbits.RB0        // Defined Pin RB0 to variable INT_CDC1
+//#define INT_CDC2 PORTBbits.RB1        // Defined Pin RB1 to variable INT_CDC2
 #define INT_GYRO LATBbits.LATB2        // Defined Pin RD2 to variable INT_GYRO
 #define INT_ACCEL LATBbits.LATB3        // Defined Pin RD3 to variable INT_ACCEL
+
+//All Possible State Configurations
+#define RESET_STATE 'r'                 //Receiving a command from Master to Reset State
+#define CONTINOUS 'c'                   //Continous reading of a sensor until Master Stops It
+#define SINGLE 's'                      //Read the value of a sensor just once
+#define CDC_PARAMETERS 'p'              //Change the parameters of the CDC
+
+//All Possible Indicator Options
+#define s_sensor 'b'                    //Reading a single sensor from the CDC
+#define all_sensors 'a'                 //Read all available sensors from the CDC
+#define c_sensor 'u'                    //Read a single sensor continously
+#define c_sensors 'v'                   //Read from all sensors continously
+#define id_sensor 'w'                   //Read the ID from the CDC
+#define led_state 'h'                   //Turn LED on or off
+#define led_blink 'f'                   //Blink LED for 1 second
+#define reset_sensors 'n'               //Reset Sensor values to read from the GUI
+
+
+
 
 #define NELEMS(x)  (sizeof(x) / sizeof((x)[0])) 
 
@@ -183,6 +198,8 @@ extern unsigned int* CDC_RESULT[]; // Result from the CDC
 void setup_mcu(void);
 
 void setup_port(void);
+
+void init_interrupts(void);
 
 void init_uart(void);
 

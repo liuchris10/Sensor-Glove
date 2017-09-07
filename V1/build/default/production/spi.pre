@@ -17571,15 +17571,14 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 
-# 66
-extern unsigned int CDC_RESULT_REGISTER[12];
+#pragma config MCLRE = OFF
 
-extern unsigned int* CDC_RESULT[];
-
-# 183
+# 198
 void setup_mcu(void);
 
 void setup_port(void);
+
+void init_interrupts(void);
 
 void init_uart(void);
 
@@ -17654,24 +17653,21 @@ p2 = SSPBUF;
 
 unsigned int r16_spi(void)
 {
-unsigned int dummy = 0x000;
-unsigned int p1, p2, message;
+unsigned int blank_low = 0x000;
+unsigned int blank_high = 0x000;
+unsigned int p1, p2, result;
 
-LATCbits.LATC1 = 0;
 
-SSPBUF = dummy;
+SSPBUF = blank_high;
 while(!SSPSTATbits.BF);
 p1 = SSPBUF;
 
-SSPBUF = dummy;
+SSPBUF = blank_low;
 while(!SSPSTATbits.BF);
 p2 = SSPBUF;
 
-LATCbits.LATC1 = 1;
-
-message = (p1<<8) + p2;
-
-return message;
+result = (p1 << 8) + p2;
+return result;
 }
 
 unsigned int w16_r16_spi(unsigned int address)

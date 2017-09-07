@@ -1,0 +1,12 @@
+Added Component: Designator=AC1(AC_SHIELD)
+Add component. Clean all parameters for all variants
+Added Component: Designator=AC2(AC_SHIELD)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetAC1_1 Pin=AC1-1
+Added Pin To Net: NetName=NetAC1_1 Pin=U2-8
+Added Net: Name=NetAC1_1
+Added Pin To Net: NetName=NetAC2_1 Pin=AC2-1
+Added Pin To Net: NetName=NetAC2_1 Pin=U3-8
+Added Net: Name=NetAC2_1
+Added Member To Class: ClassName=Sheet-2 Member=Component AC1 AC_Shield
+Added Member To Class: ClassName=Sheet-2 Member=Component AC2 AC_Shield

@@ -13451,12 +13451,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x FCMEN=OFF ]
 "18
 [p x IESO=OFF ]
-[; ;micro_setup.h: 66: extern unsigned int CDC_RESULT_REGISTER[12];
-[; ;micro_setup.h: 68: extern unsigned int* CDC_RESULT[];
-[; ;micro_setup.h: 183: void setup_mcu(void);
-[; ;micro_setup.h: 185: void setup_port(void);
-[; ;micro_setup.h: 187: void init_uart(void);
-[; ;micro_setup.h: 189: void delay_ms(int n);
+"20
+[p x MCLRE=OFF ]
+[; ;micro_setup.h: 198: void setup_mcu(void);
+[; ;micro_setup.h: 200: void setup_port(void);
+[; ;micro_setup.h: 202: void init_interrupts(void);
+[; ;micro_setup.h: 204: void init_uart(void);
+[; ;micro_setup.h: 206: void delay_ms(int n);
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
@@ -13871,7 +13872,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _uart_read_char `(uc ~T0 @X0 1 ef ]
 "95
 {
-[; ;uart.c: 94: char uart_read_char(void)
+[; ;uart.c: 94: unsigned char uart_read_char(void)
 [; ;uart.c: 95: {
 [e :U _uart_read_char ]
 [f ]
@@ -13917,41 +13918,150 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 1565 ]
 }
 "108
-[v _uart_read_text `(v ~T0 @X0 1 ef2`*uc`ui ]
+[v _uart_read_indicator `(uc ~T0 @X0 1 ef ]
 "109
 {
-[; ;uart.c: 108: void uart_read_text(char *Output, unsigned int length)
+[; ;uart.c: 108: unsigned char uart_read_indicator(void)
 [; ;uart.c: 109: {
-[e :U _uart_read_text ]
-"108
-[v _Output `*uc ~T0 @X0 1 r1 ]
-[v _length `ui ~T0 @X0 1 r2 ]
-"109
+[e :U _uart_read_indicator ]
 [f ]
-[; ;uart.c: 110: for(unsigned int i=0; i<length; i++)
 "110
-{
-[v _i `ui ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `ui ]
-[e $U 1574  ]
+[v _count `ui ~T0 @X0 1 a ]
+[; ;uart.c: 110: unsigned int count = 0;
+[e = _count -> -> 0 `i `ui ]
+[; ;uart.c: 111: while(PIR1bits.RC1IF == 0 && count < 5)
 "111
-[e :U 1571 ]
-[; ;uart.c: 111: {
-{
-[; ;uart.c: 112: Output[i] = uart_read_char();
-"112
-[e = *U + _Output * -> _i `ux -> -> # *U _Output `ui `ux ( _uart_read_char ..  ]
-"113
-}
-"110
-[e ++ _i -> -> 1 `i `ui ]
-[e :U 1574 ]
-[e $ < _i _length 1571  ]
+[e $U 1571  ]
 [e :U 1572 ]
+[; ;uart.c: 112: {
+"112
+{
+[; ;uart.c: 113: if(RCSTA1bits.OERR == 1)
 "113
-}
-[; ;uart.c: 113: }
-[; ;uart.c: 114: }
+[e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 1574  ]
+[; ;uart.c: 114: {
 "114
+{
+[; ;uart.c: 115: RCSTA1bits.OERR = 0;
+"115
+[e = . . _RCSTA1bits 0 1 -> -> 0 `i `uc ]
+[; ;uart.c: 116: RCSTA1bits.CREN = 0;
+"116
+[e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;uart.c: 117: RCSTA1bits.CREN = 1;
+"117
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+"118
+}
+[e :U 1574 ]
+[; ;uart.c: 118: }
+[; ;uart.c: 119: count = count + 1;
+"119
+[e = _count + _count -> -> 1 `i `ui ]
+"120
+}
+[e :U 1571 ]
+"111
+[e $ && == -> . . _PIR1bits 0 5 `i -> 0 `i < _count -> -> 5 `i `ui 1572  ]
+[e :U 1573 ]
+[; ;uart.c: 120: }
+[; ;uart.c: 121: if(count >= 5)
+"121
+[e $ ! >= _count -> -> 5 `i `ui 1575  ]
+[; ;uart.c: 122: {
+"122
+{
+[; ;uart.c: 123: return 0;
+"123
+[e ) -> -> 0 `i `uc ]
+[e $UE 1570  ]
+"124
+}
+[; ;uart.c: 124: }
+[e $U 1576  ]
+"125
+[e :U 1575 ]
+[; ;uart.c: 125: else
+[; ;uart.c: 126: {
+"126
+{
+[; ;uart.c: 127: return RCREG1;
+"127
+[e ) _RCREG1 ]
+[e $UE 1570  ]
+"128
+}
+[e :U 1576 ]
+[; ;uart.c: 128: }
+[; ;uart.c: 129: }
+"129
 [e :UE 1570 ]
+}
+"131
+[v _uart_read_unsigned_int `(ui ~T0 @X0 1 ef ]
+"132
+{
+[; ;uart.c: 131: unsigned int uart_read_unsigned_int(void)
+[; ;uart.c: 132: {
+[e :U _uart_read_unsigned_int ]
+[f ]
+"133
+[v _part1 `uc ~T0 @X0 1 a ]
+[; ;uart.c: 133: unsigned char part1 = uart_read_char();
+[e = _part1 ( _uart_read_char ..  ]
+"134
+[v _part2 `uc ~T0 @X0 1 a ]
+[; ;uart.c: 134: unsigned char part2 = uart_read_char();
+[e = _part2 ( _uart_read_char ..  ]
+"135
+[v _message `ui ~T0 @X0 1 a ]
+[; ;uart.c: 135: unsigned int message = (unsigned int)((part1 << 8) | part2);
+[e = _message -> | << -> _part1 `i -> 8 `i -> _part2 `i `ui ]
+[; ;uart.c: 136: return message;
+"136
+[e ) _message ]
+[e $UE 1577  ]
+[; ;uart.c: 137: }
+"137
+[e :UE 1577 ]
+}
+"139
+[v _uart_send_sensors `(v ~T0 @X0 1 ef3`*ui`*ui`ui ]
+"140
+{
+[; ;uart.c: 139: void uart_send_sensors(unsigned int *sensor_values, unsigned int *avail_sensors, unsigned int num_sensors)
+[; ;uart.c: 140: {
+[e :U _uart_send_sensors ]
+"139
+[v _sensor_values `*ui ~T0 @X0 1 r1 ]
+[v _avail_sensors `*ui ~T0 @X0 1 r2 ]
+[v _num_sensors `ui ~T0 @X0 1 r3 ]
+"140
+[f ]
+[; ;uart.c: 141: for(unsigned int j=0; j<num_sensors; j++)
+"141
+{
+[v _j `ui ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `ui ]
+[e $U 1582  ]
+"142
+[e :U 1579 ]
+[; ;uart.c: 142: {
+{
+[; ;uart.c: 143: uart_write_unsigned_int(sensor_values[avail_sensors[j]]);
+"143
+[e ( _uart_write_unsigned_int (1 *U + _sensor_values * -> *U + _avail_sensors * -> _j `ux -> -> # *U _avail_sensors `ui `ux `ux -> -> # *U _sensor_values `ui `ux ]
+"144
+}
+"141
+[e ++ _j -> -> 1 `i `ui ]
+[e :U 1582 ]
+[e $ < _j _num_sensors 1579  ]
+[e :U 1580 ]
+"144
+}
+[; ;uart.c: 144: }
+[; ;uart.c: 145: }
+"145
+[e :UE 1578 ]
 }

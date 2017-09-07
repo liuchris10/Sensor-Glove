@@ -12,13 +12,38 @@ void setup_mcu(void)
 void setup_port(void)
 {
     //TRISA = 0b00000000;         // Port A: Output: 0-7
-    TRISB = 0b00000011;         // Port B: Output: 2-7, Input: 0,1
+    //TRISB = 0b00000011;         // Port B: Output: 2-7, Input: 0,1
     TRISC = 0b10010000;         // Port C: Output: 0-3,5-6 Input: 4,7 
     CS_CDC1=1;
     CS_CDC2=1;
     CS_AG=1;
 }                   
+void init_interrupts(void)
+{
+    ANCON1bits.ANSEL10 = 0; //Disabling ADC from RB0
+    ANCON1bits.ANSEL8 = 0; //Disabling ADC from RB1
+    TRISBbits.TRISB0 = 1; // Setting RB0 as an Input
+    TRISBbits.TRISB1 = 1; // Setting RB1 as an Input
+    
+    RCONbits.IPEN = 1; //Enables Priority levels on interrupts
 
+//    INTCON2bits.RBPU = 0; //PORTB pull-ups are enabled by individual port TRIS values 
+    //CDC 1 Interrupt Pin Set INT0 is automatically a high priority pin
+    INTCONbits.INT0IE = 1; //Enables Interrupt 0 (RB0 as interrupt)
+    INTCON2bits.INTEDG0 = 0; //Setting CDC 1 Interrupt Pin on Falling Edge
+    INTCONbits.INT0IF = 0; //Clear the Flag
+    
+//    //CDC 2 Interrupt Pin Set
+    INTCON3bits.INT1P = 1; //setting this pin to high priority
+    INTCON3bits.INT1IE = 1; //Enables Interrupt 0 (RB0 as interrupt)
+    INTCON2bits.INTEDG1 = 0; //Setting CDC 2 Interrupt Pin on Falling Edge
+    INTCON3bits.INT1IF = 0; //Clear the Flag
+    
+    INTCONbits.PEIE = 1; //Enable All unmasked peripheral interrupts
+    INTCONbits.GIE = 1; //Enable all unmasked interrupts
+//    
+    ei(); //Enable All Interrupts
+}
 void init_uart(void)
 {
     TXSTA1 = 0b00100000;         // Transmission Register

@@ -4,3 +4,5 @@ Version=1.0
 ProjectPath=PCB_1.PrjPcb
 [Project2]
 ProjectPath=..\..\V2\PCB\PCB_2.PrjPcb
+[Project3]
+ProjectPath=..\..\V3\PCB\PCB_3.PrjPcb

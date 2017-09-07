@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: DB_2.GBR   7/28/2017  7:42:32 PM
+Gerber File Extension Report For: DB_2.GBR   8/25/2017  11:28:59 AM
 ------------------------------------------------------------------------------------------
 
 
@@ -7,6 +7,8 @@ Gerber File Extension Report For: DB_2.GBR   7/28/2017  7:42:32 PM
 Layer Extension     Layer Description                      
 ------------------------------------------------------------------------------------------
 .GTL                Top Layer                               
+.G1                 Signal Layer 1                          
+.G2                 Ground                                  
 .GBL                Bottom Layer                            
 .GTO                Top Overlay                             
 .GTP                Top Paste                               
@@ -15,4 +17,5 @@ Layer Extension     Layer Description
 .GBP                Bottom Paste                            
 .GBO                Bottom Overlay                          
 .GKO                Keep-Out Layer                          
+.GM3                Mechanical 3                            
 ------------------------------------------------------------------------------------------

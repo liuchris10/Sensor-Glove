@@ -17623,15 +17623,14 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 
-# 66
-extern unsigned int CDC_RESULT_REGISTER[12];
+#pragma config MCLRE = OFF
 
-extern unsigned int* CDC_RESULT[];
-
-# 183
+# 198
 void setup_mcu(void);
 
 void setup_port(void);
+
+void init_interrupts(void);
 
 void init_uart(void);
 
@@ -17649,23 +17648,48 @@ init_uart();
 void setup_port(void)
 {
 
-TRISB = 0b00000011;
+
 TRISC = 0b10010000;
 LATCbits.LATC1=1;
 LATCbits.LATC0=1;
 LATCbits.LATC2=1;
 }
+void init_interrupts(void)
+{
+ANCON1bits.ANSEL10 = 0;
+ANCON1bits.ANSEL8 = 0;
+TRISBbits.TRISB0 = 1;
+TRISBbits.TRISB1 = 1;
 
+RCONbits.IPEN = 1;
+
+
+
+INTCONbits.INT0IE = 1;
+INTCON2bits.INTEDG0 = 0;
+INTCONbits.INT0IF = 0;
+
+
+INTCON3bits.INT1P = 1;
+INTCON3bits.INT1IE = 1;
+INTCON2bits.INTEDG1 = 0;
+INTCON3bits.INT1IF = 0;
+
+INTCONbits.PEIE = 1;
+INTCONbits.GIE = 1;
+
+(INTCONbits.GIE = 1);
+}
 void init_uart(void)
 {
 TXSTA1 = 0b00100000;
 
-# 36
+# 61
 SPBRG1 = 12;
 
 BAUDCON1 = 0b00000000;
 
-# 58
+# 83
 RCSTA1bits.SPEN=1;
 RCSTA1bits.RX9=0;
 RCSTA1bits.CREN=1;

@@ -91,7 +91,7 @@ char uart_data_ready(void)
     return (unsigned int)RC1IF;
 }
 
-char uart_read_char(void)
+unsigned char uart_read_char(void)
 {
     while(PIR1bits.RC1IF == 0)
     {
@@ -105,10 +105,49 @@ char uart_read_char(void)
     return RCREG1;
 }
 
-void uart_read_text(char *Output, unsigned int length)
+unsigned char uart_read_indicator(void)
 {
-    for(unsigned int i=0; i<length; i++)
+    unsigned int count = 0;
+    while(PIR1bits.RC1IF == 0 && count < 5)
     {
-        Output[i] = uart_read_char();
+        if(RCSTA1bits.OERR == 1)
+        {
+            RCSTA1bits.OERR = 0;
+            RCSTA1bits.CREN = 0;
+            RCSTA1bits.CREN = 1;
+        }
+        count = count + 1;
+    }
+    if(count >= 5)
+    {
+        return 0;
+    }
+    else
+    {
+    return RCREG1;
     }
 }
+
+unsigned int uart_read_unsigned_int(void)
+{
+    unsigned char part1 = uart_read_char();
+    unsigned char part2 = uart_read_char();
+    unsigned int message = (unsigned int)((part1 << 8) | part2);
+    return message;
+}
+
+void uart_send_sensors(unsigned int *sensor_values, unsigned int *avail_sensors, unsigned int num_sensors)
+{
+    for(unsigned int j=0; j<num_sensors; j++)
+    {
+        uart_write_unsigned_int(sensor_values[avail_sensors[j]]);
+    }
+}
+
+//void uart_read_text(char *Output, unsigned int length)
+//{
+//    for(unsigned int i=0; i<length; i++)
+//    {
+//        Output[i] = uart_read_char();
+//    }
+//}

@@ -17560,29 +17560,29 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 
-# 66
-extern unsigned int CDC_RESULT_REGISTER[12];
+#pragma config MCLRE = OFF
 
-extern unsigned int* CDC_RESULT[];
-
-# 183
+# 198
 void setup_mcu(void);
 
 void setup_port(void);
+
+void init_interrupts(void);
 
 void init_uart(void);
 
 void delay_ms(int n);
 
 # 6 "AD7147.h"
-void setup_AD7147(unsigned int);
-void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[], unsigned int);
-unsigned int read_AD7147(unsigned int, unsigned int);
-unsigned int read_AD7147_interrupt(unsigned int);
+void setup_AD7147(unsigned int*, unsigned int);
+void write_AD7147(unsigned int, unsigned int, unsigned int*, unsigned int, unsigned int);
+void read_AD7147(unsigned int*, unsigned int, unsigned int, unsigned int);
 static int ServiceAD7147Isr(void);
-unsigned int read_sensor(unsigned int);
+void read_sensor(unsigned int*, unsigned int);
+void read_cdc1(unsigned int*);
+void read_cdc2(unsigned int*);
 unsigned int get_ID(unsigned int);
-void read_sensors(void);
+void read_sensors(unsigned int*, unsigned int*, unsigned int);
 void switch_LED(unsigned int, unsigned int);
 void blink_LED(unsigned int);
 void get_CDC(unsigned int, unsigned int);
@@ -17618,27 +17618,57 @@ char uart_int_to_string(unsigned int);
 
 char uart_data_ready(void);
 
-char uart_read_char(void);
+unsigned char uart_read_char(void);
 
-void uart_read_text(char *Output, unsigned int length);
+unsigned char uart_read_indicator(void);
+
+
+
+void uart_send_sensors(unsigned int*, unsigned int*, unsigned int);
+
+unsigned int uart_read_unsigned_int(void);
 
 # 6 "AD7147.c"
-void setup_AD7147(unsigned int cdc)
+void setup_AD7147(unsigned int *DataBuffer, unsigned int cdc)
 {
-unsigned int StageBuffer[8];
-unsigned int AD7147Registers[8];
-get_CDC(cdc,0);
+unsigned int StageBuffer[8] = {0};
 
-# 25
+# 23
 StageBuffer[0] = 0xFFFE;
 StageBuffer[1] = 0x1FFF;
 StageBuffer[2] = 0x0100;
 StageBuffer[3] = 0x2121;
-StageBuffer[4] = 4000;
-StageBuffer[5] = 4000;
-StageBuffer[6] = 4250;
-StageBuffer[7] = 4250;
-write_AD7147(0x080, 8, StageBuffer,0);
+StageBuffer[4] = 500;
+StageBuffer[5] = 500;
+StageBuffer[6] = 600;
+StageBuffer[7] = 600;
+write_AD7147(0x080, 8, StageBuffer, 0, cdc);
+
+
+
+
+StageBuffer[0]=0xFFFB;
+StageBuffer[1]=0x1FFF;
+StageBuffer[2]=0x0100;
+StageBuffer[3]=0x2121;
+StageBuffer[4]=500;
+StageBuffer[5]=500;
+StageBuffer[6]=600;
+StageBuffer[7]=600;
+write_AD7147(0x088, 8, StageBuffer, 0, cdc);
+
+
+
+
+StageBuffer[0]=0xFFEF;
+StageBuffer[1]=0x1FFF;
+StageBuffer[2]=0x0100;
+StageBuffer[3]=0x2121;
+StageBuffer[4]=500;
+StageBuffer[5]=500;
+StageBuffer[6]=600;
+StageBuffer[7]=600;
+write_AD7147(0x090, 8, StageBuffer, 0, cdc);
 
 
 
@@ -17647,11 +17677,11 @@ StageBuffer[0]=0xFFFF;
 StageBuffer[1]=0x3FFF;
 StageBuffer[2]=0x0000;
 StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
+StageBuffer[4]=4000;
+StageBuffer[5]=2500;
 StageBuffer[6]=4000;
 StageBuffer[7]=4000;
-write_AD7147(0x088, 8, StageBuffer,0);
+write_AD7147(0x098, 8, StageBuffer, 0, cdc);
 
 
 
@@ -17660,11 +17690,11 @@ StageBuffer[0]=0xFFFF;
 StageBuffer[1]=0x3FFF;
 StageBuffer[2]=0x0000;
 StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
+StageBuffer[4]=4000;
+StageBuffer[5]=2500;
 StageBuffer[6]=4000;
 StageBuffer[7]=4000;
-write_AD7147(0x090, 8, StageBuffer,0);
+write_AD7147(0x0A0, 8, StageBuffer,0, cdc);
 
 
 
@@ -17673,11 +17703,11 @@ StageBuffer[0]=0xFFFF;
 StageBuffer[1]=0x3FFF;
 StageBuffer[2]=0x0000;
 StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
+StageBuffer[4]=4000;
+StageBuffer[5]=2500;
 StageBuffer[6]=4000;
 StageBuffer[7]=4000;
-write_AD7147(0x098, 8, StageBuffer,0);
+write_AD7147(0x0A8, 8, StageBuffer,0, cdc);
 
 
 
@@ -17686,11 +17716,11 @@ StageBuffer[0]=0xFFFF;
 StageBuffer[1]=0x3FFF;
 StageBuffer[2]=0x0000;
 StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
+StageBuffer[4]=4000;
+StageBuffer[5]=2500;
 StageBuffer[6]=4000;
 StageBuffer[7]=4000;
-write_AD7147(0x0A0, 8, StageBuffer,0);
+write_AD7147(0x0B0, 8, StageBuffer, 0, cdc);
 
 
 
@@ -17699,11 +17729,11 @@ StageBuffer[0]=0xFFFF;
 StageBuffer[1]=0x3FFF;
 StageBuffer[2]=0x0000;
 StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
+StageBuffer[4]=4000;
+StageBuffer[5]=2500;
 StageBuffer[6]=4000;
 StageBuffer[7]=4000;
-write_AD7147(0x0A8, 8, StageBuffer,0);
+write_AD7147(0x0B8, 8, StageBuffer, 0, cdc);
 
 
 
@@ -17712,11 +17742,11 @@ StageBuffer[0]=0xFFFF;
 StageBuffer[1]=0x3FFF;
 StageBuffer[2]=0x0000;
 StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
+StageBuffer[4]=4000;
+StageBuffer[5]=2500;
 StageBuffer[6]=4000;
 StageBuffer[7]=4000;
-write_AD7147(0x0B0, 8, StageBuffer,0);
+write_AD7147(0x0C0, 8, StageBuffer, 0, cdc);
 
 
 
@@ -17725,11 +17755,11 @@ StageBuffer[0]=0xFFFF;
 StageBuffer[1]=0x3FFF;
 StageBuffer[2]=0x0000;
 StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
+StageBuffer[4]=4000;
+StageBuffer[5]=2500;
 StageBuffer[6]=4000;
 StageBuffer[7]=4000;
-write_AD7147(0x0B8, 8, StageBuffer,0);
+write_AD7147(0x0C8, 8, StageBuffer, 0, cdc);
 
 
 
@@ -17738,11 +17768,11 @@ StageBuffer[0]=0xFFFF;
 StageBuffer[1]=0x3FFF;
 StageBuffer[2]=0x0000;
 StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
+StageBuffer[4]=4000;
+StageBuffer[5]=2500;
 StageBuffer[6]=4000;
 StageBuffer[7]=4000;
-write_AD7147(0x0C0, 8, StageBuffer,0);
+write_AD7147(0x0D0, 8, StageBuffer, 0, cdc);
 
 
 
@@ -17751,101 +17781,65 @@ StageBuffer[0]=0xFFFF;
 StageBuffer[1]=0x3FFF;
 StageBuffer[2]=0x0000;
 StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
+StageBuffer[4]=4000;
+StageBuffer[5]=2500;
 StageBuffer[6]=4000;
 StageBuffer[7]=4000;
-write_AD7147(0x0C8, 8, StageBuffer,0);
+write_AD7147(0x0D8, 8, StageBuffer, 0, cdc);
+
+# 181
+StageBuffer[0] = 0x00B2;
+write_AD7147(0x000, 1, StageBuffer, 0, cdc);
 
 
+read_AD7147(DataBuffer, 0x008, 3, cdc);
+
+StageBuffer[2] = 0x3230;
+StageBuffer[3] = 0x0819;
+StageBuffer[4] = 0x0832;
+StageBuffer[5] = 0x0000;
+StageBuffer[6] = 0x0000;
+StageBuffer[7] = 0x0004;
+write_AD7147(0x002, 6, StageBuffer, 2, cdc);
 
 
-StageBuffer[0]=0xFFFF;
-StageBuffer[1]=0x3FFF;
-StageBuffer[2]=0x0000;
-StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
-StageBuffer[6]=4000;
-StageBuffer[7]=4000;
-write_AD7147(0x0D0, 8, StageBuffer,0);
+StageBuffer[1] = 0x0007;
+write_AD7147(0x001, 1, StageBuffer, 1, cdc);
 
 
+StageBuffer[2] = 0x4000;
+write_AD7147(0x002, 1, StageBuffer, 2, cdc);
 
 
-StageBuffer[0]=0xFFFF;
-StageBuffer[1]=0x3FFF;
-StageBuffer[2]=0x0000;
-StageBuffer[3]=0x2626;
-StageBuffer[4]=3000;
-StageBuffer[5]=3000;
-StageBuffer[6]=4000;
-StageBuffer[7]=4000;
-write_AD7147(0x0D8, 8, StageBuffer,0);
+read_AD7147(DataBuffer, 0x008, 3, cdc);
 
-# 182
-AD7147Registers[0] = 0x82B2;
-write_AD7147(0x000, 1, AD7147Registers,0);
+}
 
-AD7147Registers[2] = 0x3230;
-AD7147Registers[3] = 0x0419;
-AD7147Registers[4] = 0x0832;
-AD7147Registers[5] = 0x0000;
-AD7147Registers[6] = 0x0000;
-AD7147Registers[7] = 0x0000;
-write_AD7147(0x002, 6, AD7147Registers,2);
-
-
-AD7147Registers[1] = 0x0001;
-write_AD7147(0x001, 1, AD7147Registers,1);
-
-
-
-
-unsigned int int_low = read_AD7147_interrupt(0x008);
-unsigned int int_high = read_AD7147_interrupt(0x009);
-unsigned int int_complete = read_AD7147_interrupt(0x00A);
+void write_AD7147(unsigned int RegisterStartAddress, unsigned int NumberOfRegisters, unsigned int *OutputBuffer, unsigned int index, unsigned int cdc)
+{
+get_CDC(cdc,0);
+unsigned int Register_Value = 0xE000 + RegisterStartAddress;
+unsigned int Data_Value = 0;
+for (unsigned int i=0; i<NumberOfRegisters; i++)
+{
+Data_Value = OutputBuffer[index+i];
+w32_spi(Register_Value+i,Data_Value);
+}
 get_CDC(cdc,1);
 }
 
-void write_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters, unsigned int DataBuffer[], unsigned int index)
+void read_AD7147(unsigned int *DataBuffer, unsigned int RegisterStartAddress, unsigned int NumberOfRegisters, unsigned int cdc)
 {
-unsigned int Register_Value = 0;
-unsigned int Data_Value = 0;
-
-for (unsigned int i=0; i<NumberOfRegisters; i++)
-{
-Register_Value = 0xE000 + RegisterAddress + i;
-Data_Value = DataBuffer[index+i];
-
-w32_spi(Register_Value,Data_Value);
-}
-}
-
-unsigned int read_AD7147(unsigned int RegisterAddress, unsigned int NumberOfRegisters)
-{
-unsigned int Register_Values;
-unsigned int DataBuffer[];
-
-Register_Values = 0xE400 + RegisterAddress;
-
+get_CDC(cdc,0);
+unsigned int Register_Values = 0xE400 + RegisterStartAddress;
 for (unsigned int i=0; i<NumberOfRegisters; i++)
 {
 DataBuffer[i]=w16_r16_spi(Register_Values+i);
 }
-return DataBuffer[0];
+get_CDC(cdc,1);
 }
 
-unsigned int read_AD7147_interrupt(unsigned int RegisterAddress)
-{
-unsigned int Register_Values = 0xE400 + RegisterAddress;
-unsigned int interrupt_clear = w16_r16_spi(Register_Values);
-
-
-return interrupt_clear;
-}
-
-unsigned int read_sensor(unsigned int sensor)
+void read_sensor(unsigned int *sensor_values, unsigned int sensor)
 {
 unsigned int cdc_sensor = 0;
 if (sensor > 12)
@@ -17857,16 +17851,53 @@ else
 cdc_sensor = sensor;
 }
 unsigned int register1 = 0xE400 + 0x00A + cdc_sensor;
-
 sensor_CDC(sensor, 0);
-unsigned int sensor_value = w16_r16_spi(register1);
+sensor_values[sensor-1] = w16_r16_spi(register1);
 sensor_CDC(sensor, 1);
-
-# 265
-return sensor_value;
 }
 
-# 273
+void read_sensors(unsigned int *sensor_values, unsigned int *avail_sensors, unsigned int num_sensors)
+{
+unsigned int cdc_read = 0xE400 + 0x00A;
+unsigned int cdc_sensor = 0;
+unsigned int cdc_register = 0;
+for(unsigned int j=0; j<num_sensors; j++)
+{
+sensor_CDC(avail_sensors[j], 0);
+if(avail_sensors[j] > 12)
+{
+cdc_sensor = avail_sensors[j] - 12;
+}
+else
+{
+cdc_sensor = avail_sensors[j];
+}
+cdc_register = cdc_read + avail_sensors[j];
+sensor_values[avail_sensors[j]] = w16_r16_spi(cdc_register);
+sensor_CDC(avail_sensors[j], 1);
+}
+}
+
+void read_cdc1(unsigned int *sensor_values)
+{
+get_CDC(1,0);
+sensor_values[0] = w16_r16_spi(0xE400 + 0x00B);
+for(unsigned int i = 1; i<3; i++)
+{
+sensor_values[i] = r16_spi();
+}
+get_CDC(1,1);
+}
+void read_cdc2(unsigned int *sensor_values)
+{
+get_CDC(2,0);
+sensor_values[12] = w16_r16_spi(0xE400 + 0x00B);
+for(unsigned int i = 13; i<17; i++)
+{
+sensor_values[i] = r16_spi();
+}
+get_CDC(2,1);
+}
 void sensor_CDC(unsigned int sensor, unsigned int state)
 {
 
@@ -17879,52 +17910,6 @@ else
 {
 get_CDC(1,state);
 }
-}
-void read_sensors()
-{
-unsigned int Register_Values[12];
-unsigned int address_low[12];
-unsigned int address_high[12];
-unsigned int enable_word = 0xE400;
-unsigned int blank_low = 0x000;
-unsigned int blank_high = 0x000;
-unsigned int p1, p2, p3, p4;
-unsigned int temp_high, temp_low;
-
-for(unsigned int i=0; i<12; i++)
-{
-
-
-Register_Values[i] = enable_word + (0x00B+i);
-address_low[i] = Register_Values[i] & 0xFF;
-address_high[i] = Register_Values[i] >> 8;
-}
-
-LATCbits.LATC1 = 0;
-for(unsigned int i=0; i<12; i++)
-{
-temp_high = address_high[i];
-temp_low = address_low[i];
-
-SSPBUF = temp_high;
-while(!SSPSTATbits.BF);
-p1 = SSPBUF;
-
-SSPBUF = temp_low;
-while(!SSPSTATbits.BF);
-p2 = SSPBUF;
-
-SSPBUF = blank_high;
-while(!SSPSTATbits.BF);
-p3 = SSPBUF;
-
-SSPBUF = blank_low;
-while(!SSPSTATbits.BF);
-p4 = SSPBUF;
-
-
-}
-LATCbits.LATC1 = 1;
 }
 
 unsigned int get_ID(unsigned int cdc)
