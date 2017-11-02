@@ -50,23 +50,23 @@ void setup_AD7147(unsigned int *DataBuffer, unsigned int cdc)
     StageBuffer[1]=0x1FFF;	//Register 0x91
     StageBuffer[2]=0x0100;	//Register 0x92
     StageBuffer[3]=0x2121;	//Register 0x93
-    StageBuffer[4]=500;	//Register 0x94
-    StageBuffer[5]=500;	//Register 0x95
-    StageBuffer[6]=600;	//Register 0x96
-    StageBuffer[7]=600;	//Register 0x97
+    StageBuffer[4]=500;     //Register 0x94
+    StageBuffer[5]=500;     //Register 0x95
+    StageBuffer[6]=600;     //Register 0x96
+    StageBuffer[7]=600;     //Register 0x97
 	write_AD7147(STAGE2_CONNECTION, 8, StageBuffer, 0, cdc);
 
     //===========================
     //= Stage 3 - CIN3 (+) S4
     //===========================
-    StageBuffer[0]=0xFFFF;	//Register 0x98
-    StageBuffer[1]=0x3FFF;	//Register 0x99
-    StageBuffer[2]=0x0000;	//Register 0x9A
-    StageBuffer[3]=0x2626;	//Register 0x9B
-    StageBuffer[4]=4000;	//Register 0x9C
-    StageBuffer[5]=2500;	//Register 0x9D
-    StageBuffer[6]=4000;	//Register 0x9E
-    StageBuffer[7]=4000;	//Register 0x9F
+    StageBuffer[0]=0xFFBF;	//Register 0x98
+    StageBuffer[1]=0x1FFF;	//Register 0x99
+    StageBuffer[2]=0x0100;	//Register 0x9A
+    StageBuffer[3]=0x2121;	//Register 0x9B
+    StageBuffer[4]=500; 	//Register 0x9C
+    StageBuffer[5]=500;     //Register 0x9D
+    StageBuffer[6]=600;     //Register 0x9E
+    StageBuffer[7]=600;     //Register 0x9F
     write_AD7147(STAGE3_CONNECTION, 8, StageBuffer, 0, cdc);
 
     //===========================
@@ -189,11 +189,11 @@ void setup_AD7147(unsigned int *DataBuffer, unsigned int cdc)
     StageBuffer[4] = 0x0832;			//Register 0x004
     StageBuffer[5] = 0x0000;            //Register 0x005
     StageBuffer[6] = 0x0000;            //Register 0x006
-    StageBuffer[7] = 0x0004;            //Register 0x007
+    StageBuffer[7] = 0x0008;            //Register 0x007 - Interrupt after 4th Sensor
     write_AD7147(AMB_COMP_CTRL0, 6, StageBuffer, 2, cdc);
     
-    //Enable data path for all sequences and enable calibration on 3 stages
-    StageBuffer[1] = 0x0007;			//Register 0x001
+    //Enable data path for all sequences and enable calibration on 4 stages
+    StageBuffer[1] = 0x000F;			//Register 0x001
     write_AD7147(STAGE_CAL_EN, 1, StageBuffer, 1, cdc);
     
     //Set the "Force Calibration Bit" 

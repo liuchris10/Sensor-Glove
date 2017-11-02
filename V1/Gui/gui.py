@@ -1,13 +1,16 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import *
 import matplotlib
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
 from matplotlib.figure import Figure
 import matplotlib.animation as animation
 from matplotlib import style
 import serial_1 as sp1
-from openpyxl import Workbook
+from openpyxl import Workbook, load_workbook
 import time
+from tkinter.filedialog import askopenfilename
+
 
 LARGE_FONT = ("Verdana", 12)
 TITLE_FONT = ("Times", 16)
@@ -28,7 +31,9 @@ sensors_pressure = [[0 for x in range(1)] for y in range(1)]     # 2D Array of S
 avail_sensors = []  # Initializing an Array of Possible Available Sensors
 seconds = [0]    # Time Since Data has been Captured
 num_sensors = 0
-
+calibration_filename = '_'
+calibration_values = [0]*24     # Calibration values of the CDC value when no pressure Applied
+sensitivity_values = [0]*24     # Sensitivity of Capacitive Sensor (Pa/pf)
 
 def init_gui():
     app = SensorGlove()
@@ -90,6 +95,58 @@ def quit_gui(self):
 def print_name():
         print("Carl!")
 
+def ask_user_file(file_show):
+    global sensitivity_filename
+    sensitivity_filename = askopenfilename()
+    file_show.delete(0, END)
+    file_show.insert(0, sensitivity_filename)
+
+def get_sensitivity():
+    global sensitivity_filename
+    popup_sensitivity = tk.Toplevel()
+    popup_sensitivity.grab_set()
+    popup_sensitivity.geometry("1000x100")
+    popup_sensitivity.wm_title("sensitivity Excel Data")
+    label = ttk.Label(popup_sensitivity, text="Select the sensitivity File For A Given Glove:", font=NORM_FONT)
+    label.grid(row=0, column=0)
+
+    b3 = ttk.Button(popup_sensitivity, text="Browse:", command=lambda: ask_user_file(file_show))
+    b3.grid(row=1, column=0)
+
+    sensitivity_filename_string_var = StringVar(popup_sensitivity, value = sensitivity_filename)
+    file_show = ttk.Entry(popup_sensitivity, font = NORM_FONT, textvariable = sensitivity_filename_string_var, width = 150)
+    file_show.grid(row=1, column=1)
+
+
+    b1 = ttk.Button(popup_sensitivity, text="Select Excel", command=lambda:[load_sensitivity(sensitivity_filename_string_var), popup_sensitivity.grab_release(), popup_sensitivity.destroy()])
+    b1.grid(row=2, column=0)
+
+    b2 = ttk.Button(popup_sensitivity, text="Cancel", command=popup_sensitivity.destroy)
+    b2.grid(row=2, column=1)
+
+    popup_sensitivity.mainloop()
+
+def load_sensitivity(sensitivity_file_name):
+    global avail_sensors
+    global sensitivity_values
+    sensitivity_file = str(sensitivity_file_name.get())
+    wb = load_workbook(sensitivity_file)
+    ws_name = wb.get_sheet_names()[0]
+    ws = wb.get_sheet_by_name(ws_name)
+
+    for n in range(2, ws.max_row):
+        if ws.cell(row=n, column=2).value != 0:
+            sensitivity_values[n-2] = ws.cell(row=n, column=2).value
+            avail_sensors.append(n-1)
+
+
+def get_calibration():
+
+
+
+def calibrate_glove():
+    get_sensitivity()
+    get_calibration()
 
 def save_data():
     global seconds
@@ -234,6 +291,9 @@ class IntroPage(tk.Frame):
         button3 = ttk.Button(self, text="Help Me!", command=lambda: controller.show_frame(HelpPage))
         button3.grid(row=4, column=0)
 
+        button4 = ttk.Button(self, text="Calibrate", command=lambda: calibrate_glove())
+        button4.grid(row=5, column=0)
+
 
 class HelpPage(tk.Frame):
     def __init__(self, parent, controller):
@@ -245,8 +305,6 @@ class HelpPage(tk.Frame):
         button1 = tk.Button(self, text="go Back to intro Page", command=lambda: controller.show_frame(IntroPage))
         button1.grid(row=1, column=0)
 
-        button2 = tk.Button(self, text="Go Back to main Page", command=lambda: controller.show_frame(MainPage))
-        button2.grid(row=2, column=0)
 
 
 class MainPage(tk.Frame):

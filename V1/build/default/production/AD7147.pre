@@ -17673,14 +17673,14 @@ write_AD7147(0x090, 8, StageBuffer, 0, cdc);
 
 
 
-StageBuffer[0]=0xFFFF;
-StageBuffer[1]=0x3FFF;
-StageBuffer[2]=0x0000;
-StageBuffer[3]=0x2626;
-StageBuffer[4]=4000;
-StageBuffer[5]=2500;
-StageBuffer[6]=4000;
-StageBuffer[7]=4000;
+StageBuffer[0]=0xFFBF;
+StageBuffer[1]=0x1FFF;
+StageBuffer[2]=0x0100;
+StageBuffer[3]=0x2121;
+StageBuffer[4]=500;
+StageBuffer[5]=500;
+StageBuffer[6]=600;
+StageBuffer[7]=600;
 write_AD7147(0x098, 8, StageBuffer, 0, cdc);
 
 
@@ -17799,11 +17799,11 @@ StageBuffer[3] = 0x0819;
 StageBuffer[4] = 0x0832;
 StageBuffer[5] = 0x0000;
 StageBuffer[6] = 0x0000;
-StageBuffer[7] = 0x0004;
+StageBuffer[7] = 0x0008;
 write_AD7147(0x002, 6, StageBuffer, 2, cdc);
 
 
-StageBuffer[1] = 0x0007;
+StageBuffer[1] = 0x000F;
 write_AD7147(0x001, 1, StageBuffer, 1, cdc);
 
 
