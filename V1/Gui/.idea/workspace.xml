@@ -5,54 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2786c48a-81c6-49ae-808a-7de65d2c63fe" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/AD7147.p1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/AD7147.p1.d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/AD7147.pre" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/main.p1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/main.p1.d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/main.pre" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/micro_setup.p1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/micro_setup.p1.d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/micro_setup.pre" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/spi.p1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/spi.p1.d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/spi.pre" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/uart.p1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/uart.p1.d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../build/default/debug/uart.pre" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.cmf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.elf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.hxl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.mum" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.obj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.rlf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sdb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sym" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../dist/default/debug/memoryfile.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.elf" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.elf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.obj" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.rlf" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.rlf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AD7147.c" afterPath="$PROJECT_DIR$/../AD7147.c" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/serial_1.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Gui.iml" afterPath="$PROJECT_DIR$/.idea/Gui.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/AD7147.p1" afterPath="$PROJECT_DIR$/../build/default/production/AD7147.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/AD7147.pre" afterPath="$PROJECT_DIR$/../build/default/production/AD7147.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.cmf" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.cmf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.hex" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.hex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.hxl" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.hxl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.lst" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.map" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.mum" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.mum" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.sym" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.sym" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/memoryfile.xml" afterPath="$PROJECT_DIR$/../dist/default/production/memoryfile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-genesis.properties" afterPath="$PROJECT_DIR$/../nbproject/Makefile-genesis.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/__Previews/Battery.SchDocPreview" afterPath="$PROJECT_DIR$/../../V2/PCB/__Previews/Battery.SchDocPreview" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/__Previews/DB_2.PcbDocPreview" afterPath="$PROJECT_DIR$/../../V2/PCB/__Previews/DB_2.PcbDocPreview" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/__Previews/Sheet-2.SchDocPreview" afterPath="$PROJECT_DIR$/../../V2/PCB/__Previews/Sheet-2.SchDocPreview" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V3/PCB/__Previews/Sheet-3.SchDocPreview" afterPath="$PROJECT_DIR$/../../V3/PCB/__Previews/Sheet-3.SchDocPreview" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,14 +25,26 @@
     <favorites_list name="Gui" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="strain_guage_calc.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/strain_guage_calc.py">
+    <leaf>
+      <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+            <state relative-caret-position="272">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data_graph.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_graph.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1258">
+              <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,6 +103,7 @@
         <option value="$PROJECT_DIR$/../../../UV-Sticker/Gui/parse_log.py" />
         <option value="$PROJECT_DIR$/../../../UV-Sticker/Gui/strain_guage_calc.py" />
         <option value="$PROJECT_DIR$/gui.py" />
+        <option value="$PROJECT_DIR$/data_graph.py" />
       </list>
     </option>
   </component>
@@ -159,8 +129,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,6 +140,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -217,7 +187,6 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <method />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -229,7 +198,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Gui" />
-      <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -248,7 +216,50 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gui" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gui" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gui" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -324,7 +335,7 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Gui" />
@@ -368,14 +379,15 @@
     <frame x="1912" y="22" width="1696" height="1066" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23105134" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23716381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33019853" sideWeight="0.3892857" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46079484" sideWeight="0.61071426" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09774436" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22556391" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867885" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18045112" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39916405" sideWeight="0.49710983" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -384,7 +396,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -421,13 +432,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ex1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -587,19 +591,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/parse_log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/parse_log.py" />
     <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/bglib_test_adc_collector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -615,7 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -623,36 +618,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serial_1.py" />
+    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/strain_guage_calc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1258">
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding>
-            <element signature="e#0#22#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+        <state relative-caret-position="272">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serial_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/strain_guage_calc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
