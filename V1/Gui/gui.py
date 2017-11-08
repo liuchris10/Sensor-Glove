@@ -1,25 +1,18 @@
 import tkinter as tk
 from tkinter import ttk
-import matplotlib
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
-from matplotlib import style
 import serial_tools
 import data_graph
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
+from matplotlib import style
+import matplotlib
 
-
-LARGE_FONT = ("Verdana", 12)
-TITLE_FONT = ("Times", 16)
-NORM_FONT = ("Helvetica", 10)
-SMALL_FONT = ("Helvetica", 8)
 style.use("ggplot")
 matplotlib.use("TkAgg")
-
 
 def init_gui():
     app = SensorGlove()
     app.geometry("1280x720")
     app.mainloop()
-
 
 class SensorGlove(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -32,6 +25,11 @@ class SensorGlove(tk.Tk):
         self.container.grid(row=0, column=0)
         self.container.grid_rowconfigure(0, weight=1)
         self.container.grid_columnconfigure(0, weight=1)
+
+        self.large_font = ("Verdana", 12)
+        self.title_font = ("Times", 16)
+        self.normal_font = ("Helvetica", 10)
+        self.small_font = ("Helvetica", 8)
 
         self.create_menu(self.container)
         self.frames = {}
@@ -57,7 +55,7 @@ class SensorGlove(tk.Tk):
         filemenu.add_command(label="Save Graph", command=lambda: print("Not supported just yet!"))
         filemenu.add_command(label="Export Excel", command=lambda: print("Not supported just yet!"))
         filemenu.add_separator()
-        filemenu.add_command(label="Exit", command=quit)
+        filemenu.add_command(label="Exit", command=lambda: quit())
         menubar.add_cascade(label="File", menu=filemenu)
 
         submenu = tk.Menu(menubar, tearoff=1)
@@ -79,16 +77,17 @@ class IntroPage(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.parent = parent
         self.controller = controller
-        self.label1 = tk.Label(self, text="Welcome to Sensor Glove Gui!", font=LARGE_FONT)
+        self.label1 = tk.Label(self, text="Welcome to Sensor Glove Gui!")
         self.label1.grid(row=0, column=0)
 
-        self.label2 = tk.Label(self, text="Designed by the Flexible Electronics Lab @ UCSD", font=TITLE_FONT)
+        self.label2 = tk.Label(self, text="Designed by the Flexible Electronics Lab @ UCSD")
         self.label2.grid(row=1, column=0)
 
-        button4 = ttk.Button(self, text="Calibrate", command=lambda: self.controller.dg.calibrate_glove())
+        button4 = ttk.Button(self, text="Load Sensitivity", command=lambda: self.controller.dg.get_sensitivity())
         button4.grid(row=2, column=0)
 
-        button5 = ttk.Button(self, text="Connect to Sensor", command=lambda: self.controller.serial_port.select_port())
+        button5 = ttk.Button(self, text="Connect to Sensor Glove", command=lambda:
+                             self.controller.serial_port.select_port())
         button5.grid(row=3, column=0)
 
         self.button1 = ttk.Button(self, text="Start!", command=lambda: controller.show_frame(MainPage))
@@ -105,7 +104,7 @@ class HelpPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        self.label = tk.Label(self, text="Welcome to Help Menu!", font=TITLE_FONT)
+        self.label = tk.Label(self, text="Welcome to Help Menu!")
         self.label.grid(row=0, column=0)
 
         self.button1 = tk.Button(self, text="go Back to intro Page", command=lambda: controller.show_frame(IntroPage))
@@ -121,7 +120,6 @@ class MainPage(tk.Frame):
         self.create_button()
 
         canvas_frame = tk.Frame(self)
-        #  insert figure into FigureCanvas
         canvas = FigureCanvasTkAgg(self.controller.dg.live_plot_figure, canvas_frame)
         canvas.show()
         canvas.get_tk_widget().pack()
@@ -139,15 +137,15 @@ class MainPage(tk.Frame):
         palm.grid(row=0, column=0, columnspan=4)
         fingers = tk.Frame(self)
         fingers.grid(row=0, column=5, columnspan=4)
-        palm_title = tk.Label(palm, text='Palm', font=TITLE_FONT)
+        palm_title = tk.Label(palm, text='Palm')
         palm_title.grid(row=0)
-        right_title = tk.Label(fingers, text='Fingers', font=TITLE_FONT)
+        right_title = tk.Label(fingers, text='Fingers')
         right_title.grid(row=0)
         for n in range(1, 25):
             checkbox_name = "Sensor %d" % n
             if n > 12:
                 button.append(tk.Checkbutton(fingers, text=checkbox_name, onvalue=1, offvalue=0,
-                                             command=lambda n=n: self.controller.dg.update_checkbox_sensors(n)))
+                                             command=lambda m=n: self.controller.dg.update_checkbox_sensors(m)))
                 if n > 20:
                     row = 3
                     column = 5 + (n-21)
@@ -159,7 +157,7 @@ class MainPage(tk.Frame):
                     column = 5 + (n-13)
             else:
                 button.append(tk.Checkbutton(palm, text=checkbox_name, onvalue=1, offvalue=0,
-                                             command=lambda n=n: self.controller.update_checkbox_sensors(n)))
+                                             command=lambda m=n: self.controller.dg.update_checkbox_sensors(m)))
                 if n > 8:
                     row = 3
                     column = 0 + (n-9)
@@ -173,11 +171,12 @@ class MainPage(tk.Frame):
 
     def create_button(self):
         button_frame = tk.Frame(self)
-        button2 = tk.Button(button_frame, text="Start", command=lambda: self.controller.dg.record_start())
+        button2 = tk.Button(button_frame, text="Start", command=lambda: [self.controller.dg.calibrate_glove(),
+                            self.controller.dg.record_start()])
         button2.grid(row=0, column=0)
         button3 = tk.Button(button_frame, text="Stop", command=lambda: self.controller.dg.record_stop())
         button3.grid(row=0, column=1)
-        button_frame.grid(row=4, column=0)
+        button_frame.grid(row=4, column=1)
 
 
 def main():

@@ -1,25 +1,19 @@
-from matplotlib.figure import Figure
-import matplotlib.animation as animation
 from openpyxl import Workbook, load_workbook
 import time
-import serial_tools
 from tkinter.filedialog import askopenfilename, askdirectory
 import tkinter as tk
+from matplotlib.figure import Figure
+import matplotlib.animation as animation
 
 
 class DataGraph(object):
     def __init__(self, master, serial_port):
         self.master = master
-        self.serial_port = serial_port
-        self.live_plot_figure = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
-        self.a = self.live_plot_figure.add_subplot(1, 1, 1)
+        self.serial = serial_port
         #  See if I need a subplot to properly graph Live Data
-        self.serial = serial_tools.SerialPort()
-        #  self.ani1 = animation.FuncAnimation(self.live_plot_figure, self.recorddata, interval=100)
         self.start_time = 0
         self.stop_time = 0
-        self.record = 0
-        self.value = 0
+        self.record = 0  # Can Start Recording Data
         self.sensors_switch = [0] * 24
         self.sensors_pressure = [[0 for x in range(1)] for y in range(1)]  # 2D Array of Sensor Pressure Values
         self.avail_sensors = []  # Initializing an Array of Possible Available Sensors
@@ -27,10 +21,14 @@ class DataGraph(object):
         self.num_sensors = 0
         self.calibration_filename = '_'
         self.sensitivity_filename = '_'
+        self.destination_folder = '_'
         self.destination_filename = '_'
         self.calibration_values = [0] * 24  # Calibration values of the CDC value when no pressure Applied
         self.sensitivity_values = [0] * 24  # Sensitivity of Capacitive Sensor (Pa/pf)
-        # return self.live_plot_figure
+
+        self.live_plot_figure = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
+        self.a = self.live_plot_figure.add_subplot(1, 1, 1)
+        # self.ani1 = animation.FuncAnimation(self.live_plot_figure, self.recorddata, interval=100)
 
     def update_checkbox_sensors(self, s_toggle):
         self.avail_sensors = []
@@ -44,12 +42,12 @@ class DataGraph(object):
         self.num_sensors = len(self.avail_sensors)
 
     def record_start(self):
-        if self.value == 0:
+        if self.record == 0:
             self.serial.flush_input()
             self.sensors_pressure = [[0 for x in range(1)] for y in range(self.num_sensors)]
             self.serial.write_8('p')
-            self.serial_port.write_8('n')
-            self.serial_port.write_dec(self.num_sensors)
+            self.serial.write_8('n')
+            self.serial.write_dec(self.num_sensors)
             for x in range(0, self.num_sensors):
                 self.serial.write_dec(self.avail_sensors[x])
             self.serial.write_8('c')
@@ -58,14 +56,14 @@ class DataGraph(object):
             self.start_time = time.time()
 
     def record_stop(self):
-        if self.value == 1:
+        if self.record == 1:
             self.record = 0
             self.serial.write_8('z')
             self.start_time = 0
             self.output_folder_popup()  # Saving the Data to an Excel Spread Sheet
-        self.sensors_pressure = [[0 for x in range(1)] for y in range(self.num_sensors)]
-        # Reinitializing Pressure from Sensor Array
-        self.seconds = [0]    # Reinitializing Seconds Array
+            self.sensors_pressure = [[0 for x in range(1)] for y in range(self.num_sensors)]
+            # Reinitializing Pressure from Sensor Array
+            self.seconds = [0]    # Reinitializing Seconds Array
 
     @staticmethod
     def quit_gui():
@@ -117,20 +115,28 @@ class DataGraph(object):
         label = tk.Label(popup_output, text="Output Folder:")
         label.grid(row=0, column=0)
 
-        b4 = tk.Button(popup_output, text="Select Output Folder:", command=lambda:
+        b4 = tk.Button(popup_output, text="Browse:", command=lambda:
                        self.ask_user_output_folder(folder_show))
         b4.grid(row=1, column=0)
 
-        excel_destination_string_var = tk.StringVar(popup_output, value=self.destination_filename)
-        folder_show = tk.Entry(popup_output, textvariable=excel_destination_string_var, width=150)
+        excel_folder_string_var = tk.StringVar(popup_output, value=self.destination_folder)
+        folder_show = tk.Entry(popup_output, textvariable=excel_folder_string_var, width=150)
         folder_show.grid(row=1, column=1)
 
-        b1 = tk.Button(popup_output, text="Select this Output Folder", command=lambda:
-                       [self.save_data(str(excel_destination_string_var.get())), popup_output.destroy()])
-        b1.grid(row=2, column=0)
+        label_file_name = tk.Label(popup_output, text="File Name:")
+        label_file_name.grid(row=2, column=0)
+
+        excel_file_string_var = tk.StringVar(popup_output, value=self.destination_filename)
+        file_name_show = tk.Entry(popup_output, textvariable=excel_file_string_var, width=150)
+        file_name_show.grid(row=2, column=1)
+
+        b1 = tk.Button(popup_output, text="Save Excel File", command=lambda:
+                       [self.save_data(str(excel_folder_string_var.get()) + '/' + str(excel_file_string_var.get()) +
+                                       '.xlsx'), popup_output.destroy()])
+        b1.grid(row=3, column=0)
 
         b2 = tk.Button(popup_output, text="Cancel", command=popup_output.destroy)
-        b2.grid(row=2, column=1)
+        b2.grid(row=3, column=1)
 
         popup_output.mainloop()
 
@@ -144,10 +150,10 @@ class DataGraph(object):
             if ws.cell(row=n, column=2).value != 0:
                 self.sensitivity_values[n-2] = ws.cell(row=n, column=2).value
                 self.avail_sensors.append(n-1)
+        print(self.sensitivity_values)
 
     def calibrate_glove(self):
-        self.get_sensitivity()
-        #  get_calibration()
+        print("Feature to be Added Soon!")
 
     def save_data(self, output_excel):
         self.destination_filename = output_excel
@@ -187,8 +193,9 @@ class DataGraph(object):
     def update_total_fig():
         print('Hello')
 
-    def recorddata(self):
+    def record_data(self):
         # start data collection
+        print("p")
         startbit = b's'
         if self.record == 1:
             while self.serial.wait() == 0:
@@ -199,7 +206,7 @@ class DataGraph(object):
                     for n in range(0, self.num_sensors):
                         temp1 = self.serial.read_dec()
                         print(temp1)
-                        temp3 = int((temp1 - self.calibration_values[self.avail_sensors[n]]) / (65536 - 40000) * 5)
+                        temp3 = int((temp1 - self.calibration_values[self.avail_sensors[n]]) / (65536 - 40000) * self.sensitivity_values[n])
                         self.sensors_pressure[n].append(temp3)  # Storing values in Larger Data Array
                     self.serial.flush_input()
                     break

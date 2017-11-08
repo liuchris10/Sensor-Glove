@@ -15,9 +15,11 @@ class SerialPort(object):
         label = tk.Label(popup_serial, text="Select Serial Port:")
         label.grid(row=0, column=0)
 
-        port_com_num = 0
-        port_name = "hello"
+        port_com = []
+        port_name = []
         port_baud_speed = "9600"
+        port_com_disp = '-'
+        port_name_disp = '_'
 
         port_list_frame = tk.Frame(popup_serial)
         port_list_frame.grid(row=0, column=0, sticky='ns')
@@ -30,26 +32,14 @@ class SerialPort(object):
         serial_list.grid(row=1, column=1)
 
         ports = list(serial.tools.list_ports.comports())
-        print(ports)
-        for p in ports:
+        for p in range(0,len(ports)):
             # insert serial_list.insert(tk.END, ports(p))
-            print(p)
-
-        serial_list.insert(tk.END, "Hello")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
-        serial_list.insert(tk.END, "What's up")
+            desc_temp = str(ports[p])
+            [port_com_temp, desc_temp1] = desc_temp.split(" - ")
+            port_com.append(port_com_temp)
+            [port_name_temp, desc_temp2] = desc_temp1.split(" (")
+            port_name.append(port_name_temp)
+            serial_list.insert(tk.END, port_com[p])
 
         port_info_frame = tk.Frame(popup_serial)
         port_info_frame.grid(row=0, column=1, sticky='ns')
@@ -63,11 +53,11 @@ class SerialPort(object):
         baud_rate_label = tk.Label(port_info_frame, text="Baud Rate:")
         baud_rate_label.grid(row=3, column=0)
 
-        com_num_var = tk.StringVar(port_info_frame, value=port_com_num)
+        com_num_var = tk.StringVar(port_info_frame, value=port_com_disp)
         com_num = tk.Label(port_info_frame, textvariable=com_num_var)
         com_num.grid(row=1, column=1)
 
-        com_name_var = tk.StringVar(port_info_frame, value=port_name)
+        com_name_var = tk.StringVar(port_info_frame, value=port_name_disp)
         com_name = tk.Label(port_info_frame, textvariable=com_name_var)
         com_name.grid(row=2, column=1)
 
@@ -78,9 +68,9 @@ class SerialPort(object):
         def port_list_select(event):
             selection_index = int(event.widget.curselection()[0])
             selection_value = event.widget.get(selection_index)
-            com_num_var.set(selection_index)
-            com_name_var.set(selection_value)
-            com_baud_var.set(selection_index*15)
+            com_num_var.set(port_com[selection_index])
+            com_name_var.set(port_name[selection_index])
+            com_baud_var.set(port_baud_speed)
 
         serial_list.bind('<<ListboxSelect>>', port_list_select)
 
@@ -94,13 +84,12 @@ class SerialPort(object):
         popup_serial.mainloop()
 
     def open_serial_port(self, com_num, baud_rate):
-        # self.serial.baudrate = baud_rate
-        # self.serial.port = com_num
-        # self.serial.open()
-        print("Serial Port Open")
+        self.serial.baudrate = baud_rate
+        self.serial.port = com_num
+        self.serial.open()
 
     def close_serial_port(self):
-        # self.serial.close()
+        self.serial.close()
         print("Serial Port Closed")
 
     def flush_input(self):
