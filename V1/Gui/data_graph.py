@@ -23,12 +23,14 @@ class DataGraph(object):
         self.sensitivity_filename = '_'
         self.destination_folder = '_'
         self.destination_filename = '_'
-        self.calibration_values = [0] * 24  # Calibration values of the CDC value when no pressure Applied
+        self.calibration_values = [48000] * 24  # Calibration values of the CDC value when no pressure Applied
         self.sensitivity_values = [0] * 24  # Sensitivity of Capacitive Sensor (Pa/pf)
 
         self.live_plot_figure = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
         self.a = self.live_plot_figure.add_subplot(1, 1, 1)
-        # self.ani1 = animation.FuncAnimation(self.live_plot_figure, self.recorddata, interval=100)
+
+    def animate_graph(self, graph_frame):
+        self.ani1 = animation.FuncAnimation(graph_frame, self.record_data, interval=100)
 
     def update_checkbox_sensors(self, s_toggle):
         self.avail_sensors = []
@@ -42,6 +44,8 @@ class DataGraph(object):
         self.num_sensors = len(self.avail_sensors)
 
     def record_start(self):
+        print(self.num_sensors)
+        print(self.avail_sensors)
         if self.record == 0:
             self.serial.flush_input()
             self.sensors_pressure = [[0 for x in range(1)] for y in range(self.num_sensors)]
@@ -60,9 +64,7 @@ class DataGraph(object):
             self.record = 0
             self.serial.write_8('z')
             self.start_time = 0
-            self.output_folder_popup()  # Saving the Data to an Excel Spread Sheet
-            self.sensors_pressure = [[0 for x in range(1)] for y in range(self.num_sensors)]
-            # Reinitializing Pressure from Sensor Array
+            self.sensors_pressure = [[0 for x in range(1)] for y in range(self.num_sensors)]    # Reinitializing Pressure from Sensor Array
             self.seconds = [0]    # Reinitializing Seconds Array
 
     @staticmethod
@@ -98,8 +100,8 @@ class DataGraph(object):
         file_show = tk.Entry(popup_sensitivity, textvariable=sensitivity_filename_string_var, width=150)
         file_show.grid(row=1, column=1)
 
-        b1 = tk.Button(popup_sensitivity, text="Select Excel", command=lambda: [popup_sensitivity.destroy(),
-                       self.load_sensitivity(sensitivity_filename_string_var), popup_sensitivity.grab_release()])
+        b1 = tk.Button(popup_sensitivity, text="Select Excel", command=lambda: [popup_sensitivity.destroy(), self.load_sensitivity(sensitivity_filename_string_var),
+                                                                                popup_sensitivity.grab_release()])
         b1.grid(row=2, column=0)
 
         b2 = tk.Button(popup_sensitivity, text="Cancel", command=popup_sensitivity.destroy)
@@ -108,37 +110,38 @@ class DataGraph(object):
         popup_sensitivity.mainloop()
 
     def output_folder_popup(self):
-        popup_output = tk.Toplevel()
-        popup_output.grab_set()
-        popup_output.geometry("1000x100")
-        popup_output.wm_title("Select Output Folder to Save Data")
-        label = tk.Label(popup_output, text="Output Folder:")
-        label.grid(row=0, column=0)
+        if self.record == 1:
+            popup_output = tk.Toplevel()
+            popup_output.grab_set()
+            popup_output.geometry("1000x100")
+            popup_output.wm_title("Select Output Folder to Save Data")
+            label = tk.Label(popup_output, text="Output Folder:")
+            label.grid(row=0, column=0)
 
-        b4 = tk.Button(popup_output, text="Browse:", command=lambda:
-                       self.ask_user_output_folder(folder_show))
-        b4.grid(row=1, column=0)
+            b4 = tk.Button(popup_output, text="Browse:", command=lambda:
+                           self.ask_user_output_folder(folder_show))
+            b4.grid(row=1, column=0)
 
-        excel_folder_string_var = tk.StringVar(popup_output, value=self.destination_folder)
-        folder_show = tk.Entry(popup_output, textvariable=excel_folder_string_var, width=150)
-        folder_show.grid(row=1, column=1)
+            excel_folder_string_var = tk.StringVar(popup_output, value=self.destination_folder)
+            folder_show = tk.Entry(popup_output, textvariable=excel_folder_string_var, width=150)
+            folder_show.grid(row=1, column=1)
 
-        label_file_name = tk.Label(popup_output, text="File Name:")
-        label_file_name.grid(row=2, column=0)
+            label_file_name = tk.Label(popup_output, text="File Name:")
+            label_file_name.grid(row=2, column=0)
 
-        excel_file_string_var = tk.StringVar(popup_output, value=self.destination_filename)
-        file_name_show = tk.Entry(popup_output, textvariable=excel_file_string_var, width=150)
-        file_name_show.grid(row=2, column=1)
+            excel_file_string_var = tk.StringVar(popup_output, value=self.destination_filename)
+            file_name_show = tk.Entry(popup_output, textvariable=excel_file_string_var, width=150)
+            file_name_show.grid(row=2, column=1)
 
-        b1 = tk.Button(popup_output, text="Save Excel File", command=lambda:
-                       [self.save_data(str(excel_folder_string_var.get()) + '/' + str(excel_file_string_var.get()) +
-                                       '.xlsx'), popup_output.destroy()])
-        b1.grid(row=3, column=0)
+            b1 = tk.Button(popup_output, text="Save Excel File", command=lambda:
+                           [self.save_data(str(excel_folder_string_var.get()) + '/' + str(excel_file_string_var.get()) +
+                                           '.xlsx'), popup_output.destroy()])
+            b1.grid(row=3, column=0)
 
-        b2 = tk.Button(popup_output, text="Cancel", command=popup_output.destroy)
-        b2.grid(row=3, column=1)
+            b2 = tk.Button(popup_output, text="Cancel", command=popup_output.destroy)
+            b2.grid(row=3, column=1)
 
-        popup_output.mainloop()
+            popup_output.mainloop()
 
     def load_sensitivity(self, sensitivity_file_name):
         sensitivity_file = str(sensitivity_file_name.get())
@@ -150,7 +153,6 @@ class DataGraph(object):
             if ws.cell(row=n, column=2).value != 0:
                 self.sensitivity_values[n-2] = ws.cell(row=n, column=2).value
                 self.avail_sensors.append(n-1)
-        print(self.sensitivity_values)
 
     def calibrate_glove(self):
         print("Feature to be Added Soon!")
@@ -186,16 +188,15 @@ class DataGraph(object):
             self.a.set_xlim([time_low, self.seconds[-1]])
 
         # Setting the Y limit to show PSI from 0 - 5 psi
-        self.a.set_ylim([0, 5])
+        self.a.set_ylim([0, 20])
         self.a.ticklabel_format(useOffset=False)
 
     @staticmethod
     def update_total_fig():
         print('Hello')
 
-    def record_data(self):
+    def record_data(self, i):
         # start data collection
-        print("p")
         startbit = b's'
         if self.record == 1:
             while self.serial.wait() == 0:
@@ -206,7 +207,7 @@ class DataGraph(object):
                     for n in range(0, self.num_sensors):
                         temp1 = self.serial.read_dec()
                         print(temp1)
-                        temp3 = int((temp1 - self.calibration_values[self.avail_sensors[n]]) / (65536 - 40000) * self.sensitivity_values[n])
+                        temp3 = (temp1 - self.calibration_values[self.avail_sensors[n]]) / (65535 - self.calibration_values[self.avail_sensors[n]]) * self.sensitivity_values[n]
                         self.sensors_pressure[n].append(temp3)  # Storing values in Larger Data Array
                     self.serial.flush_input()
                     break
@@ -217,4 +218,5 @@ class DataGraph(object):
             self.seconds.append(count)
 
             self.update_single_fig()
-            self.a.plot(self.seconds, self.sensors_pressure[0])
+            self.a.plot(self.seconds, self.sensors_pressure[0], self.seconds, self.sensors_pressure[1], self.seconds, self.sensors_pressure[2], self.seconds,
+                        self.sensors_pressure[3])

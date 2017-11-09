@@ -59,7 +59,7 @@ void setup_AD7147(unsigned int *DataBuffer, unsigned int cdc)
     //===========================
     //= Stage 3 - CIN3 (+) S4
     //===========================
-    StageBuffer[0]=0xFFBF;	//Register 0x98
+    StageBuffer[0]=0xFEFF;	//Register 0x98
     StageBuffer[1]=0x1FFF;	//Register 0x99
     StageBuffer[2]=0x0100;	//Register 0x9A
     StageBuffer[3]=0x2121;	//Register 0x9B

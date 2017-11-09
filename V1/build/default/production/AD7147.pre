@@ -17673,7 +17673,7 @@ write_AD7147(0x090, 8, StageBuffer, 0, cdc);
 
 
 
-StageBuffer[0]=0xFFBF;
+StageBuffer[0]=0xFEFF;
 StageBuffer[1]=0x1FFF;
 StageBuffer[2]=0x0100;
 StageBuffer[3]=0x2121;

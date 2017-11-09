@@ -13554,9 +13554,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;AD7147.c: 57: write_AD7147(0x090, 8, StageBuffer, 0, cdc);
 "57
 [e ( _write_AD7147 (4 , , , , -> -> 144 `i `ui -> -> 8 `i `ui &U _StageBuffer -> -> 0 `i `ui _cdc ]
-[; ;AD7147.c: 62: StageBuffer[0]=0xFFBF;
+[; ;AD7147.c: 62: StageBuffer[0]=0xFEFF;
 "62
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65471 `ui ]
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65279 `ui ]
 [; ;AD7147.c: 63: StageBuffer[1]=0x1FFF;
 "63
 [e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
