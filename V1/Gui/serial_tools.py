@@ -35,10 +35,10 @@ class SerialPort(object):
         for p in range(0,len(ports)):
             # insert serial_list.insert(tk.END, ports(p))
             desc_temp = str(ports[p])
-            [port_com_temp, desc_temp1] = desc_temp.split(" - ")
-            port_com.append(port_com_temp)
-            [port_name_temp, desc_temp2] = desc_temp1.split(" (")
-            port_name.append(port_name_temp)
+            port_com_temp = desc_temp.split(" - ")
+            port_com.append(port_com_temp[0])
+            port_name_temp = port_com_temp[1].split(" (")
+            port_name.append(port_name_temp[0])
             serial_list.insert(tk.END, port_com[p])
 
         port_info_frame = tk.Frame(popup_serial)

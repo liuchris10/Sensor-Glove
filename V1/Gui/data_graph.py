@@ -110,38 +110,37 @@ class DataGraph(object):
         popup_sensitivity.mainloop()
 
     def output_folder_popup(self):
-        if self.record == 1:
-            popup_output = tk.Toplevel()
-            popup_output.grab_set()
-            popup_output.geometry("1000x100")
-            popup_output.wm_title("Select Output Folder to Save Data")
-            label = tk.Label(popup_output, text="Output Folder:")
-            label.grid(row=0, column=0)
+        popup_output = tk.Toplevel()
+        popup_output.grab_set()
+        popup_output.geometry("1000x100")
+        popup_output.wm_title("Select Output Folder to Save Data")
+        label = tk.Label(popup_output, text="Output Folder:")
+        label.grid(row=0, column=0)
 
-            b4 = tk.Button(popup_output, text="Browse:", command=lambda:
-                           self.ask_user_output_folder(folder_show))
-            b4.grid(row=1, column=0)
+        b4 = tk.Button(popup_output, text="Browse:", command=lambda:
+                       self.ask_user_output_folder(folder_show))
+        b4.grid(row=1, column=0)
 
-            excel_folder_string_var = tk.StringVar(popup_output, value=self.destination_folder)
-            folder_show = tk.Entry(popup_output, textvariable=excel_folder_string_var, width=150)
-            folder_show.grid(row=1, column=1)
+        excel_folder_string_var = tk.StringVar(popup_output, value=self.destination_folder)
+        folder_show = tk.Entry(popup_output, textvariable=excel_folder_string_var, width=150)
+        folder_show.grid(row=1, column=1)
 
-            label_file_name = tk.Label(popup_output, text="File Name:")
-            label_file_name.grid(row=2, column=0)
+        label_file_name = tk.Label(popup_output, text="File Name:")
+        label_file_name.grid(row=2, column=0)
 
-            excel_file_string_var = tk.StringVar(popup_output, value=self.destination_filename)
-            file_name_show = tk.Entry(popup_output, textvariable=excel_file_string_var, width=150)
-            file_name_show.grid(row=2, column=1)
+        excel_file_string_var = tk.StringVar(popup_output, value=self.destination_filename)
+        file_name_show = tk.Entry(popup_output, textvariable=excel_file_string_var, width=150)
+        file_name_show.grid(row=2, column=1)
 
-            b1 = tk.Button(popup_output, text="Save Excel File", command=lambda:
-                           [self.save_data(str(excel_folder_string_var.get()) + '/' + str(excel_file_string_var.get()) +
-                                           '.xlsx'), popup_output.destroy()])
-            b1.grid(row=3, column=0)
+        b1 = tk.Button(popup_output, text="Save Excel File", command=lambda:
+                       [self.save_data(str(excel_folder_string_var.get()) + '/' + str(excel_file_string_var.get()) +
+                                       '.xlsx'), popup_output.destroy()])
+        b1.grid(row=3, column=0)
 
-            b2 = tk.Button(popup_output, text="Cancel", command=popup_output.destroy)
-            b2.grid(row=3, column=1)
+        b2 = tk.Button(popup_output, text="Cancel", command=popup_output.destroy)
+        b2.grid(row=3, column=1)
 
-            popup_output.mainloop()
+        popup_output.mainloop()
 
     def load_sensitivity(self, sensitivity_file_name):
         sensitivity_file = str(sensitivity_file_name.get())
