@@ -1,19 +1,19 @@
-missing module named 'win32com.gen_py' - imported by win32com, c:\users\intern\documents\python\python-3.5.3\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_win32comgenpy.py
 missing module named pyimod03_importers - imported by c:\users\intern\documents\python\python-3.5.3\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_pkgres.py
-missing module named 'pkg_resources.extern.pyparsing' - imported by pkg_resources._vendor.packaging.requirements, pkg_resources._vendor.packaging.markers
-missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs
-missing module named com - imported by pkg_resources._vendor.appdirs
-missing module named StringIO - imported by numpy.lib.utils, numpy.testing.utils, numpy.lib.format, pandas.compat, six, pkg_resources._vendor.six
 missing module named __builtin__ - imported by numpy.core.numerictypes, numpy.core.numeric, numpy.distutils.misc_util, numpy.lib.function_base, numpy.lib._iotools, numpy.ma.core, numpy, pandas.compat, PIL.Image, pyparsing, pkg_resources._vendor.pyparsing
 missing module named ordereddict - imported by pyparsing, pkg_resources._vendor.pyparsing
+missing module named 'pkg_resources.extern.pyparsing' - imported by pkg_resources._vendor.packaging.requirements, pkg_resources._vendor.packaging.markers
+missing module named StringIO - imported by numpy.lib.utils, numpy.testing.utils, numpy.lib.format, pandas.compat, six, pkg_resources._vendor.six
+missing module named 'com.sun' - imported by pkg_resources._vendor.appdirs
+missing module named com - imported by pkg_resources._vendor.appdirs
+missing module named 'win32com.gen_py' - imported by win32com, c:\users\intern\documents\python\python-3.5.3\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_win32comgenpy.py
 missing module named __main__ - imported by pkg_resources
 missing module named multiprocessing.SimpleQueue - imported by multiprocessing, concurrent.futures.process
-missing module named multiprocessing.set_start_method - imported by multiprocessing, multiprocessing.spawn
 missing module named multiprocessing.get_start_method - imported by multiprocessing, multiprocessing.spawn
+missing module named multiprocessing.set_start_method - imported by multiprocessing, multiprocessing.spawn
 missing module named multiprocessing.get_context - imported by multiprocessing, multiprocessing.pool, multiprocessing.managers, multiprocessing.sharedctypes
 missing module named multiprocessing.TimeoutError - imported by multiprocessing, multiprocessing.pool
-missing module named multiprocessing.AuthenticationError - imported by multiprocessing, multiprocessing.connection
 missing module named multiprocessing.BufferTooShort - imported by multiprocessing, multiprocessing.connection
+missing module named multiprocessing.AuthenticationError - imported by multiprocessing, multiprocessing.connection
 missing module named _sysconfigdata - imported by sysconfig
 missing module named pkg_resources.extern.packaging - imported by pkg_resources.extern, pkg_resources, setuptools.dist, setuptools.command.egg_info
 missing module named pkg_resources.extern.appdirs - imported by pkg_resources.extern, pkg_resources
@@ -24,7 +24,6 @@ missing module named resource - imported by posix, C:\Users\Intern\Documents\Git
 missing module named posix - imported by os, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
 missing module named _posixsubprocess - imported by subprocess, multiprocessing.util, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
 missing module named 'org.python' - imported by pickle, setuptools.sandbox, xml.sax, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
-missing module named ce - imported by os, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
 missing module named readline - imported by cmd, code, pdb, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
 excluded module named _frozen_importlib - imported by importlib, importlib.abc, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
 missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
@@ -34,27 +33,28 @@ missing module named java - imported by platform, unittest.mock, C:\Users\Intern
 missing module named 'java.lang' - imported by platform, xml.sax._exceptions, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
 missing module named vms_lib - imported by platform, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
 missing module named termios - imported by tty, serial.serialposix, getpass, pandas.io.formats.terminal, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
-missing module named urllib.pathname2url - imported by urllib, pandas.io.common
 missing module named urllib.urlencode - imported by urllib, pandas.io.common
+missing module named urllib.pathname2url - imported by urllib, pandas.io.common
 missing module named urllib.splittag - imported by urllib, setuptools.py26compat
 missing module named grp - imported by shutil, tarfile, pathlib, distutils.archive_util, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
-missing module named _dummy_threading - imported by dummy_threading, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
 missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, pathlib, distutils.util, distutils.archive_util, netrc, getpass, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
+missing module named ce - imported by os, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
+missing module named _dummy_threading - imported by dummy_threading, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
 missing module named org - imported by copy, C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\Gui\gui.py
 missing module named commands - imported by numpy.distutils.cpuinfo
 missing module named ConfigParser - imported by numpy.distutils.system_info, numpy.distutils.npy_pkg_config
 missing module named 'numpy_distutils.cpuinfo' - imported by numpy.f2py.diagnose
 missing module named 'numpy_distutils.fcompiler' - imported by numpy.f2py.diagnose
 missing module named setuptools_svn - imported by setuptools.command.egg_info
+missing module named 'setuptools.extern.six.moves' - imported by setuptools.dist, setuptools.command.easy_install, setuptools.sandbox, setuptools.command.setopt, setuptools.package_index, setuptools.ssl_support, setuptools.command.egg_info, setuptools.command.py36compat, setuptools.msvc
 missing module named 'setuptools.extern.six' - imported by setuptools, setuptools.extension
+missing module named 'pkg_resources.extern.packaging.version' - imported by setuptools.msvc
 missing module named certifi - imported by setuptools.ssl_support
 missing module named wincertstore - imported by setuptools.ssl_support
 missing module named 'backports.ssl_match_hostname' - imported by setuptools.ssl_support
 missing module named backports - imported by setuptools.ssl_support, pandas.compat
 missing module named urllib2 - imported by setuptools.package_index, numpy.lib._datasource, pandas.io.common
-missing module named 'pkg_resources.extern.packaging.version' - imported by setuptools.msvc
-missing module named 'setuptools.extern.six.moves' - imported by setuptools.dist, setuptools.command.easy_install, setuptools.sandbox, setuptools.command.setopt, setuptools.package_index, setuptools.ssl_support, setuptools.command.egg_info, setuptools.command.py36compat, setuptools.msvc
-missing module named setuptools.extern.six - imported by setuptools.extern, setuptools.monkey, setuptools.dist, setuptools.depends, setuptools.command.easy_install, setuptools.sandbox, setuptools.package_index, setuptools.command.bdist_egg, setuptools.command.egg_info, setuptools.command.sdist, setuptools.unicode_utils, setuptools.glob, setuptools.command.develop
+missing module named setuptools.extern.six - imported by setuptools.extern, setuptools.monkey, setuptools.dist, setuptools.depends, setuptools.command.easy_install, setuptools.sandbox, setuptools.package_index, setuptools.command.egg_info, setuptools.command.sdist, setuptools.command.bdist_egg, setuptools.unicode_utils, setuptools.glob, setuptools.command.develop
 missing module named 'numpy_distutils.command' - imported by numpy.f2py.diagnose
 missing module named numpy_distutils - imported by numpy.f2py.diagnose
 missing module named __svn_version__ - imported by numpy.f2py.__version__
@@ -73,14 +73,14 @@ missing module named cPickle - imported by numpy.core.numeric, numpy.lib.format,
 missing module named cStringIO - imported by cPickle, pandas.compat, pytz.tzfile
 missing module named copy_reg - imported by cPickle, cStringIO, numpy.core
 missing module named numpy.core.number - imported by numpy.core, numpy.testing.utils
-missing module named numpy.lib.imag - imported by numpy.lib, numpy.testing.utils
-missing module named numpy.lib.real - imported by numpy.lib, numpy.testing.utils
 missing module named numpy.lib.iscomplexobj - imported by numpy.lib, numpy.testing.utils
-missing module named numpy.ndarray - imported by numpy, numpy.ma.core, numpy.ma.extras, numpy.ma.mrecords, numpy.ctypeslib, pandas.core.series, pandas.compat.numpy.function
+missing module named numpy.lib.real - imported by numpy.lib, numpy.testing.utils
+missing module named numpy.lib.imag - imported by numpy.lib, numpy.testing.utils
+missing module named numpy.dtype - imported by numpy, numpy.ma.mrecords, numpy.ctypeslib
+missing module named numpy.array - imported by numpy, numpy.ma.core, numpy.ma.extras, numpy.ma.mrecords, numpy.ctypeslib
 missing module named numpy.bool_ - imported by numpy, numpy.ma.core, numpy.ma.mrecords
 missing module named numpy.recarray - imported by numpy, numpy.ma.mrecords
-missing module named numpy.array - imported by numpy, numpy.ma.core, numpy.ma.extras, numpy.ma.mrecords, numpy.ctypeslib
-missing module named numpy.dtype - imported by numpy, numpy.ma.mrecords, numpy.ctypeslib
+missing module named numpy.ndarray - imported by numpy, numpy.ma.core, numpy.ma.extras, numpy.ma.mrecords, numpy.ctypeslib, pandas.core.series, pandas.compat.numpy.function
 missing module named future_builtins - imported by numpy.lib.npyio
 missing module named urlparse - imported by numpy.lib._datasource, pandas.io.common, pandas.io.s3
 missing module named numpy.histogramdd - imported by numpy, numpy.lib.twodim_base
@@ -95,20 +95,20 @@ missing module named numpy.core.isnat - imported by numpy.core, numpy.testing.ut
 missing module named numpy.core.float32 - imported by numpy.core, numpy.testing.utils
 missing module named numpy.core.integer - imported by numpy.core, numpy.fft.helper
 missing module named numpy.core.conjugate - imported by numpy.core, numpy.fft.fftpack
-missing module named numpy.core.longdouble - imported by numpy.core, numpy.linalg.linalg
-missing module named numpy.core.sqrt - imported by numpy.core, numpy.linalg.linalg, numpy.fft.fftpack
-missing module named numpy.core.complexfloating - imported by numpy.core, numpy.linalg.linalg
-missing module named numpy.core.add - imported by numpy.core, numpy.linalg.linalg
-missing module named numpy.core.multiply - imported by numpy.core, numpy.linalg.linalg
-missing module named numpy.core.cdouble - imported by numpy.core, numpy.linalg.linalg
-missing module named numpy.core.maximum - imported by numpy.core, numpy.linalg.linalg
+missing module named numpy.core.double - imported by numpy.core, numpy.linalg.linalg
 missing module named numpy.core.inexact - imported by numpy.core, numpy.linalg.linalg
 missing module named numpy.core.geterrobj - imported by numpy.core, numpy.linalg.linalg
-missing module named numpy.core.csingle - imported by numpy.core, numpy.linalg.linalg
-missing module named numpy.core.intp - imported by numpy.core, numpy.linalg.linalg
-missing module named numpy.core.double - imported by numpy.core, numpy.linalg.linalg
+missing module named numpy.core.multiply - imported by numpy.core, numpy.linalg.linalg
+missing module named numpy.core.add - imported by numpy.core, numpy.linalg.linalg
 missing module named numpy.core.object_ - imported by numpy.core, numpy.linalg.linalg
+missing module named numpy.core.cdouble - imported by numpy.core, numpy.linalg.linalg
 missing module named numpy.core.single - imported by numpy.core, numpy.linalg.linalg
+missing module named numpy.core.intp - imported by numpy.core, numpy.linalg.linalg
+missing module named numpy.core.maximum - imported by numpy.core, numpy.linalg.linalg
+missing module named numpy.core.sqrt - imported by numpy.core, numpy.linalg.linalg, numpy.fft.fftpack
+missing module named numpy.core.complexfloating - imported by numpy.core, numpy.linalg.linalg
+missing module named numpy.core.longdouble - imported by numpy.core, numpy.linalg.linalg
+missing module named numpy.core.csingle - imported by numpy.core, numpy.linalg.linalg
 missing module named numpy.linalg.inv - imported by numpy.linalg, numpy.matrixlib.defmatrix, numpy.lib.polynomial, matplotlib.transforms
 missing module named numpy.random.rand - imported by numpy.random, pandas.util.testing
 missing module named numpy.random.randn - imported by numpy.random, pandas.util.testing
@@ -145,11 +145,11 @@ missing module named six.moves.range - imported by six.moves, dateutil.rrule
 missing module named dateutil.tz.tzfile - imported by dateutil.tz, dateutil.zoneinfo
 missing module named subprocess32 - imported by matplotlib.compat.subprocess
 missing module named numpy.expand_dims - imported by numpy, numpy.ma.core
-missing module named numpy.iscomplexobj - imported by numpy, numpy.ma.core
-missing module named numpy.amax - imported by numpy, numpy.ma.core
 missing module named numpy.amin - imported by numpy, numpy.ma.core
-missing module named six.moves.zip - imported by six.moves, matplotlib.cbook, matplotlib.finance, matplotlib.colors, matplotlib.dates, matplotlib.collections, matplotlib.patches, matplotlib.text, matplotlib.widgets, matplotlib.mlab, cycler, matplotlib.colorbar, matplotlib.gridspec, matplotlib.axes._axes, matplotlib.offsetbox, matplotlib.legend_handler, matplotlib.textpath, matplotlib.animation
+missing module named numpy.amax - imported by numpy, numpy.ma.core
+missing module named numpy.iscomplexobj - imported by numpy, numpy.ma.core
 missing module named six.moves.xrange - imported by six.moves, matplotlib.cbook, matplotlib.finance, matplotlib.hatch, matplotlib.markers, matplotlib.backend_bases, matplotlib.mlab, matplotlib.contour, matplotlib.colorbar, matplotlib.axes._axes, matplotlib.legend, matplotlib.offsetbox, matplotlib.stackplot, matplotlib.streamplot, matplotlib.table, matplotlib.axes._base, matplotlib.dviread, matplotlib.backends.backend_svg, matplotlib.tri.triinterpolate, matplotlib.animation
+missing module named six.moves.zip - imported by six.moves, matplotlib.cbook, matplotlib.finance, matplotlib.colors, matplotlib.dates, matplotlib.collections, matplotlib.patches, matplotlib.text, matplotlib.widgets, matplotlib.mlab, cycler, matplotlib.colorbar, matplotlib.gridspec, matplotlib.axes._axes, matplotlib.offsetbox, matplotlib.legend_handler, matplotlib.textpath, matplotlib.animation
 runtime module named six.moves - imported by dateutil.tz.win, dateutil.rrule, matplotlib.cbook, matplotlib.finance, 'six.moves.urllib', matplotlib.colors, matplotlib.dates, matplotlib.hatch, matplotlib.collections, matplotlib.patches, matplotlib.markers, matplotlib.text, matplotlib.font_manager, matplotlib.afm, matplotlib.backend_bases, matplotlib.widgets, matplotlib.mlab, matplotlib.contour, cycler, matplotlib.colorbar, matplotlib.gridspec, matplotlib.axes._subplots, matplotlib.axes._axes, matplotlib.legend, matplotlib.offsetbox, matplotlib.legend_handler, matplotlib.stackplot, matplotlib.streamplot, matplotlib.table, matplotlib.axes._base, matplotlib.dviread, matplotlib.backends.backend_svg, matplotlib.tri.triinterpolate, matplotlib.textpath, matplotlib, matplotlib.animation, matplotlib.backends.backend_tkagg, matplotlib.backends.tkagg, matplotlib.backends.backend_ps
 missing module named six.moves.tkinter_filedialog - imported by six.moves, matplotlib.backends.backend_tkagg
 missing module named 'IPython.utils' - imported by matplotlib
@@ -195,17 +195,17 @@ missing module named html5lib - imported by pandas.io.html
 missing module named bs4 - imported by pandas.io.html
 missing module named simplejson - imported by pandas.util._print_versions
 missing module named pandas.option_context - imported by pandas, pandas.io.clipboards
-missing module named pandas.Interval - imported by pandas, pandas.core.reshape.tile
 missing module named pandas.Timedelta - imported by pandas, pandas.core.reshape.tile, pandas.core.reshape.merge
-missing module named pandas.CategoricalIndex - imported by pandas, pandas.io.packers, pandas.core.dtypes.concat, pandas.util.testing
-missing module named pandas.NaT - imported by pandas, pandas.io.packers
+missing module named pandas.Interval - imported by pandas, pandas.core.reshape.tile
 missing module named pandas.RangeIndex - imported by pandas, pandas.io.packers, pandas.io.feather_format, pandas.util.testing
 missing module named pandas.Period - imported by pandas, pandas.io.packers
-missing module named pandas.Panel4D - imported by pandas, pandas.io.pytables, pandas.util.testing
-missing module named pandas.concat - imported by pandas, pandas.io.pytables, pandas.core.groupby, pandas.core.generic, pandas.core.sparse.frame
+missing module named pandas.CategoricalIndex - imported by pandas, pandas.io.packers, pandas.core.dtypes.concat, pandas.util.testing
+missing module named pandas.NaT - imported by pandas, pandas.io.packers
 missing module named pandas.SparseSeries - imported by pandas, pandas.io.pytables
 missing module named pandas.Int64Index - imported by pandas, pandas.io.pytables, pandas.io.packers, pandas.io.feather_format, pandas.core.algorithms
+missing module named pandas.Panel4D - imported by pandas, pandas.io.pytables, pandas.util.testing
 missing module named pandas.SparseDataFrame - imported by pandas, pandas.io.pytables
+missing module named pandas.concat - imported by pandas, pandas.io.pytables, pandas.core.groupby, pandas.core.generic, pandas.core.sparse.frame
 missing module named pandas.isnull - imported by pandas, pandas.io.json.json, pandas.io.pytables, pandas.io.stata
 missing module named pandas.Float64Index - imported by pandas, pandas.core.internals, pandas.io.packers
 missing module named pandas.Timestamp - imported by pandas, pandas.core.indexes.timedeltas, pandas.io.packers, pandas.core.reshape.tile
