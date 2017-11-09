@@ -23,7 +23,7 @@ class DataGraph(object):
         self.sensitivity_filename = '_'
         self.destination_folder = '_'
         self.destination_filename = '_'
-        self.calibration_values = [48000] * 24  # Calibration values of the CDC value when no pressure Applied
+        self.calibration_values = [40000] * 24  # Calibration values of the CDC value when no pressure Applied
         self.sensitivity_values = [0] * 24  # Sensitivity of Capacitive Sensor (Pa/pf)
 
         self.live_plot_figure = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
