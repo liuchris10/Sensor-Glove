@@ -4,185 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/ex1.py" line="3" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2786c48a-81c6-49ae-808a-7de65d2c63fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ex3.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(3).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(30).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(31).PcbLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(44).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(45).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(46).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(47).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(48).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(49).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(5).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(50).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(51).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(52).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(53).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(54).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(55).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(56).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(57).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(58).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(59).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(6).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/History/Glove.~(60).SchLib.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(10).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(11).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(12).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(13).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(14).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(15).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(16).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(17).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(18).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(19).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(2).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(20).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(21).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(3).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(4).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(5).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(6).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(7).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(8).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/DB_2.~(9).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/PCB_2.~(2).OutJob.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/PCB_2.~(2).PrjPcb.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/PCB_2.~(3).OutJob.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/PCB_2.~(3).PrjPcb.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/PCB_2.~(4).OutJob.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/PCB_2.~(5).OutJob.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(10).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(11).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(12).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(13).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(14).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(15).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(16).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(17).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(18).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(19).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(2).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(20).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(21).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(22).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(23).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(24).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(25).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(26).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(27).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(28).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(29).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(3).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(30).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(31).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/History/Sheet-2.~(4).SchDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.GBL" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.GBO" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.GBP" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.GBS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.GKO" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.GM3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.GTL" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.GTO" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.GTP" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.GTS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.TXT" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Glove.PcbLib" afterPath="$PROJECT_DIR$/../PCB/Glove.PcbLib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Glove.SchLib" afterPath="$PROJECT_DIR$/../PCB/Glove.SchLib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/Glove_2/DB_1.PcbDoc" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/Glove_2/DB_1.PcbDoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.elf" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.elf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.obj" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.rlf" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.rlf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.elf" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.elf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.obj" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.rlf" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.rlf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/DB_2.PcbDoc" afterPath="$PROJECT_DIR$/../../V2/PCB/DB_2.PcbDoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.zip" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/DB_2.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Sheet-2.SchDoc" afterPath="$PROJECT_DIR$/../../V2/PCB/Sheet-2.SchDoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AD7147.c" afterPath="$PROJECT_DIR$/../AD7147.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AD7147.h" afterPath="$PROJECT_DIR$/../AD7147.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ex1.py" afterPath="$PROJECT_DIR$/ex1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ex2.py" afterPath="$PROJECT_DIR$/ex2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/serial_1.py" afterPath="$PROJECT_DIR$/serial_1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/Glove_2/DB_1.PcbDoc.htm" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/Glove_2/DB_1.PcbDoc.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/Glove_2/__Previews/DB_1.PcbDocPreview" afterPath="$PROJECT_DIR$/../PCB/Project Outputs for PCB_1/Glove_2/__Previews/DB_1.PcbDocPreview" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Sensor_Glove.DsnWrk" afterPath="$PROJECT_DIR$/../PCB/Sensor_Glove.DsnWrk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/__Previews/Sheet.SchDocPreview" afterPath="$PROJECT_DIR$/../PCB/__Previews/Sheet.SchDocPreview" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/AD7147.p1" afterPath="$PROJECT_DIR$/../build/default/debug/AD7147.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/AD7147.pre" afterPath="$PROJECT_DIR$/../build/default/debug/AD7147.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/main.p1" afterPath="$PROJECT_DIR$/../build/default/debug/main.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/main.pre" afterPath="$PROJECT_DIR$/../build/default/debug/main.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/micro_setup.p1" afterPath="$PROJECT_DIR$/../build/default/debug/micro_setup.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/micro_setup.pre" afterPath="$PROJECT_DIR$/../build/default/debug/micro_setup.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/spi.p1" afterPath="$PROJECT_DIR$/../build/default/debug/spi.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/spi.pre" afterPath="$PROJECT_DIR$/../build/default/debug/spi.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/uart.p1" afterPath="$PROJECT_DIR$/../build/default/debug/uart.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/debug/uart.pre" afterPath="$PROJECT_DIR$/../build/default/debug/uart.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/AD7147.p1" afterPath="$PROJECT_DIR$/../build/default/production/AD7147.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/AD7147.pre" afterPath="$PROJECT_DIR$/../build/default/production/AD7147.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/main.p1" afterPath="$PROJECT_DIR$/../build/default/production/main.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/main.pre" afterPath="$PROJECT_DIR$/../build/default/production/main.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/micro_setup.p1" afterPath="$PROJECT_DIR$/../build/default/production/micro_setup.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/micro_setup.pre" afterPath="$PROJECT_DIR$/../build/default/production/micro_setup.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/spi.p1" afterPath="$PROJECT_DIR$/../build/default/production/spi.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/spi.pre" afterPath="$PROJECT_DIR$/../build/default/production/spi.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/uart.p1" afterPath="$PROJECT_DIR$/../build/default/production/uart.p1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build/default/production/uart.pre" afterPath="$PROJECT_DIR$/../build/default/production/uart.pre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.cmf" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.cmf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.hxl" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.hxl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.lst" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.map" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.mum" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.mum" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sdb" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sym" afterPath="$PROJECT_DIR$/../dist/default/debug/V1.debug.sym" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/debug/memoryfile.xml" afterPath="$PROJECT_DIR$/../dist/default/debug/memoryfile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.cmf" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.cmf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.hex" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.hex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.hxl" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.hxl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.lst" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.map" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.mum" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.mum" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.sdb" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.sdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/V1.production.sym" afterPath="$PROJECT_DIR$/../dist/default/production/V1.production.sym" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dist/default/production/memoryfile.xml" afterPath="$PROJECT_DIR$/../dist/default/production/memoryfile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../main.c" afterPath="$PROJECT_DIR$/../main.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../micro_setup.c" afterPath="$PROJECT_DIR$/../micro_setup.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../micro_setup.h" afterPath="$PROJECT_DIR$/../micro_setup.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-genesis.properties" afterPath="$PROJECT_DIR$/../nbproject/Makefile-genesis.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/private/private.xml" afterPath="$PROJECT_DIR$/../nbproject/private/private.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spi.c" afterPath="$PROJECT_DIR$/../spi.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../uart.c" afterPath="$PROJECT_DIR$/../uart.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../uart.h" afterPath="$PROJECT_DIR$/../uart.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/PCB_2.OutJob" afterPath="$PROJECT_DIR$/../../V2/PCB/PCB_2.OutJob" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/PCB_2.PrjPcb" afterPath="$PROJECT_DIR$/../../V2/PCB/PCB_2.PrjPcb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/PCB_2.PrjPcbStructure" afterPath="$PROJECT_DIR$/../../V2/PCB/PCB_2.PrjPcbStructure" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2-macro.APR_LIB" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2-macro.APR_LIB" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.EXTREP" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.EXTREP" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GBL" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GBL" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GBO" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GBO" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GBP" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GBP" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GBS" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GBS" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GKO" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GKO" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GM3" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GM3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GTL" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GTL" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GTO" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GTO" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GTP" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GTP" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GTS" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.GTS" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.REP" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.REP" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.RUL" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.RUL" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.apr" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/DB_2.apr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/__Previews/DB_2.REPPreview" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Gerber/__Previews/DB_2.REPPreview" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/NC Drill/DB_2.DRR" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/NC Drill/DB_2.DRR" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/NC Drill/DB_2.TXT" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/NC Drill/DB_2.TXT" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Status Report.Txt" afterPath="$PROJECT_DIR$/../../V2/PCB/Project Outputs for PCB_2/Status Report.Txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/__Previews/DB_2.PcbDocPreview" afterPath="$PROJECT_DIR$/../../V2/PCB/__Previews/DB_2.PcbDocPreview" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../V2/PCB/__Previews/Sheet-2.SchDocPreview" afterPath="$PROJECT_DIR$/../../V2/PCB/__Previews/Sheet-2.SchDocPreview" />
-    </list>
+    <list default="true" id="2786c48a-81c6-49ae-808a-7de65d2c63fe" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +15,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Gui" />
   </component>
@@ -202,8 +23,8 @@
       <file leaf-file-name="ex1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ex1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+            <state relative-caret-position="289">
+              <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -234,8 +55,8 @@
       <file leaf-file-name="ex3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ex3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+            <state relative-caret-position="442">
+              <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -246,8 +67,8 @@
       <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+            <state relative-caret-position="-2108">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -309,10 +130,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
-    <option name="y" value="96" />
-    <option name="width" value="1696" />
-    <option name="height" value="1066" />
+    <option name="width" value="1692" />
+    <option name="height" value="1062" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -330,39 +149,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Gui">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../UV-Sticker/Gui/serial_2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python" />
     <property name="settings.editor.splitter.proportion" value="0.23212537" />
@@ -388,78 +181,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.gui">
-    <configuration default="false" name="ex1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Gui" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ex3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Gui" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex3.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ex2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Gui" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Gui" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -556,20 +277,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Python.ex1" />
-      <item index="1" class="java.lang.String" itemvalue="Python.ex3" />
-      <item index="2" class="java.lang.String" itemvalue="Python.ex2" />
-      <item index="3" class="java.lang.String" itemvalue="Python.gui" />
-    </list>
-    <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.gui" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ex2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ex3" />
-        <item index="3" class="java.lang.String" itemvalue="Python.ex1" />
-      </list>
-    </recent_temporary>
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -589,6 +296,88 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
+    <configuration name="ex1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gui" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="ex2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gui" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="ex3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gui" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gui" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Python.ex1" />
+      <item index="1" class="java.lang.String" itemvalue="Python.ex3" />
+      <item index="2" class="java.lang.String" itemvalue="Python.ex2" />
+      <item index="3" class="java.lang.String" itemvalue="Python.gui" />
+    </list>
+    <recent_temporary>
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.gui" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ex2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ex3" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ex1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -616,19 +405,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="96" width="1696" height="1066" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1692" height="1062" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22857143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22852029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33019853" sideWeight="0.3892857" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2633229" sideWeight="0.61071426" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2633229" sideWeight="0.61071426" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39916405" sideWeight="0.49710983" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39916405" sideWeight="0.49710983" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -757,99 +545,22 @@
     <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script3.py" />
     <entry file="file://$PROJECT_DIR$/../../PyCharm/untitled/script2.py" />
     <entry file="file://C:/Program Files (x86)/Python/Lib/tkinter/__init__.py" />
-    <entry file="file://$USER_HOME$/Downloads/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python35/site-packages/matplotlib/animation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="1561" column="0" lean-forward="false" selection-start-line="1561" selection-start-column="0" selection-end-line="1561" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/strain_guage_calc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/quick_graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/bled112_scanner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="872">
-          <caret line="276" column="33" lean-forward="false" selection-start-line="276" selection-start-column="33" selection-end-line="276" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/bglib_test_adc_collector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="872">
-          <caret line="286" column="25" lean-forward="false" selection-start-line="286" selection-start-column="25" selection-end-line="286" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../bglib/Python/bglib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="686" column="97" lean-forward="false" selection-start-line="686" selection-start-column="56" selection-end-line="686" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/ex1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="199" column="44" lean-forward="false" selection-start-line="199" selection-start-column="44" selection-end-line="199" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#20#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/gui.py" />
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python35/site-packages/matplotlib/animation.py" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/strain_guage_calc.py" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
+    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/quick_graph.py" />
+    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/bled112_scanner.py" />
+    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/bglib_test_adc_collector.py" />
+    <entry file="file://$PROJECT_DIR$/../../../bglib/Python/bglib.py" />
+    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/ex1.py" />
+    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/gui.py" />
     <entry file="file://$PROJECT_DIR$/gui_ex.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -857,9 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#20#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -873,22 +581,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ex3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        <state relative-caret-position="442">
+          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/serial_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../UV-Sticker/Gui/serial_2.py" />
     <entry file="file://$PROJECT_DIR$/serial_1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -899,8 +600,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        <state relative-caret-position="289">
+          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
@@ -909,8 +610,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+        <state relative-caret-position="-2108">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
