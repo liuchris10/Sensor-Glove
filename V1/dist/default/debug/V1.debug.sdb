@@ -496,7 +496,7 @@
 [v main@i i `ui  1 a 2 68 ]
 "124
 [v main@k k `ui  1 a 2 66 ]
-"174
+"163
 } 0
 "39 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\uart.c
 [v _uart_write_unsigned_int uart_write_unsigned_int `(v  1 e 1 0 ]

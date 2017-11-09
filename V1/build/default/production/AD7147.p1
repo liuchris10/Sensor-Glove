@@ -13554,30 +13554,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;AD7147.c: 57: write_AD7147(0x090, 8, StageBuffer, 0, cdc);
 "57
 [e ( _write_AD7147 (4 , , , , -> -> 144 `i `ui -> -> 8 `i `ui &U _StageBuffer -> -> 0 `i `ui _cdc ]
-[; ;AD7147.c: 62: StageBuffer[0]=0xFFFF;
+[; ;AD7147.c: 62: StageBuffer[0]=0xFEFF;
 "62
-[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65535 `ui ]
-[; ;AD7147.c: 63: StageBuffer[1]=0x3FFF;
+[e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65279 `ui ]
+[; ;AD7147.c: 63: StageBuffer[1]=0x1FFF;
 "63
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 16383 `i `ui ]
-[; ;AD7147.c: 64: StageBuffer[2]=0x0000;
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8191 `i `ui ]
+[; ;AD7147.c: 64: StageBuffer[2]=0x0100;
 "64
-[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
-[; ;AD7147.c: 65: StageBuffer[3]=0x2626;
+[e = *U + &U _StageBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 256 `i `ui ]
+[; ;AD7147.c: 65: StageBuffer[3]=0x2121;
 "65
-[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 9766 `i `ui ]
-[; ;AD7147.c: 66: StageBuffer[4]=4000;
+[e = *U + &U _StageBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8481 `i `ui ]
+[; ;AD7147.c: 66: StageBuffer[4]=500;
 "66
-[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 67: StageBuffer[5]=2500;
+[e = *U + &U _StageBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 500 `i `ui ]
+[; ;AD7147.c: 67: StageBuffer[5]=500;
 "67
-[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 2500 `i `ui ]
-[; ;AD7147.c: 68: StageBuffer[6]=4000;
+[e = *U + &U _StageBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 500 `i `ui ]
+[; ;AD7147.c: 68: StageBuffer[6]=600;
 "68
-[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
-[; ;AD7147.c: 69: StageBuffer[7]=4000;
+[e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 600 `i `ui ]
+[; ;AD7147.c: 69: StageBuffer[7]=600;
 "69
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4000 `i `ui ]
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 600 `i `ui ]
 [; ;AD7147.c: 70: write_AD7147(0x098, 8, StageBuffer, 0, cdc);
 "70
 [e ( _write_AD7147 (4 , , , , -> -> 152 `i `ui -> -> 8 `i `ui &U _StageBuffer -> -> 0 `i `ui _cdc ]
@@ -13821,15 +13821,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;AD7147.c: 191: StageBuffer[6] = 0x0000;
 "191
 [e = *U + &U _StageBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 0 `i `ui ]
-[; ;AD7147.c: 192: StageBuffer[7] = 0x0004;
+[; ;AD7147.c: 192: StageBuffer[7] = 0x0008;
 "192
-[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 4 `i `ui ]
+[e = *U + &U _StageBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 8 `i `ui ]
 [; ;AD7147.c: 193: write_AD7147(0x002, 6, StageBuffer, 2, cdc);
 "193
 [e ( _write_AD7147 (4 , , , , -> -> 2 `i `ui -> -> 6 `i `ui &U _StageBuffer -> -> 2 `i `ui _cdc ]
-[; ;AD7147.c: 196: StageBuffer[1] = 0x0007;
+[; ;AD7147.c: 196: StageBuffer[1] = 0x000F;
 "196
-[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 7 `i `ui ]
+[e = *U + &U _StageBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> -> 15 `i `ui ]
 [; ;AD7147.c: 197: write_AD7147(0x001, 1, StageBuffer, 1, cdc);
 "197
 [e ( _write_AD7147 (4 , , , , -> -> 1 `i `ui -> -> 1 `i `ui &U _StageBuffer -> -> 1 `i `ui _cdc ]

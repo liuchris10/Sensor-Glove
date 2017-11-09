@@ -158,17 +158,6 @@ void main(void)
             default:
                 break;
 		}
- 
-
-//        for(unsigned int j = 0; j < 3; j++)
-//        {     
-//            uart_write_char('s');
-//            uart_write_unsigned_int(sensor_values[0]);
-//            uart_write_unsigned_int(sensor_values[1]);
-//            uart_write_unsigned_int(sensor_values[2]);
-//        }
-//        delay_ms(50);
-
     } 
     return;
 }

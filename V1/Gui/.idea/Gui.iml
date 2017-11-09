@@ -2,7 +2,11 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Python 3.5.4 (C:\Users\nglab\Documents\python\python-3.5.4\python.exe)" jdkType="Python SDK" />
+=======
+    <orderEntry type="inheritedJdk" />
+>>>>>>> 91123e48ab4d2798ffc19a79cc011a4d6ce11a18
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
