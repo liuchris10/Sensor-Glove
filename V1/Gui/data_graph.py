@@ -45,8 +45,6 @@ class DataGraph(object):
         self.num_sensors = len(self.avail_sensors)
 
     def record_start(self):
-        print(self.num_sensors)
-        print(self.avail_sensors)
         if self.record == 0:
             self.serial.flush_input()
             self.sensors_pressure = [[0 for x in range(1)] for y in range(self.num_sensors)]
@@ -66,8 +64,6 @@ class DataGraph(object):
             self.popup_enable = 1
             self.serial.write_8('z')
             self.start_time = 0
-            self.sensors_pressure = [[0 for x in range(1)] for y in range(self.num_sensors)]    # Reinitializing Pressure from Sensor Array
-            self.seconds = [0]    # Reinitializing Seconds Array
 
     @staticmethod
     def quit_gui():
@@ -161,6 +157,7 @@ class DataGraph(object):
         print("Feature to be Added Soon!")
 
     def save_data(self, output_excel):
+        print("Saved")
         self.destination_filename = output_excel
         wb = Workbook()
         ws = wb.active
@@ -176,6 +173,8 @@ class DataGraph(object):
                 ws.cell(row=i + 1, column=2 + j, value=self.sensors_pressure[j][i-1])
         # Saving the Excel File
         wb.save(filename=self.destination_filename)
+        self.sensors_pressure = [[0 for x in range(1)] for y in range(self.num_sensors)]  # Reinitializing Pressure from Sensor Array
+        self.seconds = [0]  # Reinitializing Seconds Array
 
     def update_single_fig(self):
         self.a.clear()
