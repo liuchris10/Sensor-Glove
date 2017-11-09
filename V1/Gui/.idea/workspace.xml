@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2786c48a-81c6-49ae-808a-7de65d2c63fe" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/base_library.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/gui.exe.manifest" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/out00-Analysis.toc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/out00-EXE.toc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/out00-PKG.pkg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/out00-PKG.toc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/out00-PYZ.pyz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/out00-PYZ.toc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/out00-Tree.toc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/out01-Tree.toc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/warngui.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/gui/xref-gui.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/gui.exe" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_graph.py" afterPath="$PROJECT_DIR$/data_graph.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/private/private.xml" afterPath="$PROJECT_DIR$/../nbproject/private/private.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-genesis.properties" afterPath="$PROJECT_DIR$/../nbproject/Makefile-genesis.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nbproject/Makefile-local-default.mk" afterPath="$PROJECT_DIR$/../nbproject/Makefile-local-default.mk" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
