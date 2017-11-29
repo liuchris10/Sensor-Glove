@@ -1,108 +1,108 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"200 micro_setup.h
+"201 micro_setup.h
 [v _setup_port `(v ~T0 @X0 0 ef ]
 "12 C:\Program Files (x86)\Microchip\xc8\v1.44\include\conio.h
 [v _init_uart `(v ~T0 @X0 0 ef ]
 "30762 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f25k80.h
 [v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
 "30443
-[s S1157 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1157 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+[s S1156 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1156 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
 "30453
-[s S1158 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1158 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+[s S1157 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1157 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
 "30442
-[u S1156 `S1157 1 `S1158 1 ]
-[n S1156 . . . ]
+[u S1155 `S1156 1 `S1157 1 ]
+[n S1155 . . . ]
 "30464
-[v _LATCbits `VS1156 ~T0 @X0 0 e@3979 ]
+[v _LATCbits `VS1155 ~T0 @X0 0 e@3979 ]
 "26926
-[s S1009 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1009 . ANSEL8 ANSEL9 ANSEL10 ]
+[s S1008 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1008 . ANSEL8 ANSEL9 ANSEL10 ]
 "26931
-[s S1010 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1010 . PCFG8 PCFG9 PCFG10 ]
+[s S1009 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1009 . PCFG8 PCFG9 PCFG10 ]
 "26925
-[u S1008 `S1009 1 `S1010 1 ]
-[n S1008 . . . ]
+[u S1007 `S1008 1 `S1009 1 ]
+[n S1007 . . . ]
 "26937
-[v _ANCON1bits `VS1008 ~T0 @X0 0 e@3932 ]
+[v _ANCON1bits `VS1007 ~T0 @X0 0 e@3932 ]
 "30706
-[s S1166 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1166 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+[s S1165 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1165 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
 "30705
-[u S1165 `S1166 1 ]
-[n S1165 . . ]
+[u S1164 `S1165 1 ]
+[n S1164 . . ]
 "30717
-[v _TRISBbits `VS1165 ~T0 @X0 0 e@3987 ]
+[v _TRISBbits `VS1164 ~T0 @X0 0 e@3987 ]
 "35412
-[s S1407 :1 `uc 1 ]
-[n S1407 . NOT_BOR ]
+[s S1406 :1 `uc 1 ]
+[n S1406 . NOT_BOR ]
 "35415
-[s S1408 :1 `uc 1 :1 `uc 1 ]
-[n S1408 . . NOT_POR ]
+[s S1407 :1 `uc 1 :1 `uc 1 ]
+[n S1407 . . NOT_POR ]
 "35419
-[s S1409 :2 `uc 1 :1 `uc 1 ]
-[n S1409 . . NOT_PD ]
+[s S1408 :2 `uc 1 :1 `uc 1 ]
+[n S1408 . . NOT_PD ]
 "35423
-[s S1410 :3 `uc 1 :1 `uc 1 ]
-[n S1410 . . NOT_TO ]
+[s S1409 :3 `uc 1 :1 `uc 1 ]
+[n S1409 . . NOT_TO ]
 "35427
-[s S1411 :4 `uc 1 :1 `uc 1 ]
-[n S1411 . . NOT_RI ]
+[s S1410 :4 `uc 1 :1 `uc 1 ]
+[n S1410 . . NOT_RI ]
 "35431
-[s S1412 :5 `uc 1 :1 `uc 1 ]
-[n S1412 . . NOT_CM ]
+[s S1411 :5 `uc 1 :1 `uc 1 ]
+[n S1411 . . NOT_CM ]
 "35435
-[s S1413 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1413 . nBOR nPOR nPD nTO nRI nCM SBOREN IPEN ]
+[s S1412 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1412 . nBOR nPOR nPD nTO nRI nCM SBOREN IPEN ]
 "35445
-[s S1414 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1414 . BOR POR PD TO RI CM ]
+[s S1413 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1413 . BOR POR PD TO RI CM ]
 "35411
-[u S1406 `S1407 1 `S1408 1 `S1409 1 `S1410 1 `S1411 1 `S1412 1 `S1413 1 `S1414 1 ]
-[n S1406 . . . . . . . . . ]
+[u S1405 `S1406 1 `S1407 1 `S1408 1 `S1409 1 `S1410 1 `S1411 1 `S1412 1 `S1413 1 ]
+[n S1405 . . . . . . . . . ]
 "35454
-[v _RCONbits `VS1406 ~T0 @X0 0 e@4048 ]
+[v _RCONbits `VS1405 ~T0 @X0 0 e@4048 ]
 "36653
-[s S1488 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1488 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+[s S1487 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1487 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
 "36663
-[s S1489 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1489 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+[s S1488 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1488 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
 "36673
-[s S1490 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1490 . . GIEL GIEH ]
+[s S1489 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1489 . . GIEL GIEH ]
 "36652
-[u S1487 `S1488 1 `S1489 1 `S1490 1 ]
-[n S1487 . . . . ]
+[u S1486 `S1487 1 `S1488 1 `S1489 1 ]
+[n S1486 . . . . ]
 "36679
-[v _INTCONbits `VS1487 ~T0 @X0 0 e@4082 ]
+[v _INTCONbits `VS1486 ~T0 @X0 0 e@4082 ]
 "36555
-[s S1484 :7 `uc 1 :1 `uc 1 ]
-[n S1484 . . NOT_RBPU ]
+[s S1483 :7 `uc 1 :1 `uc 1 ]
+[n S1483 . . NOT_RBPU ]
 "36559
-[s S1485 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1485 . RBIP INT3IP TMR0IP INTEDG3 INTEDG2 INTEDG1 INTEDG0 nRBPU ]
+[s S1484 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1484 . RBIP INT3IP TMR0IP INTEDG3 INTEDG2 INTEDG1 INTEDG0 nRBPU ]
 "36569
-[s S1486 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
-[n S1486 . . INT3P T0IP . RBPU ]
+[s S1485 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S1485 . . INT3P T0IP . RBPU ]
 "36554
-[u S1483 `S1484 1 `S1485 1 `S1486 1 ]
-[n S1483 . . . . ]
+[u S1482 `S1483 1 `S1484 1 `S1485 1 ]
+[n S1482 . . . . ]
 "36577
-[v _INTCON2bits `VS1483 ~T0 @X0 0 e@4081 ]
+[v _INTCON2bits `VS1482 ~T0 @X0 0 e@4081 ]
 "36443
-[s S1481 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1481 . INT1IF INT2IF INT3IF INT1IE INT2IE INT3IE INT1IP INT2IP ]
+[s S1480 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1480 . INT1IF INT2IF INT3IF INT1IE INT2IE INT3IE INT1IP INT2IP ]
 "36453
-[s S1482 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1482 . INT1F INT2F INT3F INT1E INT2E INT3E INT1P INT2P ]
+[s S1481 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1481 . INT1F INT2F INT3F INT1E INT2E INT3E INT1P INT2P ]
 "36442
-[u S1480 `S1481 1 `S1482 1 ]
-[n S1480 . . . ]
+[u S1479 `S1480 1 `S1481 1 ]
+[n S1479 . . . ]
 "36464
-[v _INTCON3bits `VS1480 ~T0 @X0 0 e@4080 ]
+[v _INTCON3bits `VS1479 ~T0 @X0 0 e@4080 ]
 "32478
 [v _TXSTA1 `Vuc ~T0 @X0 0 e@4012 ]
 "32842
@@ -110,65 +110,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 "31790
 [v _BAUDCON1 `Vuc ~T0 @X0 0 e@4007 ]
 "32151
-[s S1232 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1232 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+[s S1231 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1231 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
 "32161
-[s S1233 :1 `uc 1 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1233 . RCD8 . ADEN . RC9 ]
+[s S1232 :1 `uc 1 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1232 . RCD8 . ADEN . RC9 ]
 "32168
-[s S1234 :6 `uc 1 :1 `uc 1 ]
-[n S1234 . . NOT_RC8 ]
+[s S1233 :6 `uc 1 :1 `uc 1 ]
+[n S1233 . . NOT_RC8 ]
 "32172
-[s S1235 :6 `uc 1 :1 `uc 1 ]
-[n S1235 . . nRC8 ]
+[s S1234 :6 `uc 1 :1 `uc 1 ]
+[n S1234 . . nRC8 ]
 "32176
-[s S1236 :6 `uc 1 :1 `uc 1 ]
-[n S1236 . . RC8_9 ]
+[s S1235 :6 `uc 1 :1 `uc 1 ]
+[n S1235 . . RC8_9 ]
 "32180
-[s S1237 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1237 . RX9D1 OERR1 FERR1 ADDEN1 CREN1 SREN1 RX91 SPEN1 ]
+[s S1236 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1236 . RX9D1 OERR1 FERR1 ADDEN1 CREN1 SREN1 RX91 SPEN1 ]
 "32190
-[s S1238 :5 `uc 1 :1 `uc 1 ]
-[n S1238 . . SRENA ]
+[s S1237 :5 `uc 1 :1 `uc 1 ]
+[n S1237 . . SRENA ]
 "32150
-[u S1231 `S1232 1 `S1233 1 `S1234 1 `S1235 1 `S1236 1 `S1237 1 `S1238 1 ]
-[n S1231 . . . . . . . . ]
+[u S1230 `S1231 1 `S1232 1 `S1233 1 `S1234 1 `S1235 1 `S1236 1 `S1237 1 ]
+[n S1230 . . . . . . . . ]
 "32195
-[v _RCSTA1bits `VS1231 ~T0 @X0 0 e@4011 ]
-[v F14845 `(v ~T0 @X0 1 tf1`ul ]
+[v _RCSTA1bits `VS1230 ~T0 @X0 0 e@4011 ]
+[v F14783 `(v ~T0 @X0 1 tf1`ul ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18.h
-[v __delay `JF14845 ~T0 @X0 0 e ]
+[v __delay `JF14783 ~T0 @X0 0 e ]
 [p i __delay ]
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -13538,32 +13508,62 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-"7 micro_setup.h
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+"8 micro_setup.h
 [p x WDTEN=OFF ]
-"8
-[p x STVREN=ON ]
 "9
+[p x STVREN=ON ]
+"10
 [p x XINST=OFF ]
-"12
-[p x CP0=OFF ]
 "13
-[p x SOSCSEL=DIG ]
+[p x CP0=OFF ]
 "14
+[p x SOSCSEL=DIG ]
+"15
 [p x CANMX=PORTB ]
-"16
-[p x FOSC=HS1 ]
 "17
-[p x FCMEN=OFF ]
+[p x FOSC=HS1 ]
 "18
+[p x FCMEN=OFF ]
+"19
 [p x IESO=OFF ]
-"20
+"21
 [p x MCLRE=OFF ]
-[; ;micro_setup.h: 198: void setup_mcu(void);
-[; ;micro_setup.h: 200: void setup_port(void);
-[; ;micro_setup.h: 202: void init_interrupts(void);
-[; ;micro_setup.h: 204: void init_uart(void);
-[; ;micro_setup.h: 206: void delay_ms(int n);
-"4 micro_setup.c
+[; ;micro_setup.h: 199: void setup_mcu(void);
+[; ;micro_setup.h: 201: void setup_port(void);
+[; ;micro_setup.h: 203: void init_interrupts(void);
+[; ;micro_setup.h: 205: void init_uart(void);
+[; ;micro_setup.h: 207: void delay_ms(int n);
+"3 micro_setup.c
 [v _CDC_RESULT `*ui ~T0 @X0 -> 0 `x e ]
 [i _CDC_RESULT
 :U ..
@@ -13581,169 +13581,169 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `*ui
 ..
 ]
-[; ;micro_setup.c: 4: unsigned int* CDC_RESULT[] = {0,0,0,0,0,0,0,0,0,0,0,0};
-"6
+[; ;micro_setup.c: 3: unsigned int* CDC_RESULT[] = {0,0,0,0,0,0,0,0,0,0,0,0};
+"5
 [v _setup_mcu `(v ~T0 @X0 1 ef ]
-"7
+"6
 {
-[; ;micro_setup.c: 6: void setup_mcu(void)
-[; ;micro_setup.c: 7: {
+[; ;micro_setup.c: 5: void setup_mcu(void)
+[; ;micro_setup.c: 6: {
 [e :U _setup_mcu ]
 [f ]
-[; ;micro_setup.c: 8: setup_port();
-"8
+[; ;micro_setup.c: 7: setup_port();
+"7
 [e ( _setup_port ..  ]
-[; ;micro_setup.c: 9: init_uart();
-"9
+[; ;micro_setup.c: 8: init_uart();
+"8
 [e ( _init_uart ..  ]
-[; ;micro_setup.c: 10: }
-"10
+[; ;micro_setup.c: 9: }
+"9
 [e :UE 1522 ]
 }
-"12
+"11
 [v _setup_port `(v ~T0 @X0 1 ef ]
-"13
+"12
 {
-[; ;micro_setup.c: 12: void setup_port(void)
-[; ;micro_setup.c: 13: {
+[; ;micro_setup.c: 11: void setup_port(void)
+[; ;micro_setup.c: 12: {
 [e :U _setup_port ]
 [f ]
-[; ;micro_setup.c: 16: TRISC = 0b10010000;
-"16
+[; ;micro_setup.c: 15: TRISC = 0b10010000;
+"15
 [e = _TRISC -> -> 144 `i `uc ]
-[; ;micro_setup.c: 17: LATCbits.LATC1=1;
-"17
+[; ;micro_setup.c: 16: LATCbits.LATC1=1;
+"16
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 18: LATCbits.LATC0=1;
-"18
+[; ;micro_setup.c: 17: LATCbits.LATC0=1;
+"17
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 19: LATCbits.LATC2=1;
-"19
+[; ;micro_setup.c: 18: LATCbits.LATC2=1;
+"18
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 20: }
-"20
+[; ;micro_setup.c: 19: }
+"19
 [e :UE 1523 ]
 }
-"21
+"20
 [v _init_interrupts `(v ~T0 @X0 1 ef ]
-"22
+"21
 {
-[; ;micro_setup.c: 21: void init_interrupts(void)
-[; ;micro_setup.c: 22: {
+[; ;micro_setup.c: 20: void init_interrupts(void)
+[; ;micro_setup.c: 21: {
 [e :U _init_interrupts ]
 [f ]
-[; ;micro_setup.c: 23: ANCON1bits.ANSEL10 = 0;
-"23
+[; ;micro_setup.c: 22: ANCON1bits.ANSEL10 = 0;
+"22
 [e = . . _ANCON1bits 0 2 -> -> 0 `i `uc ]
-[; ;micro_setup.c: 24: ANCON1bits.ANSEL8 = 0;
-"24
+[; ;micro_setup.c: 23: ANCON1bits.ANSEL8 = 0;
+"23
 [e = . . _ANCON1bits 0 0 -> -> 0 `i `uc ]
-[; ;micro_setup.c: 25: TRISBbits.TRISB0 = 1;
-"25
+[; ;micro_setup.c: 24: TRISBbits.TRISB0 = 1;
+"24
 [e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 26: TRISBbits.TRISB1 = 1;
-"26
+[; ;micro_setup.c: 25: TRISBbits.TRISB1 = 1;
+"25
 [e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 28: RCONbits.IPEN = 1;
-"28
+[; ;micro_setup.c: 27: RCONbits.IPEN = 1;
+"27
 [e = . . _RCONbits 6 7 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 32: INTCONbits.INT0IE = 1;
-"32
+[; ;micro_setup.c: 31: INTCONbits.INT0IE = 1;
+"31
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 33: INTCON2bits.INTEDG0 = 0;
-"33
+[; ;micro_setup.c: 32: INTCON2bits.INTEDG0 = 0;
+"32
 [e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
-[; ;micro_setup.c: 34: INTCONbits.INT0IF = 0;
-"34
+[; ;micro_setup.c: 33: INTCONbits.INT0IF = 0;
+"33
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;micro_setup.c: 37: INTCON3bits.INT1P = 1;
-"37
+[; ;micro_setup.c: 36: INTCON3bits.INT1P = 1;
+"36
 [e = . . _INTCON3bits 1 6 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 38: INTCON3bits.INT1IE = 1;
-"38
+[; ;micro_setup.c: 37: INTCON3bits.INT1IE = 1;
+"37
 [e = . . _INTCON3bits 0 3 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 39: INTCON2bits.INTEDG1 = 0;
-"39
+[; ;micro_setup.c: 38: INTCON2bits.INTEDG1 = 0;
+"38
 [e = . . _INTCON2bits 1 5 -> -> 0 `i `uc ]
-[; ;micro_setup.c: 40: INTCON3bits.INT1IF = 0;
-"40
+[; ;micro_setup.c: 39: INTCON3bits.INT1IF = 0;
+"39
 [e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-[; ;micro_setup.c: 42: INTCONbits.PEIE = 1;
-"42
+[; ;micro_setup.c: 41: INTCONbits.PEIE = 1;
+"41
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 43: INTCONbits.GIE = 1;
-"43
+[; ;micro_setup.c: 42: INTCONbits.GIE = 1;
+"42
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 45: (INTCONbits.GIE = 1);
+[; ;micro_setup.c: 44: (INTCONbits.GIE = 1);
+"44
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;micro_setup.c: 45: }
 "45
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 46: }
-"46
 [e :UE 1524 ]
 }
-"47
+"46
 [v _init_uart `(v ~T0 @X0 1 ef ]
-"48
+"47
 {
-[; ;micro_setup.c: 47: void init_uart(void)
-[; ;micro_setup.c: 48: {
+[; ;micro_setup.c: 46: void init_uart(void)
+[; ;micro_setup.c: 47: {
 [e :U _init_uart ]
 [f ]
-[; ;micro_setup.c: 49: TXSTA1 = 0b00100000;
-"49
+[; ;micro_setup.c: 48: TXSTA1 = 0b00100000;
+"48
 [e = _TXSTA1 -> -> 32 `i `uc ]
-[; ;micro_setup.c: 61: SPBRG1 = 12;
-"61
-[e = _SPBRG1 -> -> 12 `i `uc ]
-[; ;micro_setup.c: 63: BAUDCON1 = 0b00000000;
-"63
+[; ;micro_setup.c: 60: SPBRG1 = 1;
+"60
+[e = _SPBRG1 -> -> 1 `i `uc ]
+[; ;micro_setup.c: 62: BAUDCON1 = 0b00000000;
+"62
 [e = _BAUDCON1 -> -> 0 `i `uc ]
-[; ;micro_setup.c: 83: RCSTA1bits.SPEN=1;
-"83
+[; ;micro_setup.c: 82: RCSTA1bits.SPEN=1;
+"82
 [e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 84: RCSTA1bits.RX9=0;
-"84
+[; ;micro_setup.c: 83: RCSTA1bits.RX9=0;
+"83
 [e = . . _RCSTA1bits 0 6 -> -> 0 `i `uc ]
-[; ;micro_setup.c: 85: RCSTA1bits.CREN=1;
-"85
+[; ;micro_setup.c: 84: RCSTA1bits.CREN=1;
+"84
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 90: }
-"90
+[; ;micro_setup.c: 89: }
+"89
 [e :UE 1525 ]
 }
-"92
+"91
 [v _delay_ms `(v ~T0 @X0 1 ef1`i ]
-"93
-{
-[; ;micro_setup.c: 92: void delay_ms(int n)
-[; ;micro_setup.c: 93: {
-[e :U _delay_ms ]
 "92
+{
+[; ;micro_setup.c: 91: void delay_ms(int n)
+[; ;micro_setup.c: 92: {
+[e :U _delay_ms ]
+"91
 [v _n `i ~T0 @X0 1 r1 ]
-"93
+"92
 [f ]
-"94
+"93
 [v _j `i ~T0 @X0 1 a ]
-[; ;micro_setup.c: 94: int j = n/10;
+[; ;micro_setup.c: 93: int j = n/10;
 [e = _j / _n -> 10 `i ]
-[; ;micro_setup.c: 95: while(j--)
-"95
+[; ;micro_setup.c: 94: while(j--)
+"94
 [e $U 1527  ]
 [e :U 1528 ]
-[; ;micro_setup.c: 96: {
-"96
+[; ;micro_setup.c: 95: {
+"95
 {
-[; ;micro_setup.c: 97: _delay((unsigned long)((10)*(8000000/4000.0)));
-"97
+[; ;micro_setup.c: 96: _delay((unsigned long)((10)*(8000000/4000.0)));
+"96
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"98
+"97
 }
 [e :U 1527 ]
-"95
+"94
 [e $ != -- _j -> 1 `i -> 0 `i 1528  ]
 [e :U 1529 ]
+[; ;micro_setup.c: 97: }
 [; ;micro_setup.c: 98: }
-[; ;micro_setup.c: 99: }
-"99
+"98
 [e :UE 1526 ]
 }

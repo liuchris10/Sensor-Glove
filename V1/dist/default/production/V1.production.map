@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.44\dat\en_msgs.txt -cs \
   -h+dist/default/production\V1.production.sym \
   --cmf=dist/default/production\V1.production.cmf -z -Q18F25K80 \
-  -oC:\Users\Intern\AppData\Local\Temp\succ.2 \
+  -oC:\Users\Intern\AppData\Local\Temp\sub4.2 \
   -Mdist/default/production/V1.production.map -E1 -ver=XC8 \
   -ASTACK=0130h-0e40h -pstack=STACK -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0F00h-0FFFhx113 -AMEDIUMCONST=0F00h-07FFFh -ACOMRAM=01h-05Fh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Intern\AppData\Local\Temp\succ.obj \
+  C:\Users\Intern\AppData\Local\Temp\sub4.obj \
   dist/default/production\V1.production.obj 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Intern\AppData\Local\Temp\succ.obj
+C:\Users\Intern\AppData\Local\Temp\sub4.obj
                 init                                10E      10E        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -714,7 +714,7 @@ read_sensor@sensor_values          cstackBANK0  0000C2
 sensor_CDC@sensor                  cstackBANK0  0000B0
 sensor_CDC@state                   cstackBANK0  0000B2
 setup_AD7147@DataBuffer            cstackBANK0  0000D4
-setup_AD7147@F14884                bssBANK0     000060
+setup_AD7147@F14945                bssBANK0     000060
 setup_AD7147@StageBuffer           cstackBANK0  0000D8
 setup_AD7147@cdc                   cstackBANK0  0000D6
 stackhi                            (abs)        000E40
@@ -1034,7 +1034,7 @@ Total ram usage:        0 bytes
 
  *************** function _setup_mcu *****************
  Defined at:
-		line 6 in file "micro_setup.c"
+		line 5 in file "micro_setup.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1065,7 +1065,7 @@ Total ram usage:        0 bytes
 
  *************** function _setup_port *****************
  Defined at:
-		line 12 in file "micro_setup.c"
+		line 11 in file "micro_setup.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1095,7 +1095,7 @@ Total ram usage:        0 bytes
 
  *************** function _init_uart *****************
  Defined at:
-		line 47 in file "micro_setup.c"
+		line 46 in file "micro_setup.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1333,7 +1333,7 @@ Total ram usage:        8 bytes
 
  *************** function _init_interrupts *****************
  Defined at:
-		line 21 in file "micro_setup.c"
+		line 20 in file "micro_setup.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1543,7 +1543,7 @@ Total ram usage:        4 bytes
 
  *************** function _delay_ms *****************
  Defined at:
-		line 92 in file "micro_setup.c"
+		line 91 in file "micro_setup.c"
  Parameters:    Size  Location     Type
   n               2    8[BANK0 ] int 
  Auto vars:     Size  Location     Type

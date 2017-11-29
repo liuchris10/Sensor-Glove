@@ -57,15 +57,15 @@
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 "39
 [v _main main `(v  1 e 1 0 ]
-"6 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+"5 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
 [v _setup_mcu setup_mcu `(v  1 e 1 0 ]
-"12
+"11
 [v _setup_port setup_port `(v  1 e 1 0 ]
-"21
+"20
 [v _init_interrupts init_interrupts `(v  1 e 1 0 ]
-"47
+"46
 [v _init_uart init_uart `(v  1 e 1 0 ]
-"92
+"91
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
 "4 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
 [v _setup_spi setup_spi `(v  1 e 1 0 ]
@@ -557,20 +557,20 @@
 {
 "24
 } 0
-"6 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+"5 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
 [v _setup_mcu setup_mcu `(v  1 e 1 0 ]
 {
-"10
+"9
 } 0
-"12
+"11
 [v _setup_port setup_port `(v  1 e 1 0 ]
 {
-"20
+"19
 } 0
-"47
+"46
 [v _init_uart init_uart `(v  1 e 1 0 ]
 {
-"90
+"89
 } 0
 "6 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 [v _setup_AD7147 setup_AD7147 `(v  1 e 1 0 ]
@@ -581,7 +581,7 @@
 [v setup_AD7147@DataBuffer DataBuffer `*.39ui  1 p 2 40 ]
 [v setup_AD7147@cdc cdc `ui  1 p 2 42 ]
 "7
-[v setup_AD7147@F14884 F14884 `[8]ui  1 s 16 F14884 ]
+[v setup_AD7147@F14945 F14945 `[8]ui  1 s 16 F14945 ]
 "206
 } 0
 "208
@@ -645,10 +645,10 @@
 [v memset@n n `ui  1 p 2 4 ]
 "22
 } 0
-"21 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+"20 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
 [v _init_interrupts init_interrupts `(v  1 e 1 0 ]
 {
-"46
+"45
 } 0
 "305 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 [v _get_ID get_ID `(ui  1 e 2 0 ]
@@ -717,14 +717,14 @@
 [v get_CDC@state state `ui  1 p 2 2 ]
 "363
 } 0
-"92 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+"91 C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
 {
-"94
+"93
 [v delay_ms@j j `i  1 a 2 11 ]
-"92
+"91
 [v delay_ms@n n `i  1 p 2 8 ]
-"99
+"98
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]

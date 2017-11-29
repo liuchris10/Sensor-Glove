@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "micro_setup.h"
 
 unsigned int* CDC_RESULT[] = {0,0,0,0,0,0,0,0,0,0,0,0};
@@ -52,13 +51,15 @@ void init_uart(void)
     // Bit 5=1, TXEN, Transmit Enabled
     // Bit 4=0, SYNC, Asynchronous mode
     // Bit 3=-, -, Unimplemented
-    // Bit 2=0, BRGH, Baud Rate Select Bit, 1 = High Speed
+    // Bit 2=1, BRGH, Baud Rate Select Bit, 1 = High Speed
     // Bit 1=x, TRMT, Transmit Shift Register Status Bit
     // Bit 0=0, TX9D, No parity bit
     
-    //x = ((_XTAL_FREQ/BAUDRATE)/64)-1;
+    //x = ((_XTAL_FREQ/BAUDRATE)/64)-1; Low Speed Mode
     // 9600 Baud Rate, x = 12
-    SPBRG1 = 12;          // Writing SPBRG Register
+    //x = ((_XTAL_FREQ/BAUDRATE)/16)-1; High Speed Mode
+    // 100000 Baud Rate, x = 4
+    SPBRG1 = 4;          // Writing SPBRG Register
     
     BAUDCON1 = 0b00000000;
     // Bit 7=0

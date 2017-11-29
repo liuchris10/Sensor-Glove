@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.44 build -154322312 
-                                                                                               Thu Nov 09 12:55:54 2017
+                                                                                               Mon Nov 20 11:05:15 2017
 
 Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140600
      1                           	processor	18F25K80
@@ -216,7 +216,7 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
    202                           	psect	bssBANK0
    203  000060                     __pbssBANK0:
    204                           	opt stack 0
-   205  000060                     setup_AD7147@F14884:
+   205  000060                     setup_AD7147@F14945:
    206                           	opt stack 0
    207  000060                     	ds	16
    208  000070                     _num_sensors:
@@ -2011,7 +2011,7 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   1957                           
   1958 ;; *************** function _setup_mcu *****************
   1959 ;; Defined at:
-  1960 ;;		line 6 in file "micro_setup.c"
+  1960 ;;		line 5 in file "micro_setup.c"
   1961 ;; Parameters:    Size  Location     Type
   1962 ;;		None
   1963 ;; Auto vars:     Size  Location     Type
@@ -2051,12 +2051,12 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   1992  0013E4                     _setup_mcu:
   1993                           	opt stack 26
   1994                           
-  1995                           ;micro_setup.c: 8: setup_port();
+  1995                           ;micro_setup.c: 7: setup_port();
   1996                           
   1997                           ;incstack = 0
   1998  0013E4  ECEC  F009         	call	_setup_port	;wreg free
   1999                           
-  2000                           ;micro_setup.c: 9: init_uart();
+  2000                           ;micro_setup.c: 8: init_uart();
   2001  0013E8  ECDB  F009         	call	_init_uart	;wreg free
   2002  0013EC  0012               	return		;funcret
   2003  0013EE                     __end_of_setup_mcu:
@@ -2075,7 +2075,7 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   2016                           
   2017 ;; *************** function _setup_port *****************
   2018 ;; Defined at:
-  2019 ;;		line 12 in file "micro_setup.c"
+  2019 ;;		line 11 in file "micro_setup.c"
   2020 ;; Parameters:    Size  Location     Type
   2021 ;;		None
   2022 ;; Auto vars:     Size  Location     Type
@@ -2114,19 +2114,19 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   2050  0013D8                     _setup_port:
   2051                           	opt stack 26
   2052                           
-  2053                           ;micro_setup.c: 16: TRISC = 0b10010000;
+  2053                           ;micro_setup.c: 15: TRISC = 0b10010000;
   2054                           
   2055                           ;incstack = 0
   2056  0013D8  0E90               	movlw	144
   2057  0013DA  6E94               	movwf	3988,c	;volatile
   2058                           
-  2059                           ;micro_setup.c: 17: LATCbits.LATC1=1;
+  2059                           ;micro_setup.c: 16: LATCbits.LATC1=1;
   2060  0013DC  828B               	bsf	3979,1,c	;volatile
   2061                           
-  2062                           ;micro_setup.c: 18: LATCbits.LATC0=1;
+  2062                           ;micro_setup.c: 17: LATCbits.LATC0=1;
   2063  0013DE  808B               	bsf	3979,0,c	;volatile
   2064                           
-  2065                           ;micro_setup.c: 19: LATCbits.LATC2=1;
+  2065                           ;micro_setup.c: 18: LATCbits.LATC2=1;
   2066  0013E0  848B               	bsf	3979,2,c	;volatile
   2067  0013E2  0012               	return		;funcret
   2068  0013E4                     __end_of_setup_port:
@@ -2145,7 +2145,7 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   2081                           
   2082 ;; *************** function _init_uart *****************
   2083 ;; Defined at:
-  2084 ;;		line 47 in file "micro_setup.c"
+  2084 ;;		line 46 in file "micro_setup.c"
   2085 ;; Parameters:    Size  Location     Type
   2086 ;;		None
   2087 ;; Auto vars:     Size  Location     Type
@@ -2184,27 +2184,27 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   2115  0013B6                     _init_uart:
   2116                           	opt stack 26
   2117                           
-  2118                           ;micro_setup.c: 49: TXSTA1 = 0b00100000;
+  2118                           ;micro_setup.c: 48: TXSTA1 = 0b00100000;
   2119                           
   2120                           ;incstack = 0
   2121  0013B6  0E20               	movlw	32
   2122  0013B8  6EAC               	movwf	4012,c	;volatile
   2123                           
-  2124                           ;micro_setup.c: 61: SPBRG1 = 12;
-  2125  0013BA  0E0C               	movlw	12
+  2124                           ;micro_setup.c: 60: SPBRG1 = 1;
+  2125  0013BA  0E01               	movlw	1
   2126  0013BC  6EAF               	movwf	4015,c	;volatile
   2127                           
-  2128                           ;micro_setup.c: 63: BAUDCON1 = 0b00000000;
+  2128                           ;micro_setup.c: 62: BAUDCON1 = 0b00000000;
   2129  0013BE  0E00               	movlw	0
   2130  0013C0  6EA7               	movwf	4007,c	;volatile
   2131                           
-  2132                           ;micro_setup.c: 83: RCSTA1bits.SPEN=1;
+  2132                           ;micro_setup.c: 82: RCSTA1bits.SPEN=1;
   2133  0013C2  8EAB               	bsf	4011,7,c	;volatile
   2134                           
-  2135                           ;micro_setup.c: 84: RCSTA1bits.RX9=0;
+  2135                           ;micro_setup.c: 83: RCSTA1bits.RX9=0;
   2136  0013C4  9CAB               	bcf	4011,6,c	;volatile
   2137                           
-  2138                           ;micro_setup.c: 85: RCSTA1bits.CREN=1;
+  2138                           ;micro_setup.c: 84: RCSTA1bits.CREN=1;
   2139  0013C6  88AB               	bsf	4011,4,c	;volatile
   2140  0013C8  0012               	return		;funcret
   2141  0013CA                     __end_of_init_uart:
@@ -2268,7 +2268,7 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   2194                           ;AD7147.c: 8: unsigned int StageBuffer[8] = {0};
   2195                           
   2196                           ;incstack = 0
-  2197  000112  EE20  F060         	lfsr	2,setup_AD7147@F14884
+  2197  000112  EE20  F060         	lfsr	2,setup_AD7147@F14945
   2198  000116  EE10  F0D8         	lfsr	1,setup_AD7147@StageBuffer
   2199  00011A  0E0F               	movlw	15
   2200  00011C                     u991:
@@ -4038,7 +4038,7 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   3939                           
   3940 ;; *************** function _init_interrupts *****************
   3941 ;; Defined at:
-  3942 ;;		line 21 in file "micro_setup.c"
+  3942 ;;		line 20 in file "micro_setup.c"
   3943 ;; Parameters:    Size  Location     Type
   3944 ;;		None
   3945 ;; Auto vars:     Size  Location     Type
@@ -4077,53 +4077,53 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   3973  00132C                     _init_interrupts:
   3974                           	opt stack 27
   3975                           
-  3976                           ;micro_setup.c: 23: ANCON1bits.ANSEL10 = 0;
+  3976                           ;micro_setup.c: 22: ANCON1bits.ANSEL10 = 0;
   3977                           
   3978                           ; BSR set to: 0
   3979                           ;incstack = 0
   3980  00132C  010F               	movlb	15	; () banked
   3981  00132E  955C               	bcf	92,2,b	;volatile
   3982                           
-  3983                           ;micro_setup.c: 24: ANCON1bits.ANSEL8 = 0;
+  3983                           ;micro_setup.c: 23: ANCON1bits.ANSEL8 = 0;
   3984  001330  915C               	bcf	92,0,b	;volatile
   3985                           
-  3986                           ;micro_setup.c: 25: TRISBbits.TRISB0 = 1;
+  3986                           ;micro_setup.c: 24: TRISBbits.TRISB0 = 1;
   3987  001332  8093               	bsf	3987,0,c	;volatile
   3988                           
-  3989                           ;micro_setup.c: 26: TRISBbits.TRISB1 = 1;
+  3989                           ;micro_setup.c: 25: TRISBbits.TRISB1 = 1;
   3990  001334  8293               	bsf	3987,1,c	;volatile
   3991                           
-  3992                           ;micro_setup.c: 28: RCONbits.IPEN = 1;
+  3992                           ;micro_setup.c: 27: RCONbits.IPEN = 1;
   3993  001336  8ED0               	bsf	4048,7,c	;volatile
   3994                           
-  3995                           ;micro_setup.c: 32: INTCONbits.INT0IE = 1;
+  3995                           ;micro_setup.c: 31: INTCONbits.INT0IE = 1;
   3996  001338  88F2               	bsf	intcon,4,c	;volatile
   3997                           
-  3998                           ;micro_setup.c: 33: INTCON2bits.INTEDG0 = 0;
+  3998                           ;micro_setup.c: 32: INTCON2bits.INTEDG0 = 0;
   3999  00133A  9CF1               	bcf	intcon2,6,c	;volatile
   4000                           
-  4001                           ;micro_setup.c: 34: INTCONbits.INT0IF = 0;
+  4001                           ;micro_setup.c: 33: INTCONbits.INT0IF = 0;
   4002  00133C  92F2               	bcf	intcon,1,c	;volatile
   4003                           
-  4004                           ;micro_setup.c: 37: INTCON3bits.INT1P = 1;
+  4004                           ;micro_setup.c: 36: INTCON3bits.INT1P = 1;
   4005  00133E  8CF0               	bsf	intcon3,6,c	;volatile
   4006                           
-  4007                           ;micro_setup.c: 38: INTCON3bits.INT1IE = 1;
+  4007                           ;micro_setup.c: 37: INTCON3bits.INT1IE = 1;
   4008  001340  86F0               	bsf	intcon3,3,c	;volatile
   4009                           
-  4010                           ;micro_setup.c: 39: INTCON2bits.INTEDG1 = 0;
+  4010                           ;micro_setup.c: 38: INTCON2bits.INTEDG1 = 0;
   4011  001342  9AF1               	bcf	intcon2,5,c	;volatile
   4012                           
-  4013                           ;micro_setup.c: 40: INTCON3bits.INT1IF = 0;
+  4013                           ;micro_setup.c: 39: INTCON3bits.INT1IF = 0;
   4014  001344  90F0               	bcf	intcon3,0,c	;volatile
   4015                           
-  4016                           ;micro_setup.c: 42: INTCONbits.PEIE = 1;
+  4016                           ;micro_setup.c: 41: INTCONbits.PEIE = 1;
   4017  001346  8CF2               	bsf	intcon,6,c	;volatile
   4018                           
-  4019                           ;micro_setup.c: 43: INTCONbits.GIE = 1;
+  4019                           ;micro_setup.c: 42: INTCONbits.GIE = 1;
   4020  001348  8EF2               	bsf	intcon,7,c	;volatile
   4021                           
-  4022                           ;micro_setup.c: 45: (INTCONbits.GIE = 1);
+  4022                           ;micro_setup.c: 44: (INTCONbits.GIE = 1);
   4023  00134A  8EF2               	bsf	intcon,7,c	;volatile
   4024                           
   4025                           ; BSR set to: 15
@@ -4872,7 +4872,7 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   4742                           
   4743 ;; *************** function _delay_ms *****************
   4744 ;; Defined at:
-  4745 ;;		line 92 in file "micro_setup.c"
+  4745 ;;		line 91 in file "micro_setup.c"
   4746 ;; Parameters:    Size  Location     Type
   4747 ;;  n               2    8[BANK0 ] int 
   4748 ;; Auto vars:     Size  Location     Type
@@ -4913,7 +4913,7 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   4778  001226                     _delay_ms:
   4779                           	opt stack 25
   4780                           
-  4781                           ;micro_setup.c: 94: int j = n/10;
+  4781                           ;micro_setup.c: 93: int j = n/10;
   4782                           
   4783                           ; BSR set to: 0
   4784                           ;incstack = 0
@@ -4928,12 +4928,12 @@ Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140
   4793  00123C  C0AC  F0B7         	movff	?___awdiv,delay_ms@j
   4794  001240  C0AD  F0B8         	movff	?___awdiv+1,delay_ms@j+1
   4795                           
-  4796                           ;micro_setup.c: 95: while(j--)
+  4796                           ;micro_setup.c: 94: while(j--)
   4797  001244  D009               	goto	l250
   4798  001246                     l1919:
   4799                           
-  4800                           ;micro_setup.c: 96: {
-  4801                           ;micro_setup.c: 97: _delay((unsigned long)((10)*(8000000/4000.0)));
+  4800                           ;micro_setup.c: 95: {
+  4801                           ;micro_setup.c: 96: _delay((unsigned long)((10)*(8000000/4000.0)));
   4802  001246  0E1A               	movlw	26
   4803  001248  0100               	movlb	0	; () banked
   4804  00124A  6FB6               	movwf	??_delay_ms& (0+255),b
@@ -6727,7 +6727,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.44 build -154322312 
-Symbol Table                                                                                   Thu Nov 09 12:55:54 2017
+Symbol Table                                                                                   Mon Nov 20 11:05:15 2017
 
                       _SSPSTATbits 000FC7                                 l32 0EDA  
                                l33 0EAA                                 l26 0C48  
@@ -6967,7 +6967,7 @@ Symbol Table                                                                    
                        _RCSTA1bits 000FAB                     ?i2_w16_r16_spi 0001  
                      ??_switch_LED 00C6                 __end_of_setup_port 13E4  
                       ??_setup_mcu 00AC                        ??_setup_spi 00AC  
-               setup_AD7147@F14884 0060                  w16_r16_spi@result 00B8  
+               setup_AD7147@F14945 0060                  w16_r16_spi@result 00B8  
   __size_of_uart_read_unsigned_int 0030                     i2get_CDC@state 0003  
                       _num_sensors 0070                        _SSPCON1bits 000FC6  
                __end_of_switch_LED 0DFA        __end_of_uart_read_indicator 1226  

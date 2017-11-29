@@ -1,7 +1,8 @@
 #ifndef MICRO_SETUP_H
 #define	MICRO_SETUP_H
 
-#include <xc.h>                 // PIC16F917 Configuration Bit Settings
+#include <xc.h>                 // PIC18F25K80 Configuration Bit Settings
+#include <stdio.h>
 
 // CONFIG1L
 #pragma config WDTEN = OFF      // Watchdog Timer Enable bit (WDT disabled (control is placed on SWDTEN bit))

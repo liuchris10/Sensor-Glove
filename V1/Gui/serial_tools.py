@@ -17,7 +17,7 @@ class SerialPort(object):
 
         port_com = []
         port_name = []
-        port_baud_speed = "9600"
+        port_baud_speed = "62500"
         port_com_disp = '-'
         port_name_disp = '_'
 
@@ -87,6 +87,7 @@ class SerialPort(object):
         self.serial.baudrate = baud_rate
         self.serial.port = com_num
         self.serial.open()
+        print(self.serial)
 
     def close_serial_port(self):
         self.serial.close()
