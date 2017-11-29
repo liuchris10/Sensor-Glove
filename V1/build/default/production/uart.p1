@@ -13433,31 +13433,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-"7 micro_setup.h
-[p x WDTEN=OFF ]
-"8
-[p x STVREN=ON ]
-"9
-[p x XINST=OFF ]
-"12
-[p x CP0=OFF ]
-"13
-[p x SOSCSEL=DIG ]
-"14
-[p x CANMX=PORTB ]
-"16
-[p x FOSC=HS1 ]
-"17
-[p x FCMEN=OFF ]
-"18
-[p x IESO=OFF ]
-"20
-[p x MCLRE=OFF ]
-[; ;micro_setup.h: 198: void setup_mcu(void);
-[; ;micro_setup.h: 200: void setup_port(void);
-[; ;micro_setup.h: 202: void init_interrupts(void);
-[; ;micro_setup.h: 204: void init_uart(void);
-[; ;micro_setup.h: 206: void delay_ms(int n);
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
@@ -13488,6 +13463,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 195: extern int printf(const char *, ...);
+"8 micro_setup.h
+[p x WDTEN=OFF ]
+"9
+[p x STVREN=ON ]
+"10
+[p x XINST=OFF ]
+"13
+[p x CP0=OFF ]
+"14
+[p x SOSCSEL=DIG ]
+"15
+[p x CANMX=PORTB ]
+"17
+[p x FOSC=HS1 ]
+"18
+[p x FCMEN=OFF ]
+"19
+[p x IESO=OFF ]
+"21
+[p x MCLRE=OFF ]
+[; ;micro_setup.h: 199: void setup_mcu(void);
+[; ;micro_setup.h: 201: void setup_port(void);
+[; ;micro_setup.h: 203: void init_interrupts(void);
+[; ;micro_setup.h: 205: void init_uart(void);
+[; ;micro_setup.h: 207: void delay_ms(int n);
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
 [; ;string.h: 16: extern void * memset(void *, int, size_t);

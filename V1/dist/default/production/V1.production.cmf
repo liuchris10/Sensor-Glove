@@ -53,7 +53,7 @@ intcode CODE 0 8 8 106 1
 idataBANK0 CODE 0 13EE 13EE 3 1
 dataBANK0 BANK0 1 F2 F2 3 1
 bssCOMRAM COMRAM 1 35 35 26 1
-$C:\Users\Intern\AppData\Local\Temp\succ.obj
+$C:\Users\Intern\AppData\Local\Temp\sub4.obj
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 10E 10E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -218,12 +218,12 @@ D5C text24 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\aw
 D60 text24 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
 D66 text24 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
 D6E text24 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
-1226 text23 CODE >92:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1226 text23 CODE >94:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1244 text23 CODE >95:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1246 text23 CODE >97:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1258 text23 CODE >95:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1258 text23 CODE >98:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1226 text23 CODE >91:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1226 text23 CODE >93:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1244 text23 CODE >94:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1246 text23 CODE >96:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1258 text23 CODE >94:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1258 text23 CODE >97:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
 1308 text22 CODE >343:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 1308 text22 CODE >345:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 1312 text22 CODE >347:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
@@ -293,23 +293,23 @@ CE8 text19 CODE >116:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
 1100 text18 CODE >308:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 112A text18 CODE >309:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 113E text18 CODE >310:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-132C text17 CODE >21:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-132C text17 CODE >23:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1330 text17 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1332 text17 CODE >25:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1334 text17 CODE >26:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1336 text17 CODE >28:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1338 text17 CODE >32:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-133A text17 CODE >33:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-133C text17 CODE >34:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-133E text17 CODE >37:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1340 text17 CODE >38:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1342 text17 CODE >39:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1344 text17 CODE >40:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1346 text17 CODE >42:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-1348 text17 CODE >43:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-134A text17 CODE >45:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-134C text17 CODE >46:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+132C text17 CODE >20:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+132C text17 CODE >22:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1330 text17 CODE >23:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1332 text17 CODE >24:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1334 text17 CODE >25:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1336 text17 CODE >27:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1338 text17 CODE >31:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+133A text17 CODE >32:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+133C text17 CODE >33:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+133E text17 CODE >36:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1340 text17 CODE >37:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1342 text17 CODE >38:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1344 text17 CODE >39:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1346 text17 CODE >41:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+1348 text17 CODE >42:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+134A text17 CODE >44:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+134C text17 CODE >45:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
 12D8 text16 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\memset.c
 12D8 text16 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\memset.c
 12E0 text16 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\memset.c
@@ -480,24 +480,24 @@ C68 text12 CODE >219:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 70C text11 CODE >201:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 738 text11 CODE >204:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
 75E text11 CODE >206:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\AD7147.c
-13B6 text10 CODE >47:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13B6 text10 CODE >49:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13BA text10 CODE >61:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13BE text10 CODE >63:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13C2 text10 CODE >83:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13C4 text10 CODE >84:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13C6 text10 CODE >85:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13C8 text10 CODE >90:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13D8 text9 CODE >12:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13D8 text9 CODE >16:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13DC text9 CODE >17:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13DE text9 CODE >18:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13E0 text9 CODE >19:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13E2 text9 CODE >20:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13E4 text8 CODE >6:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13E4 text8 CODE >8:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13E8 text8 CODE >9:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
-13EC text8 CODE >10:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13B6 text10 CODE >46:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13B6 text10 CODE >48:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13BA text10 CODE >60:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13BE text10 CODE >62:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13C2 text10 CODE >82:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13C4 text10 CODE >83:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13C6 text10 CODE >84:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13C8 text10 CODE >89:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13D8 text9 CODE >11:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13D8 text9 CODE >15:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13DC text9 CODE >16:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13DE text9 CODE >17:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13E0 text9 CODE >18:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13E2 text9 CODE >19:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13E4 text8 CODE >5:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13E4 text8 CODE >7:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13E8 text8 CODE >8:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
+13EC text8 CODE >9:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\micro_setup.c
 138C text7 CODE >4:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
 138C text7 CODE >6:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
 138E text7 CODE >7:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\spi.c
@@ -645,46 +645,46 @@ A36 text0 CODE >153:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
 A3A text0 CODE >141:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
 A50 text0 CODE >53:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
 A6A text0 CODE >50:C:\Users\Intern\Documents\GitHub\Sensor-Glove\V1\main.c
-1148 cinit CODE >4770:C:\Users\Intern\AppData\Local\Temp\succ.
-1148 cinit CODE >4772:C:\Users\Intern\AppData\Local\Temp\succ.
-1148 cinit CODE >4775:C:\Users\Intern\AppData\Local\Temp\succ.
-1148 cinit CODE >4848:C:\Users\Intern\AppData\Local\Temp\succ.
-114A cinit CODE >4849:C:\Users\Intern\AppData\Local\Temp\succ.
-114C cinit CODE >4850:C:\Users\Intern\AppData\Local\Temp\succ.
-114E cinit CODE >4851:C:\Users\Intern\AppData\Local\Temp\succ.
-1150 cinit CODE >4852:C:\Users\Intern\AppData\Local\Temp\succ.
-1152 cinit CODE >4853:C:\Users\Intern\AppData\Local\Temp\succ.
-1154 cinit CODE >4854:C:\Users\Intern\AppData\Local\Temp\succ.
-1156 cinit CODE >4855:C:\Users\Intern\AppData\Local\Temp\succ.
-115A cinit CODE >4856:C:\Users\Intern\AppData\Local\Temp\succ.
-115C cinit CODE >4857:C:\Users\Intern\AppData\Local\Temp\succ.
-1160 cinit CODE >4858:C:\Users\Intern\AppData\Local\Temp\succ.
-1162 cinit CODE >4859:C:\Users\Intern\AppData\Local\Temp\succ.
-1166 cinit CODE >4863:C:\Users\Intern\AppData\Local\Temp\succ.
-116A cinit CODE >4864:C:\Users\Intern\AppData\Local\Temp\succ.
-116C cinit CODE >4865:C:\Users\Intern\AppData\Local\Temp\succ.
-116C cinit CODE >4866:C:\Users\Intern\AppData\Local\Temp\succ.
-116E cinit CODE >4867:C:\Users\Intern\AppData\Local\Temp\succ.
-1170 cinit CODE >4868:C:\Users\Intern\AppData\Local\Temp\succ.
-1172 cinit CODE >4871:C:\Users\Intern\AppData\Local\Temp\succ.
-1176 cinit CODE >4872:C:\Users\Intern\AppData\Local\Temp\succ.
-1178 cinit CODE >4873:C:\Users\Intern\AppData\Local\Temp\succ.
-1178 cinit CODE >4874:C:\Users\Intern\AppData\Local\Temp\succ.
-117A cinit CODE >4875:C:\Users\Intern\AppData\Local\Temp\succ.
-117C cinit CODE >4876:C:\Users\Intern\AppData\Local\Temp\succ.
-117E cinit CODE >4879:C:\Users\Intern\AppData\Local\Temp\succ.
-1182 cinit CODE >4880:C:\Users\Intern\AppData\Local\Temp\succ.
-1184 cinit CODE >4881:C:\Users\Intern\AppData\Local\Temp\succ.
-1184 cinit CODE >4882:C:\Users\Intern\AppData\Local\Temp\succ.
-1186 cinit CODE >4883:C:\Users\Intern\AppData\Local\Temp\succ.
-1188 cinit CODE >4884:C:\Users\Intern\AppData\Local\Temp\succ.
-118A cinit CODE >4890:C:\Users\Intern\AppData\Local\Temp\succ.
-118A cinit CODE >4892:C:\Users\Intern\AppData\Local\Temp\succ.
-118C cinit CODE >4893:C:\Users\Intern\AppData\Local\Temp\succ.
-118E cinit CODE >4895:C:\Users\Intern\AppData\Local\Temp\succ.
-1190 cinit CODE >4896:C:\Users\Intern\AppData\Local\Temp\succ.
-1192 cinit CODE >4897:C:\Users\Intern\AppData\Local\Temp\succ.
-1194 cinit CODE >4898:C:\Users\Intern\AppData\Local\Temp\succ.
+1148 cinit CODE >4770:C:\Users\Intern\AppData\Local\Temp\sub4.
+1148 cinit CODE >4772:C:\Users\Intern\AppData\Local\Temp\sub4.
+1148 cinit CODE >4775:C:\Users\Intern\AppData\Local\Temp\sub4.
+1148 cinit CODE >4848:C:\Users\Intern\AppData\Local\Temp\sub4.
+114A cinit CODE >4849:C:\Users\Intern\AppData\Local\Temp\sub4.
+114C cinit CODE >4850:C:\Users\Intern\AppData\Local\Temp\sub4.
+114E cinit CODE >4851:C:\Users\Intern\AppData\Local\Temp\sub4.
+1150 cinit CODE >4852:C:\Users\Intern\AppData\Local\Temp\sub4.
+1152 cinit CODE >4853:C:\Users\Intern\AppData\Local\Temp\sub4.
+1154 cinit CODE >4854:C:\Users\Intern\AppData\Local\Temp\sub4.
+1156 cinit CODE >4855:C:\Users\Intern\AppData\Local\Temp\sub4.
+115A cinit CODE >4856:C:\Users\Intern\AppData\Local\Temp\sub4.
+115C cinit CODE >4857:C:\Users\Intern\AppData\Local\Temp\sub4.
+1160 cinit CODE >4858:C:\Users\Intern\AppData\Local\Temp\sub4.
+1162 cinit CODE >4859:C:\Users\Intern\AppData\Local\Temp\sub4.
+1166 cinit CODE >4863:C:\Users\Intern\AppData\Local\Temp\sub4.
+116A cinit CODE >4864:C:\Users\Intern\AppData\Local\Temp\sub4.
+116C cinit CODE >4865:C:\Users\Intern\AppData\Local\Temp\sub4.
+116C cinit CODE >4866:C:\Users\Intern\AppData\Local\Temp\sub4.
+116E cinit CODE >4867:C:\Users\Intern\AppData\Local\Temp\sub4.
+1170 cinit CODE >4868:C:\Users\Intern\AppData\Local\Temp\sub4.
+1172 cinit CODE >4871:C:\Users\Intern\AppData\Local\Temp\sub4.
+1176 cinit CODE >4872:C:\Users\Intern\AppData\Local\Temp\sub4.
+1178 cinit CODE >4873:C:\Users\Intern\AppData\Local\Temp\sub4.
+1178 cinit CODE >4874:C:\Users\Intern\AppData\Local\Temp\sub4.
+117A cinit CODE >4875:C:\Users\Intern\AppData\Local\Temp\sub4.
+117C cinit CODE >4876:C:\Users\Intern\AppData\Local\Temp\sub4.
+117E cinit CODE >4879:C:\Users\Intern\AppData\Local\Temp\sub4.
+1182 cinit CODE >4880:C:\Users\Intern\AppData\Local\Temp\sub4.
+1184 cinit CODE >4881:C:\Users\Intern\AppData\Local\Temp\sub4.
+1184 cinit CODE >4882:C:\Users\Intern\AppData\Local\Temp\sub4.
+1186 cinit CODE >4883:C:\Users\Intern\AppData\Local\Temp\sub4.
+1188 cinit CODE >4884:C:\Users\Intern\AppData\Local\Temp\sub4.
+118A cinit CODE >4890:C:\Users\Intern\AppData\Local\Temp\sub4.
+118A cinit CODE >4892:C:\Users\Intern\AppData\Local\Temp\sub4.
+118C cinit CODE >4893:C:\Users\Intern\AppData\Local\Temp\sub4.
+118E cinit CODE >4895:C:\Users\Intern\AppData\Local\Temp\sub4.
+1190 cinit CODE >4896:C:\Users\Intern\AppData\Local\Temp\sub4.
+1192 cinit CODE >4897:C:\Users\Intern\AppData\Local\Temp\sub4.
+1194 cinit CODE >4898:C:\Users\Intern\AppData\Local\Temp\sub4.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -710,10 +710,10 @@ __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\V1.production.obj
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\V1.production.obj
 __end_of_init_interrupts 134E 0 CODE 0 text17 dist/default/production\V1.production.obj
 blink_LED@message C4 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
-setup_AD7147@F14884 60 0 BANK0 1 bssBANK0 dist/default/production\V1.production.obj
+setup_AD7147@F14945 60 0 BANK0 1 bssBANK0 dist/default/production\V1.production.obj
 ?_r16_spi 1 0 COMRAM 1 cstackCOMRAM dist/default/production\V1.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\V1.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Intern\AppData\Local\Temp\succ.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Intern\AppData\Local\Temp\sub4.obj
 __size_of_uart_write_char 0 0 ABS 0 - dist/default/production\V1.production.obj
 i2get_CDC@cdc 1 0 COMRAM 1 cstackCOMRAM dist/default/production\V1.production.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\V1.production.obj
@@ -726,11 +726,11 @@ __size_of_uart_write_unsigned_int 0 0 ABS 0 - dist/default/production\V1.product
 __end_of_w32_spi 10EA 0 CODE 0 text21 dist/default/production\V1.production.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\V1.production.obj
 _indicator 7B 0 BANK0 1 bssBANK0 dist/default/production\V1.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\succ.obj
+___sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\sub4.obj
 _main 760 0 CODE 0 text0 dist/default/production\V1.production.obj
 uart_read_unsigned_int@message B0 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
 btemp 5B 0 COMRAM 1 temp dist/default/production\V1.production.obj
-start 10E 0 CODE 0 init C:\Users\Intern\AppData\Local\Temp\succ.obj
+start 10E 0 CODE 0 init C:\Users\Intern\AppData\Local\Temp\sub4.obj
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\V1.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\V1.production.obj
 w16_r16_spi@address AC 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
@@ -755,11 +755,11 @@ setup_AD7147@DataBuffer D4 0 BANK0 1 cstackBANK0 dist/default/production\V1.prod
 switch_LED@cdc C2 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
 uart_write_unsigned_int@number AC 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
 _init_interrupts 132C 0 CODE 0 text17 dist/default/production\V1.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\succ.obj
-intlevel0 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\succ.obj
-intlevel1 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\succ.obj
-intlevel2 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\succ.obj
-intlevel3 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\succ.obj
+__accesstop 60 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\sub4.obj
+intlevel0 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\sub4.obj
+intlevel1 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\sub4.obj
+intlevel2 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\sub4.obj
+intlevel3 0 0 CODE 0 text C:\Users\Intern\AppData\Local\Temp\sub4.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\V1.production.obj
 read_AD7147@DataBuffer C2 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
 write_AD7147@cdc CA 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
@@ -787,8 +787,8 @@ i2w16_r16_spi@blank_high 11 0 COMRAM 1 cstackCOMRAM dist/default/production\V1.p
 w16_r16_spi@blank_low BA 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
 __size_of_setup_AD7147 0 0 ABS 0 - dist/default/production\V1.production.obj
 ___awdiv@dividend AC 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\succ.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\succ.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\sub4.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Intern\AppData\Local\Temp\sub4.obj
 read_sensor@register1 CA 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
 _break_loop 7A 0 BANK0 1 bssBANK0 dist/default/production\V1.production.obj
 _avail_sensors 100 0 BANK1 1 bssBANK1 dist/default/production\V1.production.obj
@@ -887,7 +887,7 @@ _w32_spi 1072 0 CODE 0 text21 dist/default/production\V1.production.obj
 write_AD7147@index C8 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\V1.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\V1.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Intern\AppData\Local\Temp\succ.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Intern\AppData\Local\Temp\sub4.obj
 _BAUDCON1 FA7 0 ABS 0 - dist/default/production\V1.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\V1.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\V1.production.obj
@@ -1062,8 +1062,8 @@ main@index EC 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
 _init_uart 13B6 0 CODE 0 text10 dist/default/production\V1.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\V1.production.obj
 __end_of_w16_r16_spi CF2 0 CODE 0 text19 dist/default/production\V1.production.obj
-stackhi E40 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\succ.obj
-stacklo 130 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\succ.obj
+stackhi E40 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\sub4.obj
+stacklo 130 0 ABS 0 - C:\Users\Intern\AppData\Local\Temp\sub4.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\V1.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\V1.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\V1.production.obj
@@ -1140,7 +1140,7 @@ __Ltext30 0 0 ABS 0 text30 dist/default/production\V1.production.obj
 __Ltext31 0 0 ABS 0 text31 dist/default/production\V1.production.obj
 r16_spi@p1 9 0 COMRAM 1 cstackCOMRAM dist/default/production\V1.production.obj
 r16_spi@p2 B 0 COMRAM 1 cstackCOMRAM dist/default/production\V1.production.obj
-__ramtop F00 0 RAM 0 ramtop C:\Users\Intern\AppData\Local\Temp\succ.obj
+__ramtop F00 0 RAM 0 ramtop C:\Users\Intern\AppData\Local\Temp\sub4.obj
 uart_read_unsigned_int@part1 B2 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
 uart_read_unsigned_int@part2 B3 0 BANK0 1 cstackBANK0 dist/default/production\V1.production.obj
 i2read_AD7147@Register_Values 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\V1.production.obj

@@ -13,7 +13,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _sensor_CDC `(v ~T0 @X0 0 ef2`ui`ui ]
 "10 spi.h
 [v _r16_spi `(ui ~T0 @X0 0 ef ]
-"206 micro_setup.h
+"207 micro_setup.h
 [v _delay_ms `(v ~T0 @X0 0 ef1`i ]
 "30443 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f25k80.h
 [s S1156 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -13395,31 +13395,61 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-"7 micro_setup.h
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+"8 micro_setup.h
 [p x WDTEN=OFF ]
-"8
-[p x STVREN=ON ]
 "9
+[p x STVREN=ON ]
+"10
 [p x XINST=OFF ]
-"12
-[p x CP0=OFF ]
 "13
-[p x SOSCSEL=DIG ]
+[p x CP0=OFF ]
 "14
+[p x SOSCSEL=DIG ]
+"15
 [p x CANMX=PORTB ]
-"16
-[p x FOSC=HS1 ]
 "17
-[p x FCMEN=OFF ]
+[p x FOSC=HS1 ]
 "18
+[p x FCMEN=OFF ]
+"19
 [p x IESO=OFF ]
-"20
+"21
 [p x MCLRE=OFF ]
-[; ;micro_setup.h: 198: void setup_mcu(void);
-[; ;micro_setup.h: 200: void setup_port(void);
-[; ;micro_setup.h: 202: void init_interrupts(void);
-[; ;micro_setup.h: 204: void init_uart(void);
-[; ;micro_setup.h: 206: void delay_ms(int n);
+[; ;micro_setup.h: 199: void setup_mcu(void);
+[; ;micro_setup.h: 201: void setup_port(void);
+[; ;micro_setup.h: 203: void init_interrupts(void);
+[; ;micro_setup.h: 205: void init_uart(void);
+[; ;micro_setup.h: 207: void delay_ms(int n);
 [; ;AD7147.h: 6: void setup_AD7147(unsigned int*, unsigned int);
 [; ;AD7147.h: 7: void write_AD7147(unsigned int, unsigned int, unsigned int*, unsigned int, unsigned int);
 [; ;AD7147.h: 8: void read_AD7147(unsigned int*, unsigned int, unsigned int, unsigned int);
@@ -13463,8 +13493,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _cdc `ui ~T0 @X0 1 r2 ]
 "7
 [f ]
-[v F14884 `ui ~T0 @X0 -> 8 `i s ]
-[i F14884
+[v F14945 `ui ~T0 @X0 -> 8 `i s ]
+[i F14945
 :U ..
 "8
 -> -> 0 `i `ui
@@ -13472,7 +13502,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _StageBuffer `ui ~T0 @X0 -> 8 `i a ]
 [; ;AD7147.c: 8: unsigned int StageBuffer[8] = {0};
-[e = _StageBuffer F14884 ]
+[e = _StageBuffer F14945 ]
 [; ;AD7147.c: 23: StageBuffer[0] = 0xFFFE;
 "23
 [e = *U + &U _StageBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _StageBuffer `ui `ux -> 65534 `ui ]
@@ -13844,7 +13874,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _read_AD7147 (4 , , , _DataBuffer -> -> 8 `i `ui -> -> 3 `i `ui _cdc ]
 [; ;AD7147.c: 206: }
 "206
-[e :UE 1521 ]
+[e :UE 1522 ]
 }
 "208
 [v _write_AD7147 `(v ~T0 @X0 1 ef5`ui`ui`*ui`ui`ui ]
@@ -13877,9 +13907,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
-[e $U 1526  ]
+[e $U 1527  ]
 "214
-[e :U 1523 ]
+[e :U 1524 ]
 [; ;AD7147.c: 214: {
 {
 [; ;AD7147.c: 215: Data_Value = OutputBuffer[index+i];
@@ -13892,9 +13922,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "213
 [e ++ _i -> -> 1 `i `ui ]
-[e :U 1526 ]
-[e $ < _i _NumberOfRegisters 1523  ]
-[e :U 1524 ]
+[e :U 1527 ]
+[e $ < _i _NumberOfRegisters 1524  ]
+[e :U 1525 ]
 "217
 }
 [; ;AD7147.c: 217: }
@@ -13903,7 +13933,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _get_CDC (2 , _cdc -> -> 1 `i `ui ]
 [; ;AD7147.c: 219: }
 "219
-[e :UE 1522 ]
+[e :UE 1523 ]
 }
 "221
 [v _read_AD7147 `(v ~T0 @X0 1 ef4`*ui`ui`ui`ui ]
@@ -13931,9 +13961,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
-[e $U 1531  ]
+[e $U 1532  ]
 "226
-[e :U 1528 ]
+[e :U 1529 ]
 [; ;AD7147.c: 226: {
 {
 [; ;AD7147.c: 227: DataBuffer[i]=w16_r16_spi(Register_Values+i);
@@ -13943,9 +13973,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "225
 [e ++ _i -> -> 1 `i `ui ]
-[e :U 1531 ]
-[e $ < _i _NumberOfRegisters 1528  ]
-[e :U 1529 ]
+[e :U 1532 ]
+[e $ < _i _NumberOfRegisters 1529  ]
+[e :U 1530 ]
 "228
 }
 [; ;AD7147.c: 228: }
@@ -13954,7 +13984,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _get_CDC (2 , _cdc -> -> 1 `i `ui ]
 [; ;AD7147.c: 230: }
 "230
-[e :UE 1527 ]
+[e :UE 1528 ]
 }
 "232
 [v _read_sensor `(v ~T0 @X0 1 ef2`*ui`ui ]
@@ -13974,7 +14004,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cdc_sensor -> -> 0 `i `ui ]
 [; ;AD7147.c: 235: if (sensor > 12)
 "235
-[e $ ! > _sensor -> -> 12 `i `ui 1533  ]
+[e $ ! > _sensor -> -> 12 `i `ui 1534  ]
 [; ;AD7147.c: 236: {
 "236
 {
@@ -13984,9 +14014,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "238
 }
 [; ;AD7147.c: 238: }
-[e $U 1534  ]
+[e $U 1535  ]
 "239
-[e :U 1533 ]
+[e :U 1534 ]
 [; ;AD7147.c: 239: else
 [; ;AD7147.c: 240: {
 "240
@@ -13996,7 +14026,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cdc_sensor _sensor ]
 "242
 }
-[e :U 1534 ]
+[e :U 1535 ]
 "243
 [v _register1 `ui ~T0 @X0 1 a ]
 [; ;AD7147.c: 242: }
@@ -14013,7 +14043,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _sensor_CDC (2 , _sensor -> -> 1 `i `ui ]
 [; ;AD7147.c: 247: }
 "247
-[e :UE 1532 ]
+[e :UE 1533 ]
 }
 "249
 [v _read_sensors `(v ~T0 @X0 1 ef3`*ui`*ui`ui ]
@@ -14045,9 +14075,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _j `ui ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `ui ]
-[e $U 1539  ]
+[e $U 1540  ]
 "255
-[e :U 1536 ]
+[e :U 1537 ]
 [; ;AD7147.c: 255: {
 {
 [; ;AD7147.c: 256: sensor_CDC(avail_sensors[j], 0);
@@ -14055,7 +14085,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _sensor_CDC (2 , *U + _avail_sensors * -> _j `ux -> -> # *U _avail_sensors `ui `ux -> -> 0 `i `ui ]
 [; ;AD7147.c: 257: if(avail_sensors[j] > 12)
 "257
-[e $ ! > *U + _avail_sensors * -> _j `ux -> -> # *U _avail_sensors `ui `ux -> -> 12 `i `ui 1540  ]
+[e $ ! > *U + _avail_sensors * -> _j `ux -> -> # *U _avail_sensors `ui `ux -> -> 12 `i `ui 1541  ]
 [; ;AD7147.c: 258: {
 "258
 {
@@ -14065,9 +14095,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "260
 }
 [; ;AD7147.c: 260: }
-[e $U 1541  ]
+[e $U 1542  ]
 "261
-[e :U 1540 ]
+[e :U 1541 ]
 [; ;AD7147.c: 261: else
 [; ;AD7147.c: 262: {
 "262
@@ -14077,7 +14107,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cdc_sensor *U + _avail_sensors * -> _j `ux -> -> # *U _avail_sensors `ui `ux ]
 "264
 }
-[e :U 1541 ]
+[e :U 1542 ]
 [; ;AD7147.c: 264: }
 [; ;AD7147.c: 265: cdc_register = cdc_read + avail_sensors[j];
 "265
@@ -14092,15 +14122,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "254
 [e ++ _j -> -> 1 `i `ui ]
-[e :U 1539 ]
-[e $ < _j _num_sensors 1536  ]
-[e :U 1537 ]
+[e :U 1540 ]
+[e $ < _j _num_sensors 1537  ]
+[e :U 1538 ]
 "268
 }
 [; ;AD7147.c: 268: }
 [; ;AD7147.c: 269: }
 "269
-[e :UE 1535 ]
+[e :UE 1536 ]
 }
 "271
 [v _read_cdc1 `(v ~T0 @X0 1 ef1`*ui ]
@@ -14124,10 +14154,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 3 `i `ui 1543  ]
-[e $U 1544  ]
+[e $ < _i -> -> 3 `i `ui 1544  ]
+[e $U 1545  ]
 "276
-[e :U 1543 ]
+[e :U 1544 ]
 [; ;AD7147.c: 276: {
 {
 [; ;AD7147.c: 277: sensor_values[i] = r16_spi();
@@ -14137,8 +14167,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "275
 [e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 3 `i `ui 1543  ]
-[e :U 1544 ]
+[e $ < _i -> -> 3 `i `ui 1544  ]
+[e :U 1545 ]
 "278
 }
 [; ;AD7147.c: 278: }
@@ -14147,7 +14177,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _get_CDC (2 , -> -> 1 `i `ui -> -> 1 `i `ui ]
 [; ;AD7147.c: 280: }
 "280
-[e :UE 1542 ]
+[e :UE 1543 ]
 }
 "281
 [v _read_cdc2 `(v ~T0 @X0 1 ef1`*ui ]
@@ -14171,10 +14201,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 13 `i `ui ]
-[e $ < _i -> -> 17 `i `ui 1547  ]
-[e $U 1548  ]
+[e $ < _i -> -> 17 `i `ui 1548  ]
+[e $U 1549  ]
 "286
-[e :U 1547 ]
+[e :U 1548 ]
 [; ;AD7147.c: 286: {
 {
 [; ;AD7147.c: 287: sensor_values[i] = r16_spi();
@@ -14184,8 +14214,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "285
 [e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 17 `i `ui 1547  ]
-[e :U 1548 ]
+[e $ < _i -> -> 17 `i `ui 1548  ]
+[e :U 1549 ]
 "288
 }
 [; ;AD7147.c: 288: }
@@ -14194,7 +14224,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _get_CDC (2 , -> -> 2 `i `ui -> -> 1 `i `ui ]
 [; ;AD7147.c: 290: }
 "290
-[e :UE 1546 ]
+[e :UE 1547 ]
 }
 "291
 [v _sensor_CDC `(v ~T0 @X0 1 ef2`ui`ui ]
@@ -14210,7 +14240,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;AD7147.c: 295: if (sensor > 12)
 "295
-[e $ ! > _sensor -> -> 12 `i `ui 1551  ]
+[e $ ! > _sensor -> -> 12 `i `ui 1552  ]
 [; ;AD7147.c: 296: {
 "296
 {
@@ -14220,9 +14250,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "298
 }
 [; ;AD7147.c: 298: }
-[e $U 1552  ]
+[e $U 1553  ]
 "299
-[e :U 1551 ]
+[e :U 1552 ]
 [; ;AD7147.c: 299: else
 [; ;AD7147.c: 300: {
 "300
@@ -14232,11 +14262,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _get_CDC (2 , -> -> 1 `i `ui _state ]
 "302
 }
-[e :U 1552 ]
+[e :U 1553 ]
 [; ;AD7147.c: 302: }
 [; ;AD7147.c: 303: }
 "303
-[e :UE 1550 ]
+[e :UE 1551 ]
 }
 "305
 [v _get_ID `(ui ~T0 @X0 1 ef1`ui ]
@@ -14262,10 +14292,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;AD7147.c: 310: return result;
 "310
 [e ) _result ]
-[e $UE 1553  ]
+[e $UE 1554  ]
 [; ;AD7147.c: 311: }
 "311
-[e :UE 1553 ]
+[e :UE 1554 ]
 }
 "313
 [v _switch_LED `(v ~T0 @X0 1 ef2`ui`ui ]
@@ -14284,7 +14314,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _get_CDC (2 , _cdc -> -> 0 `i `ui ]
 [; ;AD7147.c: 316: if (state==1)
 "316
-[e $ ! == _state -> -> 1 `i `ui 1555  ]
+[e $ ! == _state -> -> 1 `i `ui 1556  ]
 [; ;AD7147.c: 317: {
 "317
 {
@@ -14298,9 +14328,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "320
 }
 [; ;AD7147.c: 320: }
-[e $U 1556  ]
+[e $U 1557  ]
 "321
-[e :U 1555 ]
+[e :U 1556 ]
 [; ;AD7147.c: 321: else
 [; ;AD7147.c: 322: {
 "322
@@ -14314,7 +14344,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _w32_spi (2 , + -> 57344 `ui -> -> 5 `i `ui _message ]
 "325
 }
-[e :U 1556 ]
+[e :U 1557 ]
 [; ;AD7147.c: 325: }
 [; ;AD7147.c: 326: delay_ms(10);
 "326
@@ -14324,7 +14354,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _get_CDC (2 , _cdc -> -> 1 `i `ui ]
 [; ;AD7147.c: 328: }
 "328
-[e :UE 1554 ]
+[e :UE 1555 ]
 }
 "329
 [v _blink_LED `(v ~T0 @X0 1 ef1`ui ]
@@ -14373,7 +14403,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _get_CDC (2 , _cdc -> -> 1 `i `ui ]
 [; ;AD7147.c: 342: }
 "342
-[e :UE 1557 ]
+[e :UE 1558 ]
 }
 "343
 [v _get_CDC `(v ~T0 @X0 1 ef2`ui`ui ]
@@ -14389,7 +14419,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;AD7147.c: 345: if (state == 1)
 "345
-[e $ ! == _state -> -> 1 `i `ui 1559  ]
+[e $ ! == _state -> -> 1 `i `ui 1560  ]
 [; ;AD7147.c: 346: {
 "346
 {
@@ -14402,16 +14432,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 "349
 }
 [; ;AD7147.c: 349: }
-[e $U 1560  ]
+[e $U 1561  ]
 "350
-[e :U 1559 ]
+[e :U 1560 ]
 [; ;AD7147.c: 350: else
 [; ;AD7147.c: 351: {
 "351
 {
 [; ;AD7147.c: 352: if (cdc == 1)
 "352
-[e $ ! == _cdc -> -> 1 `i `ui 1561  ]
+[e $ ! == _cdc -> -> 1 `i `ui 1562  ]
 [; ;AD7147.c: 353: {
 "353
 {
@@ -14424,9 +14454,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "356
 }
 [; ;AD7147.c: 356: }
-[e $U 1562  ]
+[e $U 1563  ]
 "357
-[e :U 1561 ]
+[e :U 1562 ]
 [; ;AD7147.c: 357: else
 [; ;AD7147.c: 358: {
 "358
@@ -14439,13 +14469,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
 "361
 }
-[e :U 1562 ]
+[e :U 1563 ]
 "362
 }
-[e :U 1560 ]
+[e :U 1561 ]
 [; ;AD7147.c: 361: }
 [; ;AD7147.c: 362: }
 [; ;AD7147.c: 363: }
 "363
-[e :UE 1558 ]
+[e :UE 1559 ]
 }

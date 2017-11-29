@@ -13438,31 +13438,61 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-"7 micro_setup.h
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+"8 micro_setup.h
 [p x WDTEN=OFF ]
-"8
-[p x STVREN=ON ]
 "9
+[p x STVREN=ON ]
+"10
 [p x XINST=OFF ]
-"12
-[p x CP0=OFF ]
 "13
-[p x SOSCSEL=DIG ]
+[p x CP0=OFF ]
 "14
+[p x SOSCSEL=DIG ]
+"15
 [p x CANMX=PORTB ]
-"16
-[p x FOSC=HS1 ]
 "17
-[p x FCMEN=OFF ]
+[p x FOSC=HS1 ]
 "18
+[p x FCMEN=OFF ]
+"19
 [p x IESO=OFF ]
-"20
+"21
 [p x MCLRE=OFF ]
-[; ;micro_setup.h: 198: void setup_mcu(void);
-[; ;micro_setup.h: 200: void setup_port(void);
-[; ;micro_setup.h: 202: void init_interrupts(void);
-[; ;micro_setup.h: 204: void init_uart(void);
-[; ;micro_setup.h: 206: void delay_ms(int n);
+[; ;micro_setup.h: 199: void setup_mcu(void);
+[; ;micro_setup.h: 201: void setup_port(void);
+[; ;micro_setup.h: 203: void init_interrupts(void);
+[; ;micro_setup.h: 205: void init_uart(void);
+[; ;micro_setup.h: 207: void delay_ms(int n);
 "4 spi.c
 [v _setup_spi `(v ~T0 @X0 1 ef ]
 "5
@@ -13503,7 +13533,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _SSPCON1bits 0 2 -> -> 1 `i `uc ]
 [; ;spi.c: 24: }
 "24
-[e :UE 1521 ]
+[e :UE 1522 ]
 }
 "26
 [v _w32_spi `(v ~T0 @X0 1 ef2`ui`ui ]
@@ -13540,11 +13570,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _address_high `uc ]
 [; ;spi.c: 37: while(!SSPSTATbits.BF);
 "37
-[e $U 1523  ]
-[e :U 1524 ]
-[e :U 1523 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1524  ]
+[e $U 1524  ]
 [e :U 1525 ]
+[e :U 1524 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1525  ]
+[e :U 1526 ]
 "38
 [v _p1 `ui ~T0 @X0 1 a ]
 [; ;spi.c: 38: unsigned int p1 = SSPBUF;
@@ -13554,11 +13584,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _address_low `uc ]
 [; ;spi.c: 41: while(!SSPSTATbits.BF);
 "41
-[e $U 1526  ]
-[e :U 1527 ]
-[e :U 1526 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1527  ]
+[e $U 1527  ]
 [e :U 1528 ]
+[e :U 1527 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1528  ]
+[e :U 1529 ]
 "42
 [v _p2 `ui ~T0 @X0 1 a ]
 [; ;spi.c: 42: unsigned int p2 = SSPBUF;
@@ -13568,11 +13598,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _data_high `uc ]
 [; ;spi.c: 45: while(!SSPSTATbits.BF);
 "45
-[e $U 1529  ]
-[e :U 1530 ]
-[e :U 1529 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1530  ]
+[e $U 1530  ]
 [e :U 1531 ]
+[e :U 1530 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1531  ]
+[e :U 1532 ]
 "46
 [v _p3 `ui ~T0 @X0 1 a ]
 [; ;spi.c: 46: unsigned int p3 = SSPBUF;
@@ -13582,18 +13612,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _data_low `uc ]
 [; ;spi.c: 49: while(!SSPSTATbits.BF);
 "49
-[e $U 1532  ]
-[e :U 1533 ]
-[e :U 1532 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1533  ]
+[e $U 1533  ]
 [e :U 1534 ]
+[e :U 1533 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1534  ]
+[e :U 1535 ]
 "50
 [v _p4 `ui ~T0 @X0 1 a ]
 [; ;spi.c: 50: unsigned int p4 = SSPBUF;
 [e = _p4 -> _SSPBUF `ui ]
 [; ;spi.c: 51: }
 "51
-[e :UE 1522 ]
+[e :UE 1523 ]
 }
 "53
 [v _w16_spi `(v ~T0 @X0 1 ef1`ui ]
@@ -13625,11 +13655,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _address_high `uc ]
 [; ;spi.c: 62: while(!SSPSTATbits.BF);
 "62
-[e $U 1536  ]
-[e :U 1537 ]
-[e :U 1536 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1537  ]
+[e $U 1537  ]
 [e :U 1538 ]
+[e :U 1537 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1538  ]
+[e :U 1539 ]
 [; ;spi.c: 63: p1 = SSPBUF;
 "63
 [e = _p1 -> _SSPBUF `ui ]
@@ -13638,17 +13668,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _address_low `uc ]
 [; ;spi.c: 66: while(!SSPSTATbits.BF);
 "66
-[e $U 1539  ]
-[e :U 1540 ]
-[e :U 1539 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1540  ]
+[e $U 1540  ]
 [e :U 1541 ]
+[e :U 1540 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1541  ]
+[e :U 1542 ]
 [; ;spi.c: 67: p2 = SSPBUF;
 "67
 [e = _p2 -> _SSPBUF `ui ]
 [; ;spi.c: 68: }
 "68
-[e :UE 1535 ]
+[e :UE 1536 ]
 }
 "70
 [v _r16_spi `(ui ~T0 @X0 1 ef ]
@@ -13676,11 +13706,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _blank_high `uc ]
 [; ;spi.c: 78: while(!SSPSTATbits.BF);
 "78
-[e $U 1543  ]
-[e :U 1544 ]
-[e :U 1543 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1544  ]
+[e $U 1544  ]
 [e :U 1545 ]
+[e :U 1544 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1545  ]
+[e :U 1546 ]
 [; ;spi.c: 79: p1 = SSPBUF;
 "79
 [e = _p1 -> _SSPBUF `ui ]
@@ -13689,11 +13719,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _blank_low `uc ]
 [; ;spi.c: 82: while(!SSPSTATbits.BF);
 "82
-[e $U 1546  ]
-[e :U 1547 ]
-[e :U 1546 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1547  ]
+[e $U 1547  ]
 [e :U 1548 ]
+[e :U 1547 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1548  ]
+[e :U 1549 ]
 [; ;spi.c: 83: p2 = SSPBUF;
 "83
 [e = _p2 -> _SSPBUF `ui ]
@@ -13703,10 +13733,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.c: 86: return result;
 "86
 [e ) _result ]
-[e $UE 1542  ]
+[e $UE 1543  ]
 [; ;spi.c: 87: }
 "87
-[e :UE 1542 ]
+[e :UE 1543 ]
 }
 "89
 [v _w16_r16_spi `(ui ~T0 @X0 1 ef1`ui ]
@@ -13749,11 +13779,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _address_high `uc ]
 [; ;spi.c: 100: while(!SSPSTATbits.BF);
 "100
-[e $U 1550  ]
-[e :U 1551 ]
-[e :U 1550 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1551  ]
+[e $U 1551  ]
 [e :U 1552 ]
+[e :U 1551 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1552  ]
+[e :U 1553 ]
 [; ;spi.c: 101: p1 = SSPBUF;
 "101
 [e = _p1 -> _SSPBUF `ui ]
@@ -13762,11 +13792,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _address_low `uc ]
 [; ;spi.c: 104: while(!SSPSTATbits.BF);
 "104
-[e $U 1553  ]
-[e :U 1554 ]
-[e :U 1553 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1554  ]
+[e $U 1554  ]
 [e :U 1555 ]
+[e :U 1554 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1555  ]
+[e :U 1556 ]
 [; ;spi.c: 105: p2 = SSPBUF;
 "105
 [e = _p2 -> _SSPBUF `ui ]
@@ -13775,11 +13805,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _blank_high `uc ]
 [; ;spi.c: 108: while(!SSPSTATbits.BF);
 "108
-[e $U 1556  ]
-[e :U 1557 ]
-[e :U 1556 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1557  ]
+[e $U 1557  ]
 [e :U 1558 ]
+[e :U 1557 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1558  ]
+[e :U 1559 ]
 [; ;spi.c: 109: p3 = SSPBUF;
 "109
 [e = _p3 -> _SSPBUF `ui ]
@@ -13788,11 +13818,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _blank_low `uc ]
 [; ;spi.c: 112: while(!SSPSTATbits.BF);
 "112
-[e $U 1559  ]
-[e :U 1560 ]
-[e :U 1559 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1560  ]
+[e $U 1560  ]
 [e :U 1561 ]
+[e :U 1560 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1561  ]
+[e :U 1562 ]
 [; ;spi.c: 113: p4 = SSPBUF;
 "113
 [e = _p4 -> _SSPBUF `ui ]
@@ -13802,8 +13832,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.c: 116: return result;
 "116
 [e ) _result ]
-[e $UE 1549  ]
+[e $UE 1550  ]
 [; ;spi.c: 117: }
 "117
-[e :UE 1549 ]
+[e :UE 1550 ]
 }
