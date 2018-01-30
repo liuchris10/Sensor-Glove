@@ -135,7 +135,7 @@ class MainPage(tk.Frame):
         canvas = FigureCanvasTkAgg(self.controller.dg.live_plot_figure, canvas_frame)
         canvas.show()
         canvas.get_tk_widget().pack()
-        canvas_frame.grid(row=6, column=0, columnspan=5)
+        canvas_frame.grid(row=6, column=0, columnspan=10)
 
         # animate graph
         self.controller.dg.animate_graph(self.controller.dg.live_plot_figure)
@@ -186,10 +186,9 @@ class MainPage(tk.Frame):
 
     def create_button(self):
         button_frame = tk.Frame(self)
-        button2 = tk.Button(button_frame, text="Start", command=lambda: [self.controller.dg.calibrate_glove(),
-                            self.controller.dg.record_start()])
+        button2 = tk.Button(button_frame, text="Start", command=lambda: self.controller.dg.button_start())
         button2.grid(row=0, column=0)
-        button3 = tk.Button(button_frame, text="Stop", command=lambda: [self.controller.dg.record_stop(), self.controller.dg.output_folder_popup()])
+        button3 = tk.Button(button_frame, text="Stop", command=lambda: [self.controller.dg.button_stop(), self.controller.dg.output_folder_popup()])
         button3.grid(row=0, column=1)
         button_frame.grid(row=4, column=1)
 

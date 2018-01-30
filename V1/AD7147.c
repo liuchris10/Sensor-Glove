@@ -20,7 +20,7 @@ void setup_AD7147(unsigned int *DataBuffer, unsigned int cdc)
     //===========================
     //= Stage 0 - CIN0 (+) S1
     //===========================
-    StageBuffer[0] = 0xFFFE;	//Register 0x80
+    StageBuffer[0] = 0x3FFE;	//Register 0x80
     StageBuffer[1] = 0x1FFF;	//Register 0x81
     StageBuffer[2] = 0x0100;	//Register 0x82
     StageBuffer[3] = 0x2121;	//Register 0x83
@@ -33,7 +33,7 @@ void setup_AD7147(unsigned int *DataBuffer, unsigned int cdc)
     //===========================
     //= Stage 1 - CIN1 (+) S2
     //===========================
-    StageBuffer[0]=0xFFFB;      //Register 0x88
+    StageBuffer[0]=0x3FFB;      //Register 0x88
     StageBuffer[1]=0x1FFF;      //Register 0x89
     StageBuffer[2]=0x0100;      //Register 0x8A
     StageBuffer[3]=0x2121;      //Register 0x8B
@@ -46,7 +46,7 @@ void setup_AD7147(unsigned int *DataBuffer, unsigned int cdc)
     //===========================
     //= Stage 2 - CIN2 (+) S3
     //===========================
-    StageBuffer[0]=0xFFEF;	//Register 0x90
+    StageBuffer[0]=0x3FEF;	//Register 0x90
     StageBuffer[1]=0x1FFF;	//Register 0x91
     StageBuffer[2]=0x0100;	//Register 0x92
     StageBuffer[3]=0x2121;	//Register 0x93
@@ -59,7 +59,7 @@ void setup_AD7147(unsigned int *DataBuffer, unsigned int cdc)
     //===========================
     //= Stage 3 - CIN3 (+) S4
     //===========================
-    StageBuffer[0]=0xFEFF;	//Register 0x98
+    StageBuffer[0]=0x3FBF;	//Register 0x98
     StageBuffer[1]=0x1FFF;	//Register 0x99
     StageBuffer[2]=0x0100;	//Register 0x9A
     StageBuffer[3]=0x2121;	//Register 0x9B
@@ -72,131 +72,217 @@ void setup_AD7147(unsigned int *DataBuffer, unsigned int cdc)
     //===========================
     //= Stage 4 - CIN4 (+) S5
     //===========================
-    StageBuffer[0]=0xFFFF;	//Register 0xA0
-    StageBuffer[1]=0x3FFF;	//Register 0xA1
-    StageBuffer[2]=0x0000;	//Register 0xA2
-    StageBuffer[3]=0x2626;	//Register 0xA3
-    StageBuffer[4]=4000;	//Register 0xA4
-    StageBuffer[5]=2500;	//Register 0xA5
-    StageBuffer[6]=4000;	//Register 0xA6
-    StageBuffer[7]=4000;	//Register 0xA7
+    StageBuffer[0]=0x3EFF;	//Register 0xA0
+    StageBuffer[1]=0x1FFF;	//Register 0xA1
+    StageBuffer[2]=0x0100;	//Register 0xA2
+    StageBuffer[3]=0x2121;	//Register 0xA3
+    StageBuffer[4]=500;	//Register 0xA4
+    StageBuffer[5]=500;	//Register 0xA5
+    StageBuffer[6]=600;	//Register 0xA6
+    StageBuffer[7]=600;	//Register 0xA7
     write_AD7147(STAGE4_CONNECTION, 8, StageBuffer,0, cdc);
 
     //===========================
     //= Stage 5 - CIN5 (+) S6
     //===========================
-    StageBuffer[0]=0xFFFF;	//Register 0xA8
-    StageBuffer[1]=0x3FFF;	//Register 0xA9
-    StageBuffer[2]=0x0000;	//Register 0xAA
-    StageBuffer[3]=0x2626;	//Register 0xAB
-    StageBuffer[4]=4000;	//Register 0xAC
-    StageBuffer[5]=2500;	//Register 0xAD
-    StageBuffer[6]=4000;	//Register 0xAE
-    StageBuffer[7]=4000;	//Register 0xAF
+    StageBuffer[0]=0x3BFF;	//Register 0xA8
+    StageBuffer[1]=0x1FFF;	//Register 0xA9
+    StageBuffer[2]=0x0100;	//Register 0xAA
+    StageBuffer[3]=0x2121;	//Register 0xAB
+    StageBuffer[4]=500;	//Register 0xAC
+    StageBuffer[5]=500;	//Register 0xAD
+    StageBuffer[6]=600;	//Register 0xAE
+    StageBuffer[7]=600;	//Register 0xAF
 	write_AD7147(STAGE5_CONNECTION, 8, StageBuffer,0, cdc);
 
 	//===========================
     //= Stage 6 - CIN6 (+) S7
     //===========================
-    StageBuffer[0]=0xFFFF;	//Register 0xB0
-    StageBuffer[1]=0x3FFF;	//Register 0xB1
-    StageBuffer[2]=0x0000;	//Register 0xB2
-    StageBuffer[3]=0x2626;	//Register 0xB3
-    StageBuffer[4]=4000;	//Register 0xB4
-    StageBuffer[5]=2500;	//Register 0xB5
-    StageBuffer[6]=4000;	//Register 0xB6
-    StageBuffer[7]=4000;	//Register 0xB7
+    StageBuffer[0]=0x3FFF;	//Register 0xB0
+    StageBuffer[1]=0xDFFF;	//Register 0xB1
+    StageBuffer[2]=0x0100;	//Register 0xB2
+    StageBuffer[3]=0x2121;	//Register 0xB3
+    StageBuffer[4]=500;     //Register 0xB4
+    StageBuffer[5]=500;     //Register 0xB5
+    StageBuffer[6]=600;     //Register 0xB6
+    StageBuffer[7]=600;     //Register 0xB7
     write_AD7147(STAGE6_CONNECTION, 8, StageBuffer, 0, cdc);
 
     //===========================
     //= Stage 7 - CIN7 (+) S8
     //===========================
-    StageBuffer[0]=0xFFFF;	//Register 0xB8
-    StageBuffer[1]=0x3FFF;	//Register 0xB9
-    StageBuffer[2]=0x0000;	//Register 0xBA
-    StageBuffer[3]=0x2626;	//Register 0xBB
-    StageBuffer[4]=4000;	//Register 0xBC
-    StageBuffer[5]=2500;  	//Register 0xBD
-    StageBuffer[6]=4000;	//Register 0xBE
-    StageBuffer[7]=4000;	//Register 0xBF
+    StageBuffer[0]=0x3FFF;	//Register 0xB8
+    StageBuffer[1]=0xDFFF;	//Register 0xB9
+    StageBuffer[2]=0x0100;	//Register 0xBA
+    StageBuffer[3]=0x2121;	//Register 0xBB
+    StageBuffer[4]=500;     //Register 0xBC
+    StageBuffer[5]=500;  	//Register 0xBD
+    StageBuffer[6]=600;     //Register 0xBE
+    StageBuffer[7]=600;     //Register 0xBF
     write_AD7147(STAGE7_CONNECTION, 8, StageBuffer, 0, cdc);
 
     //===========================
     //= Stage 8 - CIN8 (+) S9
     //===========================
-    StageBuffer[0]=0xFFFF;	//Register 0xC0
-    StageBuffer[1]=0x3FFF;	//Register 0xC1
-    StageBuffer[2]=0x0000;	//Register 0xC2
-    StageBuffer[3]=0x2626;	//Register 0xC3
-    StageBuffer[4]=4000;	//Register 0xC4
-    StageBuffer[5]=2500;	//Register 0xC5
-    StageBuffer[6]=4000;	//Register 0xC6
-    StageBuffer[7]=4000;	//Register 0xC7
+    StageBuffer[0]=0x3FFF;	//Register 0xC0
+    StageBuffer[1]=0xDFFF;	//Register 0xC1
+    StageBuffer[2]=0x0100;	//Register 0xC2
+    StageBuffer[3]=0x2121;	//Register 0xC3
+    StageBuffer[4]=500; 	//Register 0xC4
+    StageBuffer[5]=500;     //Register 0xC5
+    StageBuffer[6]=600;     //Register 0xC6
+    StageBuffer[7]=600;     //Register 0xC7
     write_AD7147(STAGE8_CONNECTION, 8, StageBuffer, 0, cdc);
 
     //===========================
     //= Stage 9 - CIN9 (+) S10
     //===========================
-    StageBuffer[0]=0xFFFF;	//Register 0xC8	
-    StageBuffer[1]=0x3FFF;	//Register 0xC9
+    StageBuffer[0]=0x3FFF;	//Register 0xC8	
+    StageBuffer[1]=0xDFFF;	//Register 0xC9
     StageBuffer[2]=0x0000;	//Register 0xCA
     StageBuffer[3]=0x2626;	//Register 0xCB
-    StageBuffer[4]=4000;	//Register 0xCC
-    StageBuffer[5]=2500;	//Register 0xCD
-    StageBuffer[6]=4000;	//Register 0xCE
-    StageBuffer[7]=4000;	//Register 0xCF
+    StageBuffer[4]=4000; 	//Register 0xCC
+    StageBuffer[5]=2500;     //Register 0xCD
+    StageBuffer[6]=4000;     //Register 0xCE
+    StageBuffer[7]=600;     //Register 0xCF
     write_AD7147(STAGE9_CONNECTION, 8, StageBuffer, 0, cdc);
 
     //============================
     //= Stage 10 - CIN10 (+) S11
     //============================
-    StageBuffer[0]=0xFFFF;	//Register 0xD0
-    StageBuffer[1]=0x3FFF;	//Register 0xD1
-    StageBuffer[2]=0x0000;	//Register 0xD2
-    StageBuffer[3]=0x2626;	//Register 0xD3
-    StageBuffer[4]=4000;	//Register 0xD4
-    StageBuffer[5]=2500;	//Register 0xD5
-    StageBuffer[6]=4000;	//Register 0xD6
-    StageBuffer[7]=4000;	//Register 0xD7
+    StageBuffer[0]=0x3FFF;	//Register 0xD0
+    StageBuffer[1]=0xDFFF;	//Register 0xD1
+    StageBuffer[2]=0x0100;	//Register 0xD2
+    StageBuffer[3]=0x2121;	//Register 0xD3
+    StageBuffer[4]=500;     //Register 0xD4
+    StageBuffer[5]=500;     //Register 0xD5
+    StageBuffer[6]=600;     //Register 0xD6
+    StageBuffer[7]=600;     //Register 0xD7
 	write_AD7147(STAGE10_CONNECTION, 8, StageBuffer, 0, cdc);
 
     //============================
     //= Stage 11 - CIN11 (+) S12
     //============================
-    StageBuffer[0]=0xFFFF;	//Register 0xD8
-    StageBuffer[1]=0x3FFF;	//Register 0xD9
-    StageBuffer[2]=0x0000;	//Register 0xDA
-    StageBuffer[3]=0x2626;	//Register 0xDB
-    StageBuffer[4]=4000;	//Register 0xDC
-    StageBuffer[5]=2500;	//Register 0xDD
-    StageBuffer[6]=4000;	//Register 0xDE
-    StageBuffer[7]=4000;	//Register 0xDF
+    StageBuffer[0]=0x3FFF;	//Register 0xD8
+    StageBuffer[1]=0xDFFF;	//Register 0xD9
+    StageBuffer[2]=0x0100;	//Register 0xDA
+    StageBuffer[3]=0x2121;	//Register 0xDB
+    StageBuffer[4]=500; 	//Register 0xDC
+    StageBuffer[5]=500;     //Register 0xDD
+    StageBuffer[6]=600;     //Register 0xDE
+    StageBuffer[7]=600;     //Register 0xDF
 	write_AD7147(STAGE11_CONNECTION, 8, StageBuffer, 0, cdc);
 
     //--------------------------------------------------------------------------//
     //-------------------------Bank 1 Registers---------------------------------//
     //--------------------------------------------------------------------------//
     //Initialization of the first register bank but not the STAGE_CAL_EN
-//    StageBuffer[0] = 0x0012; 			//Register 0x000
-    StageBuffer[0] = 0x00B2; 			//Register 0x000
+    //  10  [1:0] Power Mode, 00 = Full Power Mode, 10 = low power mode
+    //  00  [3:2] LP_CONV_DELAY, 00 = 200 ms, low power conversion delay
+    //  0101 [7:4] SEQUENCE_STAGE_NUM, 0101 = 6 conversion stages in sequence
+    //  00  [9:8]  DECIMATION, 10 decimate by 64
+    //  0   [10]    SW_RESET, 0 = Do not reset registers to default values
+    //  0   [11]    Interrupt polarity control, 0 = active low
+    //  0   [12]    Ext_Source, 0 = Enable excitation source to CINx pins
+    //  0   [13]    UNUSED, set to 0
+    //  00  [15:14] CDC Bias Current control, 00 = normal operation
+    StageBuffer[0] = 0x0052; 			//Register 0x000 PWR_CONTROL
     write_AD7147(PWR_CONTROL, 1, StageBuffer, 0, cdc);
     
     //Read Interrupt Status to enable the Interrupts
     read_AD7147(DataBuffer, STAGE_LOW_LIMIT_INT, 3, cdc); //Registers 0x08 & 0x09 & 0x0A
     
-    StageBuffer[2] = 0x3230;			//Register 0x002
-    StageBuffer[3] = 0x0819;			//Register 0x003
-    StageBuffer[4] = 0x0832;			//Register 0x004
-    StageBuffer[5] = 0x0000;            //Register 0x005
-    StageBuffer[6] = 0x0000;            //Register 0x006
-    StageBuffer[7] = 0x0008;            //Register 0x007 - Interrupt after 4th Sensor
+    //  0000 [3:0]   Fast Filter Skip Control, 0000 = no sequence of results is skip
+    //  0011 [7:4]   FP_PROXIMITY_CNT, Calibration disable period in full power
+    //  0010 [11:8]  LP_PROXIMITY_CNT, Calibration disable period in low power mode
+    //  11   [13:12] PWR_DOWN_TIMEOUT, 11 = 2.00 x (FP_PROXIMITY_CNT)
+    //  0    [14]    FORCED_CAL, forced calibration control, 0 = normal operation
+    //  0    [15]    CONV_RESET, (self-clearing), 0 = normal operation
+    StageBuffer[2] = 0x3230;			//Register 0x002 AMB_COMP_CTRL0
+    
+    //  0001 1001   [7:0]    PROXIMITY_RECAL_LVL, 0000 = no sequence of results is skip
+    //  001000      [13:8]   PROXIMITY_DETECTION_RATE, proximity detection rate, the value is multiplied by 16 to determine actual detection rate
+    //  00          [15:14]  SLOW_FILTER_UPDATE_LVL, Slow Filter Update Level
+    StageBuffer[3] = 0x0819;			//Register 0x003 AMB_COMP_CTRL1
+    
+    //  00 0011 0010 [9:0]   FP_PROXIMITY_RECAL, Full power mode proximity recalibration time control
+    //  0000 10      [15:10] LP_PROXIMITY_RECAL, Low power mode proximity recalibration time control
+    StageBuffer[4] = 0x0832;			//Register 0x004 AMB_COMP_CTRL2
+    
+    //  0  [0] STAGE0, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [1] STAGE1, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [2] STAGE2, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [3] STAGE3, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [4] STAGE4, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [5] STAGE5, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [6] STAGE6, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [7] STAGE7, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [8] STAGE8, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [9] STAGE9, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [10] STAGE10, Low interrupt enable, 0 = Interrupt source disabled
+    //  0  [11] STAGE11, Low interrupt enable, 0 = Interrupt source disabled
+    //  00 [13:12] GPIO_SETUP, 00 = disable GPIO pin 
+    //  00 [15:14] GPIO_INPUT_CONFIG, 00 = Triggered on negative level
+    StageBuffer[5] = 0x0000;            //Register 0x005 STAGE_LOW_INT_ENABLE
+    
+    //  0  [0] STAGE0, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [1] STAGE1, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [2] STAGE2, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [3] STAGE3, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [4] STAGE4, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [5] STAGE5, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [6] STAGE6, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [7] STAGE7, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [8] STAGE8, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [9] STAGE9, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [10] STAGE10, High interrupt enable, 0 = Interrupt source disabled
+    //  0  [11] STAGE11, High interrupt enable, 0 = Interrupt source disabled
+    //  0000 [15:12] UNUSED, Set to 0 
+    StageBuffer[6] = 0x0000;            //Register 0x006 STAGE_HIGH_INT_ENABLE
+    
+    //  0  [0] STAGE0, Completion Interrupt enable, 0 = Interrupt source disabled
+    //  0  [1] STAGE1, Completion Interrupt enable, 0 = Interrupt source disabled
+    //  0  [2] STAGE2, Completion interrupt enable, 0 = Interrupt source disabled
+    //  0  [3] STAGE3, Completion interrupt enable, 0 = Interrupt source disabled
+    //  0  [4] STAGE4, Completion interrupt enable, 0 = Interrupt source disabled
+    //  1  [5] STAGE5, Completion interrupt enable, 0 = Interrupt source disabled
+    //  0  [6] STAGE6, Completion interrupt enable, 0 = Interrupt source disabled
+    //  0  [7] STAGE7, Completion interrupt enable, 0 = Interrupt source disabled
+    //  0  [8] STAGE8, Completion interrupt enable, 0 = Interrupt source disabled
+    //  0  [9] STAGE9, Completion interrupt enable, 0 = Interrupt source disabled
+    //  0  [10] STAGE10, Completion interrupt enable, 0 = Interrupt source disabled
+    //  0  [11] STAGE11, Completion interrupt enable, 1 = Interrupt source enabled
+    //  0  [12] GPIO_INT_ENABLE, Interrupt control when GPIO input pin changes level, 0 = disabled
+    //  000 [15:13] UNUSED, Set to 0 
+    StageBuffer[7] = 0x0020;            //Register 0x007 - STAGE_COMPLETE_INT_ENABLE
     write_AD7147(AMB_COMP_CTRL0, 6, StageBuffer, 2, cdc);
     
     //Enable data path for all sequences and enable calibration on 4 stages
-    StageBuffer[1] = 0x000F;			//Register 0x001
+    
+    //  1  [0] STAGE0_CAL_EN, STAGE0 Calibration enable, 1 = Calibration Enabled
+    //  1  [1] STAGE1_CAL_EN, Completion Interrupt enable, 1 = Calibration Enabled
+    //  1  [2] STAGE2_CAL_EN, Completion Interrupt enable, 1 = Calibration Enabled
+    //  1  [3] STAGE3_CAL_EN, Completion Interrupt enable, 1 = Calibration Enabled
+    //  1  [4] STAGE4_CAL_EN, Completion Interrupt enable, 1 = Calibration Disabled
+    //  1  [5] STAGE5_CAL_EN, Completion Interrupt enable, 0 = Calibration Disabled
+    //  0  [6] STAGE6_CAL_EN, Completion Interrupt enable, 0 = Calibration Disabled
+    //  0  [7] STAGE7_CAL_EN, Completion Interrupt enable, 0 = Calibration Disabled
+    //  0  [8] STAGE8_CAL_EN, Completion Interrupt enable, 0 = Calibration Disabled
+    //  0  [9] STAGE9_CAL_EN, Completion Interrupt enable, 0 = Calibration Disabled
+    //  0  [10] STAGE10_CAL_EN, Completion Interrupt enable, 0 = Calibration Disabled
+    //  0  [11] STAGE11_CAL_EN, Completion Interrupt enable, 0 = Calibration Disabled
+    //  00 [13:12] AVG_FP_SKIP, Full Power mode skip control, 00 = skip 3 samples
+    //  00 [15:14] AVG_LP_SKIP, Low Power mode skip control, 00 = use all samples
+    StageBuffer[1] = 0x003F;			//Register 0x001
     write_AD7147(STAGE_CAL_EN, 1, StageBuffer, 1, cdc);
     
     //Set the "Force Calibration Bit" 
+    //  0000 [3:0]   Fast Filter Skip Control, 0000 = no sequence of results is skip
+    //  0000 [7:4]   FP_PROXIMITY_CNT, Calibration disable period in full power
+    //  0000 [11:8]  LP_PROXIMITY_CNT, Calibration disable period in low power mode
+    //  00   [13:12] PWR_DOWN_TIMEOUT, 11 = 2.00 x (FP_PROXIMITY_CNT)
+    //  1    [14]    FORCED_CAL, forced calibration control, 1 = force all conversion stages to recalibrate
+    //  0    [15]    CONV_RESET, (self-clearing), 0 = normal operation
     StageBuffer[2] = 0x4000;            //Register 0x002
     write_AD7147(AMB_COMP_CTRL0, 1, StageBuffer, 2, cdc);
     
@@ -246,38 +332,30 @@ void read_sensor(unsigned int *sensor_values, unsigned int sensor)
     sensor_CDC(sensor, 1); //set CS to high (Stop Transmitting data)
 }
 
-void read_sensors(unsigned int *sensor_values, unsigned int *avail_sensors, unsigned int num_sensors)
+void read_sensors(unsigned int *sensor_values, unsigned int *avail_sensors, unsigned int num_cdc)
 {
-    unsigned int cdc_read = ENABLE_READ + 0x00A;
-    unsigned int cdc_sensor = 0;
-    unsigned int cdc_register = 0;
-    for(unsigned int j=0; j<num_sensors; j++)
+    get_CDC(num_cdc,0);
+    for(unsigned int i = 0; i<12; i++)
     {
-        sensor_CDC(avail_sensors[j], 0); //set CS to low (Start Transmitting data)
-        if(avail_sensors[j] > 12)
+        if(avail_sensors[i] == 1)
         {
-            cdc_sensor = avail_sensors[j] - 12;
+            sensor_values[i] = w16_r16_spi(ENABLE_READ + 0x00B+ i);
         }
-        else
-        {
-            cdc_sensor = avail_sensors[j];
-        }
-        cdc_register = cdc_read + avail_sensors[j];
-        sensor_values[avail_sensors[j]] = w16_r16_spi(cdc_register);
-        sensor_CDC(avail_sensors[j], 1); //set CS to high (Stop Transmitting data)
     }
+    get_CDC(num_cdc,1);
 }
 
 void read_cdc1(unsigned int *sensor_values)
 {
     get_CDC(1,0);
     sensor_values[0] = w16_r16_spi(ENABLE_READ + 0x00B);
-    for(unsigned int i = 1; i<3; i++)
+    for(unsigned int i = 1; i<6; i++)
     {
         sensor_values[i] = r16_spi();
     }
     get_CDC(1,1);
 }
+
 void read_cdc2(unsigned int *sensor_values)
 {
     get_CDC(2,0);
@@ -288,6 +366,7 @@ void read_cdc2(unsigned int *sensor_values)
     }
     get_CDC(2,1);
 }
+
 void sensor_CDC(unsigned int sensor, unsigned int state)
 {
     //Sensor is the sensor number to be read
@@ -326,6 +405,7 @@ void switch_LED(unsigned int cdc, unsigned int state)
  delay_ms(10);
  get_CDC(cdc,1);
 }
+
 void blink_LED(unsigned int cdc)
 {
     get_CDC(cdc,0);
@@ -340,6 +420,7 @@ void blink_LED(unsigned int cdc)
     delay_ms(10);
     get_CDC(cdc,1);
 }
+
 void get_CDC(unsigned int cdc, unsigned int state)
 {
     if (state == 1)

@@ -2,7 +2,6 @@ import serial
 import serial.tools.list_ports
 import tkinter as tk
 
-
 class SerialPort(object):
     def __init__(self):
         self.serial = serial.Serial()
@@ -17,7 +16,7 @@ class SerialPort(object):
 
         port_com = []
         port_name = []
-        port_baud_speed = "62500"
+        port_baud_speed = "9600"
         port_com_disp = '-'
         port_name_disp = '_'
 
@@ -74,8 +73,8 @@ class SerialPort(object):
 
         serial_list.bind('<<ListboxSelect>>', port_list_select)
 
-        b1 = tk.Button(popup_serial, text="Select this Serial Port", command=lambda: [self.open_serial_port(
-            str(com_num_var.get()), int(com_baud_var.get())), popup_serial.destroy()])
+        b1 = tk.Button(popup_serial, text="Select this Serial Port", command=lambda: [self.open_serial_port(str(com_num_var.get()), int(com_baud_var.get())),
+                                                                                      popup_serial.destroy()])
         b1.grid(row=1, column=0)
 
         b2 = tk.Button(popup_serial, text="Cancel", command=popup_serial.destroy)
@@ -86,8 +85,9 @@ class SerialPort(object):
     def open_serial_port(self, com_num, baud_rate):
         self.serial.baudrate = baud_rate
         self.serial.port = com_num
+        # self.serial.timeout = 0
+        # self.serial.nonblocking()
         self.serial.open()
-        print(self.serial)
 
     def close_serial_port(self):
         self.serial.close()

@@ -17684,12 +17684,12 @@ void init_uart(void)
 {
 TXSTA1 = 0b00100000;
 
-# 60
-SPBRG1 = 1;
+# 62
+SPBRG1 = 12;
 
 BAUDCON1 = 0b00000000;
 
-# 82
+# 84
 RCSTA1bits.SPEN=1;
 RCSTA1bits.RX9=0;
 RCSTA1bits.CREN=1;

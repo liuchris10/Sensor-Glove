@@ -13692,58 +13692,58 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;micro_setup.c: 48: TXSTA1 = 0b00100000;
 "48
 [e = _TXSTA1 -> -> 32 `i `uc ]
-[; ;micro_setup.c: 60: SPBRG1 = 1;
-"60
-[e = _SPBRG1 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 62: BAUDCON1 = 0b00000000;
+[; ;micro_setup.c: 62: SPBRG1 = 12;
 "62
+[e = _SPBRG1 -> -> 12 `i `uc ]
+[; ;micro_setup.c: 64: BAUDCON1 = 0b00000000;
+"64
 [e = _BAUDCON1 -> -> 0 `i `uc ]
-[; ;micro_setup.c: 82: RCSTA1bits.SPEN=1;
-"82
-[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 83: RCSTA1bits.RX9=0;
-"83
-[e = . . _RCSTA1bits 0 6 -> -> 0 `i `uc ]
-[; ;micro_setup.c: 84: RCSTA1bits.CREN=1;
+[; ;micro_setup.c: 84: RCSTA1bits.SPEN=1;
 "84
+[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
+[; ;micro_setup.c: 85: RCSTA1bits.RX9=0;
+"85
+[e = . . _RCSTA1bits 0 6 -> -> 0 `i `uc ]
+[; ;micro_setup.c: 86: RCSTA1bits.CREN=1;
+"86
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;micro_setup.c: 89: }
-"89
+[; ;micro_setup.c: 91: }
+"91
 [e :UE 1525 ]
 }
-"91
-[v _delay_ms `(v ~T0 @X0 1 ef1`i ]
-"92
-{
-[; ;micro_setup.c: 91: void delay_ms(int n)
-[; ;micro_setup.c: 92: {
-[e :U _delay_ms ]
-"91
-[v _n `i ~T0 @X0 1 r1 ]
-"92
-[f ]
 "93
-[v _j `i ~T0 @X0 1 a ]
-[; ;micro_setup.c: 93: int j = n/10;
-[e = _j / _n -> 10 `i ]
-[; ;micro_setup.c: 94: while(j--)
+[v _delay_ms `(v ~T0 @X0 1 ef1`i ]
 "94
+{
+[; ;micro_setup.c: 93: void delay_ms(int n)
+[; ;micro_setup.c: 94: {
+[e :U _delay_ms ]
+"93
+[v _n `i ~T0 @X0 1 r1 ]
+"94
+[f ]
+"95
+[v _j `i ~T0 @X0 1 a ]
+[; ;micro_setup.c: 95: int j = n/10;
+[e = _j / _n -> 10 `i ]
+[; ;micro_setup.c: 96: while(j--)
+"96
 [e $U 1527  ]
 [e :U 1528 ]
-[; ;micro_setup.c: 95: {
-"95
-{
-[; ;micro_setup.c: 96: _delay((unsigned long)((10)*(8000000/4000.0)));
-"96
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;micro_setup.c: 97: {
 "97
+{
+[; ;micro_setup.c: 98: _delay((unsigned long)((10)*(8000000/4000.0)));
+"98
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"99
 }
 [e :U 1527 ]
-"94
+"96
 [e $ != -- _j -> 1 `i -> 0 `i 1528  ]
 [e :U 1529 ]
-[; ;micro_setup.c: 97: }
-[; ;micro_setup.c: 98: }
-"98
+[; ;micro_setup.c: 99: }
+[; ;micro_setup.c: 100: }
+"100
 [e :UE 1526 ]
 }

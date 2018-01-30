@@ -17777,7 +17777,6 @@ switch (indicator)
 {
 case 'b':
 single_sensor = uart_read_unsigned_int();
-read_sensor(sensor_values, single_sensor);
 uart_write_unsigned_int(sensor_values[single_sensor]);
 state = 'r';
 break;

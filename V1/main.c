@@ -57,7 +57,6 @@ void main(void)
                 {
                     case s_sensor:
                         single_sensor = uart_read_unsigned_int();
-                        read_sensor(sensor_values, single_sensor);
                         uart_write_unsigned_int(sensor_values[single_sensor]);
                         state = RESET_STATE;
                         break;
