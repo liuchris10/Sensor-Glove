@@ -293,7 +293,7 @@ class DataGraph(object):
             self.sub_plot.set_xlim([time_low, self.graph_seconds[-1]])
 
         # Setting the Y limit to show PSI from 0 - 5 psi
-        self.sub_plot.set_ylim([0, 20])
+        self.sub_plot.set_ylim([0, 20000])
         self.sub_plot.ticklabel_format(useOffset=False)
 
     def init_single_fig(self):
